@@ -607,7 +607,7 @@ public class DisplayTTT extends JPanel implements Runnable {
 		}
 		if (m_stopWatch == null) {
 
-			m_lblTimer.setBounds(Display.XPOS_COL4, Display.YPOS_ROW11,
+			m_lblTimer.setBounds(Display.XPOS_COL200, Display.YPOS_ROW550,
 					Display.COMPONENT_WIDTH150, Display.COMPONENT_HEIGHT40);
 			m_lblTimer.setForeground(Color.WHITE);
 			add(m_lblTimer);
@@ -641,7 +641,7 @@ public class DisplayTTT extends JPanel implements Runnable {
 		goBackButton.setBorderPainted(false); // this stuff hides button chrome
 		goBackButton.setFocusPainted(false);
 		goBackButton.setContentAreaFilled(false);
-		goBackButton.setBounds(0, Display.YPOS_ROW10, 
+		goBackButton.setBounds(0, Display.YPOS_ROW500, 
 				Display.COMPONENT_WIDTH180, Display.COMPONENT_HEIGHT100);
 		goBackButton.setVisible(true);
 		// listen for clicks
@@ -664,17 +664,17 @@ public class DisplayTTT extends JPanel implements Runnable {
 		}
 		// sets colours and bounds for turn and list of players labels.
 		dispTurn.setForeground(Color.WHITE);
-		dispTurn.setBounds(Display.OFFSET1, Display.YPOS_ROW9-Display.OFFSET4, 
+		dispTurn.setBounds(Display.OFFSET1, Display.YPOS_ROW450-Display.OFFSET4, 
 				Display.COMPONENT_WIDTH350, Display.COMPONENT_HEIGHT20);
 		dispPlayers.setForeground(Color.WHITE);
-		dispPlayers.setBounds(Display.OFFSET1, Display.YPOS_ROW9,
+		dispPlayers.setBounds(Display.OFFSET1, Display.YPOS_ROW450,
 				Display.COMPONENT_WIDTH350, Display.COMPONENT_HEIGHT20);
 		dispPlayers.setText("Players playing: "
 				+ game.getPlayers().get(0).getPlayerName() + ","
 				+ game.getPlayers().get(1).getPlayerName());
 		dispCount.setForeground(Color.WHITE);
 		dispCount.setBounds(Display.OFFSET1, 
-				Display.YPOS_ROW9 + Display.OFFSET4, 
+				Display.YPOS_ROW450 + Display.OFFSET4, 
 				Display.COMPONENT_WIDTH350, Display.COMPONENT_HEIGHT20);
 		dispCount.setText(""); // blank for initialisation
 		
@@ -692,7 +692,7 @@ public class DisplayTTT extends JPanel implements Runnable {
 		m_saveGameButton.setBorderPainted(false); // this stuff hides button chrome
 		m_saveGameButton.setFocusPainted(false);
 		m_saveGameButton.setContentAreaFilled(false);
-		m_saveGameButton.setBounds(Display.XPOS_COL5, Display.YPOS_ROW10,
+		m_saveGameButton.setBounds(Display.XPOS_COL250, Display.YPOS_ROW500,
 				Display.COMPONENT_WIDTH200, Display.COMPONENT_HEIGHT100);
 		m_saveGameButton.setVisible(true);
 		m_saveGameButton.addActionListener(new ActionListener() {

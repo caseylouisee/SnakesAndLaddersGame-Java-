@@ -147,11 +147,7 @@ public class GameSnL {
 
 	public int getPlayerLocation(int playerIndex) {
 		if (GameSelector.m_TRACE) {
-			if (GameSelector.m_VALID) {
-				System.out.println("GameSnL:: getPlayerLocation() "
-						+ "valid parameter:" + playerIndex + "returns: "
-						+ players.get(playerIndex).getPlayerLocation());
-			}
+				System.out.println("GameSnL:: getPlayerLocation()");		
 		}
 		return players.get(playerIndex).getPlayerLocation();
 	}
@@ -194,11 +190,7 @@ public class GameSnL {
 
 	public PlayerSnL getPlayer(int playerIndex) {
 		if (GameSelector.m_TRACE) {
-			if (GameSelector.m_VALID) {
-				System.out.println("GameSnL:: getPlayerLocation() "
-						+ "valid parameter:" + playerIndex + "returns: "
-						+ players.get(playerIndex).getPlayerLocation());
-			}
+			System.out.println("GameSnL:: getPlayerLocation()");		
 		}
 		return players.get(playerIndex);
 	}
@@ -230,36 +222,21 @@ public class GameSnL {
 	 * */
 
 	public static int getMovementPair(int original) {
+		if (GameSelector.m_TRACE) {
+			System.out.println("GameSnL:: getMovementPair()");
+		}
 
 		if (m_laddersList.contains(original)) {
 			int movementPair = m_laddersList.lastIndexOf(original) - 1;
-			if (GameSelector.m_TRACE) {
-				if (GameSelector.m_VALID) {
-					System.out.println("GameSnL:: getMovementPair() "
-							+ "valid parameter:" + original + "returns: "
-							+ m_laddersList.get(movementPair));
-				}
-			}
+
 			return m_laddersList.get(movementPair);
 		} else if (m_snakesList.contains(original)) {
 			int movementPair = m_snakesList.lastIndexOf(original) + 1;
-			if (GameSelector.m_TRACE) {
-				if (GameSelector.m_VALID) {
-					System.out.println("GameSnL:: getMovementPair() "
-							+ "valid parameter:" + original + "returns: "
-							+ m_snakesList.get(movementPair));
-				}
-			}
+
 			return m_snakesList.get(movementPair);
 		} else {
 			System.out.println("error");
-			if (GameSelector.m_TRACE) {
-				if (!GameSelector.m_VALID) {
-					System.out.println("GameSnL:: getMovementPair() "
-							+ "invalid parameter:" + original + "returns: "
-							+ -1);
-				}
-			}
+
 			return -1;
 		}
 	}
@@ -335,11 +312,7 @@ public class GameSnL {
 			final int ladders) {
 
 		if (GameSelector.m_TRACE) {
-			if (GameSelector.m_VALID) {
-				System.out.println("GameSnL:: GameSnL() " + "valid parameters:"
-						+ playerNames + " " + playerColors + " " + snakes + " "
-						+ ladders + " no returns");
-			}
+			System.out.println("GameSnL:: GameSnL() valid params");
 		}
 
 		/** Displays the number of snakes and ladders to the console */
@@ -475,12 +448,7 @@ public class GameSnL {
 			ArrayList<Color> playerColors, int snakes, int ladders) {
 
 		if (GameSelector.m_TRACE) {
-			if (GameSelector.m_VALID) {
-				System.out.println("GameSnL:: initVariables() "
-						+ "valid parameter:" + playerNames + " " + playerNames
-						+ " " + playerColors + " " + snakes + " " + ladders
-						+ "no returns: ");
-			}
+			System.out.println("GameSnL:: initVariables()");
 		}
 
 		/** Adds a player object to the player object array list */
@@ -555,10 +523,7 @@ public class GameSnL {
 		int roll = rollDice();
 
 		if (GameSelector.m_TRACE) {
-			if (GameSelector.m_VALID) {
-				System.out.println("GameSnL:: initVariables() "
-						+ "valid parameter:" + player + "returns: " + roll);
-			}
+				System.out.println("GameSnL:: initVariables()");
 		}
 
 		final int MAX_VALUE = 99;
@@ -607,11 +572,7 @@ public class GameSnL {
 		}
 
 		if (GameSelector.m_TRACE) {
-			if (GameSelector.m_VALID) {
-				System.out.println("GameSnL:: movePlayer() "
-						+ "valid parameter:" + player + " " + destination
-						+ "returns: " + move);
-			}
+				System.out.println("GameSnL:: movePlayer()");
 		}
 	}
 
@@ -624,10 +585,7 @@ public class GameSnL {
 
 	private void winner(PlayerSnL player) {
 		if (GameSelector.m_TRACE) {
-			if (GameSelector.m_VALID) {
-				System.out.println("GameSnL:: winner() " + "valid parameter:"
-						+ player + "returns: the winner frame");
-			}
+				System.out.println("GameSnL:: winner()");
 		}
 		m_shapesPanel.winner(m_frame);
 	}

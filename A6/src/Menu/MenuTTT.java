@@ -141,8 +141,8 @@ public class MenuTTT {
 		for (int i = 0; i < MAX_NUM_PLAYERS; i++) {
 			m_namePlayersLabel.add(new JLabel("Name " + (i + 1) + ": ",
 					SwingConstants.RIGHT));
-			m_namePlayersLabel.get(i).setBounds(Display.XPOS_COL1, 
-					Display.YPOS_ROW3 + Display.OFFSET3 * i, 
+			m_namePlayersLabel.get(i).setBounds(Display.XPOS_COL50, 
+					Display.YPOS_ROW150 + Display.OFFSET3 * i, 
 					Display.COMPONENT_WIDTH100, Display.COMPONENT_HEIGHT20);
 			m_namePlayersLabel.get(i).setForeground(Color.WHITE);
 			m_namePlayersLabel.get(i).setVisible(true);
@@ -158,8 +158,8 @@ public class MenuTTT {
 		m_playerTypeComboBox = new ArrayList<JComboBox<String>>();
 		for(int i = 0; i < MAX_NUM_PLAYERS; i++){
 			m_playerTypeComboBox.add(new JComboBox<String>(HUMAN_OR_AI));
-			m_playerTypeComboBox.get(i).setBounds(Display.XPOS_COL8, 
-					Display.YPOS_ROW3 + Display.OFFSET3 * i,
+			m_playerTypeComboBox.get(i).setBounds(Display.XPOS_COL400, 
+					Display.YPOS_ROW150 + Display.OFFSET3 * i,
 					Display.COMPONENT_WIDTH100, Display.COMPONENT_HEIGHT20);
 			m_playerTypeComboBox.get(i).setVisible(true);
 			m_frame.add(m_playerTypeComboBox.get(i));	
@@ -174,8 +174,8 @@ public class MenuTTT {
 		m_playersXorO = new ArrayList<JComboBox<String>>();
 		for (int i = 0; i < MAX_NUM_PLAYERS; i++) {
 			m_playersXorO.add(new JComboBox<String>(TTT_X_OR_O));
-			m_playersXorO.get(i).setBounds(Display.XPOS_COL6, 
-					Display.YPOS_ROW3 + Display.OFFSET3 * i, 
+			m_playersXorO.get(i).setBounds(Display.XPOS_COL300, 
+					Display.YPOS_ROW150 + Display.OFFSET3 * i, 
 					Display.COMPONENT_WIDTH100, Display.COMPONENT_HEIGHT20);
 			m_playersXorO.get(i).setVisible(true);
 			m_frame.add(m_playersXorO.get(i));
@@ -212,8 +212,8 @@ public class MenuTTT {
 			m_playersNameTextField.add(new JTextField());
 			m_playersNameTextField.get(i).setText("Player " + (i + 1));
 			m_playersNameTextField.get(i).setVisible(true);
-			m_playersNameTextField.get(i).setBounds(Display.XPOS_COL3, 
-					Display.YPOS_ROW3 + Display.OFFSET3 * i,
+			m_playersNameTextField.get(i).setBounds(Display.XPOS_COL150, 
+					Display.YPOS_ROW150 + Display.OFFSET3 * i,
 					Display.COMPONENT_WIDTH150, Display.COMPONENT_HEIGHT20);
 			m_frame.add(m_playersNameTextField.get(i));
 		}
@@ -245,8 +245,8 @@ public class MenuTTT {
 		m_initGameButton.setBorderPainted(false);
 		m_initGameButton.setFocusPainted(false);
 		m_initGameButton.setContentAreaFilled(false);
-		m_initGameButton.setBounds(Display.XPOS_COL3+Display.OFFSET2, 
-				Display.YPOS_ROW5, Display.COMPONENT_WIDTH200, 
+		m_initGameButton.setBounds(Display.XPOS_COL150+Display.OFFSET2, 
+				Display.YPOS_ROW250, Display.COMPONENT_WIDTH200, 
 				Display.COMPONENT_HEIGHT100);
 		m_initGameButton.setVisible(true);
 		m_initGameButton.addActionListener(new ActionListener() {
@@ -259,7 +259,7 @@ public class MenuTTT {
 		m_goBackButton.setBorderPainted(false);
 		m_goBackButton.setFocusPainted(false);
 		m_goBackButton.setContentAreaFilled(false);
-		m_goBackButton.setBounds(0, Display.YPOS_ROW5, 
+		m_goBackButton.setBounds(0, Display.YPOS_ROW250, 
 				Display.COMPONENT_WIDTH180, Display.COMPONENT_HEIGHT100);
 		m_goBackButton.setVisible(true);
 		m_goBackButton.addActionListener(new ActionListener() {
@@ -283,7 +283,7 @@ public class MenuTTT {
 		loadGame.setBorderPainted(false);
 		loadGame.setFocusPainted(false);
 		loadGame.setContentAreaFilled(false);
-		loadGame.setBounds(Display.XPOS_COL6-Display.OFFSET4, Display.YPOS_ROW5,
+		loadGame.setBounds(Display.XPOS_COL300-Display.OFFSET4, Display.YPOS_ROW250,
 				Display.COMPONENT_WIDTH350, Display.COMPONENT_HEIGHT100);
 		loadGame.setVisible(true);
 		m_frame.add(loadGame);

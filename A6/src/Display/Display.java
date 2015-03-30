@@ -35,31 +35,31 @@ public class Display extends JPanel {
 	private final int SHAPE_HEIGHT = 30;
 
 	/** Used to set object locations on the JFrames/JPanels**/
-	public static final int XPOS_COL1 = 50;
-	public static final int XPOS_COL2 = 100;
-	public static final int XPOS_COL3 = 150;
-	public static final int XPOS_COL4 = 200;
-	public static final int XPOS_COL5 = 250;
-	public static final int XPOS_COL6 = 300;
-	public static final int XPOS_COL7 = 350;
-	public static final int XPOS_COL8 = 400;
-	public static final int XPOS_COL9 = 450;
-	public static final int XPOS_COL10 = 500;
-	public static final int XPOS_COL11 = 550;
+	public static final int XPOS_COL50 = 50;
+	public static final int XPOS_COL100 = 100;
+	public static final int XPOS_COL150 = 150;
+	public static final int XPOS_COL200 = 200;
+	public static final int XPOS_COL250 = 250;
+	public static final int XPOS_COL300 = 300;
+	public static final int XPOS_COL350 = 350;
+	public static final int XPOS_COL400 = 400;
+	public static final int XPOS_COL450 = 450;
+	public static final int XPOS_COL500 = 500;
+	public static final int XPOS_COL550 = 550;
 	
-	public static final int YPOS_ROW1 = 50;
-	public static final int YPOS_ROW2 = 100;
-	public static final int YPOS_ROW3 = 150;
-	public static final int YPOS_ROW4 = 200;
-	public static final int YPOS_ROW5 = 250;
-	public static final int YPOS_ROW6 = 300;
-	public static final int YPOS_ROW7 = 350;
-	public static final int YPOS_ROW8 = 400;
-	public static final int YPOS_ROW9 = 450;
-	public static final int YPOS_ROW10 = 500;
-	public static final int YPOS_ROW11 = 550;
-	public static final int YPOS_ROW12 = 600;
-	public static final int YPOS_ROW13 = 650;
+	public static final int YPOS_ROW50 = 50;
+	public static final int YPOS_ROW100 = 100;
+	public static final int YPOS_ROW150 = 150;
+	public static final int YPOS_ROW200 = 200;
+	public static final int YPOS_ROW250 = 250;
+	public static final int YPOS_ROW300 = 300;
+	public static final int YPOS_ROW350 = 350;
+	public static final int YPOS_ROW400 = 400;
+	public static final int YPOS_ROW450 = 450;
+	public static final int YPOS_ROW500 = 500;
+	public static final int YPOS_ROW550 = 550;
+	public static final int YPOS_ROW600 = 600;
+	public static final int YPOS_ROW650 = 650;
 	
 	public static final int COMPONENT_WIDTH50 = 50;
 	public static final int COMPONENT_WIDTH75 = 75;

@@ -190,8 +190,8 @@ public class DisplaySnL extends JPanel implements Runnable{
 		m_playerTurn.setText("It is player "
 				+ m_players.get(m_gameSnL.getIterator()).getPlayerName()
 				+ "'s turn!");
-		m_playerTurn.setBounds(Display.XPOS_COL4, 
-				Display.YPOS_ROW10+Display.OFFSET2, 
+		m_playerTurn.setBounds(Display.XPOS_COL200, 
+				Display.YPOS_ROW500+Display.OFFSET2, 
 				Display.COMPONENT_WIDTH200, Display.COMPONENT_HEIGHT20);
 
 		add(m_playerTurn);
@@ -224,8 +224,8 @@ public class DisplaySnL extends JPanel implements Runnable{
 		if(GameSelector.m_TRACE){
 			System.out.println("DisplaySnL::addRollDice");
 		}
-		m_rollDiceBtn.setBounds(Display.XPOS_COL9-Display.OFFSET2, 
-				Display.YPOS_ROW10+Display.OFFSET2, Display.COMPONENT_WIDTH100, 
+		m_rollDiceBtn.setBounds(Display.XPOS_COL450-Display.OFFSET2, 
+				Display.YPOS_ROW500+Display.OFFSET2, Display.COMPONENT_WIDTH100, 
 				Display.COMPONENT_HEIGHT40);
 
 		if(m_players.get(m_gameSnL.getIterator()).getPlayerName()
@@ -296,8 +296,8 @@ public class DisplaySnL extends JPanel implements Runnable{
 
 		m_dicePicLabel.setIcon(new ImageIcon("res/Dice"+roll+".png"));
 
-		m_dicePicLabel.setBounds(Display.XPOS_COL8+Display.OFFSET1,
-				Display.YPOS_ROW11, Display.COMPONENT_WIDTH150,
+		m_dicePicLabel.setBounds(Display.XPOS_COL400+Display.OFFSET1,
+				Display.YPOS_ROW550, Display.COMPONENT_WIDTH150,
 				Display.COMPONENT_HEIGHT100);
 		
 		add(m_rollDiceBtn);
@@ -314,7 +314,7 @@ public class DisplaySnL extends JPanel implements Runnable{
 			System.out.println("DisplaySnL::addPlayerInformation");
 		}
 		m_playerInfoPanel = new JPanel();
-		m_playerInfoPanel.setBounds(Display.XPOS_COL1, Display.YPOS_ROW11, 
+		m_playerInfoPanel.setBounds(Display.XPOS_COL50, Display.YPOS_ROW550, 
 				Display.COMPONENT_WIDTH300, Display.COMPONENT_HEIGHT80);
 		m_playerInfoPanel.setLayout(null);
 		m_playerInfoPanel.setBackground(Color.WHITE);
@@ -332,7 +332,7 @@ public class DisplaySnL extends JPanel implements Runnable{
 
 			Integer location = m_gameSnL.getPlayerLocation(i);
 			m_playerPos.add(new JLabel(location.toString()));
-			m_playerPos.get(i).setBounds(Display.XPOS_COL4, Display.OFFSET2*i, 
+			m_playerPos.get(i).setBounds(Display.XPOS_COL200, Display.OFFSET2*i, 
 					Display.COMPONENT_WIDTH100, Display.COMPONENT_HEIGHT20);
 
 			m_playerInfoPanel.add(m_playerInfo.get(i));
@@ -363,7 +363,7 @@ public class DisplaySnL extends JPanel implements Runnable{
 			System.out.println("DisplaySnL::addSaveButton");
 		}
 		m_saveGameButton.setText("Save Game");
-		m_saveGameButton.setBounds(Display.XPOS_COL1, Display.YPOS_ROW13, 
+		m_saveGameButton.setBounds(Display.XPOS_COL50, Display.YPOS_ROW650, 
 				Display.COMPONENT_WIDTH100, Display.COMPONENT_HEIGHT20);
 		m_saveGameButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -672,8 +672,8 @@ public class DisplaySnL extends JPanel implements Runnable{
 		}
 		if (m_stopWatch == null) {
 
-			m_timerPanel.setBounds(Display.XPOS_COL1, 
-					Display.YPOS_ROW10+Display.OFFSET2,
+			m_timerPanel.setBounds(Display.XPOS_COL50, 
+					Display.YPOS_ROW500+Display.OFFSET2,
 					Display.COMPONENT_WIDTH100, Display.COMPONENT_HEIGHT20);
 			m_timerPanel.setLayout(null);
 			m_timerPanel.setBackground(Color.WHITE);
@@ -711,8 +711,8 @@ public class DisplaySnL extends JPanel implements Runnable{
 			System.out.println("DisplaySnL::winner");
 		}
 		boardOverlay = new JPanel();
-		boardOverlay.setBounds(0, 0, Display.XPOS_COL10, 
-				Display.XPOS_COL10);
+		boardOverlay.setBounds(0, 0, Display.XPOS_COL500, 
+				Display.XPOS_COL500);
 		boardOverlay.setVisible(true);
 		frame.add(boardOverlay);
 		Thread flash = new Thread(){

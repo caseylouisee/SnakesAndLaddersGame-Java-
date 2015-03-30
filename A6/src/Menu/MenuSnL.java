@@ -130,7 +130,6 @@ public class MenuSnL {
 		test.addSnakesComboBox();
 		test.addLogo();
 		test.addGameButtons();
-		test.addLoadButton();
 		test.loadGame();
 		test.sendForm();
 	}
@@ -146,7 +145,7 @@ public class MenuSnL {
 		}
 
 		m_frame = new JFrame(WINDOW_TITLE);
-		m_frame.setBounds(Display.XPOS_COL2, Display.YPOS_ROW2, 
+		m_frame.setBounds(Display.XPOS_COL100, Display.YPOS_ROW100, 
 				WINDOW_WIDTH, WINDOW_HEIGHT);
 		m_frame.setLayout(null);
 		m_frame.getContentPane().setBackground(Color.BLACK);
@@ -162,7 +161,6 @@ public class MenuSnL {
 		addGameButtons();
 		addSnakesComboBox();
 		addLaddersComboBox();
-		addLoadButton();
 		m_frame.setVisible(true);
 	}
 
@@ -179,8 +177,8 @@ public class MenuSnL {
 		m_frame.add(title);
 
 		JLabel numberPlayersLabel = new JLabel("Number players:");
-		numberPlayersLabel.setBounds(Display.XPOS_COL1, 
-				Display.YPOS_ROW2+Display.OFFSET4, 
+		numberPlayersLabel.setBounds(Display.XPOS_COL50, 
+				Display.YPOS_ROW100+Display.OFFSET4, 
 				Display.COMPONENT_WIDTH150, Display.COMPONENT_HEIGHT20);
 		numberPlayersLabel.setForeground(Color.WHITE);
 		m_frame.add(numberPlayersLabel);
@@ -188,8 +186,8 @@ public class MenuSnL {
 		m_namePlayersLabel = new ArrayList<JLabel>();
 		for (int i = 0; i < MAX_NUM_PLAYERS; i++) {
 			m_namePlayersLabel.add(new JLabel("Name " + (i + 1) + ": "));
-			m_namePlayersLabel.get(i).setBounds(Display.XPOS_COL2, 
-					Display.YPOS_ROW3 + Display.OFFSET3* i, 
+			m_namePlayersLabel.get(i).setBounds(Display.XPOS_COL100, 
+					Display.YPOS_ROW150 + Display.OFFSET3* i, 
 					Display.COMPONENT_WIDTH150, 
 					Display.COMPONENT_HEIGHT20);
 			m_namePlayersLabel.get(i).setVisible(false);
@@ -197,13 +195,13 @@ public class MenuSnL {
 
 			JLabel playerLadderslbl = new JLabel("Number of ladders: ");
 			playerLadderslbl.setForeground(Color.WHITE);
-			playerLadderslbl.setBounds(Display.XPOS_COL2, Display.YPOS_ROW8, 
+			playerLadderslbl.setBounds(Display.XPOS_COL100, Display.YPOS_ROW400, 
 					Display.COMPONENT_WIDTH150, Display.COMPONENT_HEIGHT20);
 			m_frame.add(playerLadderslbl);
 
 			JLabel playerSnakeslbl = new JLabel("Number of snakes: ");
 			playerSnakeslbl.setForeground(Color.WHITE);
-			playerSnakeslbl.setBounds(Display.XPOS_COL2, Display.YPOS_ROW7,
+			playerSnakeslbl.setBounds(Display.XPOS_COL100, Display.YPOS_ROW350,
 					Display.COMPONENT_WIDTH150, Display.COMPONENT_HEIGHT20);
 			m_frame.add(playerSnakeslbl);
 
@@ -216,8 +214,8 @@ public class MenuSnL {
 			System.out.println("MenuSnL:: addNumberOfPLayersComboBox");
 		}
 		m_playersComboBox = new JComboBox<String>(SNL_NUMBER_PLAYERS);
-		m_playersComboBox.setBounds(Display.XPOS_COL3, 
-				Display.YPOS_ROW2 + Display.OFFSET4, Display.COMPONENT_WIDTH150, 
+		m_playersComboBox.setBounds(Display.XPOS_COL150, 
+				Display.YPOS_ROW100 + Display.OFFSET4, Display.COMPONENT_WIDTH150, 
 				Display.COMPONENT_HEIGHT20);
 		m_frame.add(m_playersComboBox);
 		m_playersComboBox.addItemListener(new ItemListener() {
@@ -267,8 +265,8 @@ public class MenuSnL {
 		for (int i = 0; i < MAX_NUM_PLAYERS; i++) {
 			m_playersNameTextField.add(new JTextField("Player "+(i+1)));
 			m_playersNameTextField.get(i).setVisible(false);
-			m_playersNameTextField.get(i).setBounds(Display.XPOS_COL3, 
-					Display.YPOS_ROW3 + Display.OFFSET3 * i,
+			m_playersNameTextField.get(i).setBounds(Display.XPOS_COL150, 
+					Display.YPOS_ROW150 + Display.OFFSET3 * i,
 					Display.COMPONENT_WIDTH150, Display.COMPONENT_HEIGHT20);
 			m_frame.add(m_playersNameTextField.get(i));
 		}
@@ -282,8 +280,8 @@ public class MenuSnL {
 		m_playersColours = new ArrayList<JComboBox<String>>();
 		for (int i = 0; i < MAX_NUM_PLAYERS; i++) {
 			m_playersColours.add(new JComboBox<String>(SNL_COLOR_PLAYERS));
-			m_playersColours.get(i).setBounds(Display.XPOS_COL6, 
-					Display.YPOS_ROW3 + Display.OFFSET3 * i, 
+			m_playersColours.get(i).setBounds(Display.XPOS_COL300, 
+					Display.YPOS_ROW150 + Display.OFFSET3 * i, 
 					Display.COMPONENT_WIDTH100, Display.COMPONENT_HEIGHT20);
 			m_playersColours.get(i).setVisible(false);
 			m_frame.add(m_playersColours.get(i));
@@ -305,8 +303,8 @@ public class MenuSnL {
 		m_playerTypeComboBox = new ArrayList<JComboBox<String>>();
 		for(int i = 0; i < MAX_NUM_PLAYERS; i++){
 			m_playerTypeComboBox.add(new JComboBox<String>(HUMAN_OR_AI));
-			m_playerTypeComboBox.get(i).setBounds(Display.XPOS_COL8,
-					Display.YPOS_ROW3 + Display.OFFSET3 * i,
+			m_playerTypeComboBox.get(i).setBounds(Display.XPOS_COL400,
+					Display.YPOS_ROW150 + Display.OFFSET3 * i,
 					Display.COMPONENT_WIDTH100, Display.COMPONENT_HEIGHT20);
 			m_playerTypeComboBox.get(i).setVisible(false);
 			m_frame.add(m_playerTypeComboBox.get(i));	
@@ -319,7 +317,7 @@ public class MenuSnL {
 			System.out.println("MenuSnL:: addLaddersComboBox");
 		}
 		m_playerLadders = new JComboBox<String>(NUMBERS_OF_OPTIONS);
-		m_playerLadders.setBounds(Display.XPOS_COL5, Display.YPOS_ROW8,
+		m_playerLadders.setBounds(Display.XPOS_COL250, Display.YPOS_ROW400,
 				Display.COMPONENT_WIDTH75, Display.COMPONENT_HEIGHT20);
 		m_playerLadders.setVisible(true);
 		m_frame.getContentPane().add(m_playerLadders);
@@ -339,7 +337,7 @@ public class MenuSnL {
 			System.out.println("MenuSnL:: addSnakesComboBox");
 		}
 		m_playerSnakes = new JComboBox<String>(NUMBERS_OF_OPTIONS);
-		m_playerSnakes.setBounds(Display.XPOS_COL5, Display.YPOS_ROW7,
+		m_playerSnakes.setBounds(Display.XPOS_COL250, Display.YPOS_ROW350,
 				Display.COMPONENT_WIDTH75, Display.COMPONENT_HEIGHT20);
 		m_playerSnakes.setVisible(true);
 		m_frame.getContentPane().add(m_playerSnakes);
@@ -369,10 +367,10 @@ public class MenuSnL {
 		m_frame.add(m_logoButton);
 	}
 
-	/** Adds the start and back button to the frame. */
+	/** Adds the start, load and back button to the frame. */
 	private void addGameButtons() {
 		if(GameSelector.m_TRACE){
-			System.out.println("MenuSnL:: setGameButtons");
+			System.out.println("MenuSnL:: addGameButtons");
 		}
 		m_initGameButton = new JButton();
 		m_initGameButton.setIcon(new ImageIcon("res/STARTBTN.png"));
@@ -380,8 +378,8 @@ public class MenuSnL {
 		m_initGameButton.setFocusPainted(false);
 		m_initGameButton.setContentAreaFilled(false);
 		m_initGameButton.setVisible(false);
-		m_initGameButton.setBounds(Display.XPOS_COL3+Display.OFFSET2, 
-				Display.YPOS_ROW8+Display.OFFSET4, Display.COMPONENT_WIDTH200, 
+		m_initGameButton.setBounds(Display.XPOS_COL150+Display.OFFSET2, 
+				Display.YPOS_ROW400+Display.OFFSET4, Display.COMPONENT_WIDTH200, 
 				Display.COMPONENT_HEIGHT100);
 		m_initGameButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -393,7 +391,7 @@ public class MenuSnL {
 		m_goBackButton.setBorderPainted(false);
 		m_goBackButton.setFocusPainted(false);
 		m_goBackButton.setContentAreaFilled(false);
-		m_goBackButton.setBounds(0, Display.YPOS_ROW8+Display.OFFSET4, 
+		m_goBackButton.setBounds(0, Display.YPOS_ROW400+Display.OFFSET4, 
 				Display.COMPONENT_WIDTH180, Display.COMPONENT_HEIGHT100);
 		m_goBackButton.setVisible(true);
 		m_goBackButton.addActionListener(new ActionListener() {
@@ -402,32 +400,25 @@ public class MenuSnL {
 				new GameSelector(GameSelector.m_TRACE);
 			}
 		});
-
-		m_frame.add(m_initGameButton);
-		m_frame.add(m_goBackButton);
-	}
-
-	/** Adds the load button to the frame */
-	private void addLoadButton() {
-		if(GameSelector.m_TRACE){
-			System.out.println("MenuSnL:: addLoadButton");
-		}
 		JButton m_loadGame = new JButton();
 		m_loadGame.setText("Load Game");
 		m_loadGame.setIcon(new ImageIcon(("res/LOADBTN.png")));
 		m_loadGame.setBorderPainted(false);
 		m_loadGame.setFocusPainted(false);
 		m_loadGame.setContentAreaFilled(false);
-		m_loadGame.setBounds(Display.XPOS_COL5+Display.OFFSET5, 
-				Display.YPOS_ROW8+Display.OFFSET4, 
+		m_loadGame.setBounds(Display.XPOS_COL250+Display.OFFSET5, 
+				Display.YPOS_ROW400+Display.OFFSET4, 
 				Display.COMPONENT_WIDTH350, Display.COMPONENT_HEIGHT100);
 		m_loadGame.setVisible(true);
-		m_frame.add(m_loadGame);
 		m_loadGame.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				loadGame();
 			}
 		});
+		
+		m_frame.add(m_loadGame);
+		m_frame.add(m_initGameButton);
+		m_frame.add(m_goBackButton);
 	}
 
 	/** loads the game from the file res/saveSnL */
