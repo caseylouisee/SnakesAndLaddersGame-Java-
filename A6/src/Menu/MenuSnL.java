@@ -27,6 +27,7 @@ import java.util.ArrayList;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -111,6 +112,9 @@ public class MenuSnL {
 
 	/** Number of ladders initialised to 1 */
 	private int m_laddersNo = 1;
+	
+	/** Visualization check box */
+	private JCheckBox visualization;
 
 	/* ------------ METHODS ------------- */
 	/** This is the test method. 
@@ -158,6 +162,7 @@ public class MenuSnL {
 		addColoursComboBox();
 		addPlayersNamesTextField();
 		addPlayerType();
+		addVisualizationCheckBox();
 		addGameButtons();
 		addSnakesComboBox();
 		addLaddersComboBox();
@@ -351,6 +356,33 @@ public class MenuSnL {
 		});
 	}
 
+	/** Adds the visualization check box to the frame. */
+	private void addVisualizationCheckBox(){
+		if(GameSelector.m_TRACE){
+			System.out.println("MenuSnL :: addVisualizationCheckBox");
+		}
+		visualization = new JCheckBox("Visualization?");
+		visualization.setBounds(Display.XPOS_COL350, Display.YPOS_ROW350,
+				Display.COMPONENT_WIDTH150, Display.COMPONENT_HEIGHT20);
+		visualization.setText("Visualization?");
+		visualization.setForeground(Color.WHITE);
+		visualization.setVisible(true);
+		
+		visualization.addItemListener(new ItemListener() {
+			public void itemStateChanged(ItemEvent event) {
+				Object source =  event.getItemSelectable();
+				if (source == visualization) {
+					System.out.println("MenuSnL :: addVisualizationCheckBox - Selected");
+				}
+				 if (event.getStateChange() == ItemEvent.DESELECTED){
+					System.out.println("MenuSnL :: addVisualizationCheckBox - Deselected");
+				}
+			}
+		});
+		
+		m_frame.add(visualization);
+	}
+	
 	/** Adds the snakes and ladders logo to the frame. */
 	private void addLogo() {
 		if(GameSelector.m_TRACE){
@@ -406,9 +438,9 @@ public class MenuSnL {
 		m_loadGame.setBorderPainted(false);
 		m_loadGame.setFocusPainted(false);
 		m_loadGame.setContentAreaFilled(false);
-		m_loadGame.setBounds(Display.XPOS_COL250+Display.OFFSET5, 
+		m_loadGame.setBounds(Display.XPOS_COL350, 
 				Display.YPOS_ROW400+Display.OFFSET4, 
-				Display.COMPONENT_WIDTH350, Display.COMPONENT_HEIGHT100);
+				Display.COMPONENT_WIDTH200, Display.COMPONENT_HEIGHT100);
 		m_loadGame.setVisible(true);
 		m_loadGame.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {

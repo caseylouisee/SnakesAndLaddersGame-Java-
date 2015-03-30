@@ -26,6 +26,7 @@ import java.util.ArrayList;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -84,6 +85,9 @@ public class MenuTTT {
 
 	/** Button to initialise game */
 	private JButton m_initGameButton;
+	
+	/** Check box for visualization */
+	private JCheckBox visualization;
 
 	/* -------- METHODS --------- */
 
@@ -101,7 +105,6 @@ public class MenuTTT {
 		test.addPlayersNamesTextField();
 		test.addLogo();
 		test.addGameButtons();
-		test.addLoadButton();
 		test.loadGame();
 		test.sendForm();
 	}
@@ -127,7 +130,6 @@ public class MenuTTT {
 		addPlayerType();
 		addPlayersNamesTextField();
 		addGameButtons();
-		addLoadButton();
 		m_frame.setVisible(true);
 
 	}
@@ -218,6 +220,33 @@ public class MenuTTT {
 			m_frame.add(m_playersNameTextField.get(i));
 		}
 	}
+	
+	/** Adds the visualization check box to the frame. */
+	private void addVisualizationCheckBox(){
+		if(GameSelector.m_TRACE){
+			System.out.println("MenuSnL :: addVisualizationCheckBox");
+		}
+		visualization = new JCheckBox("Visualization?");
+		visualization.setBounds(Display.XPOS_COL100, Display.YPOS_ROW200, 
+				Display.COMPONENT_WIDTH180, Display.COMPONENT_HEIGHT100);
+		visualization.setText("Visualization?");
+		visualization.setForeground(Color.WHITE);
+		visualization.setVisible(true);
+		
+		visualization.addItemListener(new ItemListener() {
+			public void itemStateChanged(ItemEvent event) {
+				Object source =  event.getItemSelectable();
+				if (source == visualization) {
+					System.out.println("MenuSnL :: addVisualizationCheckBox - Selected");
+				}
+				 if (event.getStateChange() == ItemEvent.DESELECTED){
+					System.out.println("MenuSnL :: addVisualizationCheckBox - Deselected");
+				}
+			}
+		});
+		
+		m_frame.add(visualization);
+	}
 
 	/** Adds the logo to the frame **/
 	private void addLogo() {
@@ -268,30 +297,25 @@ public class MenuTTT {
 				new GameSelector(GameSelector.m_TRACE);
 			}
 		});
-		m_frame.add(m_initGameButton);
-		m_frame.add(m_goBackButton);
-	}
-
-	/** Adds the load button to the frame */
-	private void addLoadButton() {
-		if(GameSelector.m_TRACE){
-			System.out.println("MenuTTT::addLoadButton");
-		}
+		
 		JButton loadGame = new JButton();
 		loadGame.setText("Load Game");
 		loadGame.setIcon(new ImageIcon(("res/LOADBTN.png")));
 		loadGame.setBorderPainted(false);
 		loadGame.setFocusPainted(false);
 		loadGame.setContentAreaFilled(false);
-		loadGame.setBounds(Display.XPOS_COL300-Display.OFFSET4, Display.YPOS_ROW250,
-				Display.COMPONENT_WIDTH350, Display.COMPONENT_HEIGHT100);
+		loadGame.setBounds(Display.XPOS_COL350, Display.YPOS_ROW250,
+				Display.COMPONENT_WIDTH200, Display.COMPONENT_HEIGHT100);
 		loadGame.setVisible(true);
-		m_frame.add(loadGame);
 		loadGame.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				loadGame();
 			}
 		});
+		
+		m_frame.add(loadGame);
+		m_frame.add(m_initGameButton);
+		m_frame.add(m_goBackButton);
 	}
 
 	/** Loads the saved game from the file res/saveTTT.csv */
