@@ -259,7 +259,7 @@ public class DisplayTTT extends JPanel implements Runnable {
 	private class GUIEventHandler implements ActionListener {
 		public void actionPerformed(ActionEvent event) {
 			if (ignoreEvents == false) {
-				doMovementHuman(gridSquares.indexOf(event.getSource()));
+				doMovement(gridSquares.indexOf(event.getSource()));
 				if (playing) {
 					playGame();
 				}
@@ -302,70 +302,70 @@ public class DisplayTTT extends JPanel implements Runnable {
 		}
 		if (initialPlay) {
 			m_aiMoves.add(RANDOM);
-			doMovementAI(RANDOM);
+			doMovement(RANDOM);
 			System.out.println("Computer move placed at:" + (RANDOM));
 			initialPlay = false;
 		} else if (!initialPlay) {
 			try{
 				if ((game.getBoard().accessSquare(RANDOM + 1).getValue() == ' ')
 						&& ((RANDOM + 1) <= 63) && (RANDOM % 8 != 7)) {
-					doMovementAI(RANDOM + 1);
+					doMovement(RANDOM + 1);
 					RANDOM = RANDOM + 1;
 				} else if ((game.getBoard().accessSquare(RANDOM - 1)
 						.getValue() == ' ') && ((RANDOM - 1)>=0) 
 						&& (RANDOM % 8 != 0)) {
-					doMovementAI(RANDOM - 1);
+					doMovement(RANDOM - 1);
 					RANDOM = RANDOM - 1;
 				} else if (((RANDOM + 7 )<= 63) &&(game.getBoard()
 						.accessSquare(RANDOM + 7).getValue() == ' ')
 						&&  (RANDOM % 8 != 0)) {
-					doMovementAI(RANDOM + 7);
+					doMovement(RANDOM + 7);
 					RANDOM = RANDOM + 7;
 				} else if (((RANDOM - 7)>=0) &&(game.getBoard()
 						.accessSquare(RANDOM - 7).getValue() == ' ')
 						&&  (RANDOM % 8 != 7)) {
-					doMovementAI(RANDOM - 7);
+					doMovement(RANDOM - 7);
 					RANDOM = RANDOM - 7;
 				} else if ((game.getBoard().accessSquare(RANDOM + 8)
 						.getValue() == ' ') && ((RANDOM + 8) <= 63)) {
-					doMovementAI(RANDOM + 8);
+					doMovement(RANDOM + 8);
 					RANDOM = RANDOM + 8;
 				} else if ((game.getBoard().accessSquare(RANDOM - 8)
 						.getValue() == ' ') && ((RANDOM - 8)>=0)) {
-					doMovementAI(RANDOM - 8);
+					doMovement(RANDOM - 8);
 					RANDOM = RANDOM - 8;
 				} else if (((RANDOM + 4) <= 63) &&(game.getBoard()
 						.accessSquare(RANDOM + 4) .getValue() == ' ')
 						&& RANDOM % 8 != 5 && RANDOM % 8 != 6
 						&& RANDOM % 8 != 7 && RANDOM % 8 != 4) {
-					doMovementAI(RANDOM + 4);
+					doMovement(RANDOM + 4);
 					RANDOM = RANDOM + 4;
 				} else if (((RANDOM - 4)>=0) && (game.getBoard()
 						.accessSquare(RANDOM - 4).getValue() == ' ')
 						&& RANDOM % 8 != 0 && RANDOM % 8 != 1
 						&& RANDOM % 8 != 2 && RANDOM % 8 != 3) {
-					doMovementAI(RANDOM - 4);
+					doMovement(RANDOM - 4);
 					RANDOM = RANDOM - 4;
 				} else if (((RANDOM - 28)>=0)&&(game.getBoard()
 						.accessSquare(RANDOM - 28).getValue() == ' ')) {
-					doMovementAI(RANDOM - 28);
+					doMovement(RANDOM - 28);
 					RANDOM = RANDOM - 28;
 				} else if (((RANDOM + 28) <= 63) &&(game.getBoard()
 						.accessSquare(RANDOM + 28).getValue() == ' ')) {
-					doMovementAI(RANDOM + 28);
+					doMovement(RANDOM + 28);
 					RANDOM = RANDOM + 28;
 				} else if (((RANDOM - 32)>=0)&&(game.getBoard()
 						.accessSquare(RANDOM - 32).getValue() == ' ')) {
-					doMovementAI(RANDOM - 32);
+					doMovement(RANDOM - 32);
 					RANDOM = RANDOM - 32;
 				} else if ((RANDOM + 32) <= 63&&(game.getBoard()
 						.accessSquare(RANDOM + 32).getValue() == ' ')) {
-					doMovementAI(RANDOM + 32);
+					doMovement(RANDOM + 32);
 					RANDOM = RANDOM + 32;
 				} else {
 					for(int i=0;i<=63;i++) {
 						if (game.getBoard().accessSquare(i).getValue() == ' ') {
-							doMovementAI(i);
+							doMovement(i);
 							RANDOM = i;
 							break;
 						}
@@ -375,7 +375,7 @@ public class DisplayTTT extends JPanel implements Runnable {
 				while(true) {
 					int random=RAND.nextInt(63);
 					if (game.getBoard().accessSquare(random).getValue() == ' '){
-						doMovementAI(random);
+						doMovement(random);
 						System.out.println("i am random :"+ random);
 						RANDOM = random;
 						break;
@@ -386,7 +386,7 @@ public class DisplayTTT extends JPanel implements Runnable {
 	}
 	
 	/** Sets image for any button on the grid dependent on the player moving **/
-	public void doMovementHuman(int squareRef) {
+	public void doMovement(int squareRef) {
 		if(GameSelector.m_TRACE){
 			System.out.println("DisplayTTT::doMovementHuman");
 		}

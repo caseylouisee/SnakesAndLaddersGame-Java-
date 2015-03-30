@@ -35,7 +35,7 @@ public class GameSelector {
 	/** Length of the window */
 	private final static int WINDOW_HEIGHT = 450;
 	/** Testing variable */
-	public static Boolean m_TRACE = true;
+	public static Boolean m_TRACE = false;
 	/** If true inputs valid params to main methods, false = invalid params */
 	public static Boolean m_VALID;
 	/** Frame being used */

@@ -129,6 +129,7 @@ public class MenuTTT {
 		addXorOComboBox();
 		addPlayerType();
 		addPlayersNamesTextField();
+		addVisualizationCheckBox();
 		addGameButtons();
 		m_frame.setVisible(true);
 
@@ -227,8 +228,8 @@ public class MenuTTT {
 			System.out.println("MenuSnL :: addVisualizationCheckBox");
 		}
 		visualization = new JCheckBox("Visualization?");
-		visualization.setBounds(Display.XPOS_COL100, Display.YPOS_ROW200, 
-				Display.COMPONENT_WIDTH180, Display.COMPONENT_HEIGHT100);
+		visualization.setBounds(Display.XPOS_COL200, Display.YPOS_ROW200+Display.OFFSET4,
+		Display.COMPONENT_WIDTH150, Display.COMPONENT_HEIGHT20);
 		visualization.setText("Visualization?");
 		visualization.setForeground(Color.WHITE);
 		visualization.setVisible(true);

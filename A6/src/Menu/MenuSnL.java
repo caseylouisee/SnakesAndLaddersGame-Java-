@@ -372,10 +372,12 @@ public class MenuSnL {
 			public void itemStateChanged(ItemEvent event) {
 				Object source =  event.getItemSelectable();
 				if (source == visualization) {
-					System.out.println("MenuSnL :: addVisualizationCheckBox - Selected");
+					System.out.println("MenuSnL :: addVisualizationCheckBox "
+							+ "- Selected");
 				}
 				 if (event.getStateChange() == ItemEvent.DESELECTED){
-					System.out.println("MenuSnL :: addVisualizationCheckBox - Deselected");
+					System.out.println("MenuSnL :: addVisualizationCheckBox "
+							+ "- Deselected");
 				}
 			}
 		});
