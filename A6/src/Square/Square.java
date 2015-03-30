@@ -1,7 +1,7 @@
 /**
  * @file Square.java
- * @author Chris
- * @date 16/02/2015 to 13/03/2015
+ * @author Casey Denner
+ * @date 29/03/2015
  * @brief This class stores the position of each square and its elements
  */
 

@@ -4,9 +4,9 @@ package Display;
  * 
  * @brief Class to display the SnL game
  * 
- * @date 23/02/2015 - 13/03/2015
+ * @date 29/03/2015
  * 
- * @author RB2
+ * @author Casey Denner
  *  
  */
 

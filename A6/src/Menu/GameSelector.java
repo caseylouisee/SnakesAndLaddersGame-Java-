@@ -1,7 +1,7 @@
 /**
  * @file GameSelector.java
- * @author Genalyn Estrada 
- * @date 23/2/2015 to 13/3/2015
+ * @author Casey Denner 
+ * @date 29/03/2015
  * @brief Select between games
  * 
  * Creates the starting menu depending on game choice

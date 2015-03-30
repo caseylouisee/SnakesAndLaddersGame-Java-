@@ -1,7 +1,7 @@
 /**
  * @file Player.java
- * @author Yangfan Jiang
- * @date 27 Feb 2015
+ * @author Casey Denner
+ * @date 29/03/2015
  * @see AIPlayerTTT.java
  * @see AIPlayerSnL.java
  * @see HumanPlayerTTT.java

@@ -1,7 +1,7 @@
 /**
  * @file AIPlayerTTT.java
- * @author Yangfan Jiang
- * @date 26 Feb 2015
+ * @author Casey Denner
+ * @date 29/03/2015
  * @see PlayerTTT.java
  * @brief Creates a AI player for TicTacToe
  */

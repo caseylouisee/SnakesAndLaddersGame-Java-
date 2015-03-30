@@ -1,8 +1,8 @@
 /**
  * @file SquareSnL.java
  * @see Square.java
- * @author Chris
- * @date 16/02/2015 to 13/03/2015
+ * @author Casey Denner
+ * @date 29/03/2015
  * @brief This class stores the information on each square for SnL
  */
 package Square;

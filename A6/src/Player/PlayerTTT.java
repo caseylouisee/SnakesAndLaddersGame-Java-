@@ -1,7 +1,7 @@
 /**
  * @file PlayerTTT.java
- * @author Yangfan Jiang
- * @date 26 Feb 2015
+ * @author Casey Denner
+ * @date 29/03/2015
  * @see Player.java
  * @brief Creates a player for TicTacToe
  */

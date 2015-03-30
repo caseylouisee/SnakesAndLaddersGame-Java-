@@ -5,9 +5,9 @@
  * the generic information concerning board classes, such as initialising
  * the grids and detecting the end-game.
  *         
- * @author Chris
+ * @author Casey Denner
  * 
- * @date 23-2-2015 to 13-3-2015
+ * @date 29/03/2015
  */
 package Board;
 

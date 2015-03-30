@@ -6,9 +6,9 @@ package Display;
  * display related methods which are to be used by the respective 
  * superclass display classes.
  * 
- * @date Compiles 2/10
+ * @date 29/03/2015
  * 
- * @author Casey
+ * @author Casey Denner
  *  
  */
 

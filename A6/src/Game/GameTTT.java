@@ -1,7 +1,7 @@
 /**
  * @file GameTTT.java
- * @author Genalyn Estrada 
- * @date 16/02/2015
+ * @author Casey Denner 
+ * @date 23/03/2015
  * @brief Creates some of the user interface for TicTacToe, as well as 
  * contains general information about human and AI players.
  * @see MenuTTT

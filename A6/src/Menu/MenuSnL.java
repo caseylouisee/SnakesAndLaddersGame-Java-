@@ -7,7 +7,7 @@ package Menu;
  * colour selection, the number of players and the numbers of snakes and 
  * ladders on the board. The menu also allows for the input of player names
  * 
- * @date 23/02/2015 - 13/03/2015
+ * @date 29/03/2015
  * 
  * @author Casey Denner
  *  

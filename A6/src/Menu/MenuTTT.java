@@ -6,7 +6,7 @@ package Menu;
  * This menu class is for the game TTT. The menu allows you to select whether 
  * you want to be X or O, as well as having their respective names
  * 
- * @date 23/02/2015 - 13/03/2015 
+ * @date 29/03/2015
  * 
  * @author Casey Denner
  *  
