@@ -27,7 +27,7 @@ import javax.swing.SwingConstants;
  * Also creates game specific settings such as the design of the menu, and
  * the ability to choose either SnL or TTT.
  */
-
+//online test now
 public class GameSelector {
 	/** Title of the window */
 	private final static String WINDOW_TITLE = "GAME SELECTOR";
