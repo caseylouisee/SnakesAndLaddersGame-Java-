@@ -502,7 +502,7 @@ public class GameSnL {
 		m_shapesPanel.setBackground(Color.WHITE);
 
 		m_shapesPanel.addPlayInterface(m_frame);
-		m_shapesPanel.setBounds(70, 600, 200, 40);
+		m_shapesPanel.setBounds(70, 600, 700, 40);
 		m_shapesPanel.setLayout(null);
 
 		m_frame.add(m_shapesPanel);

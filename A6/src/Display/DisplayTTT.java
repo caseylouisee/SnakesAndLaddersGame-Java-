@@ -124,9 +124,6 @@ public class DisplayTTT extends JPanel implements Runnable {
 	/** array list used for the ai moves */
 	ArrayList<Integer> m_aiMoves = new ArrayList<Integer>();
 
-	/** timer displayed on the frame */
-	Timer timer;
-
 	/** instance of the board */
 	Board m_boardGame;
 

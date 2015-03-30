@@ -73,12 +73,11 @@ public class DisplaySnL extends JPanel implements Runnable{
 	/**Array list to hold players */
 	ArrayList<PlayerSnL> m_players = new ArrayList<PlayerSnL>();
 
-	/** Stop watch variable to display timer */
+	/** Stop watch variable to display timer **/
 	private StopWatch m_stopWatch;
 
-	/** JPanel to display timer */
-	private JPanel m_timerPanel = new JPanel();
-	private JLabel m_timerLabel;
+	/** JLabel to display timer **/
+	JLabel m_lblTimer = new JLabel("Timer");
 
 	/** Boolean to test if game is running */
 	private boolean gameRunning = false;
@@ -193,6 +192,7 @@ public class DisplaySnL extends JPanel implements Runnable{
 		m_playerTurn.setBounds(Display.XPOS_COL200, 
 				Display.YPOS_ROW500+Display.OFFSET2, 
 				Display.COMPONENT_WIDTH200, Display.COMPONENT_HEIGHT20);
+		m_playerTurn.setForeground(Color.WHITE);
 
 		add(m_playerTurn);
 		addRollDice();
@@ -200,7 +200,6 @@ public class DisplaySnL extends JPanel implements Runnable{
 		addPlayerInformation();
 
 		createTimer();
-		frame.add(m_timerPanel);
 
 		gameRunning = true;	
 
@@ -257,9 +256,9 @@ public class DisplaySnL extends JPanel implements Runnable{
 							roll = m_gameSnL.buttonPush();
 
 							if(m_players.get(m_gameSnL.getIterator())
-									.getPlayerName()
-									.endsWith(".AI")){
-								m_rollDiceBtn.doClick();	
+									.getPlayerName().endsWith(".AI")){
+								m_rollDiceBtn.doClick();
+
 							}
 							m_playerTurn.setText("It is player "
 									+ m_players.get(m_gameSnL.getIterator())
@@ -281,7 +280,9 @@ public class DisplaySnL extends JPanel implements Runnable{
 
 					if(m_players.get(m_gameSnL.getIterator()).getPlayerName()
 							.endsWith(".AI")){
-						m_rollDiceBtn.doClick();	
+						m_rollDiceBtn.doClick();
+						
+						
 					}
 				}
 
@@ -290,6 +291,11 @@ public class DisplaySnL extends JPanel implements Runnable{
 						+ "'s turn!");
 
 				m_dicePicLabel.setIcon(new ImageIcon("res/Dice"+roll+".png"));
+				
+				//Prints out next players current location.
+				System.out.println("player position " +
+						m_players.get(m_gameSnL.getIterator())
+						.getPlayerLocation());
 
 			}
 		});
@@ -317,7 +323,7 @@ public class DisplaySnL extends JPanel implements Runnable{
 		m_playerInfoPanel.setBounds(Display.XPOS_COL50, Display.YPOS_ROW550, 
 				Display.COMPONENT_WIDTH300, Display.COMPONENT_HEIGHT80);
 		m_playerInfoPanel.setLayout(null);
-		m_playerInfoPanel.setBackground(Color.WHITE);
+		m_playerInfoPanel.setBackground(Color.BLACK);
 
 		m_playerInfo = new ArrayList<JLabel>();
 		m_playerPos = new ArrayList<JLabel>();
@@ -328,12 +334,14 @@ public class DisplaySnL extends JPanel implements Runnable{
 					.getPlayerName()));
 			m_playerInfo.get(i).setBounds(0, Display.OFFSET2*i, 
 					Display.COMPONENT_WIDTH100, Display.COMPONENT_HEIGHT20);
-			m_playerInfo.get(i).setVisible(true);
+			m_playerInfo.get(i).setForeground(Color.WHITE);
 
 			Integer location = m_gameSnL.getPlayerLocation(i);
 			m_playerPos.add(new JLabel(location.toString()));
 			m_playerPos.get(i).setBounds(Display.XPOS_COL200, Display.OFFSET2*i, 
 					Display.COMPONENT_WIDTH100, Display.COMPONENT_HEIGHT20);
+			m_playerPos.get(i).setForeground(Color.WHITE);
+
 
 			m_playerInfoPanel.add(m_playerInfo.get(i));
 			m_playerInfoPanel.add(m_playerPos.get(i));
@@ -400,7 +408,6 @@ public class DisplaySnL extends JPanel implements Runnable{
 				Integer red = m_players.get(i).getPlayerColor().getRed();
 				Integer green = m_players.get(i).getPlayerColor().getGreen();
 				Integer blue = m_players.get(i).getPlayerColor().getBlue();
-
 
 				writer.append(red.toString()+","+ green.toString()+","
 						+blue.toString()+",");
@@ -483,43 +490,9 @@ public class DisplaySnL extends JPanel implements Runnable{
 			this.printPlayer(graphics, m_players.get(i).getPlayerColor(),
 					m_players.get(i).getPlayerLocation());
 		}
-
+	
 		repaint();
 	}
-
-	/** Draws the board 
-	 * @param graphics
-	 */
-	public void drawBoard(Graphics graphics) {
-		if(GameSelector.m_TRACE){
-			System.out.println("DisplaySnL::drawBoard");
-		}
-		this.setBackground(Color.WHITE);
-
-		graphics.setColor(Color.BLACK);
-		int l = 100;
-		for (int j = 0; j < 10; j++) {
-			for (int i = 1; i <= 10; i++) {
-				graphics.drawRect((i * SQUARE_WIDTH), (j * SQUARE_HEIGHT),
-						SQUARE_WIDTH, SQUARE_HEIGHT);
-				graphics.drawString(String.valueOf(l), i * SQUARE_WIDTH + 5, j
-						* SQUARE_HEIGHT + 15);
-				l--;
-			}
-			j++;
-			l = l - 9;
-			for (int i = 1; i <= 10; i++) {
-				graphics.drawRect((i * SQUARE_WIDTH), (j * SQUARE_HEIGHT),
-						SQUARE_WIDTH, SQUARE_HEIGHT);
-				graphics.drawString(String.valueOf(l), i * SQUARE_WIDTH + 5, j
-						* SQUARE_HEIGHT + 15);
-				l++;
-			}
-			l = l - 11;
-		}
-
-	}
-
 
 	/**
 	 * Paints the player to the screen
@@ -545,7 +518,73 @@ public class DisplaySnL extends JPanel implements Runnable{
 		}
 		repaint();
 	}
+
+	/** Prints the player to the board 
+	 * @param graphics
+	 * @param playerColor
+	 * @param squareNo
+	 */
+	public void printPlayer(Graphics graphics, Color playerColor, int squareNo){
+		if(GameSelector.m_TRACE){
+			System.out.println("DisplaySnL::printPlayer");
+		}
+		graphics.setColor(playerColor);
+		int[] coordinates = getCoordinates(squareNo);
+		graphics.fillOval(coordinates[0] + 20, coordinates[1] + 25,
+				PIECE_DIAMETER, PIECE_DIAMETER);
+	}
 	
+	/** 
+	 * Prints the player counter according to their colour 
+	 * @param graphics
+	 * @param playerColor
+	 * @param squareNo
+	 * @param coordinates
+	 */
+	public void printPlayer(Graphics graphics, Color playerColor, int squareNo,
+			int[] coordinates) {
+		if(GameSelector.m_TRACE){
+			System.out.println("DisplaySnL::printPlayer");
+		}
+		graphics.setColor(playerColor);
+		graphics.fillOval(coordinates[0], coordinates[1],
+				PIECE_DIAMETER, PIECE_DIAMETER);
+	}
+
+	/** Draws the board 
+	 * @param graphics
+	 */
+	public void drawBoard(Graphics graphics) {
+		if(GameSelector.m_TRACE){
+			System.out.println("DisplaySnL::drawBoard");
+		}
+		this.setBackground(Color.BLACK);
+
+		graphics.setColor(Color.WHITE);
+		int l = 100;
+		for (int j = 0; j < 10; j++) {
+			for (int i = 1; i <= 10; i++) {
+				graphics.drawRect((i * SQUARE_WIDTH), (j * SQUARE_HEIGHT),
+						SQUARE_WIDTH, SQUARE_HEIGHT);
+				graphics.drawString(String.valueOf(l), i * SQUARE_WIDTH + 5, j
+						* SQUARE_HEIGHT + 15);
+				l--;
+			}
+			j++;
+			l = l - 9;
+			for (int i = 1; i <= 10; i++) {
+				graphics.drawRect((i * SQUARE_WIDTH), (j * SQUARE_HEIGHT),
+						SQUARE_WIDTH, SQUARE_HEIGHT);
+				graphics.drawString(String.valueOf(l), i * SQUARE_WIDTH + 5, j
+						* SQUARE_HEIGHT + 15);
+				l++;
+			}
+			l = l - 11;
+		}
+
+	}
+
+
 	/** Prints the ladders on the board 
 	 * @param graphics
 	 * @param squares
@@ -631,38 +670,6 @@ public class DisplaySnL extends JPanel implements Runnable{
 		}
 	}
 
-	/** Prints the player to the board 
-	 * @param graphics
-	 * @param playerColor
-	 * @param squareNo
-	 */
-	public void printPlayer(Graphics graphics, Color playerColor, int squareNo){
-		if(GameSelector.m_TRACE){
-			System.out.println("DisplaySnL::printPlayer");
-		}
-		graphics.setColor(playerColor);
-		int[] coordinates = getCoordinates(squareNo);
-		graphics.fillOval(coordinates[0] + 20, coordinates[1] + 25,
-				PIECE_DIAMETER, PIECE_DIAMETER);
-	}
-
-	/** 
-	 * Prints the player counter according to their colour 
-	 * @param graphics
-	 * @param playerColor
-	 * @param squareNo
-	 * @param coordinates
-	 */
-	public void printPlayer(Graphics graphics, Color playerColor, int squareNo,
-			int[] coordinates) {
-		if(GameSelector.m_TRACE){
-			System.out.println("DisplaySnL::printPlayer");
-		}
-		graphics.setColor(playerColor);
-		graphics.fillOval(coordinates[0], coordinates[1],
-				PIECE_DIAMETER, PIECE_DIAMETER);
-	}
-
 	/**
 	 * Creates the stop watch timer
 	 */
@@ -671,27 +678,21 @@ public class DisplaySnL extends JPanel implements Runnable{
 			System.out.println("DisplaySnL::createTimer");
 		}
 		if (m_stopWatch == null) {
-
-			m_timerPanel.setBounds(Display.XPOS_COL50, 
+			m_lblTimer.setBounds(Display.XPOS_COL50, 
 					Display.YPOS_ROW500+Display.OFFSET2,
 					Display.COMPONENT_WIDTH100, Display.COMPONENT_HEIGHT20);
-			m_timerPanel.setLayout(null);
-			m_timerPanel.setBackground(Color.WHITE);
-
-			JLabel lblTimer = new JLabel("Timer");
-			lblTimer.setBounds(0, 0, Display.COMPONENT_WIDTH100, 
-					Display.COMPONENT_HEIGHT20);
-			m_timerPanel.add(lblTimer);
+			m_lblTimer.setForeground(Color.WHITE);
+			add(m_lblTimer);
 
 			/* Creating timer */
 			m_stopWatch = new StopWatch();
 			m_stopWatch.start();
+			m_lblTimer.setText(m_stopWatch.toString());
+
 		} else {
 			m_stopWatch.reset();
 			m_stopWatch.start();
 		}
-		JPanel m_stopwatchPanel = (JPanel) m_timerPanel;
-		m_timerLabel = (JLabel) m_stopwatchPanel.getComponent(0);
 	}
 
 	/** Displays the stopwatch timer **/
@@ -699,7 +700,7 @@ public class DisplaySnL extends JPanel implements Runnable{
 		if(GameSelector.m_TRACE){
 			System.out.println("DisplaySnL::displayTimer");
 		}
-		m_timerLabel.setText(m_stopWatch.toString());
+		m_lblTimer.setText(m_stopWatch.toString());
 	}
 
 	/** 
