@@ -5,9 +5,9 @@ package Display;
  * 
  * @brief This class displays everything for the TTT game
  * 
- * @date 29/03/2015
+ * @date 23/02/2015 - 13/03/2015
  * 
- * @author Casey Denner
+ * @author RB2
  *  
  */
 
@@ -259,7 +259,7 @@ public class DisplayTTT extends JPanel implements Runnable {
 	private class GUIEventHandler implements ActionListener {
 		public void actionPerformed(ActionEvent event) {
 			if (ignoreEvents == false) {
-				doMovement(gridSquares.indexOf(event.getSource()));
+				doMovementHuman(gridSquares.indexOf(event.getSource()));
 				if (playing) {
 					playGame();
 				}
@@ -302,70 +302,70 @@ public class DisplayTTT extends JPanel implements Runnable {
 		}
 		if (initialPlay) {
 			m_aiMoves.add(RANDOM);
-			doMovement(RANDOM);
+			doMovementAI(RANDOM);
 			System.out.println("Computer move placed at:" + (RANDOM));
 			initialPlay = false;
 		} else if (!initialPlay) {
 			try{
 				if ((game.getBoard().accessSquare(RANDOM + 1).getValue() == ' ')
 						&& ((RANDOM + 1) <= 63) && (RANDOM % 8 != 7)) {
-					doMovement(RANDOM + 1);
+					doMovementAI(RANDOM + 1);
 					RANDOM = RANDOM + 1;
 				} else if ((game.getBoard().accessSquare(RANDOM - 1)
 						.getValue() == ' ') && ((RANDOM - 1)>=0) 
 						&& (RANDOM % 8 != 0)) {
-					doMovement(RANDOM - 1);
+					doMovementAI(RANDOM - 1);
 					RANDOM = RANDOM - 1;
 				} else if (((RANDOM + 7 )<= 63) &&(game.getBoard()
 						.accessSquare(RANDOM + 7).getValue() == ' ')
 						&&  (RANDOM % 8 != 0)) {
-					doMovement(RANDOM + 7);
+					doMovementAI(RANDOM + 7);
 					RANDOM = RANDOM + 7;
 				} else if (((RANDOM - 7)>=0) &&(game.getBoard()
 						.accessSquare(RANDOM - 7).getValue() == ' ')
 						&&  (RANDOM % 8 != 7)) {
-					doMovement(RANDOM - 7);
+					doMovementAI(RANDOM - 7);
 					RANDOM = RANDOM - 7;
 				} else if ((game.getBoard().accessSquare(RANDOM + 8)
 						.getValue() == ' ') && ((RANDOM + 8) <= 63)) {
-					doMovement(RANDOM + 8);
+					doMovementAI(RANDOM + 8);
 					RANDOM = RANDOM + 8;
 				} else if ((game.getBoard().accessSquare(RANDOM - 8)
 						.getValue() == ' ') && ((RANDOM - 8)>=0)) {
-					doMovement(RANDOM - 8);
+					doMovementAI(RANDOM - 8);
 					RANDOM = RANDOM - 8;
 				} else if (((RANDOM + 4) <= 63) &&(game.getBoard()
 						.accessSquare(RANDOM + 4) .getValue() == ' ')
 						&& RANDOM % 8 != 5 && RANDOM % 8 != 6
 						&& RANDOM % 8 != 7 && RANDOM % 8 != 4) {
-					doMovement(RANDOM + 4);
+					doMovementAI(RANDOM + 4);
 					RANDOM = RANDOM + 4;
 				} else if (((RANDOM - 4)>=0) && (game.getBoard()
 						.accessSquare(RANDOM - 4).getValue() == ' ')
 						&& RANDOM % 8 != 0 && RANDOM % 8 != 1
 						&& RANDOM % 8 != 2 && RANDOM % 8 != 3) {
-					doMovement(RANDOM - 4);
+					doMovementAI(RANDOM - 4);
 					RANDOM = RANDOM - 4;
 				} else if (((RANDOM - 28)>=0)&&(game.getBoard()
 						.accessSquare(RANDOM - 28).getValue() == ' ')) {
-					doMovement(RANDOM - 28);
+					doMovementAI(RANDOM - 28);
 					RANDOM = RANDOM - 28;
 				} else if (((RANDOM + 28) <= 63) &&(game.getBoard()
 						.accessSquare(RANDOM + 28).getValue() == ' ')) {
-					doMovement(RANDOM + 28);
+					doMovementAI(RANDOM + 28);
 					RANDOM = RANDOM + 28;
 				} else if (((RANDOM - 32)>=0)&&(game.getBoard()
 						.accessSquare(RANDOM - 32).getValue() == ' ')) {
-					doMovement(RANDOM - 32);
+					doMovementAI(RANDOM - 32);
 					RANDOM = RANDOM - 32;
 				} else if ((RANDOM + 32) <= 63&&(game.getBoard()
 						.accessSquare(RANDOM + 32).getValue() == ' ')) {
-					doMovement(RANDOM + 32);
+					doMovementAI(RANDOM + 32);
 					RANDOM = RANDOM + 32;
 				} else {
 					for(int i=0;i<=63;i++) {
 						if (game.getBoard().accessSquare(i).getValue() == ' ') {
-							doMovement(i);
+							doMovementAI(i);
 							RANDOM = i;
 							break;
 						}
@@ -375,7 +375,7 @@ public class DisplayTTT extends JPanel implements Runnable {
 				while(true) {
 					int random=RAND.nextInt(63);
 					if (game.getBoard().accessSquare(random).getValue() == ' '){
-						doMovement(random);
+						doMovementAI(random);
 						System.out.println("i am random :"+ random);
 						RANDOM = random;
 						break;
@@ -386,7 +386,7 @@ public class DisplayTTT extends JPanel implements Runnable {
 	}
 	
 	/** Sets image for any button on the grid dependent on the player moving **/
-	public void doMovement(int squareRef) {
+	public void doMovementHuman(int squareRef) {
 		if(GameSelector.m_TRACE){
 			System.out.println("DisplayTTT::doMovementHuman");
 		}
@@ -442,7 +442,7 @@ public class DisplayTTT extends JPanel implements Runnable {
 				game.frameDispose();
 				System.exit(0);
 			}
-			// break;
+			break;
 
 		case 2:
 
@@ -466,7 +466,7 @@ public class DisplayTTT extends JPanel implements Runnable {
 				System.exit(0);
 
 			}
-			// break;
+			break;
 
 		default:
 			game.nextTurn();
@@ -519,7 +519,7 @@ public class DisplayTTT extends JPanel implements Runnable {
 				System.exit(0);
 
 			}
-			// break;
+			break;
 
 		case 1: // a player won
 
@@ -544,7 +544,7 @@ public class DisplayTTT extends JPanel implements Runnable {
 				System.exit(0);
 
 			}
-			// break;
+			break;
 
 		case 2:
 
@@ -570,7 +570,7 @@ public class DisplayTTT extends JPanel implements Runnable {
 
 			}
 
-			// break;
+			break;
 
 		default:
 			// iterates to next turn

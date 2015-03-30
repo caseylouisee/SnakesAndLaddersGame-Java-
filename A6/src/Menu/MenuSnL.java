@@ -671,5 +671,10 @@ public class MenuSnL {
 		if(GameSelector.m_TRACE){
 			System.out.println("MenuSnL::sendForm - new GameSnL");
 		}
+		if(visualization.isSelected()){
+			JFrame visual = new JFrame();
+			visual.setVisible(true);
+			visual.setBounds(0,0,300,400);
+		}
 	}
 }
