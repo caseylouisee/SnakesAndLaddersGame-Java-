@@ -43,10 +43,6 @@ import Player.PlayerSnL;
  */
 public class DisplaySnL extends JPanel implements Runnable{
 
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 8392438217721100997L;
 	/* ------ CONSTANTS ----- */
 	/** Sets shape's width and height */
 	public static final int SQUARE_WIDTH = 50;

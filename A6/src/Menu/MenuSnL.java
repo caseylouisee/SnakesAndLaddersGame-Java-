@@ -58,7 +58,7 @@ public class MenuSnL {
 
 	/** Array list of player colour options */
 	private final String[] SNL_COLOR_PLAYERS = { " ", "BLUE", "RED",
-			"YELLOW", "BLACK"};
+			"YELLOW", "GREEN"};
 
 	/** Array list of numbers to set for snakes/ladders */
 	private final String[] NUMBERS_OF_OPTIONS = { "1", "2", "3", "4" };
@@ -593,8 +593,8 @@ public class MenuSnL {
 					.toString();
 			Color c;
 			Boolean colorUsed = false;
-			if (color == "BLACK") {
-				c = Color.BLACK;
+			if (color == "GREEN") {
+				c = Color.GREEN;
 				if(colors.contains(c)){
 					colorUsed = true;
 				}else{
