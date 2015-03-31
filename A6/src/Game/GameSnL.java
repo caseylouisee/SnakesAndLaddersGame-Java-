@@ -111,6 +111,9 @@ public class GameSnL {
 	
 	/** Panel to display everything */
 	private DisplaySnL m_shapesPanel;
+	
+	/** Boolean for visualization */
+	 Boolean m_visualize;
 
 	/************************** METHODS *****************************/
 
@@ -213,8 +216,7 @@ public class GameSnL {
 	 * 
 	 * @return the squares the player has to move to before and after a snake or
 	 *         a ladder object
-	 * */
-
+	 */
 	public ArrayList<Integer> getMovementSquares() {
 		if (GameSelector.m_TRACE) {
 			System.out.println("GameSnL:: getMovementSquares() no parameters"
@@ -232,7 +234,6 @@ public class GameSnL {
 	 * @return the squares the player has to move to before and after a snake or
 	 *         a ladder object
 	 */
-
 	public static int getMovementPair(int original) {
 		if (GameSelector.m_TRACE) {
 			System.out.println("GameSnL:: getMovementPair()");
@@ -269,11 +270,12 @@ public class GameSnL {
 	 */
 	public GameSnL(ArrayList<String> playerNames,
 			ArrayList<Color> playerColors, ArrayList<Integer> playerPositions,
-			ArrayList<Integer> snakes, ArrayList<Integer> ladders, Boolean visualize) {
+			ArrayList<Integer> snakes, ArrayList<Integer> ladders, Boolean visualization) {
 
 		m_numberOfPlayers = playerNames.size();
 		m_playerNames = playerNames;
 		m_playerColors = playerColors;
+		m_visualize = visualization;
 
 		m_laddersList = ladders;
 		System.out.println(" \n\n\n\n" + m_laddersList);
@@ -317,7 +319,7 @@ public class GameSnL {
 	 */
 	public GameSnL(final ArrayList<String> playerNames,
 			final ArrayList<Color> playerColors, final int snakes,
-			final int ladders, final Boolean visualize) {
+			final int ladders, final Boolean visualization) {
 
 		if (GameSelector.m_TRACE) {
 			System.out.println("GameSnL:: GameSnL() valid params");
@@ -326,6 +328,7 @@ public class GameSnL {
 		m_playerNames = playerNames;
 		m_playerColors = playerColors;
 		m_numberOfPlayers = playerNames.size();
+		m_visualize = visualization;
 		m_initialRolls = new int[m_numberOfPlayers];
 
 		m_popUp.setBounds(100, 100, 175, 200);
@@ -501,7 +504,7 @@ public class GameSnL {
 
 		m_frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		m_shapesPanel = new DisplaySnL(this, m_snakesList, m_laddersList,
-				players);
+				players, m_visualize);
 		m_shapesPanel.setBackground(Color.WHITE);
 
 		m_shapesPanel.addPlayInterface(m_frame);
@@ -538,6 +541,7 @@ public class GameSnL {
 
 			boolean move = player.isMovementSquare(m_board.getSquare(player
 					.getPlayerLocation() + roll));
+			player.setLastLocation(player.getPlayerLocation());
 			player.setPlayerLocation(m_shapesPanel,
 					m_board.getSquare(player.getPlayerLocation() + roll), move);
 			System.out.println("Move: " + move);

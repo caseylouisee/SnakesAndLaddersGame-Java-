@@ -24,10 +24,15 @@ public abstract class PlayerSnL extends Player {
 
 	/** The piece initial location of the player */
 	public int m_playerLocation = 1;
+	
 	/** The piece color of the player */
 	public Color m_playerColor;
+	
 	/** To check if piece is on the destination square or not */
 	public boolean m_isMovementOnSquare;
+	
+	/** Last location of player */
+	public int m_lastLocation;
 
 	/**
 	 * get the current piece location
@@ -69,7 +74,6 @@ public abstract class PlayerSnL extends Player {
 	public boolean setPlayerLocation(DisplaySnL displaySnL, Square s,
 			boolean isMovementSquare) {
 		if (s.getPosition() <= 100 && s.getPosition() >= 0) {
-
 			if (s.getPosition() > m_playerLocation) {
 				if (GameSelector.m_TRACE) {
 					System.out.println(s.getPosition() + " " + m_playerLocation);
@@ -147,4 +151,11 @@ public abstract class PlayerSnL extends Player {
 		return m_isMovementOnSquare;		
 	}
 
+	public void setLastLocation(int playerLocation) {
+		m_lastLocation = playerLocation;
+	}
+	
+	public int getLastLocation(){
+		return m_lastLocation;
+	}
 }

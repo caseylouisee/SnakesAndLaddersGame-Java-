@@ -104,6 +104,10 @@ public class DisplaySnL extends JPanel implements Runnable{
 	
 	/** JPanel used for winning visual feedback */
 	JPanel boardOverlay = null;
+	
+	/** Boolean used if visualization is selected */
+	Boolean m_visualize;
+	
 	/** gets the co_ordinates on the board for a particular square
 	 * @param squareNo
 	 */
@@ -163,10 +167,11 @@ public class DisplaySnL extends JPanel implements Runnable{
 	 * @param players set to m_players
 	 */
 	public DisplaySnL(GameSnL gameSnL, ArrayList<Integer> snakesList,
-			ArrayList<Integer> laddersList, ArrayList<PlayerSnL> players) {
+			ArrayList<Integer> laddersList, ArrayList<PlayerSnL> players, final Boolean visualization) {
 		if(GameSelector.m_TRACE){
 			System.out.println("DisplaySnL::ConstructorCalled");
 		}
+		m_visualize = visualization;
 		m_gameSnL = gameSnL;
 		m_snakeLocations = snakesList;
 		m_ladderLocations = laddersList;
@@ -492,7 +497,8 @@ public class DisplaySnL extends JPanel implements Runnable{
 		}
 		for (int i = 0; i < m_players.size(); i++) {
 			this.printPlayer(graphics, m_players.get(i).getPlayerColor(),
-					m_players.get(i).getPlayerLocation());
+					m_players.get(i).getPlayerLocation(),
+					m_players.get(i).getLastLocation());
 		}
 	
 		repaint();
@@ -518,7 +524,8 @@ public class DisplaySnL extends JPanel implements Runnable{
 		}
 		for (int i = 0; i < m_players.size(); i++) {
 			this.printPlayer(getGraphics(), m_players.get(i).getPlayerColor(),
-					m_players.get(i).getPlayerLocation(),coordinates);
+					m_players.get(i).getPlayerLocation(),coordinates,
+					m_players.get(i).getLastLocation());
 		}
 		repaint();
 	}
@@ -528,7 +535,7 @@ public class DisplaySnL extends JPanel implements Runnable{
 	 * @param playerColor
 	 * @param squareNo
 	 */
-	public void printPlayer(Graphics graphics, Color playerColor, int squareNo){
+	public void printPlayer(Graphics graphics, Color playerColor, int squareNo, int lastLocation){
 		if(GameSelector.m_TRACE){
 			System.out.println("DisplaySnL::printPlayer");
 		}
@@ -536,6 +543,12 @@ public class DisplaySnL extends JPanel implements Runnable{
 		int[] coordinates = getCoordinates(squareNo);
 		graphics.fillOval(coordinates[0] + 20, coordinates[1] + 25,
 				PIECE_DIAMETER, PIECE_DIAMETER);
+		
+		if(m_visualize){
+			int [] lastCoordinates = getCoordinates(lastLocation);
+			graphics.drawLine(coordinates[0]+30, coordinates[1]+35,
+					lastCoordinates[0]+30, lastCoordinates[1]+35);
+		}
 	}
 	
 	/** 
@@ -544,15 +557,22 @@ public class DisplaySnL extends JPanel implements Runnable{
 	 * @param playerColor
 	 * @param squareNo
 	 * @param coordinates
+	 * @param i 
 	 */
 	public void printPlayer(Graphics graphics, Color playerColor, int squareNo,
-			int[] coordinates) {
+			int[] coordinates, int lastLocation) {
 		if(GameSelector.m_TRACE){
 			System.out.println("DisplaySnL::printPlayer");
 		}
 		graphics.setColor(playerColor);
 		graphics.fillOval(coordinates[0], coordinates[1],
 				PIECE_DIAMETER, PIECE_DIAMETER);
+		
+		if(m_visualize){
+			int [] lastCoordinates = getCoordinates(lastLocation);
+			graphics.drawLine(coordinates[0]+30, coordinates[1]+35,
+					lastCoordinates[0]+30, lastCoordinates[1]+35);
+		}
 	}
 
 	/** Draws the board 
