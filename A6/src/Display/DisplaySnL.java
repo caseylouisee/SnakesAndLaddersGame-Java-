@@ -379,9 +379,13 @@ public class DisplaySnL extends JPanel implements Runnable{
 		if(GameSelector.m_TRACE){
 			System.out.println("DisplaySnL::addSaveButton");
 		}
-		m_saveGameButton.setText("Save Game");
-		m_saveGameButton.setBounds(Display.XPOS_COL50, Display.YPOS_ROW650, 
-				Display.COMPONENT_WIDTH100, Display.COMPONENT_HEIGHT20);
+		m_saveGameButton.setIcon(new ImageIcon("res/SAVEBTN.png"));
+		m_saveGameButton.setBorderPainted(false); // this stuff hides button chrome
+		m_saveGameButton.setFocusPainted(false);
+		m_saveGameButton.setContentAreaFilled(false);
+		//m_saveGameButton.setText("Save Game");
+		m_saveGameButton.setBounds(Display.XPOS_COL50, Display.YPOS_ROW600, 
+				Display.COMPONENT_WIDTH160, Display.COMPONENT_HEIGHT85);
 		m_saveGameButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				JOptionPane.showMessageDialog(null, "Game saved");
@@ -548,9 +552,25 @@ public class DisplaySnL extends JPanel implements Runnable{
 			if(GameSelector.m_TRACE){
 				System.out.println("DisplaySnL::printPlayer with visualization");
 			}
-			int [] lastCoordinates = getCoordinates(lastLocation);
+			//int [] lastCoordinates = getCoordinates(lastLocation);
+			System.out.println(m_gameSnL.getPlayer(1).getAllLocations());
+			
+			for(int i = 0; i<m_players.size(); i++){
+				for(int j = 0; j<m_players.get(i).getAllLocations().size(); j++){
+					int number = m_players.get(i).getAllLocations().get(j);
+					int [] lastCoordinates = getCoordinates(number);
+					graphics.setColor(m_players.get(i).getPlayerColor());
+					graphics.fillOval(lastCoordinates[0] + 20, lastCoordinates[1] + 25,
+							PIECE_DIAMETER, PIECE_DIAMETER);
+					//draws path but not correctly
+					/*graphics.drawLine(coordinates[0]+30, coordinates[1]+35,
+							lastCoordinates[0]+30, lastCoordinates[1]+35);*/
+				}
+			}
+			//only prints line to last single location
+			/*int [] lastCoordinates = getCoordinates(lastLocation);
 			graphics.drawLine(coordinates[0]+30, coordinates[1]+35,
-					lastCoordinates[0]+30, lastCoordinates[1]+35);
+					lastCoordinates[0]+30, lastCoordinates[1]+35);*/
 		}
 	}
 	

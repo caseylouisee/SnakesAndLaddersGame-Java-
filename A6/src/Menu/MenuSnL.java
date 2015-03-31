@@ -412,9 +412,9 @@ public class MenuSnL {
 		m_initGameButton.setFocusPainted(false);
 		m_initGameButton.setContentAreaFilled(false);
 		m_initGameButton.setVisible(false);
-		m_initGameButton.setBounds(Display.XPOS_COL150+Display.OFFSET2, 
-				Display.YPOS_ROW400+Display.OFFSET4, Display.COMPONENT_WIDTH200, 
-				Display.COMPONENT_HEIGHT100);
+		m_initGameButton.setBounds(Display.XPOS_COL200-Display.OFFSET4, 
+				Display.YPOS_ROW400+Display.OFFSET5, Display.COMPONENT_WIDTH170, 
+				Display.COMPONENT_HEIGHT85);
 		m_initGameButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				sendForm();
@@ -425,8 +425,8 @@ public class MenuSnL {
 		m_goBackButton.setBorderPainted(false);
 		m_goBackButton.setFocusPainted(false);
 		m_goBackButton.setContentAreaFilled(false);
-		m_goBackButton.setBounds(0, Display.YPOS_ROW400+Display.OFFSET4, 
-				Display.COMPONENT_WIDTH180, Display.COMPONENT_HEIGHT100);
+		m_goBackButton.setBounds(Display.OFFSET1, Display.YPOS_ROW400+Display.OFFSET5, 
+				Display.COMPONENT_WIDTH160, Display.COMPONENT_HEIGHT85);
 		m_goBackButton.setVisible(true);
 		m_goBackButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -440,9 +440,9 @@ public class MenuSnL {
 		m_loadGame.setBorderPainted(false);
 		m_loadGame.setFocusPainted(false);
 		m_loadGame.setContentAreaFilled(false);
-		m_loadGame.setBounds(Display.XPOS_COL350, 
-				Display.YPOS_ROW400+Display.OFFSET4, 
-				Display.COMPONENT_WIDTH200, Display.COMPONENT_HEIGHT100);
+		m_loadGame.setBounds(Display.XPOS_COL350+Display.OFFSET1, 
+				Display.YPOS_ROW400+Display.OFFSET5, 
+				Display.COMPONENT_WIDTH130, Display.COMPONENT_HEIGHT85);
 		m_loadGame.setVisible(true);
 		m_loadGame.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {

@@ -9,6 +9,7 @@
 package Player;
 
 import java.awt.Color;
+import java.util.ArrayList;
 
 import Display.DisplaySnL;
 import Menu.GameSelector;
@@ -33,6 +34,9 @@ public abstract class PlayerSnL extends Player {
 	
 	/** Last location of player */
 	public int m_lastLocation;
+	
+	/** Array of positions */
+	public ArrayList<Integer> m_allLocations = new ArrayList<Integer>();
 
 	/**
 	 * get the current piece location
@@ -152,10 +156,15 @@ public abstract class PlayerSnL extends Player {
 	}
 
 	public void setLastLocation(int playerLocation) {
+		m_allLocations.add(playerLocation);
 		m_lastLocation = playerLocation;
 	}
 	
 	public int getLastLocation(){
 		return m_lastLocation;
+	}
+	
+	public ArrayList<Integer> getAllLocations(){
+		return m_allLocations;
 	}
 }

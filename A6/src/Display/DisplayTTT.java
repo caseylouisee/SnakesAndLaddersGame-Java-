@@ -601,7 +601,7 @@ public class DisplayTTT extends JPanel implements Runnable {
 		}
 		if (m_stopWatch == null) {
 
-			m_lblTimer.setBounds(Display.XPOS_COL200, Display.YPOS_ROW550,
+			m_lblTimer.setBounds(Display.XPOS_COL200-Display.OFFSET4, Display.YPOS_ROW550,
 					Display.COMPONENT_WIDTH150, Display.COMPONENT_HEIGHT40);
 			m_lblTimer.setForeground(Color.WHITE);
 			add(m_lblTimer);
@@ -636,7 +636,7 @@ public class DisplayTTT extends JPanel implements Runnable {
 		goBackButton.setFocusPainted(false);
 		goBackButton.setContentAreaFilled(false);
 		goBackButton.setBounds(0, Display.YPOS_ROW500, 
-				Display.COMPONENT_WIDTH180, Display.COMPONENT_HEIGHT100);
+				Display.COMPONENT_WIDTH160, Display.COMPONENT_HEIGHT85);
 		goBackButton.setVisible(true);
 		// listen for clicks
 		goBackButton.addActionListener(new ActionListener() {
@@ -649,34 +649,6 @@ public class DisplayTTT extends JPanel implements Runnable {
 		add(goBackButton);
 	}
 
-	/** displays the turn of the player, the names of the players playing, and
-	 * the player's position
-	 */
-	private void displayTurn() {
-		if(GameSelector.m_TRACE){
-			System.out.println("DisplayTTT::displayTurn");
-		}
-		// sets colours and bounds for turn and list of players labels.
-		dispTurn.setForeground(Color.WHITE);
-		dispTurn.setBounds(Display.OFFSET1, Display.YPOS_ROW450-Display.OFFSET4, 
-				Display.COMPONENT_WIDTH350, Display.COMPONENT_HEIGHT20);
-		dispPlayers.setForeground(Color.WHITE);
-		dispPlayers.setBounds(Display.OFFSET1, Display.YPOS_ROW450,
-				Display.COMPONENT_WIDTH350, Display.COMPONENT_HEIGHT20);
-		dispPlayers.setText("Players playing: "
-				+ game.getPlayers().get(0).getPlayerName() + ","
-				+ game.getPlayers().get(1).getPlayerName());
-		dispCount.setForeground(Color.WHITE);
-		dispCount.setBounds(Display.OFFSET1, 
-				Display.YPOS_ROW450 + Display.OFFSET4, 
-				Display.COMPONENT_WIDTH350, Display.COMPONENT_HEIGHT20);
-		dispCount.setText(""); // blank for initialisation
-		
-		add(dispPlayers);
-		add(dispTurn);
-		add(dispCount);
-	}
-
 	/** adds the saveButton to the frame */
 	private void addSaveButton() {
 		if(GameSelector.m_TRACE){
@@ -686,8 +658,8 @@ public class DisplayTTT extends JPanel implements Runnable {
 		m_saveGameButton.setBorderPainted(false); // this stuff hides button chrome
 		m_saveGameButton.setFocusPainted(false);
 		m_saveGameButton.setContentAreaFilled(false);
-		m_saveGameButton.setBounds(Display.XPOS_COL250, Display.YPOS_ROW500,
-				Display.COMPONENT_WIDTH200, Display.COMPONENT_HEIGHT100);
+		m_saveGameButton.setBounds(Display.XPOS_COL250+Display.OFFSET4, Display.YPOS_ROW500,
+				Display.COMPONENT_WIDTH160, Display.COMPONENT_HEIGHT85);
 		m_saveGameButton.setVisible(true);
 		m_saveGameButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -732,6 +704,34 @@ public class DisplayTTT extends JPanel implements Runnable {
 		} 
 	}
 	
+	/** displays the turn of the player, the names of the players playing, and
+	 * the player's position
+	 */
+	private void displayTurn() {
+		if(GameSelector.m_TRACE){
+			System.out.println("DisplayTTT::displayTurn");
+		}
+		// sets colours and bounds for turn and list of players labels.
+		dispTurn.setForeground(Color.WHITE);
+		dispTurn.setBounds(Display.OFFSET1, Display.YPOS_ROW450-Display.OFFSET4, 
+				Display.COMPONENT_WIDTH350, Display.COMPONENT_HEIGHT20);
+		dispPlayers.setForeground(Color.WHITE);
+		dispPlayers.setBounds(Display.OFFSET1, Display.YPOS_ROW450,
+				Display.COMPONENT_WIDTH350, Display.COMPONENT_HEIGHT20);
+		dispPlayers.setText("Players playing: "
+				+ game.getPlayers().get(0).getPlayerName() + ","
+				+ game.getPlayers().get(1).getPlayerName());
+		dispCount.setForeground(Color.WHITE);
+		dispCount.setBounds(Display.OFFSET1, 
+				Display.YPOS_ROW450 + Display.OFFSET4, 
+				Display.COMPONENT_WIDTH350, Display.COMPONENT_HEIGHT20);
+		dispCount.setText(""); // blank for initialisation
+		
+		add(dispPlayers);
+		add(dispTurn);
+		add(dispCount);
+	}
+
 	/** Updates the players turn */
 	public void refreshUserUI(String currentTurn) {
 		if(GameSelector.m_TRACE){

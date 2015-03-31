@@ -270,27 +270,13 @@ public class MenuTTT {
 		if(GameSelector.m_TRACE){
 			System.out.println("MenuTTT::addGameButtons");
 		}
-		m_initGameButton = new JButton();
-		m_initGameButton.setIcon(new ImageIcon(("res/STARTBTN.png")));
-		m_initGameButton.setBorderPainted(false);
-		m_initGameButton.setFocusPainted(false);
-		m_initGameButton.setContentAreaFilled(false);
-		m_initGameButton.setBounds(Display.XPOS_COL150+Display.OFFSET2, 
-				Display.YPOS_ROW250, Display.COMPONENT_WIDTH200, 
-				Display.COMPONENT_HEIGHT100);
-		m_initGameButton.setVisible(true);
-		m_initGameButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				sendForm();
-			}
-		});
 		JButton m_goBackButton = new JButton();
 		m_goBackButton.setIcon(new ImageIcon("res/BACKBTN.png"));
 		m_goBackButton.setBorderPainted(false);
 		m_goBackButton.setFocusPainted(false);
 		m_goBackButton.setContentAreaFilled(false);
-		m_goBackButton.setBounds(0, Display.YPOS_ROW250, 
-				Display.COMPONENT_WIDTH180, Display.COMPONENT_HEIGHT100);
+		m_goBackButton.setBounds(Display.OFFSET1, Display.YPOS_ROW250, 
+				Display.COMPONENT_WIDTH160, Display.COMPONENT_HEIGHT85);
 		m_goBackButton.setVisible(true);
 		m_goBackButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -299,14 +285,30 @@ public class MenuTTT {
 			}
 		});
 		
+		m_initGameButton = new JButton();
+		m_initGameButton.setIcon(new ImageIcon(("res/STARTBTN.png")));
+		m_initGameButton.setBorderPainted(false);
+		m_initGameButton.setFocusPainted(false);
+		m_initGameButton.setContentAreaFilled(false);
+		m_initGameButton.setBounds(Display.XPOS_COL150+Display.OFFSET5, 
+				Display.YPOS_ROW250, Display.COMPONENT_WIDTH170, 
+				Display.COMPONENT_HEIGHT85);
+		m_initGameButton.setVisible(true);
+		m_initGameButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				sendForm();
+			}
+		});
+		
+		
 		JButton loadGame = new JButton();
 		loadGame.setText("Load Game");
 		loadGame.setIcon(new ImageIcon(("res/LOADBTN.png")));
 		loadGame.setBorderPainted(false);
 		loadGame.setFocusPainted(false);
 		loadGame.setContentAreaFilled(false);
-		loadGame.setBounds(Display.XPOS_COL350, Display.YPOS_ROW250,
-				Display.COMPONENT_WIDTH200, Display.COMPONENT_HEIGHT100);
+		loadGame.setBounds(Display.XPOS_COL350+Display.OFFSET1, Display.YPOS_ROW250,
+				Display.COMPONENT_WIDTH130, Display.COMPONENT_HEIGHT85);
 		loadGame.setVisible(true);
 		loadGame.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {

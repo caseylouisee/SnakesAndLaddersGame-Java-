@@ -64,7 +64,10 @@ public class Display extends JPanel {
 	public static final int COMPONENT_WIDTH50 = 50;
 	public static final int COMPONENT_WIDTH75 = 75;
 	public static final int COMPONENT_WIDTH100 = 100;
+	public static final int COMPONENT_WIDTH130 = 130;
 	public static final int COMPONENT_WIDTH150 = 150;
+	public static final int COMPONENT_WIDTH160 = 160;
+	public static final int COMPONENT_WIDTH170 = 170;
 	public static final int COMPONENT_WIDTH180 = 180;
 	public static final int COMPONENT_WIDTH200 = 200;
 	public static final int COMPONENT_WIDTH300 = 300;
@@ -72,7 +75,9 @@ public class Display extends JPanel {
 
 	public static final int COMPONENT_HEIGHT20 = 20;
 	public static final int COMPONENT_HEIGHT40 = 40;
+	public static final int COMPONENT_HEIGHT70 = 70;
 	public static final int COMPONENT_HEIGHT80 = 80;
+	public static final int COMPONENT_HEIGHT85 = 85;
 	public static final int COMPONENT_HEIGHT100 = 100;
 	
 	public static final int OFFSET1 = 10;
