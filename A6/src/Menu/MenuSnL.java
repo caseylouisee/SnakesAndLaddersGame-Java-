@@ -529,7 +529,7 @@ public class MenuSnL {
 					br.close();
 					m_frame.dispose();
 					new GameSnL(m_playerNames,m_playerColors,m_playerPositions,
-							m_snakes,m_ladders);
+							m_snakes,m_ladders, false);
 					if(GameSelector.m_TRACE){
 						System.out.println("new GameSnL");
 					}
@@ -667,14 +667,19 @@ public class MenuSnL {
 				JOptionPane.INFORMATION_MESSAGE);
 
 		m_frame.dispose();
-		new GameSnL(names, colors, m_snakesNo, m_laddersNo);
-		if(GameSelector.m_TRACE){
-			System.out.println("MenuSnL::sendForm - new GameSnL");
-		}
+	
 		if(visualization.isSelected()){
-			JFrame visual = new JFrame();
-			visual.setVisible(true);
-			visual.setBounds(0,0,300,400);
+			new GameSnL(names, colors, m_snakesNo, m_laddersNo, true);
+			if(GameSelector.m_TRACE){
+				System.out.println("MenuSnL::sendForm - new GameSnL "
+						+ "with visualization");
+			}
+		}else{
+			new GameSnL(names, colors, m_snakesNo, m_laddersNo,false);
+			if(GameSelector.m_TRACE){
+				System.out.println("MenuSnL::sendForm - new GameSnL "
+						+ "no visualization");
+			}
 		}
 	}
 }

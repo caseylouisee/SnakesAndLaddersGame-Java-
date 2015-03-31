@@ -42,65 +42,83 @@ import Player.PlayerSnL;
  * @brief Creates all the user interface for Snakes and Ladders, as well as
  *        contains all the functions to play the game
  */
-
 public class GameSnL {
 
 	/************************** VARIABLES *****************************/
 
 	/** Arraylist for snakes */
 	private static ArrayList<Integer> m_snakesList = new ArrayList<Integer>();
+	
 	/** Arraylist for ladders */
 	private static ArrayList<Integer> m_laddersList = new ArrayList<Integer>();
+	
 	/** Arraylist for human player names */
 	private static ArrayList<PlayerSnL> players = new ArrayList<PlayerSnL>();
+	
 	/**
 	 * Arraylist for the squares the player has to move to before and after a
 	 * snake or a ladder object
 	 */
 	private static ArrayList<Integer> movementSquares = new ArrayList<Integer>();
+	
 	/** Width of Snakes and Ladders Board */
 	private int BOARD_WIDTH = 10;
+	
 	/** Height of Snakes and Ladders Board */
 	private int BOARD_HEIGHT = 10;
+	
 	/** JFrame for displaying the Snakes and Ladders board */
 	private JFrame m_frame = new JFrame("Snakes & Ladders");
+	
 	/** Panel for player names and positions as well as the dice image */
 	private final JPanel m_contentPanel = new JPanel();
+	
 	/** Dice image */
 	private JLabel m_dicePicLabel = new JLabel(new ImageIcon("null"));
+	
 	/** Determines what dice photo to display */
 	private BufferedImage m_myPicture = null;
+	
 	/** Pop up for initial roll */
 	private JFrame m_popUp = new JFrame();
+	
 	/** Initial roll array for player iteration */
 	private int[] m_initialRolls;
+	
 	/** Total number of players */
 	final int m_numberOfPlayers;
+	
 	/** All player names, whether human or AI */
 	private ArrayList<String> m_playerNames;
+	
 	/** All player colours, whether human or AI */
 	private ArrayList<Color> m_playerColors;
+	
 	/** Displays the player turn */
 	private JTextField m_txtField;
+	
 	/** Displays the roll dice button */
 	private JButton m_btnRollDice;
+	
 	/** Displays the continue button */
 	private JButton m_btnContinue;
+	
 	/** Board object */
 	private BoardSnL m_board;
+	
 	/** Iterator for all players */
 	private int m_playerIterator = 0;
+	
 	/** Panel to display everything */
 	private DisplaySnL m_shapesPanel;
 
-	/************************** ACCESSOR METHODS *****************************/
+	/************************** METHODS *****************************/
 
 	/**
 	 * Returns the number of players
 	 * 
 	 * @return the number of players
-	 * */
-
+	 */
 	public int getNumberOfPlayers() {
 		if (GameSelector.m_TRACE) {
 			System.out.println("GameSnL:: getNumberOfPlayers() no parameters"
@@ -113,8 +131,7 @@ public class GameSnL {
 	 * Returns list of ladders
 	 * 
 	 * @return list of laddders
-	 * */
-
+	 */
 	public ArrayList<Integer> getLadders() {
 		if (GameSelector.m_TRACE) {
 			System.out.println("GameSnL:: getLadders() no parameters"
@@ -127,8 +144,7 @@ public class GameSnL {
 	 * Returns list of snakes
 	 * 
 	 * @return list of snakes
-	 * */
-
+	 */
 	public ArrayList<Integer> getSnakes() {
 		if (GameSelector.m_TRACE) {
 			System.out.println("GameSnL:: getSnakes() no parameters"
@@ -143,8 +159,7 @@ public class GameSnL {
 	 * @param playerIndex
 	 *            - index of the current player
 	 * @return the current player's location
-	 * */
-
+	 */
 	public int getPlayerLocation(int playerIndex) {
 		if (GameSelector.m_TRACE) {
 				System.out.println("GameSnL:: getPlayerLocation()");		
@@ -156,8 +171,7 @@ public class GameSnL {
 	 * Returns the number of players
 	 * 
 	 * @return the number of players
-	 * */
-
+	 */
 	public int getPlayersSize() {
 		if (GameSelector.m_TRACE) {
 			System.out.println("GameSnL:: getPlayersSize() no parameters"
@@ -170,8 +184,7 @@ public class GameSnL {
 	 * Returns the current turn
 	 * 
 	 * @return whose turn it is
-	 * */
-
+	 */
 	public int getIterator() {
 		if (GameSelector.m_TRACE) {
 			System.out.println("GameSnL:: getIterator() no parameters"
@@ -186,8 +199,7 @@ public class GameSnL {
 	 * @param playerIndex
 	 *            - index of player
 	 * @return player name
-	 **/
-
+	 */
 	public PlayerSnL getPlayer(int playerIndex) {
 		if (GameSelector.m_TRACE) {
 			System.out.println("GameSnL:: getPlayerLocation()");		
@@ -219,7 +231,7 @@ public class GameSnL {
 	 *            - player's initial position
 	 * @return the squares the player has to move to before and after a snake or
 	 *         a ladder object
-	 * */
+	 */
 
 	public static int getMovementPair(int original) {
 		if (GameSelector.m_TRACE) {
@@ -241,8 +253,6 @@ public class GameSnL {
 		}
 	}
 
-	/************************** METHODS *****************************/
-
 	/**
 	 * Loads data into game
 	 * 
@@ -257,10 +267,9 @@ public class GameSnL {
 	 * @param ladders
 	 *            adds ladders to various squares.
 	 */
-
 	public GameSnL(ArrayList<String> playerNames,
 			ArrayList<Color> playerColors, ArrayList<Integer> playerPositions,
-			ArrayList<Integer> snakes, ArrayList<Integer> ladders) {
+			ArrayList<Integer> snakes, ArrayList<Integer> ladders, Boolean visualize) {
 
 		m_numberOfPlayers = playerNames.size();
 		m_playerNames = playerNames;
@@ -306,16 +315,13 @@ public class GameSnL {
 	 * @param ladders
 	 *            - number of ladders to be generated.
 	 */
-
 	public GameSnL(final ArrayList<String> playerNames,
 			final ArrayList<Color> playerColors, final int snakes,
-			final int ladders) {
+			final int ladders, final Boolean visualize) {
 
 		if (GameSelector.m_TRACE) {
 			System.out.println("GameSnL:: GameSnL() valid params");
 		}
-
-		/** Displays the number of snakes and ladders to the console */
 
 		m_playerNames = playerNames;
 		m_playerColors = playerColors;
@@ -361,8 +367,10 @@ public class GameSnL {
 					sortPlayers();
 					m_popUp.dispose();
 					m_playerIterator = 0;
+					
 					initVariables(playerNames, playerColors, snakes, ladders);
 					initDisplay();
+					
 				}
 			}
 		});
@@ -386,8 +394,6 @@ public class GameSnL {
 					m_btnContinue.setVisible(true);
 					m_btnRollDice.setVisible(false);
 					m_playerIterator++;
-					// txtField.setText(playerNames.get(playerIterator)+"
-					// Roll the dice.");
 
 					if (m_playerIterator == m_numberOfPlayers) {
 						m_btnContinue.setText("Play Game.");
@@ -404,8 +410,7 @@ public class GameSnL {
 
 	/**
 	 * Determines who takes which turn
-	 * */
-
+	 */
 	private void sortPlayers() {
 
 		if (GameSelector.m_TRACE) {
@@ -442,8 +447,7 @@ public class GameSnL {
 	 *            - number of snakes to be generated.
 	 * @param ladders
 	 *            - number of ladders to be generated.
-	 * */
-
+	 */
 	private void initVariables(ArrayList<String> playerNames,
 			ArrayList<Color> playerColors, int snakes, int ladders) {
 
@@ -462,7 +466,7 @@ public class GameSnL {
 
 			}
 		}
-		//
+		
 		/** Generates snake positions */
 		for (int i = 0; i < snakes; i++) {
 			int[] snakeSquares = generateSquares();
@@ -488,7 +492,6 @@ public class GameSnL {
 	}
 
 	/** Creates the display */
-
 	private void initDisplay() {
 
 		if (GameSelector.m_TRACE) {
@@ -518,7 +521,6 @@ public class GameSnL {
 	 *            - current player
 	 * @return a random number from 1-6
 	 */
-
 	private int checkMove(PlayerSnL player) {
 		int roll = rollDice();
 
@@ -531,8 +533,7 @@ public class GameSnL {
 		if ((player.getPlayerLocation() + roll) >= MAX_VALUE) {
 			winner(player);
 		}
-		// System.out.println("Player Location will be " +
-		// (p.getPlayerLocation() + roll));
+
 		else {
 
 			boolean move = player.isMovementSquare(m_board.getSquare(player
@@ -557,8 +558,7 @@ public class GameSnL {
 	 *            - current player
 	 * @param destination
 	 *            - destination square player will get moved to
-	 * */
-
+	 */
 	private void movePlayer(PlayerSnL player, int destination) {
 
 		boolean move = player.isMovementSquare(m_board.getSquare(destination));
@@ -581,8 +581,7 @@ public class GameSnL {
 	 * 
 	 * @param player
 	 *            - current player
-	 * */
-
+	 */
 	private void winner(PlayerSnL player) {
 		if (GameSelector.m_TRACE) {
 				System.out.println("GameSnL:: winner()");
@@ -618,8 +617,7 @@ public class GameSnL {
 	 * Rolls the dice
 	 * 
 	 * @return a random number between 1-6
-	 * */
-
+	 */
 	private int rollDice() {
 		final int MAX_VALUE = 6;
 		final int MIN_VALUE = 1;
@@ -637,8 +635,7 @@ public class GameSnL {
 	 * Generates snake and ladder starting and ending positions
 	 * 
 	 * @return snake and ladder starting and ending positions
-	 **/
-
+	 */
 	private int[] generateSquares() {
 
 		boolean validated = false;
@@ -678,8 +675,7 @@ public class GameSnL {
 	/**
 	 * This is the test method. Default values are set for names, colours and
 	 * number of snakes and ladders.
-	 **/
-
+	 */
 	public static void main(String[] args) {
 
 		ArrayList<String> m_names = new ArrayList<String>();
@@ -692,8 +688,9 @@ public class GameSnL {
 
 		int SNAKES = 1;
 		int LADDERS = 5;
+		boolean visualize = false;
 
-		GameSnL gameSnL = new GameSnL(m_names, m_colors, SNAKES, LADDERS);
+		GameSnL gameSnL = new GameSnL(m_names, m_colors, SNAKES, LADDERS, visualize);
 		gameSnL.sortPlayers();
 		gameSnL.initVariables(m_names, m_colors, SNAKES, LADDERS);
 		gameSnL.initDisplay();
