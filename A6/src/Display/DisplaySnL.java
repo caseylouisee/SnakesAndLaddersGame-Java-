@@ -545,6 +545,9 @@ public class DisplaySnL extends JPanel implements Runnable{
 				PIECE_DIAMETER, PIECE_DIAMETER);
 		
 		if(m_visualize){
+			if(GameSelector.m_TRACE){
+				System.out.println("DisplaySnL::printPlayer with visualization");
+			}
 			int [] lastCoordinates = getCoordinates(lastLocation);
 			graphics.drawLine(coordinates[0]+30, coordinates[1]+35,
 					lastCoordinates[0]+30, lastCoordinates[1]+35);
@@ -569,6 +572,9 @@ public class DisplaySnL extends JPanel implements Runnable{
 				PIECE_DIAMETER, PIECE_DIAMETER);
 		
 		if(m_visualize){
+			if(GameSelector.m_TRACE){
+				System.out.println("DisplaySnL::printPlayer with visualization");
+			}
 			int [] lastCoordinates = getCoordinates(lastLocation);
 			graphics.drawLine(coordinates[0]+30, coordinates[1]+35,
 					lastCoordinates[0]+30, lastCoordinates[1]+35);
