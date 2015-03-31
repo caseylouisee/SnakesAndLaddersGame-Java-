@@ -30,7 +30,6 @@ public class PlayerTTT extends Player {
 	 * Gets the player piece type 
 	 * @return the player piece type is X or O
 	 */
-	
 	public char getPlayerPieceType() {
 		if(GameSelector.m_TRACE){
 			System.out.println("PlayerTTT::getPlayerPieceType()  "
@@ -43,7 +42,6 @@ public class PlayerTTT extends Player {
 	 * Sets the player piece type 
 	 * @return the player piece type 
 	 */
-	
 	public void setPlayerPieceType(char playerType) {
 		if(GameSelector.m_TRACE){
 			if(playerType=='X'||playerType=='O'){
@@ -88,7 +86,6 @@ public class PlayerTTT extends Player {
 	 * Check if the player piece is X or not 
 	 * @return the true if playerPieceType is X
 	 */
-	
 	public boolean isX() {
 		if(GameSelector.m_TRACE){
 			System.out.println("PlayerTTT::isX()  "
@@ -106,7 +103,6 @@ public class PlayerTTT extends Player {
 	 * Check if the player piece is O or not 
 	 * @return the true if playerPieceType is O
 	 */
-	
 	public boolean isO() {
 		if(GameSelector.m_TRACE){
 			System.out.println("PlayerTTT::isO()  "
@@ -124,7 +120,6 @@ public class PlayerTTT extends Player {
 	 * Add Piece to Piece array 
 	 * @param s the square location you put the piece on
 	 */
-	 
 	public void addPiece(Square s) {
 		if(GameSelector.m_TRACE){
 			System.out.println("PlayerTTT::addPiece()  "
@@ -138,7 +133,6 @@ public class PlayerTTT extends Player {
 	 * main method created for unit testing 
 	 * @param args
 	 */
-	
 	public static void main(String [] args){
 		int i =6;
 		Square s=new SquareTTT(i); 
@@ -151,9 +145,7 @@ public class PlayerTTT extends Player {
 		playerTTT.isX();
 		playerTTT.isO();
 		playerTTT.getPlayerPieceType();
-		playerTTT.getPlayerName();
-		
-		
+		playerTTT.getPlayerName();	
 	}
 }
 	

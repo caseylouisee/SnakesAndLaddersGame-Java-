@@ -58,11 +58,8 @@ public class GameTTT {
 	public boolean setMovementHuman(int Sqindex) {
 		if (m_board.accessSquare(Sqindex).getValue() != ' ') {
 			if (GameSelector.m_TRACE) {
-				if (GameSelector.m_VALID) {
-					System.out.println("GameTTT:: setMovementHuman() "
-							+ "invalid parameters: (Square is unavailable)"
-							+ "returns false");
-				}
+					System.out.println("GameTTT:: setMovementHuman() -"
+							+ " Square unavailable");
 			}
 			return false;
 		}
@@ -71,13 +68,9 @@ public class GameTTT {
 		m_board.accessSquare(Sqindex).setValue(piece);
 
 		if (GameSelector.m_TRACE) {
-			if (GameSelector.m_VALID) {
-				System.out.println("GameTTT:: setMovementHuman() "
-						+ "valid parameters: (Square is available)"
-						+ "returns true");
-			}
+				System.out.println("GameTTT:: setMovementHuman() -"
+						+ " Square available");
 		}
-
 		return true;
 	}
 
@@ -94,11 +87,8 @@ public class GameTTT {
 
 		if (m_board.accessSquare(Sqindex).getValue() != ' ') {
 			if (GameSelector.m_TRACE) {
-				if (GameSelector.m_VALID) {
-					System.out.println("GameTTT:: setMovementHuman() "
-							+ "invalid parameters: (Square is unavailable)"
-							+ "returns false");
-				}
+					System.out.println("GameTTT:: setMovementHuman() -"
+							+ " Square unavailable");
 			}
 			return false;
 		}
@@ -107,13 +97,9 @@ public class GameTTT {
 		m_board.accessSquare(Sqindex).setValue(piece);
 
 		if (GameSelector.m_TRACE) {
-			if (GameSelector.m_VALID) {
-				System.out.println("GameTTT:: setMovementHuman() "
-						+ "valid parameters: (Square is available)"
-						+ "returns true");
-			}
+				System.out.println("GameTTT:: setMovementHuman() - "
+						+ "Square available");
 		}
-
 		return true;
 	}
 

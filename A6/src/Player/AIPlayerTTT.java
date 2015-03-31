@@ -40,7 +40,6 @@ public class AIPlayerTTT extends PlayerTTT {
 	 * Gets the player name extends from Player
 	 * @return the player name
 	 */
-	
 	public String getPlayerName() {
 		if(GameSelector.m_TRACE){
 			System.out.println("AIPlayerTTT::getPlayerName()  "
@@ -53,7 +52,6 @@ public class AIPlayerTTT extends PlayerTTT {
 	 * Gets the player piece type extends from PlayerTTT
 	 * @return the player piece type is X or O
 	 */
-	
 	public char getPlayerPieceType() {
 		if(GameSelector.m_TRACE){
 			System.out.println("AIPlayerTTT::getPlayerPieceType()  "
@@ -66,7 +64,6 @@ public class AIPlayerTTT extends PlayerTTT {
 	 * Check if the player piece is X or not 
 	 * @return the true if playerPieceType is X
 	 */
-	
 	public boolean isX() {
 		if(GameSelector.m_TRACE){
 			System.out.println("AIPlayerTTT::isX()  "
@@ -84,7 +81,6 @@ public class AIPlayerTTT extends PlayerTTT {
 	 * Check if the player piece is O or not 
 	 * @return the true if playerPieceType is O
 	 */
-	
 	public boolean isO() {
 		if(GameSelector.m_TRACE){
 			System.out.println("AIPlayerTTT::isO()  "
@@ -102,7 +98,6 @@ public class AIPlayerTTT extends PlayerTTT {
 	 * Gets the player piece location extends from PlayerTTT
 	 * @return the player one piece location 
 	 */
-	
 	public int getPieceLocation() {
 		if(GameSelector.m_TRACE){
 			System.out.println("AIPlayerTTT::getPieceLocation()  "
@@ -127,7 +122,6 @@ public class AIPlayerTTT extends PlayerTTT {
 	 * Add Piece to Piece array extends from PlayerTTT
 	 * @param s the square location you put the piece on
 	 */
-	
 	public void addPiece(Square s){
 		if(GameSelector.m_TRACE){
 			System.out.println("AIPlayerTTT::addPiece()  "
@@ -141,7 +135,6 @@ public class AIPlayerTTT extends PlayerTTT {
 	 * main method created for unit testing 
 	 * @param args
 	 */
-	
 	public static void main(String [] args){
 		String name="AiPlayerTTT1";
 		char piece ='X';
@@ -154,8 +147,7 @@ public class AIPlayerTTT extends PlayerTTT {
 		aiPlayerTTT.isX();
 		aiPlayerTTT.isO();
 		aiPlayerTTT.getPlayerPieceType();
-		aiPlayerTTT.getPlayerName();
-		
-		
+		aiPlayerTTT.getPlayerName();	
 	}
+	
 }

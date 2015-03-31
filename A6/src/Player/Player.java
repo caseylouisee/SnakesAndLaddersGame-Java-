@@ -27,7 +27,6 @@ public class Player {
 	 * Gets the player name 
 	 * @return the player name
 	 */
-	
 	public String getPlayerName() {
 		if(GameSelector.m_TRACE){
 			System.out.println("Player::getPlayerName()  "
@@ -40,7 +39,6 @@ public class Player {
 	 * Sets the player name 
 	 * @return the player name
 	 */
-	
 	public void setPlayerName(String name) {
 		if(GameSelector.m_TRACE){
 			if(name.contains(".")||name.contains(",")){
@@ -59,14 +57,13 @@ public class Player {
 	 * main method created for unit testing 
 	 * @param args
 	 */
-	
 	public static void main(String [] args){
 		String name1="Player1";
 		String name2="Player.1";
 		Player player=new Player();
 		player.setPlayerName(name1);
 		player.getPlayerName();
-		player.setPlayerName(name2);
-		
+		player.setPlayerName(name2);	
 	}
+	
 }

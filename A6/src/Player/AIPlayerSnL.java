@@ -25,7 +25,6 @@ public class AIPlayerSnL extends PlayerSnL{
 	 * @param name is the player name passed 
 	 * @param c is the player piece color passed 
 	 */
-	
 	public AIPlayerSnL(String name, Color c) { 
 		if(GameSelector.m_TRACE){
 			System.out.println("AIPlayerSnL::AIPlayerSnL() create "
@@ -44,7 +43,6 @@ public class AIPlayerSnL extends PlayerSnL{
 	 * @param c is the player color passed 
 	 * @param position is the player current piece position
 	 */
-	
 	public AIPlayerSnL(String name, Color c, int position) { 
 		if(GameSelector.m_TRACE){
 			System.out.println("AIPlayerSnL::AIPlayerSnL() creates"
@@ -62,7 +60,6 @@ public class AIPlayerSnL extends PlayerSnL{
 	 * main method created for unit testing 
 	 * @param args
 	 */
-	
 	public static void main(String [] args){
 		String name="AiPlayerSnL1";
 		Color c =Color.BLUE;

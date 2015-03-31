@@ -91,18 +91,19 @@ public class DisplaySnL extends JPanel implements Runnable{
 	private JButton m_saveGameButton = new JButton();
 
 	/** JPanel to contain player information */
-	private JPanel m_playerInfoPanel = null;
+	private JPanel m_playerInfoPanel;
 
 	/** ArrayList to contain player information (names) */ 
-	private ArrayList<JLabel> m_playerInfo = null;
+	private ArrayList<JLabel> m_playerInfo;
 
 	/** Arraylist to contain player positions */
-	private ArrayList<JLabel> m_playerPos = null;
+	private ArrayList<JLabel> m_playerPos;
 
+	/** Arraylist to contain player colours */
+	private ArrayList<JLabel> m_playerColour;
+	
 	/** JPanel used for winning visual feedback */
 	JPanel boardOverlay = null;
-
-
 	/** gets the co_ordinates on the board for a particular square
 	 * @param squareNo
 	 */
@@ -323,24 +324,31 @@ public class DisplaySnL extends JPanel implements Runnable{
 
 		m_playerInfo = new ArrayList<JLabel>();
 		m_playerPos = new ArrayList<JLabel>();
+		m_playerColour = new ArrayList<JLabel>();
 
 		for(int i = 0; i<m_players.size(); i++){
 
 			m_playerInfo.add(new JLabel(m_gameSnL.getPlayer(i)
 					.getPlayerName()));
 			m_playerInfo.get(i).setBounds(0, Display.OFFSET2*i, 
-					Display.COMPONENT_WIDTH100, Display.COMPONENT_HEIGHT20);
+					Display.COMPONENT_WIDTH75, Display.COMPONENT_HEIGHT20);
 			m_playerInfo.get(i).setForeground(Color.WHITE);
 
 			Integer location = m_gameSnL.getPlayerLocation(i);
 			m_playerPos.add(new JLabel(location.toString()));
-			m_playerPos.get(i).setBounds(Display.XPOS_COL200, Display.OFFSET2*i, 
-					Display.COMPONENT_WIDTH100, Display.COMPONENT_HEIGHT20);
+			m_playerPos.get(i).setBounds(Display.XPOS_COL150, Display.OFFSET2*i, 
+					Display.COMPONENT_WIDTH50, Display.COMPONENT_HEIGHT20);
 			m_playerPos.get(i).setForeground(Color.WHITE);
-
+			
+			// Prints java.awt.color blah blah need to fix
+			/*m_playerColour.add(new JLabel(m_gameSnL.getPlayer(i).getPlayerColor().toString()));
+			m_playerColour.get(i).setBounds(Display.XPOS_COL200, Display.OFFSET2*i, 
+					Display.COMPONENT_WIDTH50, Display.COMPONENT_HEIGHT20);
+			m_playerColour.get(i).setForeground(Color.WHITE);*/
 
 			m_playerInfoPanel.add(m_playerInfo.get(i));
 			m_playerInfoPanel.add(m_playerPos.get(i));
+			//m_playerInfoPanel.add(m_playerColour.get(i));
 
 		}
 

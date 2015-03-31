@@ -26,7 +26,6 @@ public class HumanPlayerSnL extends PlayerSnL {
 	 * @param name is the player name passed 
 	 * @param c is the player color passed 
 	 */
-
 	public HumanPlayerSnL(String name, Color c) {
 		if(GameSelector.m_TRACE){
 			System.out.println("HumanPlayerSnL::HumanPlayerSnL() creates "
@@ -44,7 +43,6 @@ public class HumanPlayerSnL extends PlayerSnL {
 	 * @param c is the player color passed 
 	 * @param position is the player current piece position
 	 */
-	
 	public HumanPlayerSnL(String name, Color c, int position) {
 		if(GameSelector.m_TRACE){
 			System.out.println("HumanPlayerSnL::HumanPlayerSnL() creates "
@@ -61,7 +59,6 @@ public class HumanPlayerSnL extends PlayerSnL {
 	 * main method created for unit testing 
 	 * @param args
 	 */
-	
 	public static void main(String [] args){
 		String name="HumanPlayerSnL1";
 		Color c =Color.RED;

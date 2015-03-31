@@ -42,7 +42,6 @@ public class HumanPlayerTTT extends PlayerTTT {
 	 * Gets the player name
 	 * @return the player name extends from Player
 	 */
-	
 	public String getPlayerName() {
 		if(GameSelector.m_TRACE){
 			System.out.println("HumanPlayerTTT::getPlayerName()  "
@@ -55,7 +54,6 @@ public class HumanPlayerTTT extends PlayerTTT {
 	 * Gets the player piece type extends from playerTTT
 	 * @return the player piece type is X or O
 	 */
-
 	public char getPlayerPieceType() {
 		if(GameSelector.m_TRACE){
 			System.out.println("HUmanPlayerTTT::getPlayerPieceType()  "
@@ -68,7 +66,6 @@ public class HumanPlayerTTT extends PlayerTTT {
 	 * Check if the player piece is X or not 
 	 * @return the true if playerPieceType is X
 	 */
-	
 	public boolean isX() {
 		if(GameSelector.m_TRACE){
 			System.out.println("HumanPlayerTTT::isX()  "
@@ -86,7 +83,6 @@ public class HumanPlayerTTT extends PlayerTTT {
 	 * Check if the player piece is O or not 
 	 * @return the true if playerPieceType is O
 	 */
-	
 	public boolean isO() {
 		if(GameSelector.m_TRACE){
 			System.out.println("HumanPlayerTTT::isO()  "
@@ -104,7 +100,6 @@ public class HumanPlayerTTT extends PlayerTTT {
 	 * Gets the player piece location extends from PlayerTTT
 	 * @return the player one piece location 
 	 */
-	
 	public int getPieceLocation() {
 		if(GameSelector.m_TRACE){
 			System.out.println("HumanPlayerTTT::getPieceLocation()  "
@@ -117,7 +112,6 @@ public class HumanPlayerTTT extends PlayerTTT {
 	 * Gets the player piece location  array extends from PlayerTTT
 	 * @return the player one piece location array 
 	 */
-	
 	public ArrayList<Integer> getPieceLocations() {
 		if(GameSelector.m_TRACE){
 			System.out.println("HumanPlayerTTT::getPieceLocations()  "
@@ -130,7 +124,6 @@ public class HumanPlayerTTT extends PlayerTTT {
 	 * Add Piece to Piece array extends from PlayerTTT
 	 * @param s the square location you put the piece on
 	 */
-	
 	public void addPiece(Square s){
 		if(GameSelector.m_TRACE){
 			System.out.println("HumanPlayerTTT::addPiece()  "
@@ -144,7 +137,6 @@ public class HumanPlayerTTT extends PlayerTTT {
 	 * main method created for unit testing 
 	 * @param args
 	 */
-	
 	public static void main(String [] args){
 		String name="HumanPlayerTTT1";
 		char piece ='O';
@@ -157,8 +149,7 @@ public class HumanPlayerTTT extends PlayerTTT {
 		humanPlayerTTT.isX();
 		humanPlayerTTT.isO();
 		humanPlayerTTT.getPlayerPieceType();
-		humanPlayerTTT.getPlayerName();
-		
-		
+		humanPlayerTTT.getPlayerName();	
 	}
+	
 }

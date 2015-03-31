@@ -47,7 +47,6 @@ public abstract class PlayerSnL extends Player {
 	 * 
 	 * @return piece color
 	 */
-
 	public Color getPlayerColor() {
 		if(GameSelector.m_TRACE){
 			System.out.println("PlayerSnL::getPlayerColor()  "
@@ -67,7 +66,6 @@ public abstract class PlayerSnL extends Player {
 	 * @return true if piece gets to destination square, or false if the 
 	 * destination is out of bound
 	 */
-
 	public boolean setPlayerLocation(DisplaySnL displaySnL, Square s,
 			boolean isMovementSquare) {
 		if (s.getPosition() <= 100 && s.getPosition() >= 0) {
@@ -139,7 +137,6 @@ public abstract class PlayerSnL extends Player {
 	 * @param s is destination square
 	 * @return true if piece gets to destination square, or false if not
 	 */
-
 	public boolean isMovementSquare(SquareSnL s) {
 		m_isMovementOnSquare = s.isMovementSquare();
 		if(GameSelector.m_TRACE){
@@ -147,8 +144,7 @@ public abstract class PlayerSnL extends Player {
 					+ "check if player piece location: "+s+
 					" is  destination square that is "+m_isMovementOnSquare);
 		}
-		return m_isMovementOnSquare;
-		
+		return m_isMovementOnSquare;		
 	}
 
 }
