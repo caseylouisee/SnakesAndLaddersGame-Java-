@@ -88,6 +88,9 @@ public class MenuTTT {
 	
 	/** Check box for visualization */
 	private JCheckBox visualization;
+	
+	/** Boolean for visualization */
+	private Boolean visualize = false;
 
 	/* -------- METHODS --------- */
 
@@ -238,9 +241,11 @@ public class MenuTTT {
 			public void itemStateChanged(ItemEvent event) {
 				Object source =  event.getItemSelectable();
 				if (source == visualization) {
+					visualize = true;
 					System.out.println("MenuSnL :: addVisualizationCheckBox - Selected");
 				}
 				 if (event.getStateChange() == ItemEvent.DESELECTED){
+					 visualize = false;
 					System.out.println("MenuSnL :: addVisualizationCheckBox - Deselected");
 				}
 			}
@@ -454,7 +459,8 @@ public class MenuTTT {
 				}
 
 				m_frame.dispose();
-				new GameTTT(players);
+				new GameTTT(players, visualize);
+				System.out.println(visualize);
 				if(GameSelector.m_TRACE){
 					System.out.println("MenuTTT::sendForm - new GameTTT");
 				}

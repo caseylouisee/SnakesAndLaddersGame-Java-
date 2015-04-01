@@ -33,17 +33,24 @@ public class GameTTT {
 
 	/** Arraylist for all player names */
 	private ArrayList<PlayerTTT> m_players;
+	
 	/** Determines whose turn it is */
 	private int m_turn;
+	
 	/** Board object */
 	private BoardTTT m_board;
+	
 	/** JFrame used for displaying TicTacToe */
 	private JFrame m_frame = new JFrame("TTT");
+	
 	/** Panel to display everything */
 	private DisplayTTT m_shapesPanel;
+	
 	/** Holds the count of number of X's and O's **/
 	private int[] m_count;
 
+	/** Boolean for visualization */
+	private Boolean m_visualize;
 	/************************** ACCESSOR METHODS *****************************/
 
 	/**
@@ -207,10 +214,11 @@ public class GameTTT {
 	 *            - all player names.
 	 */
 
-	public GameTTT(ArrayList<PlayerTTT> players2) {
+	public GameTTT(ArrayList<PlayerTTT> players2, Boolean visualization) {
 		m_players = players2;
 		m_board = new BoardTTT(8, 8);
 		m_turn = 0;
+		m_visualize = visualization;
 		init();
 
 		if (GameSelector.m_TRACE) {
@@ -266,7 +274,7 @@ public class GameTTT {
 		if (m_count != null) {
 			m_shapesPanel = new DisplayTTT(this, m_board, m_count);
 		} else {
-			m_shapesPanel = new DisplayTTT(this, m_board);
+			m_shapesPanel = new DisplayTTT(this, m_board, m_visualize);
 		}
 		m_shapesPanel.setBackground(Color.BLACK);
 		m_shapesPanel.setBounds(10, 10, 435, 640);
@@ -293,7 +301,7 @@ public class GameTTT {
 		players.add(new HumanPlayerTTT("bob", 'X'));
 		players.add(new AIPlayerTTT("terry.AI", 'O'));
 
-		GameTTT gameTTT = new GameTTT(players);
+		GameTTT gameTTT = new GameTTT(players,false);
 		gameTTT.init();
 		gameTTT.getBoard();
 		gameTTT.getCoordinatesWinningSquares();
