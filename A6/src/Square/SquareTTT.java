@@ -25,7 +25,7 @@ public class SquareTTT extends Square {
 		super.m_position = i;
 		setValue(' ');
 		if(GameSelector.m_TRACE){
-			System.out.println("SqaureTTT::SqaureTTT() valid parameters:"+i+
+			System.out.println("SquareTTT::SquareTTT() valid parameters:"+i+
 					" doesn't return anything.");
 		}
 	}
@@ -36,7 +36,7 @@ public class SquareTTT extends Square {
 		setValue(value);
 		display.setButtonIcon(i,value);
 		if(GameSelector.m_TRACE){
-			System.out.println("SqaureTTT::SqaureTTT() valid parameters:"+i+
+			System.out.println("SquareTTT::SquareTTT() valid parameters:"+i+
 					" "+value+" "+display+ ", doesn't return anything.");
 		}
 	}

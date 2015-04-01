@@ -63,13 +63,13 @@ public class DisplayTTT extends JPanel implements Runnable {
 	private JFrame frame = new JFrame("Tic Tac Toe");
 
 	/** Label to display player turn **/
-	public JLabel dispTurn = new JLabel();
+	private JLabel dispTurn = new JLabel();
 
 	/** Label to display player name **/
-	public JLabel dispPlayers = new JLabel();
+	private JLabel dispPlayers = new JLabel();
 
 	/** Label to display count of pieces on board **/
-	public JLabel dispCount = new JLabel();
+	private JLabel dispCount = new JLabel();
 
 	/** Array list of Jbuttons to store buttons rendered to the board **/
 	private ArrayList<JButton> gridSquares = new ArrayList<JButton>();
@@ -88,13 +88,13 @@ public class DisplayTTT extends JPanel implements Runnable {
 	private ImageIcon idleImage = new ImageIcon("res/btnIdleImage.gif");
 
 	/** JButton to go back **/
-	JButton goBackButton = new JButton();
+	private JButton goBackButton = new JButton();
 
 	/** Stop watch variable to display timer **/
 	private StopWatch m_stopWatch;
 
 	/** JLabel to display timer **/
-	JLabel m_lblTimer = new JLabel("Timer");
+	private JLabel m_lblTimer = new JLabel("Timer");
 
 	/** Boolean to test if game is running */
 	private boolean gameRunning = true;
@@ -103,29 +103,29 @@ public class DisplayTTT extends JPanel implements Runnable {
 	private GameTTT game;
 
 	/** Arraylist of the players */
-	ArrayList<PlayerTTT> m_players = new ArrayList<PlayerTTT>();
+	private ArrayList<PlayerTTT> m_players = new ArrayList<PlayerTTT>();
 
 	/** boolean to ignore human input when ai's turn*/
-	boolean ignoreEvents = false;
+	private boolean ignoreEvents = false;
 	
 	/** event handler for human click */
-	GUIEventHandler handler = new GUIEventHandler();
+	private GUIEventHandler handler = new GUIEventHandler();
 
 	/** boolean to set whether the game is being played or not */
-	boolean playing = true;
+	private boolean playing = true;
 
 	/** boolean to detect whether it is the ai's first turn */
-	boolean initialPlay = true;
+	private boolean initialPlay = true;
 	
 	/** random used for the ai's turn */
-	final Random RAND = new Random();
-	int RANDOM = RAND.nextInt(63);
+	private final Random RAND = new Random();
+	private int RANDOM = RAND.nextInt(63);
 
 	/** array list used for the ai moves */
-	ArrayList<Integer> m_aiMoves = new ArrayList<Integer>();
+	private ArrayList<Integer> m_aiMoves = new ArrayList<Integer>();
 
 	/** instance of the board */
-	Board m_boardGame;
+	private Board m_boardGame;
 
 	/** method to set button icon to X or O, used for the load game */
 	public void setButtonIcon(int position, char value){
@@ -266,7 +266,7 @@ public class DisplayTTT extends JPanel implements Runnable {
 	}
 
 	/** plays the game and delays the AI turn */
-	public void playGame() {
+	private void playGame() {
 		if(GameSelector.m_TRACE){
 			System.out.println("DisplayTTT::playGame");
 		}
@@ -383,7 +383,7 @@ public class DisplayTTT extends JPanel implements Runnable {
 	}
 	
 	/** Sets image for any button on the grid dependent on the player moving **/
-	public void doMovementHuman(int squareRef) {
+	private void doMovementHuman(int squareRef) {
 		if(GameSelector.m_TRACE){
 			System.out.println("DisplayTTT::doMovementHuman");
 		}
@@ -394,11 +394,20 @@ public class DisplayTTT extends JPanel implements Runnable {
 			return; // do nothing if square is valid move but doesn't trigger a
 		// win or a draw or an invalid move.
 		if (game.getPlayerTurn().isX()) { // draws a cross
-			gridSquares.get(squareRef).setIcon(new ImageIcon("res/CROSS.png"));
+			
+			gridSquares.get(squareRef).setText("X");
+			gridSquares.get(squareRef).setForeground(Color.WHITE);
+			
+			//gridSquares.get(squareRef).setIcon(new ImageIcon("res/CROSS.png"));
 			m_countX++;
 			System.out.println("An X has been placed at" + squareRef);
+			
 		} else {
-			gridSquares.get(squareRef).setIcon(new ImageIcon("res/NAUGHT.png"));
+			
+			gridSquares.get(squareRef).setText("O");
+			gridSquares.get(squareRef).setForeground(Color.WHITE);
+			
+			//gridSquares.get(squareRef).setIcon(new ImageIcon("res/NAUGHT.png"));
 			m_countO++;
 			System.out.println("An O has been placed at" + squareRef);
 		}
@@ -470,8 +479,8 @@ public class DisplayTTT extends JPanel implements Runnable {
 
 		System.out.println("End of human reached ");
 	}
-
-	public void doMovementAI(int randomNumber) {
+	
+	private void doMovementAI(int randomNumber) {
 		if(GameSelector.m_TRACE){
 			System.out.println("DisplayTTT::doMovementAI");
 		}
@@ -595,7 +604,7 @@ public class DisplayTTT extends JPanel implements Runnable {
 	/**
 	 * Creates the stop watch timer
 	 */
-	public void createTimer() {
+	private void createTimer() {
 		if(GameSelector.m_TRACE){
 			System.out.println("DisplayTTT::createTimer");
 		}
@@ -618,7 +627,7 @@ public class DisplayTTT extends JPanel implements Runnable {
 	}
 
 	/** Displays the stopwatch timer **/
-	public void displayTimer() {
+	private void displayTimer() {
 		if(GameSelector.m_TRACE){
 			System.out.println("DisplayTTT::displayTimer");
 		}
@@ -655,11 +664,13 @@ public class DisplayTTT extends JPanel implements Runnable {
 			System.out.println("DisplayTTT::addSaveButton");
 		}
 		m_saveGameButton.setIcon(new ImageIcon("res/SAVEBTN.png"));
-		m_saveGameButton.setBorderPainted(false); // this stuff hides button chrome
+		// this stuff hides button chrome
+		m_saveGameButton.setBorderPainted(false); 
 		m_saveGameButton.setFocusPainted(false);
 		m_saveGameButton.setContentAreaFilled(false);
-		m_saveGameButton.setBounds(Display.XPOS_COL250+Display.OFFSET4, Display.YPOS_ROW500,
-				Display.COMPONENT_WIDTH160, Display.COMPONENT_HEIGHT85);
+		m_saveGameButton.setBounds(Display.XPOS_COL250+Display.OFFSET4, 
+				Display.YPOS_ROW500, Display.COMPONENT_WIDTH160,
+				Display.COMPONENT_HEIGHT85);
 		m_saveGameButton.setVisible(true);
 		m_saveGameButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -668,11 +679,10 @@ public class DisplayTTT extends JPanel implements Runnable {
 			}
 		});
 		add(m_saveGameButton);
-	
 	}
 
 	/** method to save the game to the file res/saveTTT.csv */
-	public void saveGame(){
+	private void saveGame(){
 		if(GameSelector.m_TRACE){
 			System.out.println("DisplayTTT::saveGame");
 		}
@@ -733,7 +743,7 @@ public class DisplayTTT extends JPanel implements Runnable {
 	}
 
 	/** Updates the players turn */
-	public void refreshUserUI(String currentTurn) {
+	private void refreshUserUI(String currentTurn) {
 		if(GameSelector.m_TRACE){
 			System.out.println("DisplayTTT::refreshUserUI");
 		}
