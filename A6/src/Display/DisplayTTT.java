@@ -406,10 +406,9 @@ public class DisplayTTT extends JPanel implements Runnable {
 				gridSquares.get(squareRef).setForeground(Color.WHITE);
 				
 				Xs.add(squareRef);
-				// x-c current turn, turn before = x-1, 2 turns before x-2
 				
-				for(int i = 0; i<Xs.size()-1; i++){
-					gridSquares.get(Xs.get(i)).setText("X-"+(m_countX-i));
+				for(int i = 0; i<Xs.size(); i++){
+					gridSquares.get(Xs.get(i)).setText("X-"+m_countX);
 				}
 				
 				System.out.println("An X has been placed at" + squareRef);
