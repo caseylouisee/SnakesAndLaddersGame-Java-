@@ -96,7 +96,6 @@ public class GameSelector {
 		TTTButton.setContentAreaFilled(false);
 		TTTButton.setBounds(400, 100, 236, 242);
 		TTTButton.addActionListener(new ActionListener() {
-
 			public void actionPerformed(ActionEvent e) {
 				m_frame.dispose();
 				new MenuTTT();

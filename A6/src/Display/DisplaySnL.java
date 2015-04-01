@@ -89,6 +89,9 @@ public class DisplaySnL extends JPanel implements Runnable{
 
 	/** Button to save game */
 	private JButton m_saveGameButton = new JButton();
+	
+	/** Button to go back to main menu */
+	private JButton m_backButton = new JButton();
 
 	/** JPanel to contain player information */
 	private JPanel m_playerInfoPanel;
@@ -101,13 +104,13 @@ public class DisplaySnL extends JPanel implements Runnable{
 
 	/** Arraylist to contain player colours */
 	private ArrayList<JLabel> m_playerColour;
-	
+
 	/** JPanel used for winning visual feedback */
 	JPanel boardOverlay = null;
-	
+
 	/** Boolean used if visualization is selected */
 	Boolean m_visualize;
-	
+
 	/** gets the co_ordinates on the board for a particular square
 	 * @param squareNo
 	 */
@@ -124,10 +127,10 @@ public class DisplaySnL extends JPanel implements Runnable{
 		}
 		int x = (xTranslation * 50);
 		int y = (yTranslation * 50) - 0;
-	
+
 		// System.out.println("X coordinate: " + x);
 		// System.out.println("Y coordinate: " + y);
-	
+
 		int[] coordinates = { x, y };
 		return coordinates;
 	}
@@ -167,7 +170,8 @@ public class DisplaySnL extends JPanel implements Runnable{
 	 * @param players set to m_players
 	 */
 	public DisplaySnL(GameSnL gameSnL, ArrayList<Integer> snakesList,
-			ArrayList<Integer> laddersList, ArrayList<PlayerSnL> players, final Boolean visualization) {
+			ArrayList<Integer> laddersList, ArrayList<PlayerSnL> players, 
+			final Boolean visualization) {
 		if(GameSelector.m_TRACE){
 			System.out.println("DisplaySnL::ConstructorCalled");
 		}
@@ -199,6 +203,7 @@ public class DisplaySnL extends JPanel implements Runnable{
 		add(m_playerTurn);
 		addRollDice();
 		addSaveButton();
+		addBackButton();
 		addPlayerInformation();
 
 		createTimer();
@@ -283,8 +288,8 @@ public class DisplaySnL extends JPanel implements Runnable{
 					if(m_players.get(m_gameSnL.getIterator()).getPlayerName()
 							.endsWith(".AI")){
 						m_rollDiceBtn.doClick();
-						
-						
+
+
 					}
 				}
 
@@ -293,7 +298,7 @@ public class DisplaySnL extends JPanel implements Runnable{
 						+ "'s turn!");
 
 				m_dicePicLabel.setIcon(new ImageIcon("res/Dice"+roll+".png"));
-				
+
 				//Prints out next players current location.
 				System.out.println("player position " +
 						m_players.get(m_gameSnL.getIterator())
@@ -307,7 +312,7 @@ public class DisplaySnL extends JPanel implements Runnable{
 		m_dicePicLabel.setBounds(Display.XPOS_COL400+Display.OFFSET1,
 				Display.YPOS_ROW550, Display.COMPONENT_WIDTH150,
 				Display.COMPONENT_HEIGHT100);
-		
+
 		add(m_rollDiceBtn);
 		add(m_dicePicLabel);
 
@@ -322,8 +327,9 @@ public class DisplaySnL extends JPanel implements Runnable{
 			System.out.println("DisplaySnL::addPlayerInformation");
 		}
 		m_playerInfoPanel = new JPanel();
-		m_playerInfoPanel.setBounds(Display.XPOS_COL50, Display.YPOS_ROW550, 
-				Display.COMPONENT_WIDTH300, Display.COMPONENT_HEIGHT80);
+		m_playerInfoPanel.setBounds(Display.XPOS_COL50, 
+				Display.YPOS_ROW550-Display.OFFSET2, Display.COMPONENT_WIDTH300, 
+				Display.COMPONENT_HEIGHT80);
 		m_playerInfoPanel.setLayout(null);
 		m_playerInfoPanel.setBackground(Color.BLACK);
 
@@ -332,7 +338,6 @@ public class DisplaySnL extends JPanel implements Runnable{
 		m_playerColour = new ArrayList<JLabel>();
 
 		for(int i = 0; i<m_players.size(); i++){
-
 			m_playerInfo.add(new JLabel(m_gameSnL.getPlayer(i)
 					.getPlayerName()));
 			m_playerInfo.get(i).setBounds(0, Display.OFFSET2*i, 
@@ -341,15 +346,19 @@ public class DisplaySnL extends JPanel implements Runnable{
 
 			Integer location = m_gameSnL.getPlayerLocation(i);
 			m_playerPos.add(new JLabel(location.toString()));
-			m_playerPos.get(i).setBounds(Display.XPOS_COL150, Display.OFFSET2*i, 
-					Display.COMPONENT_WIDTH50, Display.COMPONENT_HEIGHT20);
+			m_playerPos.get(i).setBounds(Display.XPOS_COL100, Display.OFFSET2*i, 
+					Display.COMPONENT_WIDTH20, Display.COMPONENT_HEIGHT20);
 			m_playerPos.get(i).setForeground(Color.WHITE);
-			
+
 			// Prints java.awt.color blah blah need to fix
-			/*m_playerColour.add(new JLabel(m_gameSnL.getPlayer(i).getPlayerColor().toString()));
-			m_playerColour.get(i).setBounds(Display.XPOS_COL200, Display.OFFSET2*i, 
-					Display.COMPONENT_WIDTH50, Display.COMPONENT_HEIGHT20);
-			m_playerColour.get(i).setForeground(Color.WHITE);*/
+			/*
+			 * m_playerColour.add(new JLabel(m_gameSnL.getPlayer(i)
+			 * 	.getPlayerColor().toString()));
+			 *	m_playerColour.get(i).setBounds(Display.XPOS_COL200, 
+			 *		Display.OFFSET2*i, 
+			 *			Display.COMPONENT_WIDTH50, Display.COMPONENT_HEIGHT20);
+			 *	m_playerColour.get(i).setForeground(Color.WHITE);
+			 */
 
 			m_playerInfoPanel.add(m_playerInfo.get(i));
 			m_playerInfoPanel.add(m_playerPos.get(i));
@@ -371,7 +380,32 @@ public class DisplaySnL extends JPanel implements Runnable{
 		Integer location = m_gameSnL.getPlayerLocation(m_gameSnL.getIterator());
 		m_playerPos.get(m_gameSnL.getIterator()).setText(location.toString());	
 	}
-
+	
+	/** adds the Back button to screen setting bounds etc */
+	private void addBackButton() {
+		if(GameSelector.m_TRACE){
+			System.out.println("DisplayTTT::addBackButton");
+		}
+		// add back button
+		m_backButton.setIcon(new ImageIcon("res/BACKBTN.png"));
+		m_backButton.setBorderPainted(false); // this stuff hides button chrome
+		m_backButton.setFocusPainted(false);
+		m_backButton.setContentAreaFilled(false);
+		m_backButton.setBounds(Display.XPOS_COL50, Display.YPOS_ROW600, 
+				Display.COMPONENT_WIDTH160, Display.COMPONENT_HEIGHT85);
+		m_backButton.setVisible(true);
+		// listen for clicks
+		m_backButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				m_gameSnL.frameDispose();
+				gameRunning = false;
+				m_gameSnL.reset();
+				new GameSelector(GameSelector.m_TRACE); 
+			}
+		});
+		add(m_backButton);
+	}
+	
 	/**
 	 * Sets the save button text and bounds and creates action listener
 	 */
@@ -384,8 +418,9 @@ public class DisplaySnL extends JPanel implements Runnable{
 		m_saveGameButton.setFocusPainted(false);
 		m_saveGameButton.setContentAreaFilled(false);
 		//m_saveGameButton.setText("Save Game");
-		m_saveGameButton.setBounds(Display.XPOS_COL50, Display.YPOS_ROW600, 
-				Display.COMPONENT_WIDTH160, Display.COMPONENT_HEIGHT85);
+		m_saveGameButton.setBounds(Display.XPOS_COL200 + Display.OFFSET4, 
+				Display.YPOS_ROW600, Display.COMPONENT_WIDTH160, 
+				Display.COMPONENT_HEIGHT85);
 		m_saveGameButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				JOptionPane.showMessageDialog(null, "Game saved");
@@ -393,8 +428,6 @@ public class DisplaySnL extends JPanel implements Runnable{
 			}
 		});	
 		add(m_saveGameButton);
-
-
 	}
 
 	/** method to save game to the file res/saveSnL.csv */
@@ -504,7 +537,7 @@ public class DisplaySnL extends JPanel implements Runnable{
 					m_players.get(i).getPlayerLocation(),
 					m_players.get(i).getLastLocation());
 		}
-	
+
 		repaint();
 	}
 
@@ -545,35 +578,33 @@ public class DisplaySnL extends JPanel implements Runnable{
 		}
 		graphics.setColor(playerColor);
 		int[] coordinates = getCoordinates(squareNo);
-		graphics.fillOval(coordinates[0] + 20, coordinates[1] + 25,
+		graphics.fillOval(coordinates[0] + 15, coordinates[1] + 20,
 				PIECE_DIAMETER, PIECE_DIAMETER);
-		
+
 		if(m_visualize){
 			if(GameSelector.m_TRACE){
 				System.out.println("DisplaySnL::printPlayer with visualization");
 			}
-			//int [] lastCoordinates = getCoordinates(lastLocation);
-			System.out.println(m_gameSnL.getPlayer(1).getAllLocations());
-			
+
 			for(int i = 0; i<m_players.size(); i++){
-				for(int j = 0; j<m_players.get(i).getAllLocations().size(); j++){
+				for(int j = 1; j<m_players.get(i).getAllLocations().size(); j++){
 					int number = m_players.get(i).getAllLocations().get(j);
+					int line = m_players.get(i).getAllLocations().get(j-1);
 					int [] lastCoordinates = getCoordinates(number);
+					int [] lineCoordinates = getCoordinates(line);
 					graphics.setColor(m_players.get(i).getPlayerColor());
-					graphics.fillOval(lastCoordinates[0] + 20, lastCoordinates[1] + 25,
+					graphics.fillOval(lastCoordinates[0] +15+(i*2), 
+							lastCoordinates[1] + 20+(i*2),
 							PIECE_DIAMETER, PIECE_DIAMETER);
-					//draws path but not correctly
-					/*graphics.drawLine(coordinates[0]+30, coordinates[1]+35,
-							lastCoordinates[0]+30, lastCoordinates[1]+35);*/
+					graphics.drawLine(lastCoordinates[0]+20+(i*2), 
+							lastCoordinates[1]+25+(i*2),
+							lineCoordinates[0]+20+(i*2), 
+							lineCoordinates[1]+25+(i*2));
 				}
 			}
-			//only prints line to last single location
-			/*int [] lastCoordinates = getCoordinates(lastLocation);
-			graphics.drawLine(coordinates[0]+30, coordinates[1]+35,
-					lastCoordinates[0]+30, lastCoordinates[1]+35);*/
 		}
 	}
-	
+
 	/** 
 	 * Prints the player counter according to their colour 
 	 * @param graphics
@@ -590,10 +621,11 @@ public class DisplaySnL extends JPanel implements Runnable{
 		graphics.setColor(playerColor);
 		graphics.fillOval(coordinates[0], coordinates[1],
 				PIECE_DIAMETER, PIECE_DIAMETER);
-		
+
 		if(m_visualize){
 			if(GameSelector.m_TRACE){
-				System.out.println("DisplaySnL::printPlayer with visualization");
+				System.out.println("DisplaySnL::printPlayer with"
+						+ " visualization");
 			}
 			int [] lastCoordinates = getCoordinates(lastLocation);
 			graphics.drawLine(coordinates[0]+30, coordinates[1]+35,
@@ -655,9 +687,6 @@ public class DisplaySnL extends JPanel implements Runnable{
 			int startSquare = squares.get(i);
 			i++;
 			int endSquare = squares.get(i);
-
-			// System.out.println("Start square is: " + startSquare);
-			// System.out.println("End square is: " + endSquare);
 
 			//gets coordinates for ladder square locations
 			int[] startCoordinates = getCoordinates(startSquare);
