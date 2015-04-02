@@ -71,7 +71,7 @@ public class MenuSnL {
 
 	/** Array to hold the type of players */
 	private final String[] HUMAN_OR_AI = {"Human", "AI"};
-	
+
 	/** Maximum number of players */
 	private final int MAX_NUM_PLAYERS = 4;
 
@@ -112,7 +112,7 @@ public class MenuSnL {
 
 	/** Number of ladders initialised to 1 */
 	private int m_laddersNo = 1;
-	
+
 	/** Visualization check box */
 	private JCheckBox visualization;
 
@@ -137,7 +137,7 @@ public class MenuSnL {
 		test.loadGame();
 		test.sendForm();
 	}
-	
+
 	/** 
 	 * This is the MenuSnL constructor. It sets up a new frame setting 
 	 * its height and width. 
@@ -367,7 +367,7 @@ public class MenuSnL {
 		visualization.setText("Visualization?");
 		visualization.setForeground(Color.WHITE);
 		visualization.setVisible(true);
-		
+
 		visualization.addItemListener(new ItemListener() {
 			public void itemStateChanged(ItemEvent event) {
 				Object source =  event.getItemSelectable();
@@ -375,16 +375,16 @@ public class MenuSnL {
 					System.out.println("MenuSnL :: addVisualizationCheckBox "
 							+ "- Selected");
 				}
-				 if (event.getStateChange() == ItemEvent.DESELECTED){
+				if (event.getStateChange() == ItemEvent.DESELECTED){
 					System.out.println("MenuSnL :: addVisualizationCheckBox "
 							+ "- Deselected");
 				}
 			}
 		});
-		
+
 		m_frame.add(visualization);
 	}
-	
+
 	/** Adds the snakes and ladders logo to the frame. */
 	private void addLogo() {
 		if(GameSelector.m_TRACE){
@@ -449,7 +449,7 @@ public class MenuSnL {
 				loadGame();
 			}
 		});
-		
+
 		m_frame.add(m_loadGame);
 		m_frame.add(m_initGameButton);
 		m_frame.add(m_goBackButton);
@@ -473,73 +473,78 @@ public class MenuSnL {
 
 		try{
 			br = new BufferedReader(new FileReader(csvFile));
-			String[] columns = new String[5];
-			int numberOfPlayers = Integer.parseInt(br.readLine());
-			System.out.println(numberOfPlayers);
-
 			line = br.readLine();
-			columns = line.split(",");
 
-			Color color;
-			for(int i=0;i<numberOfPlayers;i++){
+			if(line==null){
+				JOptionPane.showMessageDialog(null, "No save game data found");
+			}else{	
+				String[] columns = new String[5];
+				int numberOfPlayers = Integer.parseInt(line);
+				System.out.println(numberOfPlayers);
 
-				m_playerNames.add(columns[0]);
-				color = new Color(Integer.parseInt(columns[1]),
-						Integer.parseInt(columns[2]),
-						Integer.parseInt(columns[3]));
-				m_playerColors.add(color);
-				m_playerPositions.add(Integer.parseInt(columns[4]));
-
-				for(int j=0;j<5;j++){
-					System.out.print(columns[j]+",");
-
-				}
-				System.out.println();
 				line = br.readLine();
 				columns = line.split(",");
-			}
 
-			int numberOfSnakes = Integer.parseInt(columns[0]);
-			int numberOfLadders = Integer.parseInt(columns[1]);
-			System.out.println(columns[0]+", "+columns[1]);
+				Color color;
+				for(int i=0;i<numberOfPlayers;i++){
 
-			line = br.readLine();
-			columns = line.split(",");
+					m_playerNames.add(columns[0]);
+					color = new Color(Integer.parseInt(columns[1]),
+							Integer.parseInt(columns[2]),
+							Integer.parseInt(columns[3]));
+					m_playerColors.add(color);
+					m_playerPositions.add(Integer.parseInt(columns[4]));
+					
+					for(int j=0;j<5;j++){
+						System.out.print(columns[j]+",");
+					}
+					System.out.println();
+					line = br.readLine();
+					columns = line.split(",");
+				}
 
-			for(int i=0;i<numberOfSnakes*2;i+=2){
-				m_snakes.add(Integer.parseInt(columns[i]));
-				m_snakes.add(Integer.parseInt(columns[i+1]));
-			}
-			line = br.readLine();
-			columns = line.split(",");
-			for(int i=0; i<numberOfLadders*2;i+=2){
-				m_ladders.add(Integer.parseInt(columns[i]));
-				m_ladders.add(Integer.parseInt(columns[i+1]));
-			}
+				int numberOfSnakes = Integer.parseInt(columns[0]);
+				int numberOfLadders = Integer.parseInt(columns[1]);
+				System.out.println(columns[0]+", "+columns[1]);
 
-			System.out.println(m_snakes);
-			System.out.println(m_ladders);
-		} catch (FileNotFoundException e) {
+				line = br.readLine();
+				columns = line.split(",");
+
+				for(int i=0;i<numberOfSnakes*2;i+=2){
+					m_snakes.add(Integer.parseInt(columns[i]));
+					m_snakes.add(Integer.parseInt(columns[i+1]));
+				}
+	
+				line = br.readLine();
+				columns = line.split(",");
+	
+				for(int i=0; i<numberOfLadders*2;i+=2){
+					m_ladders.add(Integer.parseInt(columns[i]));
+					m_ladders.add(Integer.parseInt(columns[i+1]));
+				}
+				
+				br.close();
+				m_frame.dispose();
+				new GameSnL(m_playerNames,m_playerColors,m_playerPositions,
+						m_snakes,m_ladders, false);
+				
+				if(GameSelector.m_TRACE){
+					System.out.println("MenuSnL:: load() - new GameSnL");
+				}
+				
+				System.out.println(m_snakes);
+				System.out.println(m_ladders);
+			} 
+		}catch (FileNotFoundException e) {
 			JOptionPane.showMessageDialog(null, "No save game data found");
 		} catch (IOException e) {
 			e.printStackTrace();
 		} finally {
-			if (br != null) {
-				try {
-					br.close();
-					m_frame.dispose();
-					new GameSnL(m_playerNames,m_playerColors,m_playerPositions,
-							m_snakes,m_ladders, false);
-					if(GameSelector.m_TRACE){
-						System.out.println("new GameSnL");
-					}
-				} catch (IOException e) {
-					e.printStackTrace();
-				}
-			}
+			System.out.print("");
 		}
-
 	}
+
+
 
 	/** 
 	 * Sends the information of all the players and the 
@@ -667,7 +672,7 @@ public class MenuSnL {
 				JOptionPane.INFORMATION_MESSAGE);
 
 		m_frame.dispose();
-	
+
 		if(visualization.isSelected()){
 			new GameSnL(names, colors, m_snakesNo, m_laddersNo, true);
 			if(GameSelector.m_TRACE){

@@ -29,7 +29,7 @@ public abstract class Square {
 	 **/
 	public void setValue(char x) {
 		if(GameSelector.m_TRACE){
-			System.out.println("Sqaure::setValue() valid parameter:"+x+
+			System.out.println("Square::setValue() valid parameter:"+x+
 					" doesn't return anything.");
 		}
 		this.m_x = x;
@@ -41,7 +41,7 @@ public abstract class Square {
 	 */
 	public char getValue() {
 		if(GameSelector.m_TRACE){
-			System.out.println("Sqaure::getValue() no parameters needed,"+
+			System.out.println("Square::getValue() no parameters needed,"+
 					"returns: "+m_x);
 		}
 		return m_x;
@@ -53,7 +53,7 @@ public abstract class Square {
 	 */
 	public int getPosition() {
 		if(GameSelector.m_TRACE){
-			System.out.println("Sqaure::getPosition() no parameters needed,"+
+			System.out.println("Square::getPosition() no parameters needed,"+
 					"returns: "+m_position);
 		}
 		return m_position;
@@ -67,7 +67,7 @@ public abstract class Square {
 	public String toString() {
 		String s = String.valueOf(m_position);
 		if(GameSelector.m_TRACE){
-			System.out.println("Sqaure::toString() no parameters needed,"+
+			System.out.println("Square::toString() no parameters needed,"+
 					"returns: "+m_position+" as a string, not int.");
 		}
 		return s;

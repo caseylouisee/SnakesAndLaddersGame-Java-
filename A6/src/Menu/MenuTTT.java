@@ -14,6 +14,7 @@ package Menu;
 
 
 import java.awt.Color;
+import java.awt.HeadlessException;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
@@ -85,10 +86,10 @@ public class MenuTTT {
 
 	/** Button to initialise game */
 	private JButton m_initGameButton;
-	
+
 	/** Check box for visualization */
 	private JCheckBox visualization;
-	
+
 	/** Boolean for visualization */
 	private Boolean visualize = false;
 
@@ -116,11 +117,11 @@ public class MenuTTT {
 	 * It sets the frame size and adds all the objects.
 	 **/
 	public MenuTTT() {
-		
+
 		if(GameSelector.m_TRACE){
 			System.out.println("MenuTTT::ConstructorCalled");
 		}
-		
+
 		m_frame = new JFrame(WINDOW_TITLE);
 		m_frame.setBounds(100, 100, WINDOW_WIDTH, WINDOW_HEIGHT);
 		m_frame.setLayout(null);
@@ -224,7 +225,7 @@ public class MenuTTT {
 			m_frame.add(m_playersNameTextField.get(i));
 		}
 	}
-	
+
 	/** Adds the visualization check box to the frame. */
 	private void addVisualizationCheckBox(){
 		if(GameSelector.m_TRACE){
@@ -232,11 +233,11 @@ public class MenuTTT {
 		}
 		visualization = new JCheckBox("Visualization?");
 		visualization.setBounds(Display.XPOS_COL200, Display.YPOS_ROW200+Display.OFFSET4,
-		Display.COMPONENT_WIDTH150, Display.COMPONENT_HEIGHT20);
+				Display.COMPONENT_WIDTH150, Display.COMPONENT_HEIGHT20);
 		visualization.setText("Visualization?");
 		visualization.setForeground(Color.WHITE);
 		visualization.setVisible(true);
-		
+
 		visualization.addItemListener(new ItemListener() {
 			public void itemStateChanged(ItemEvent event) {
 				Object source =  event.getItemSelectable();
@@ -244,13 +245,13 @@ public class MenuTTT {
 					visualize = true;
 					System.out.println("MenuSnL :: addVisualizationCheckBox - Selected");
 				}
-				 if (event.getStateChange() == ItemEvent.DESELECTED){
-					 visualize = false;
+				if (event.getStateChange() == ItemEvent.DESELECTED){
+					visualize = false;
 					System.out.println("MenuSnL :: addVisualizationCheckBox - Deselected");
 				}
 			}
 		});
-		
+
 		m_frame.add(visualization);
 	}
 
@@ -289,7 +290,7 @@ public class MenuTTT {
 				new GameSelector(GameSelector.m_TRACE);
 			}
 		});
-		
+
 		m_initGameButton = new JButton();
 		m_initGameButton.setIcon(new ImageIcon(("res/STARTBTN.png")));
 		m_initGameButton.setBorderPainted(false);
@@ -304,8 +305,8 @@ public class MenuTTT {
 				sendForm();
 			}
 		});
-		
-		
+
+
 		JButton loadGame = new JButton();
 		loadGame.setText("Load Game");
 		loadGame.setIcon(new ImageIcon(("res/LOADBTN.png")));
@@ -320,7 +321,7 @@ public class MenuTTT {
 				loadGame();
 			}
 		});
-		
+
 		m_frame.add(loadGame);
 		m_frame.add(m_initGameButton);
 		m_frame.add(m_goBackButton);
@@ -344,28 +345,27 @@ public class MenuTTT {
 			String[] columns = 
 					new String[DisplayTTT.GRID_HEIGHT * DisplayTTT.GRID_WIDTH];
 
-			line = br.readLine();
-			columns = line.split(",");
+			try {
+				line = br.readLine();
 
-			playerNames[0] = columns[0];
-			piece[0] = columns[1].charAt(0);
-			playerNames[1] = columns[2];
-			piece[1] = columns[3].charAt(0);
+				if(line==null){
+					JOptionPane.showMessageDialog(null, "No save game data found");
+				}else{
+					//br.reset();
+					//line = br.readLine();
 
-			line = br.readLine();
-			columns = line.split(",");
-			for(int i=0;i<DisplayTTT.GRID_HEIGHT * DisplayTTT.GRID_WIDTH;i++){
-				squareValues[i] = columns[i].charAt(0);
-			}
+					columns = line.split(",");
 
+					playerNames[0] = columns[0];
+					piece[0] = columns[1].charAt(0);
+					playerNames[1] = columns[2];
+					piece[1] = columns[3].charAt(0);
 
-		}catch (FileNotFoundException e) {
-			JOptionPane.showMessageDialog(null, "No save game data found");
-		} catch (IOException e) {
-			e.printStackTrace();
-		} finally {
-			if (br != null) {
-				try {
+					line = br.readLine();
+					columns = line.split(",");
+					for(int i=0;i<DisplayTTT.GRID_HEIGHT * DisplayTTT.GRID_WIDTH;i++){
+						squareValues[i] = columns[i].charAt(0);
+					}
 					ArrayList<PlayerTTT> players = new ArrayList<PlayerTTT>();
 					br.close();
 					if(playerNames[0].contains(".ai")){
@@ -390,12 +390,18 @@ public class MenuTTT {
 					br.close();
 					new GameTTT(players,squareValues);
 					m_frame.dispose();
-				} catch (IOException e) {
-					e.printStackTrace();
 				}
+			} catch (IOException e) {
+				e.printStackTrace();
 			}
-		}
+		} catch (FileNotFoundException e2) {
+			JOptionPane.showMessageDialog(null, "No save game data found");
+		}finally{
+			System.out.println("");
+		}		
 	}
+
+
 	/** Sends all the player details (name, piece) to GameTTT */
 	private void sendForm() {
 		if(GameSelector.m_TRACE){

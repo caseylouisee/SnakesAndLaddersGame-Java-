@@ -50,7 +50,7 @@ public class GameTTT {
 	private int[] m_count;
 
 	/** Boolean for visualization */
-	private Boolean m_visualize;
+	private Boolean m_visualize = false;
 	/************************** ACCESSOR METHODS *****************************/
 
 	/**

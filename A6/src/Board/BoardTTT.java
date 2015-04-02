@@ -39,6 +39,8 @@ public class BoardTTT extends Board {
 	public static final int NOTHING_HAPPENED = 0;
 	public static final int O_WIN = 1;
 	public static final int X_WIN = 2;
+	
+
 
 	/**
 	 * Used to return the start and end of the winning chain for output.
@@ -68,7 +70,7 @@ public class BoardTTT extends Board {
 			m_boardGame[i] = new SquareTTT(i);
 		}
 	}
-	
+
 
 	public BoardTTT(int width, int height, char[] squareValues,
 			DisplayTTT display) {
