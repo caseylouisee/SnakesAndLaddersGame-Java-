@@ -18,6 +18,7 @@ import java.awt.event.ActionListener;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Random;
 
 import javax.swing.ImageIcon;
@@ -50,6 +51,10 @@ public class DisplayTTT extends JPanel implements Runnable {
 	 */
 	private static final long serialVersionUID = -1964065502848062227L;
 	/* ------ CONSTANTS ------ */
+	ArrayList<Integer> Xs = new ArrayList<Integer>();
+	ArrayList<Integer> Os = new ArrayList<Integer>();
+
+	
 	/** Variables to set size of buttons **/
 	public final int SHAPE_WIDTH = 50;
 	public final int SHAPE_HEIGHT = 50;
@@ -398,26 +403,46 @@ public class DisplayTTT extends JPanel implements Runnable {
 		if (!game.setMovementHuman(squareRef))
 			return; // do nothing if square is valid move but doesn't trigger a
 		// win or a draw or an invalid move.
-		ArrayList<Integer> Xs = new ArrayList<Integer>();
 		if(m_visualize){
 			if (game.getPlayerTurn().isX()) { // draws a cross
-				m_countX++;
-				//gridSquares.get(squareRef).setText("X"+m_countX);
 				gridSquares.get(squareRef).setForeground(Color.WHITE);
-				
 				Xs.add(squareRef);
-				
-				for(int i = 0; i<Xs.size(); i++){
-					gridSquares.get(Xs.get(i)).setText("X-"+m_countX);
+				System.out.print(Xs);
+				m_countX++;
+				int k = 0;
+				for(int j = m_countX; j!=0; j--){
+					if(j==1){
+						gridSquares.get(Xs.get(k)).setText("X-C");
+						gridSquares.get(Xs.get(k)).revalidate();
+						k++;
+					}else{
+						gridSquares.get(Xs.get(k)).setText("X-"+(j-1));
+						System.out.println("Xs = " + Xs.get(k) + "X-"+(j-1));
+						gridSquares.get(Xs.get(k)).revalidate();
+						k++;
+					}
 				}
-				
-				System.out.println("An X has been placed at" + squareRef);
+				System.out.println("An X has been placed at" + squareRef);	
 			} else {
-				m_countO++;
-				gridSquares.get(squareRef).setText("O"+m_countO);
 				gridSquares.get(squareRef).setForeground(Color.WHITE);
+				Os.add(squareRef);
+				System.out.print(Os);
+				m_countO++;
+				int k = 0;
+				for(int j = m_countO; j!=0; j--){
+					if(j==1){
+						gridSquares.get(Os.get(k)).setText("O-C");
+						gridSquares.get(Os.get(k)).revalidate();
+						k++;
+					}else{
+						gridSquares.get(Os.get(k)).setText("O-"+(j-1));
+						System.out.println("Os = " + Os.get(k) + "O-"+(j-1));
+						gridSquares.get(Os.get(k)).revalidate();
+						k++;
+					}
+				}
 				System.out.println("An O has been placed at" + squareRef);
-			}
+			}			
 		}else{
 			if (game.getPlayerTurn().isX()) { // draws a cross
 				gridSquares.get(squareRef).setIcon(new ImageIcon("res/CROSS.png"));
