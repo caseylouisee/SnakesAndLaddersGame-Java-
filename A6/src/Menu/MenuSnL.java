@@ -479,6 +479,7 @@ public class MenuSnL {
 				JOptionPane.showMessageDialog(null, "No save game data found");
 			}else{	
 				String[] columns = new String[5];
+				try{
 				int numberOfPlayers = Integer.parseInt(line);
 				System.out.println(numberOfPlayers);
 
@@ -494,7 +495,6 @@ public class MenuSnL {
 							Integer.parseInt(columns[3]));
 					m_playerColors.add(color);
 					m_playerPositions.add(Integer.parseInt(columns[4]));
-					
 					for(int j=0;j<5;j++){
 						System.out.print(columns[j]+",");
 					}
@@ -534,6 +534,13 @@ public class MenuSnL {
 				
 				System.out.println(m_snakes);
 				System.out.println(m_ladders);
+				}catch(NumberFormatException e){
+					JOptionPane.showMessageDialog(null, 
+							"Incorrect/corrupt save file.");
+				}
+				
+					
+					
 			} 
 		}catch (FileNotFoundException e) {
 			JOptionPane.showMessageDialog(null, "No save game data found");
