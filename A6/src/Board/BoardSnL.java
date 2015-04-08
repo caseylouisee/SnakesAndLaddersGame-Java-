@@ -122,18 +122,24 @@ public class BoardSnL extends Board {
 	public static void main(String[] args){
 		int width = 10;
 		int height = 10;
+		int randomPositionSL1 = 11;
+		int randomPositionSL2 = 45;
+		int randomPositionSL3 = 30;
+		int randomPositionSL4 = 24;
+		int randomPositionSL5 = 80;
+		int randomPositionSL6 = 15;
 		ArrayList<Integer> movementSquares = new ArrayList<>();
-		movementSquares.add(11);
-		movementSquares.add(45);
-		movementSquares.add(30);
+		movementSquares.add(randomPositionSL1);
+		movementSquares.add(randomPositionSL2);
+		movementSquares.add(randomPositionSL3);
 		ArrayList<Integer> laddersList = new ArrayList<>();
-		laddersList.add(11);
-		laddersList.add(24);
-		laddersList.add(45);
-		laddersList.add(80);
+		laddersList.add(randomPositionSL1);
+		laddersList.add(randomPositionSL4);
+		laddersList.add(randomPositionSL2);
+		laddersList.add(randomPositionSL5);
 		ArrayList<Integer> snakesList = new ArrayList<>();
-		snakesList.add(30);
-		snakesList.add(15);
+		snakesList.add(randomPositionSL3);
+		snakesList.add(randomPositionSL6);
 		
 		BoardSnL boardsnl = new BoardSnL(width, height, movementSquares,
 				laddersList, snakesList);
