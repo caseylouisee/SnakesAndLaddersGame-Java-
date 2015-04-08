@@ -71,7 +71,8 @@ public abstract class PlayerSnL extends Player {
 	 * @param displaySnL
 	 * is current all game information
 	 * @param s is destination square
-	 * @param isMovementSquare to check if the piece is on the destination square or not
+	 * @param isMovementSquare to check if the piece is on the destination 
+	 * square or not
 	 * @return true if piece gets to destination square, or false if the 
 	 * destination is out of bound
 	 */
@@ -80,7 +81,7 @@ public abstract class PlayerSnL extends Player {
 		if (s.getPosition() <= 100 && s.getPosition() >= 0) {
 			if (s.getPosition() > m_playerLocation) {
 				if (GameSelector.m_TRACE) {
-					System.out.println(s.getPosition() + " " + m_playerLocation);
+					System.out.println(s.getPosition() +" "+m_playerLocation);
 				}
 				for (int i = m_playerLocation; i < s.getPosition(); i++) {
 					m_playerLocation = i + 1;
@@ -100,7 +101,7 @@ public abstract class PlayerSnL extends Player {
 				}
 			} else {
 				if (GameSelector.m_TRACE) {
-					System.out.println(s.getPosition() + " " + m_playerLocation);
+					System.out.println(s.getPosition()+" "+m_playerLocation);
 				}
 				for (int i = m_playerLocation; i > s.getPosition(); i--) {
 					m_playerLocation = i - 1;
@@ -143,7 +144,7 @@ public abstract class PlayerSnL extends Player {
 		if (s.getPosition() <= 100 && s.getPosition() >= 0) {
 			if (s.getPosition() > m_playerLocation) {
 				if (GameSelector.m_TRACE) {
-					System.out.println(s.getPosition() + " " + m_playerLocation);
+					System.out.println(s.getPosition() +" "+m_playerLocation);
 				}
 				for (int i = m_playerLocation; i < s.getPosition(); i++) {
 					m_playerLocation = i + 1;

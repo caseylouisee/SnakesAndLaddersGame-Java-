@@ -113,7 +113,8 @@ public class AIPlayerTTT extends PlayerTTT {
 	public ArrayList<Integer> getPieceLocations() {
 		if(GameSelector.m_TRACE){
 			System.out.println("AIPlayerTTT::getPieceLocations()  "
-					+ "get player all  piece locations: "+super.getPieceLocations());
+					+ "get player all  piece locations: "+
+					super.getPieceLocations());
 		}
 		return super.getPieceLocations();
 	}

@@ -21,6 +21,8 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 
+import Display.Display;
+
 /**
  * @class GameSelector
  * @brief Creates the starting menu depending on game choice
@@ -53,7 +55,8 @@ public class GameSelector {
 					+ "no parameters needed") ;
 		}
 		m_frame = new JFrame(WINDOW_TITLE);
-		m_frame.setBounds(100, 100, WINDOW_WIDTH, WINDOW_HEIGHT);
+		m_frame.setBounds(Display.XPOS_COL100, Display.YPOS_ROW100,
+				WINDOW_WIDTH, WINDOW_HEIGHT);
 		m_frame.getContentPane().setLayout(null);
 		m_frame.setResizable(false);
 		m_frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -61,7 +64,8 @@ public class GameSelector {
 		JLabel title = new JLabel("Choose a game to begin!",
 				SwingConstants.CENTER);
 		title.setForeground(Color.WHITE);
-		title.setBounds(0, 20, WINDOW_WIDTH, 50);
+		title.setBounds(0, Display.OFFSET20, WINDOW_WIDTH, 
+				Display.COMPONENT_WIDTH50);
 		m_frame.getContentPane().add(title);
 	}
 
@@ -76,7 +80,8 @@ public class GameSelector {
 		SnLButton.setBorderPainted(false);
 		SnLButton.setFocusPainted(false);
 		SnLButton.setContentAreaFilled(false);
-		SnLButton.setBounds(80, 100, 236, 242);
+		SnLButton.setBounds(Display.XPOS_COL100, Display.YPOS_ROW100, 
+				Display.COMPONENT_WIDTH250, Display.COMPONENT_HEIGHT250);
 		SnLButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				m_frame.dispose();
@@ -86,7 +91,8 @@ public class GameSelector {
 
 		JLabel snakesAndLadders = new JLabel("Snakes and Ladders");
 		snakesAndLadders.setForeground(Color.WHITE);
-		snakesAndLadders.setBounds(115, 350, WINDOW_WIDTH, 50);
+		snakesAndLadders.setBounds(Display.XPOS_COL150, Display.YPOS_ROW350,
+				WINDOW_WIDTH, Display.COMPONENT_HEIGHT50);
 		snakesAndLadders.setForeground(Color.WHITE);
 
 		JButton TTTButton = new JButton();
@@ -94,7 +100,8 @@ public class GameSelector {
 		TTTButton.setBorderPainted(false);
 		TTTButton.setFocusPainted(false);
 		TTTButton.setContentAreaFilled(false);
-		TTTButton.setBounds(400, 100, 236, 242);
+		TTTButton.setBounds(Display.XPOS_COL400, Display.YPOS_ROW100, 
+				Display.COMPONENT_WIDTH250, Display.COMPONENT_HEIGHT250);
 		TTTButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				m_frame.dispose();
@@ -104,7 +111,8 @@ public class GameSelector {
 
 		JLabel ticTacToe = new JLabel("Dans Crazy Tic Tac Toe");
 		ticTacToe.setForeground(Color.WHITE);
-		ticTacToe.setBounds(450, 350, WINDOW_WIDTH, 50);
+		ticTacToe.setBounds(Display.XPOS_COL450, Display.YPOS_ROW350, 
+				WINDOW_WIDTH, Display.COMPONENT_HEIGHT50);
 		ticTacToe.setForeground(Color.WHITE);
 		m_frame.getContentPane().add(snakesAndLadders);
 		m_frame.getContentPane().add(ticTacToe);

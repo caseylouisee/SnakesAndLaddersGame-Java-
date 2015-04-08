@@ -115,7 +115,8 @@ public class HumanPlayerTTT extends PlayerTTT {
 	public ArrayList<Integer> getPieceLocations() {
 		if(GameSelector.m_TRACE){
 			System.out.println("HumanPlayerTTT::getPieceLocations()  "
-					+ "get player all  piece locations: "+super.getPieceLocations());
+					+ "get player all  piece locations: "+
+					super.getPieceLocations());
 		}
 		return super.getPieceLocations();
 	}

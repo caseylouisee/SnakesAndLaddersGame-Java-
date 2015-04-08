@@ -184,7 +184,7 @@ public class DisplayTTT extends JPanel implements Runnable {
 				// set position of buttons to appear in grid formation, with
 				// 15px margin on left and top.
 				gridSquares.get(squareRef).setBounds(SHAPE_WIDTH * i + 
-						Display.OFFSET2, SHAPE_HEIGHT * j + Display.OFFSET2, 
+						Display.OFFSET15, SHAPE_HEIGHT * j + Display.OFFSET15, 
 						SHAPE_WIDTH, SHAPE_HEIGHT);
 				gridSquares.get(squareRef).setBorder(buttonBorder);
 				gridSquares.get(squareRef).setIcon(idleImage); // reset buttons
@@ -237,7 +237,7 @@ public class DisplayTTT extends JPanel implements Runnable {
 				// set position of buttons to appear in grid formation, with
 				// 15px margin on left and top.
 				gridSquares.get(squareRef).setBounds(SHAPE_WIDTH * i +
-						Display.OFFSET2, SHAPE_HEIGHT * j + Display.OFFSET2,
+						Display.OFFSET15, SHAPE_HEIGHT * j + Display.OFFSET15,
 						SHAPE_WIDTH, SHAPE_HEIGHT);
 				gridSquares.get(squareRef).setBorder(buttonBorder);
 				gridSquares.get(squareRef).setIcon(idleImage); // reset buttons
@@ -274,7 +274,6 @@ public class DisplayTTT extends JPanel implements Runnable {
 					playGame();
 				}
 			}
-
 		}
 	}
 
@@ -293,7 +292,6 @@ public class DisplayTTT extends JPanel implements Runnable {
 						aiMovementStrategy();
 						playGame();
 					}	
-
 				};
 				Timer timer = new Timer(1000, listen);
 				timer.setRepeats(false);
@@ -317,7 +315,7 @@ public class DisplayTTT extends JPanel implements Runnable {
 			initialPlay = false;
 		} else if (!initialPlay) {
 			try{
-				if ((game.getBoard().accessSquare(RANDOM + 1).getValue() == ' ')
+				if ((game.getBoard().accessSquare(RANDOM + 1).getValue() ==' ')
 						&& ((RANDOM + 1) <= 63) && (RANDOM % 8 != 7)) {
 					doMovementAI(RANDOM + 1);
 					RANDOM = RANDOM + 1;
@@ -706,7 +704,7 @@ public class DisplayTTT extends JPanel implements Runnable {
 		}
 		if (m_stopWatch == null) {
 
-			m_lblTimer.setBounds(Display.XPOS_COL200-Display.OFFSET4,
+			m_lblTimer.setBounds(Display.XPOS_COL200-Display.OFFSET20,
 					Display.YPOS_ROW550, Display.COMPONENT_WIDTH150, 
 					Display.COMPONENT_HEIGHT40);
 			m_lblTimer.setForeground(Color.WHITE);
@@ -759,7 +757,7 @@ public class DisplayTTT extends JPanel implements Runnable {
 		m_saveGameButton.setBorderPainted(false); 
 		m_saveGameButton.setFocusPainted(false);
 		m_saveGameButton.setContentAreaFilled(false);
-		m_saveGameButton.setBounds(Display.XPOS_COL250+Display.OFFSET4, 
+		m_saveGameButton.setBounds(Display.XPOS_COL250+Display.OFFSET20, 
 				Display.YPOS_ROW500, Display.COMPONENT_WIDTH160,
 				Display.COMPONENT_HEIGHT85);
 		m_saveGameButton.setVisible(true);
@@ -817,17 +815,18 @@ public class DisplayTTT extends JPanel implements Runnable {
 		}
 		// sets colours and bounds for turn and list of players labels.
 		dispTurn.setForeground(Color.WHITE);
-		dispTurn.setBounds(Display.OFFSET1, Display.YPOS_ROW450-Display.OFFSET4, 
+		dispTurn.setBounds(Display.OFFSET10, 
+				Display.YPOS_ROW450-Display.OFFSET20, 
 				Display.COMPONENT_WIDTH350, Display.COMPONENT_HEIGHT20);
 		dispPlayers.setForeground(Color.WHITE);
-		dispPlayers.setBounds(Display.OFFSET1, Display.YPOS_ROW450,
+		dispPlayers.setBounds(Display.OFFSET10, Display.YPOS_ROW450,
 				Display.COMPONENT_WIDTH350, Display.COMPONENT_HEIGHT20);
 		dispPlayers.setText("Players playing: "
 				+ game.getPlayers().get(0).getPlayerName() + ","
 				+ game.getPlayers().get(1).getPlayerName());
 		dispCount.setForeground(Color.WHITE);
-		dispCount.setBounds(Display.OFFSET1, 
-				Display.YPOS_ROW450 + Display.OFFSET4, 
+		dispCount.setBounds(Display.OFFSET10, 
+				Display.YPOS_ROW450 + Display.OFFSET20, 
 				Display.COMPONENT_WIDTH350, Display.COMPONENT_HEIGHT20);
 		dispCount.setText(""); // blank for initialisation
 

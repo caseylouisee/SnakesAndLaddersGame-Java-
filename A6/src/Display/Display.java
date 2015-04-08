@@ -64,29 +64,38 @@ public class Display extends JPanel {
 	public static final int COMPONENT_WIDTH20 = 20;
 	public static final int COMPONENT_WIDTH50 = 50;
 	public static final int COMPONENT_WIDTH75 = 75;
+	public static final int COMPONENT_WIDTH80 = 80;
 	public static final int COMPONENT_WIDTH100 = 100;
 	public static final int COMPONENT_WIDTH130 = 130;
 	public static final int COMPONENT_WIDTH150 = 150;
 	public static final int COMPONENT_WIDTH160 = 160;
 	public static final int COMPONENT_WIDTH170 = 170;
+	public static final int COMPONENT_WIDTH175 = 175;
 	public static final int COMPONENT_WIDTH180 = 180;
 	public static final int COMPONENT_WIDTH200 = 200;
+	public static final int COMPONENT_WIDTH250 = 250;
 	public static final int COMPONENT_WIDTH300 = 300;
 	public static final int COMPONENT_WIDTH350 = 350;
 
 	public static final int COMPONENT_HEIGHT20 = 20;
 	public static final int COMPONENT_HEIGHT40 = 40;
+	public static final int COMPONENT_HEIGHT50 = 50;
 	public static final int COMPONENT_HEIGHT70 = 70;
 	public static final int COMPONENT_HEIGHT80 = 80;
 	public static final int COMPONENT_HEIGHT85 = 85;
 	public static final int COMPONENT_HEIGHT100 = 100;
-	
-	public static final int OFFSET1 = 10;
-	public static final int OFFSET2 = 15;
-	public static final int OFFSET3 = 40;
-	public static final int OFFSET4 = 20;
-	public static final int OFFSET5 = 30;
-	
+	public static final int COMPONENT_HEIGHT150 = 150;
+	public static final int COMPONENT_HEIGHT200 = 200;
+	public static final int COMPONENT_HEIGHT250 = 250;
+
+	public static final int OFFSET5 = 5;
+	public static final int OFFSET10 = 10;
+	public static final int OFFSET15 = 15;
+	public static final int OFFSET20 = 20;
+	public static final int OFFSET30 = 30; 
+	public static final int OFFSET40 = 40; 
+	public static final int OFFSET50 = 50; 
+
 	/** This method draws rectangles for the boards **/
 	public void paintComponent(Graphics graphics) {
 		if(GameSelector.m_TRACE){

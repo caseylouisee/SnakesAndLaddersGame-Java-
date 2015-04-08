@@ -183,7 +183,7 @@ public class MenuSnL {
 
 		JLabel numberPlayersLabel = new JLabel("Number players:");
 		numberPlayersLabel.setBounds(Display.XPOS_COL50, 
-				Display.YPOS_ROW100+Display.OFFSET4, 
+				Display.YPOS_ROW100+Display.OFFSET20, 
 				Display.COMPONENT_WIDTH150, Display.COMPONENT_HEIGHT20);
 		numberPlayersLabel.setForeground(Color.WHITE);
 		m_frame.add(numberPlayersLabel);
@@ -192,7 +192,7 @@ public class MenuSnL {
 		for (int i = 0; i < MAX_NUM_PLAYERS; i++) {
 			m_namePlayersLabel.add(new JLabel("Name " + (i + 1) + ": "));
 			m_namePlayersLabel.get(i).setBounds(Display.XPOS_COL100, 
-					Display.YPOS_ROW150 + Display.OFFSET3* i, 
+					Display.YPOS_ROW150 + Display.OFFSET40* i, 
 					Display.COMPONENT_WIDTH150, 
 					Display.COMPONENT_HEIGHT20);
 			m_namePlayersLabel.get(i).setVisible(false);
@@ -220,7 +220,7 @@ public class MenuSnL {
 		}
 		m_playersComboBox = new JComboBox<String>(SNL_NUMBER_PLAYERS);
 		m_playersComboBox.setBounds(Display.XPOS_COL150, 
-				Display.YPOS_ROW100 + Display.OFFSET4, Display.COMPONENT_WIDTH150, 
+				Display.YPOS_ROW100 + Display.OFFSET20, Display.COMPONENT_WIDTH150, 
 				Display.COMPONENT_HEIGHT20);
 		m_frame.add(m_playersComboBox);
 		m_playersComboBox.addItemListener(new ItemListener() {
@@ -271,7 +271,7 @@ public class MenuSnL {
 			m_playersNameTextField.add(new JTextField("Player "+(i+1)));
 			m_playersNameTextField.get(i).setVisible(false);
 			m_playersNameTextField.get(i).setBounds(Display.XPOS_COL150, 
-					Display.YPOS_ROW150 + Display.OFFSET3 * i,
+					Display.YPOS_ROW150 + Display.OFFSET40 * i,
 					Display.COMPONENT_WIDTH150, Display.COMPONENT_HEIGHT20);
 			m_frame.add(m_playersNameTextField.get(i));
 		}
@@ -286,7 +286,7 @@ public class MenuSnL {
 		for (int i = 0; i < MAX_NUM_PLAYERS; i++) {
 			m_playersColours.add(new JComboBox<String>(SNL_COLOR_PLAYERS));
 			m_playersColours.get(i).setBounds(Display.XPOS_COL300, 
-					Display.YPOS_ROW150 + Display.OFFSET3 * i, 
+					Display.YPOS_ROW150 + Display.OFFSET40 * i, 
 					Display.COMPONENT_WIDTH100, Display.COMPONENT_HEIGHT20);
 			m_playersColours.get(i).setVisible(false);
 			m_frame.add(m_playersColours.get(i));
@@ -309,7 +309,7 @@ public class MenuSnL {
 		for(int i = 0; i < MAX_NUM_PLAYERS; i++){
 			m_playerTypeComboBox.add(new JComboBox<String>(HUMAN_OR_AI));
 			m_playerTypeComboBox.get(i).setBounds(Display.XPOS_COL400,
-					Display.YPOS_ROW150 + Display.OFFSET3 * i,
+					Display.YPOS_ROW150 + Display.OFFSET40 * i,
 					Display.COMPONENT_WIDTH100, Display.COMPONENT_HEIGHT20);
 			m_playerTypeComboBox.get(i).setVisible(false);
 			m_frame.add(m_playerTypeComboBox.get(i));	
@@ -412,8 +412,8 @@ public class MenuSnL {
 		m_initGameButton.setFocusPainted(false);
 		m_initGameButton.setContentAreaFilled(false);
 		m_initGameButton.setVisible(false);
-		m_initGameButton.setBounds(Display.XPOS_COL200-Display.OFFSET4, 
-				Display.YPOS_ROW400+Display.OFFSET5, Display.COMPONENT_WIDTH170, 
+		m_initGameButton.setBounds(Display.XPOS_COL200-Display.OFFSET20, 
+				Display.YPOS_ROW400+Display.OFFSET30, Display.COMPONENT_WIDTH170, 
 				Display.COMPONENT_HEIGHT85);
 		m_initGameButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -425,7 +425,8 @@ public class MenuSnL {
 		m_goBackButton.setBorderPainted(false);
 		m_goBackButton.setFocusPainted(false);
 		m_goBackButton.setContentAreaFilled(false);
-		m_goBackButton.setBounds(Display.OFFSET1, Display.YPOS_ROW400+Display.OFFSET5, 
+		m_goBackButton.setBounds(Display.OFFSET10, 
+				Display.YPOS_ROW400+Display.OFFSET30, 
 				Display.COMPONENT_WIDTH160, Display.COMPONENT_HEIGHT85);
 		m_goBackButton.setVisible(true);
 		m_goBackButton.addActionListener(new ActionListener() {
@@ -440,8 +441,8 @@ public class MenuSnL {
 		m_loadGame.setBorderPainted(false);
 		m_loadGame.setFocusPainted(false);
 		m_loadGame.setContentAreaFilled(false);
-		m_loadGame.setBounds(Display.XPOS_COL350+Display.OFFSET1, 
-				Display.YPOS_ROW400+Display.OFFSET5, 
+		m_loadGame.setBounds(Display.XPOS_COL350+Display.OFFSET10, 
+				Display.YPOS_ROW400+Display.OFFSET30, 
 				Display.COMPONENT_WIDTH130, Display.COMPONENT_HEIGHT85);
 		m_loadGame.setVisible(true);
 		m_loadGame.addActionListener(new ActionListener() {

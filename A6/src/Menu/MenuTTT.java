@@ -123,7 +123,8 @@ public class MenuTTT {
 		}
 
 		m_frame = new JFrame(WINDOW_TITLE);
-		m_frame.setBounds(100, 100, WINDOW_WIDTH, WINDOW_HEIGHT);
+		m_frame.setBounds(Display.XPOS_COL100, Display.YPOS_ROW100,
+				WINDOW_WIDTH, WINDOW_HEIGHT);
 		m_frame.setLayout(null);
 		m_frame.setResizable(false);
 		m_frame.getContentPane().setBackground(Color.BLACK);
@@ -149,7 +150,7 @@ public class MenuTTT {
 			m_namePlayersLabel.add(new JLabel("Name " + (i + 1) + ": ",
 					SwingConstants.RIGHT));
 			m_namePlayersLabel.get(i).setBounds(Display.XPOS_COL50, 
-					Display.YPOS_ROW150 + Display.OFFSET3 * i, 
+					Display.YPOS_ROW150 + Display.OFFSET40 * i, 
 					Display.COMPONENT_WIDTH100, Display.COMPONENT_HEIGHT20);
 			m_namePlayersLabel.get(i).setForeground(Color.WHITE);
 			m_namePlayersLabel.get(i).setVisible(true);
@@ -166,7 +167,7 @@ public class MenuTTT {
 		for(int i = 0; i < MAX_NUM_PLAYERS; i++){
 			m_playerTypeComboBox.add(new JComboBox<String>(HUMAN_OR_AI));
 			m_playerTypeComboBox.get(i).setBounds(Display.XPOS_COL400, 
-					Display.YPOS_ROW150 + Display.OFFSET3 * i,
+					Display.YPOS_ROW150 + Display.OFFSET40 * i,
 					Display.COMPONENT_WIDTH100, Display.COMPONENT_HEIGHT20);
 			m_playerTypeComboBox.get(i).setVisible(true);
 			m_frame.add(m_playerTypeComboBox.get(i));	
@@ -182,7 +183,7 @@ public class MenuTTT {
 		for (int i = 0; i < MAX_NUM_PLAYERS; i++) {
 			m_playersXorO.add(new JComboBox<String>(TTT_X_OR_O));
 			m_playersXorO.get(i).setBounds(Display.XPOS_COL300, 
-					Display.YPOS_ROW150 + Display.OFFSET3 * i, 
+					Display.YPOS_ROW150 + Display.OFFSET40 * i, 
 					Display.COMPONENT_WIDTH100, Display.COMPONENT_HEIGHT20);
 			m_playersXorO.get(i).setVisible(true);
 			m_frame.add(m_playersXorO.get(i));
@@ -220,7 +221,7 @@ public class MenuTTT {
 			m_playersNameTextField.get(i).setText("Player " + (i + 1));
 			m_playersNameTextField.get(i).setVisible(true);
 			m_playersNameTextField.get(i).setBounds(Display.XPOS_COL150, 
-					Display.YPOS_ROW150 + Display.OFFSET3 * i,
+					Display.YPOS_ROW150 + Display.OFFSET40 * i,
 					Display.COMPONENT_WIDTH150, Display.COMPONENT_HEIGHT20);
 			m_frame.add(m_playersNameTextField.get(i));
 		}
@@ -232,7 +233,8 @@ public class MenuTTT {
 			System.out.println("MenuSnL :: addVisualizationCheckBox");
 		}
 		visualization = new JCheckBox("Visualization?");
-		visualization.setBounds(Display.XPOS_COL200, Display.YPOS_ROW200+Display.OFFSET4,
+		visualization.setBounds(Display.XPOS_COL200, 
+				Display.YPOS_ROW200+Display.OFFSET20,
 				Display.COMPONENT_WIDTH150, Display.COMPONENT_HEIGHT20);
 		visualization.setText("Visualization?");
 		visualization.setForeground(Color.WHITE);
@@ -243,11 +245,13 @@ public class MenuTTT {
 				Object source =  event.getItemSelectable();
 				if (source == visualization) {
 					visualize = true;
-					System.out.println("MenuSnL :: addVisualizationCheckBox - Selected");
+					System.out.println("MenuSnL :: addVisualizationCheckBox "
+							+ "- Selected");
 				}
 				if (event.getStateChange() == ItemEvent.DESELECTED){
 					visualize = false;
-					System.out.println("MenuSnL :: addVisualizationCheckBox - Deselected");
+					System.out.println("MenuSnL :: addVisualizationCheckBox "
+							+ "- Deselected");
 				}
 			}
 		});
@@ -281,7 +285,7 @@ public class MenuTTT {
 		m_goBackButton.setBorderPainted(false);
 		m_goBackButton.setFocusPainted(false);
 		m_goBackButton.setContentAreaFilled(false);
-		m_goBackButton.setBounds(Display.OFFSET1, Display.YPOS_ROW250, 
+		m_goBackButton.setBounds(Display.OFFSET10, Display.YPOS_ROW250, 
 				Display.COMPONENT_WIDTH160, Display.COMPONENT_HEIGHT85);
 		m_goBackButton.setVisible(true);
 		m_goBackButton.addActionListener(new ActionListener() {
@@ -296,7 +300,7 @@ public class MenuTTT {
 		m_initGameButton.setBorderPainted(false);
 		m_initGameButton.setFocusPainted(false);
 		m_initGameButton.setContentAreaFilled(false);
-		m_initGameButton.setBounds(Display.XPOS_COL150+Display.OFFSET5, 
+		m_initGameButton.setBounds(Display.XPOS_COL150+Display.OFFSET30, 
 				Display.YPOS_ROW250, Display.COMPONENT_WIDTH170, 
 				Display.COMPONENT_HEIGHT85);
 		m_initGameButton.setVisible(true);
@@ -313,8 +317,9 @@ public class MenuTTT {
 		loadGame.setBorderPainted(false);
 		loadGame.setFocusPainted(false);
 		loadGame.setContentAreaFilled(false);
-		loadGame.setBounds(Display.XPOS_COL350+Display.OFFSET1, Display.YPOS_ROW250,
-				Display.COMPONENT_WIDTH130, Display.COMPONENT_HEIGHT85);
+		loadGame.setBounds(Display.XPOS_COL350+Display.OFFSET10, 
+				Display.YPOS_ROW250, Display.COMPONENT_WIDTH130, 
+				Display.COMPONENT_HEIGHT85);
 		loadGame.setVisible(true);
 		loadGame.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -347,13 +352,11 @@ public class MenuTTT {
 
 			try {
 				line = br.readLine();
-
+				
 				if(line==null){
-					JOptionPane.showMessageDialog(null, "No save game data found");
+					JOptionPane.showMessageDialog(null,
+							"No save game data found");
 				}else{
-					//br.reset();
-					//line = br.readLine();
-
 					columns = line.split(",");
 
 					playerNames[0] = columns[0];
@@ -363,7 +366,9 @@ public class MenuTTT {
 
 					line = br.readLine();
 					columns = line.split(",");
-					for(int i=0;i<DisplayTTT.GRID_HEIGHT * DisplayTTT.GRID_WIDTH;i++){
+					for(int i=0;
+							i<DisplayTTT.GRID_HEIGHT * DisplayTTT.GRID_WIDTH;
+								i++){
 						squareValues[i] = columns[i].charAt(0);
 					}
 					ArrayList<PlayerTTT> players = new ArrayList<PlayerTTT>();
