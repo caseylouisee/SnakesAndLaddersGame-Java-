@@ -559,7 +559,7 @@ public class GameSnL {
 			player.setLastLocation(player.getPlayerLocation()+roll);
 			// sets player location to where the player landed with dice roll
 			player.setPlayerLocation(m_shapesPanel,
-					m_board.getSquare(player.getPlayerLocation()+roll));
+					m_board.getSquare(player.getPlayerLocation()+roll),false);
 			// sets new location if move is true
 			player.setPlayerLocation(m_shapesPanel,
 					m_board.getSquare(player.getPlayerLocation()), move);

@@ -32,12 +32,16 @@ import Display.Display;
 public class GameSelector {
 	/** Title of the window */
 	private final static String WINDOW_TITLE = "GAME SELECTOR";
+	
 	/** Width of the window */
 	private final static int WINDOW_WIDTH = 730;
+	
 	/** Length of the window */
 	private final static int WINDOW_HEIGHT = 450;
+	
 	/** Testing variable */
 	public static Boolean m_TRACE = false;
+	
 	/** Frame being used */
 	private static JFrame m_frame;
 

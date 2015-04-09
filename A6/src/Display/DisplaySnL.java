@@ -568,7 +568,8 @@ public class DisplaySnL extends JPanel implements Runnable{
 	 * @param playerColor
 	 * @param squareNo
 	 */
-	public void printPlayer(Graphics graphics, Color playerColor, int squareNo, int lastLocation){
+	public void printPlayer(Graphics graphics, Color playerColor, int squareNo,
+			int lastLocation){
 		if(GameSelector.m_TRACE){
 			System.out.println("DisplaySnL::printPlayer");
 		}
@@ -579,7 +580,8 @@ public class DisplaySnL extends JPanel implements Runnable{
 
 		if(m_visualize){
 			if(GameSelector.m_TRACE){
-				System.out.println("DisplaySnL::printPlayer with visualization");
+				System.out.println("DisplaySnL::printPlayer"
+						+ " with visualization");
 			}
 
 			for(int i = 0; i<m_players.size(); i++){

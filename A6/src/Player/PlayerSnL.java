@@ -140,24 +140,6 @@ public abstract class PlayerSnL extends Player {
 		}
 	}
 
-	public void setPlayerLocation(DisplaySnL displaySnL, SquareSnL s) {
-		if (s.getPosition() <= 100 && s.getPosition() >= 0) {
-			if (s.getPosition() > m_playerLocation) {
-				if (GameSelector.m_TRACE) {
-					System.out.println(s.getPosition() +" "+m_playerLocation);
-				}
-				for (int i = m_playerLocation; i < s.getPosition(); i++) {
-					m_playerLocation = i + 1;
-					if (GameSelector.m_TRACE) {
-						System.out.println("Player Location is now: "
-								+ m_playerLocation);
-					}
-					displaySnL.updateGraphics();
-				}
-			}
-		}
-	}
-
 	/**
 	 * check if the piece has moved to destination square
 	 * 
