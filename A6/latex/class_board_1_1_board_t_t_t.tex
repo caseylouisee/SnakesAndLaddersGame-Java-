@@ -1,0 +1,220 @@
+\hypertarget{class_board_1_1_board_t_t_t}{}\section{Board.\+Board\+T\+T\+T Class Reference}
+\label{class_board_1_1_board_t_t_t}\index{Board.\+Board\+T\+T\+T@{Board.\+Board\+T\+T\+T}}
+
+
+Specific board class for T\+T\+T game board class for T\+T\+T which is a subclass of board, this subclass contains methods specific to T\+T\+T, such as detecting the win scenario by working out adjacent squares to the players current square.  
+
+
+Inheritance diagram for Board.\+Board\+T\+T\+T\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_board_1_1_board_t_t_t}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int\mbox{[}$\,$\mbox{]} \hyperlink{class_board_1_1_board_t_t_t_a14ae6a700a6f83643afd3da120c1ee26}{get\+Coordinates\+Winning\+Squares} ()
+\item 
+\hyperlink{class_board_1_1_board_t_t_t_ac79a9beb148634225ef350d3ca0628ad}{Board\+T\+T\+T} (int width, int height)
+\item 
+\hyperlink{class_board_1_1_board_t_t_t_a3a5fc9e11157089f888727ba696fc2e4}{Board\+T\+T\+T} (int width, int height, char\mbox{[}$\,$\mbox{]} square\+Values, \hyperlink{class_display_1_1_display_t_t_t}{Display\+T\+T\+T} display)
+\item 
+int \hyperlink{class_board_1_1_board_t_t_t_a08f36da4210111d8f129be28a550334e}{detect\+End\+Game} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{class_board_1_1_board_t_t_t_a1b62648f4ca1d4a074767027b9c8eec0}{main} (String\mbox{[}$\,$\mbox{]} args)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static final int \hyperlink{class_board_1_1_board_t_t_t_a16be9cbe57d43388a3fa6e5b706210e5}{D\+R\+A\+W\+\_\+\+G\+A\+M\+E} = -\/1
+\item 
+static final int \hyperlink{class_board_1_1_board_t_t_t_a5448324216e6a32d3264e50779962562}{N\+O\+T\+H\+I\+N\+G\+\_\+\+H\+A\+P\+P\+E\+N\+E\+D} = 0
+\item 
+static final int \hyperlink{class_board_1_1_board_t_t_t_a989aacd76a6193fe54a4500dd8151b41}{O\+\_\+\+W\+I\+N} = 1
+\item 
+static final int \hyperlink{class_board_1_1_board_t_t_t_ab77ee706643fb1825e78f6b8dcacc021}{X\+\_\+\+W\+I\+N} = 2
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+Boolean \hyperlink{class_board_1_1_board_t_t_t_ab7d0a91870f300ee5544da2c1ee8b67c}{win} (char Xor\+O)
+\item 
+Boolean \hyperlink{class_board_1_1_board_t_t_t_adeda4fd9adb536be218a068d71be8587}{win\+Row} (char Xor\+O)
+\item 
+Boolean \hyperlink{class_board_1_1_board_t_t_t_aa133bbee4e44152b8ba57191475409ab}{win\+Column} (char Xor\+O)
+\item 
+Boolean \hyperlink{class_board_1_1_board_t_t_t_a756f492a748b6050441c6f821809c40d}{win\+Diagonal\+Right} (char Xor\+O)
+\item 
+Boolean \hyperlink{class_board_1_1_board_t_t_t_a5f5114b28a09db036e030ec6bb97f189}{win\+Diagonal\+Left} (char Xor\+O)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int\mbox{[}$\,$\mbox{]} \hyperlink{class_board_1_1_board_t_t_t_a50bc789f0168c29495d4827cca10c89f}{m\+\_\+winning\+Square\+Coordinates} = new int\mbox{[}2\mbox{]}
+\item 
+final int \hyperlink{class_board_1_1_board_t_t_t_ab11d997e2ea0983b566f23c4685767f6}{W\+I\+N\+\_\+\+A\+M\+O\+U\+N\+T} = 5
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Specific board class for T\+T\+T game board class for T\+T\+T which is a subclass of board, this subclass contains methods specific to T\+T\+T, such as detecting the win scenario by working out adjacent squares to the players current square. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_board_1_1_board_t_t_t_ac79a9beb148634225ef350d3ca0628ad}{}\index{Board\+::\+Board\+T\+T\+T@{Board\+::\+Board\+T\+T\+T}!Board\+T\+T\+T@{Board\+T\+T\+T}}
+\index{Board\+T\+T\+T@{Board\+T\+T\+T}!Board\+::\+Board\+T\+T\+T@{Board\+::\+Board\+T\+T\+T}}
+\subsubsection[{Board\+T\+T\+T(int width, int height)}]{\setlength{\rightskip}{0pt plus 5cm}Board.\+Board\+T\+T\+T.\+Board\+T\+T\+T (
+\begin{DoxyParamCaption}
+\item[{int}]{width, }
+\item[{int}]{height}
+\end{DoxyParamCaption}
+)}\label{class_board_1_1_board_t_t_t_ac79a9beb148634225ef350d3ca0628ad}
+Constructor for creating a board of length width$\ast$height 
+\begin{DoxyParams}{Parameters}
+{\em width} & integer that contains the width of the board to be created \\
+\hline
+{\em height} & integer that contains the height of the board to be created \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_board_1_1_board_t_t_t_a3a5fc9e11157089f888727ba696fc2e4}{}\index{Board\+::\+Board\+T\+T\+T@{Board\+::\+Board\+T\+T\+T}!Board\+T\+T\+T@{Board\+T\+T\+T}}
+\index{Board\+T\+T\+T@{Board\+T\+T\+T}!Board\+::\+Board\+T\+T\+T@{Board\+::\+Board\+T\+T\+T}}
+\subsubsection[{Board\+T\+T\+T(int width, int height, char[] square\+Values, Display\+T\+T\+T display)}]{\setlength{\rightskip}{0pt plus 5cm}Board.\+Board\+T\+T\+T.\+Board\+T\+T\+T (
+\begin{DoxyParamCaption}
+\item[{int}]{width, }
+\item[{int}]{height, }
+\item[{char\mbox{[}$\,$\mbox{]}}]{square\+Values, }
+\item[{{\bf Display\+T\+T\+T}}]{display}
+\end{DoxyParamCaption}
+)}\label{class_board_1_1_board_t_t_t_a3a5fc9e11157089f888727ba696fc2e4}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_board_1_1_board_t_t_t_a08f36da4210111d8f129be28a550334e}{}\index{Board\+::\+Board\+T\+T\+T@{Board\+::\+Board\+T\+T\+T}!detect\+End\+Game@{detect\+End\+Game}}
+\index{detect\+End\+Game@{detect\+End\+Game}!Board\+::\+Board\+T\+T\+T@{Board\+::\+Board\+T\+T\+T}}
+\subsubsection[{detect\+End\+Game()}]{\setlength{\rightskip}{0pt plus 5cm}int Board.\+Board\+T\+T\+T.\+detect\+End\+Game (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_board_1_1_board_t_t_t_a08f36da4210111d8f129be28a550334e}
+First checks for a draw game by looping though every square and checking if there are any empty squares, if there is not then the game is a draw. It then calls the \hyperlink{class_board_1_1_board_t_t_t_ab7d0a91870f300ee5544da2c1ee8b67c}{win()} method on both X and O \hypertarget{class_board_1_1_board_t_t_t_a14ae6a700a6f83643afd3da120c1ee26}{}\index{Board\+::\+Board\+T\+T\+T@{Board\+::\+Board\+T\+T\+T}!get\+Coordinates\+Winning\+Squares@{get\+Coordinates\+Winning\+Squares}}
+\index{get\+Coordinates\+Winning\+Squares@{get\+Coordinates\+Winning\+Squares}!Board\+::\+Board\+T\+T\+T@{Board\+::\+Board\+T\+T\+T}}
+\subsubsection[{get\+Coordinates\+Winning\+Squares()}]{\setlength{\rightskip}{0pt plus 5cm}int \mbox{[}$\,$\mbox{]} Board.\+Board\+T\+T\+T.\+get\+Coordinates\+Winning\+Squares (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_board_1_1_board_t_t_t_a14ae6a700a6f83643afd3da120c1ee26}
+Used to return the start and end of the winning chain for output. \begin{DoxyReturn}{Returns}
+integer array containing the start and end of the winning chain 
+\end{DoxyReturn}
+\hypertarget{class_board_1_1_board_t_t_t_a1b62648f4ca1d4a074767027b9c8eec0}{}\index{Board\+::\+Board\+T\+T\+T@{Board\+::\+Board\+T\+T\+T}!main@{main}}
+\index{main@{main}!Board\+::\+Board\+T\+T\+T@{Board\+::\+Board\+T\+T\+T}}
+\subsubsection[{main(\+String[] args)}]{\setlength{\rightskip}{0pt plus 5cm}static void Board.\+Board\+T\+T\+T.\+main (
+\begin{DoxyParamCaption}
+\item[{String\mbox{[}$\,$\mbox{]}}]{args}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{class_board_1_1_board_t_t_t_a1b62648f4ca1d4a074767027b9c8eec0}
+\hypertarget{class_board_1_1_board_t_t_t_ab7d0a91870f300ee5544da2c1ee8b67c}{}\index{Board\+::\+Board\+T\+T\+T@{Board\+::\+Board\+T\+T\+T}!win@{win}}
+\index{win@{win}!Board\+::\+Board\+T\+T\+T@{Board\+::\+Board\+T\+T\+T}}
+\subsubsection[{win(char Xor\+O)}]{\setlength{\rightskip}{0pt plus 5cm}Boolean Board.\+Board\+T\+T\+T.\+win (
+\begin{DoxyParamCaption}
+\item[{char}]{Xor\+O}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{class_board_1_1_board_t_t_t_ab7d0a91870f300ee5544da2c1ee8b67c}
+Checks (horizontally, vertically and then diagonally) if there are five Xs or Os (depending on the input) in a row. 
+\begin{DoxyParams}{Parameters}
+{\em Xor\+O} & char containing X or O depending on what type of piece to check win for \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true of false depending on if a win is found. 
+\end{DoxyReturn}
+\hypertarget{class_board_1_1_board_t_t_t_aa133bbee4e44152b8ba57191475409ab}{}\index{Board\+::\+Board\+T\+T\+T@{Board\+::\+Board\+T\+T\+T}!win\+Column@{win\+Column}}
+\index{win\+Column@{win\+Column}!Board\+::\+Board\+T\+T\+T@{Board\+::\+Board\+T\+T\+T}}
+\subsubsection[{win\+Column(char Xor\+O)}]{\setlength{\rightskip}{0pt plus 5cm}Boolean Board.\+Board\+T\+T\+T.\+win\+Column (
+\begin{DoxyParamCaption}
+\item[{char}]{Xor\+O}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{class_board_1_1_board_t_t_t_aa133bbee4e44152b8ba57191475409ab}
+Checks if there is a vertical win 
+\begin{DoxyParams}{Parameters}
+{\em Xor\+O} & the char it is checking for \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if win is found, false if not 
+\end{DoxyReturn}
+\hypertarget{class_board_1_1_board_t_t_t_a5f5114b28a09db036e030ec6bb97f189}{}\index{Board\+::\+Board\+T\+T\+T@{Board\+::\+Board\+T\+T\+T}!win\+Diagonal\+Left@{win\+Diagonal\+Left}}
+\index{win\+Diagonal\+Left@{win\+Diagonal\+Left}!Board\+::\+Board\+T\+T\+T@{Board\+::\+Board\+T\+T\+T}}
+\subsubsection[{win\+Diagonal\+Left(char Xor\+O)}]{\setlength{\rightskip}{0pt plus 5cm}Boolean Board.\+Board\+T\+T\+T.\+win\+Diagonal\+Left (
+\begin{DoxyParamCaption}
+\item[{char}]{Xor\+O}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{class_board_1_1_board_t_t_t_a5f5114b28a09db036e030ec6bb97f189}
+Checks if there is a diagonal left win 
+\begin{DoxyParams}{Parameters}
+{\em Xor\+O} & the char it is checking for \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if win is found, false if not 
+\end{DoxyReturn}
+\hypertarget{class_board_1_1_board_t_t_t_a756f492a748b6050441c6f821809c40d}{}\index{Board\+::\+Board\+T\+T\+T@{Board\+::\+Board\+T\+T\+T}!win\+Diagonal\+Right@{win\+Diagonal\+Right}}
+\index{win\+Diagonal\+Right@{win\+Diagonal\+Right}!Board\+::\+Board\+T\+T\+T@{Board\+::\+Board\+T\+T\+T}}
+\subsubsection[{win\+Diagonal\+Right(char Xor\+O)}]{\setlength{\rightskip}{0pt plus 5cm}Boolean Board.\+Board\+T\+T\+T.\+win\+Diagonal\+Right (
+\begin{DoxyParamCaption}
+\item[{char}]{Xor\+O}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{class_board_1_1_board_t_t_t_a756f492a748b6050441c6f821809c40d}
+Checks if there is a diagonal right win 
+\begin{DoxyParams}{Parameters}
+{\em Xor\+O} & the char it is checking for \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if win is found, false if not 
+\end{DoxyReturn}
+\hypertarget{class_board_1_1_board_t_t_t_adeda4fd9adb536be218a068d71be8587}{}\index{Board\+::\+Board\+T\+T\+T@{Board\+::\+Board\+T\+T\+T}!win\+Row@{win\+Row}}
+\index{win\+Row@{win\+Row}!Board\+::\+Board\+T\+T\+T@{Board\+::\+Board\+T\+T\+T}}
+\subsubsection[{win\+Row(char Xor\+O)}]{\setlength{\rightskip}{0pt plus 5cm}Boolean Board.\+Board\+T\+T\+T.\+win\+Row (
+\begin{DoxyParamCaption}
+\item[{char}]{Xor\+O}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{class_board_1_1_board_t_t_t_adeda4fd9adb536be218a068d71be8587}
+Checks if there is a horizontal win 
+\begin{DoxyParams}{Parameters}
+{\em Xor\+O} & the char it is checking for \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if win is found, false if not 
+\end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_board_1_1_board_t_t_t_a16be9cbe57d43388a3fa6e5b706210e5}{}\index{Board\+::\+Board\+T\+T\+T@{Board\+::\+Board\+T\+T\+T}!D\+R\+A\+W\+\_\+\+G\+A\+M\+E@{D\+R\+A\+W\+\_\+\+G\+A\+M\+E}}
+\index{D\+R\+A\+W\+\_\+\+G\+A\+M\+E@{D\+R\+A\+W\+\_\+\+G\+A\+M\+E}!Board\+::\+Board\+T\+T\+T@{Board\+::\+Board\+T\+T\+T}}
+\subsubsection[{D\+R\+A\+W\+\_\+\+G\+A\+M\+E}]{\setlength{\rightskip}{0pt plus 5cm}final int Board.\+Board\+T\+T\+T.\+D\+R\+A\+W\+\_\+\+G\+A\+M\+E = -\/1\hspace{0.3cm}{\ttfamily [static]}}\label{class_board_1_1_board_t_t_t_a16be9cbe57d43388a3fa6e5b706210e5}
+integers that store the return values for \hyperlink{class_board_1_1_board_t_t_t_a08f36da4210111d8f129be28a550334e}{detect\+End\+Game()} \hypertarget{class_board_1_1_board_t_t_t_a50bc789f0168c29495d4827cca10c89f}{}\index{Board\+::\+Board\+T\+T\+T@{Board\+::\+Board\+T\+T\+T}!m\+\_\+winning\+Square\+Coordinates@{m\+\_\+winning\+Square\+Coordinates}}
+\index{m\+\_\+winning\+Square\+Coordinates@{m\+\_\+winning\+Square\+Coordinates}!Board\+::\+Board\+T\+T\+T@{Board\+::\+Board\+T\+T\+T}}
+\subsubsection[{m\+\_\+winning\+Square\+Coordinates}]{\setlength{\rightskip}{0pt plus 5cm}int \mbox{[}$\,$\mbox{]} Board.\+Board\+T\+T\+T.\+m\+\_\+winning\+Square\+Coordinates = new int\mbox{[}2\mbox{]}\hspace{0.3cm}{\ttfamily [private]}}\label{class_board_1_1_board_t_t_t_a50bc789f0168c29495d4827cca10c89f}
+Integer array used to store the start and end of the winning chain for output \hypertarget{class_board_1_1_board_t_t_t_a5448324216e6a32d3264e50779962562}{}\index{Board\+::\+Board\+T\+T\+T@{Board\+::\+Board\+T\+T\+T}!N\+O\+T\+H\+I\+N\+G\+\_\+\+H\+A\+P\+P\+E\+N\+E\+D@{N\+O\+T\+H\+I\+N\+G\+\_\+\+H\+A\+P\+P\+E\+N\+E\+D}}
+\index{N\+O\+T\+H\+I\+N\+G\+\_\+\+H\+A\+P\+P\+E\+N\+E\+D@{N\+O\+T\+H\+I\+N\+G\+\_\+\+H\+A\+P\+P\+E\+N\+E\+D}!Board\+::\+Board\+T\+T\+T@{Board\+::\+Board\+T\+T\+T}}
+\subsubsection[{N\+O\+T\+H\+I\+N\+G\+\_\+\+H\+A\+P\+P\+E\+N\+E\+D}]{\setlength{\rightskip}{0pt plus 5cm}final int Board.\+Board\+T\+T\+T.\+N\+O\+T\+H\+I\+N\+G\+\_\+\+H\+A\+P\+P\+E\+N\+E\+D = 0\hspace{0.3cm}{\ttfamily [static]}}\label{class_board_1_1_board_t_t_t_a5448324216e6a32d3264e50779962562}
+\hypertarget{class_board_1_1_board_t_t_t_a989aacd76a6193fe54a4500dd8151b41}{}\index{Board\+::\+Board\+T\+T\+T@{Board\+::\+Board\+T\+T\+T}!O\+\_\+\+W\+I\+N@{O\+\_\+\+W\+I\+N}}
+\index{O\+\_\+\+W\+I\+N@{O\+\_\+\+W\+I\+N}!Board\+::\+Board\+T\+T\+T@{Board\+::\+Board\+T\+T\+T}}
+\subsubsection[{O\+\_\+\+W\+I\+N}]{\setlength{\rightskip}{0pt plus 5cm}final int Board.\+Board\+T\+T\+T.\+O\+\_\+\+W\+I\+N = 1\hspace{0.3cm}{\ttfamily [static]}}\label{class_board_1_1_board_t_t_t_a989aacd76a6193fe54a4500dd8151b41}
+\hypertarget{class_board_1_1_board_t_t_t_ab11d997e2ea0983b566f23c4685767f6}{}\index{Board\+::\+Board\+T\+T\+T@{Board\+::\+Board\+T\+T\+T}!W\+I\+N\+\_\+\+A\+M\+O\+U\+N\+T@{W\+I\+N\+\_\+\+A\+M\+O\+U\+N\+T}}
+\index{W\+I\+N\+\_\+\+A\+M\+O\+U\+N\+T@{W\+I\+N\+\_\+\+A\+M\+O\+U\+N\+T}!Board\+::\+Board\+T\+T\+T@{Board\+::\+Board\+T\+T\+T}}
+\subsubsection[{W\+I\+N\+\_\+\+A\+M\+O\+U\+N\+T}]{\setlength{\rightskip}{0pt plus 5cm}final int Board.\+Board\+T\+T\+T.\+W\+I\+N\+\_\+\+A\+M\+O\+U\+N\+T = 5\hspace{0.3cm}{\ttfamily [private]}}\label{class_board_1_1_board_t_t_t_ab11d997e2ea0983b566f23c4685767f6}
+integer that stores the length of the chain needed to win \hypertarget{class_board_1_1_board_t_t_t_ab77ee706643fb1825e78f6b8dcacc021}{}\index{Board\+::\+Board\+T\+T\+T@{Board\+::\+Board\+T\+T\+T}!X\+\_\+\+W\+I\+N@{X\+\_\+\+W\+I\+N}}
+\index{X\+\_\+\+W\+I\+N@{X\+\_\+\+W\+I\+N}!Board\+::\+Board\+T\+T\+T@{Board\+::\+Board\+T\+T\+T}}
+\subsubsection[{X\+\_\+\+W\+I\+N}]{\setlength{\rightskip}{0pt plus 5cm}final int Board.\+Board\+T\+T\+T.\+X\+\_\+\+W\+I\+N = 2\hspace{0.3cm}{\ttfamily [static]}}\label{class_board_1_1_board_t_t_t_ab77ee706643fb1825e78f6b8dcacc021}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Board/\hyperlink{_board_t_t_t_8java}{Board\+T\+T\+T.\+java}\end{DoxyCompactItemize}

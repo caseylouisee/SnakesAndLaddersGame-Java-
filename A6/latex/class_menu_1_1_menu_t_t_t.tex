@@ -1,0 +1,205 @@
+\hypertarget{class_menu_1_1_menu_t_t_t}{}\section{Menu.\+Menu\+T\+T\+T Class Reference}
+\label{class_menu_1_1_menu_t_t_t}\index{Menu.\+Menu\+T\+T\+T@{Menu.\+Menu\+T\+T\+T}}
+
+
+A generic class containing the display methods. This menu class is for the game T\+T\+T. The menu allows you to select whether you want to be X or O, as well as having their respective names.  
+
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_menu_1_1_menu_t_t_t_ad4e37e7c616519cc089666adf3bda2ad}{Menu\+T\+T\+T} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{class_menu_1_1_menu_t_t_t_aadb5ca51346ce541623408f04e806ba3}{main} (String\mbox{[}$\,$\mbox{]} args)
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_menu_1_1_menu_t_t_t_a48a8d83ac7c6e390507700574ddfabff}{add\+Labels} ()
+\item 
+void \hyperlink{class_menu_1_1_menu_t_t_t_ae2102ee7da27dee00625b813a5142143}{add\+Player\+Type} ()
+\item 
+void \hyperlink{class_menu_1_1_menu_t_t_t_ab2e2e48256d680705dac876219d404fb}{add\+Xor\+O\+Combo\+Box} ()
+\item 
+void \hyperlink{class_menu_1_1_menu_t_t_t_a2ff5a71570235793d9f9792b124cfaa8}{add\+Players\+Names\+Text\+Field} ()
+\item 
+void \hyperlink{class_menu_1_1_menu_t_t_t_aab64230cfcc735d5d7c921fff67eb371}{add\+Visualization\+Check\+Box} ()
+\item 
+void \hyperlink{class_menu_1_1_menu_t_t_t_a4f469514054ebd91fb4cf50e17aab7b3}{add\+Logo} ()
+\item 
+void \hyperlink{class_menu_1_1_menu_t_t_t_a605ea271b36acc1565d95db0c8469bfd}{add\+Game\+Buttons} ()
+\item 
+void \hyperlink{class_menu_1_1_menu_t_t_t_aeac6a368a9a21c6dc96bc01388f055ef}{load\+Game} ()
+\item 
+void \hyperlink{class_menu_1_1_menu_t_t_t_a62e5048bd2e1a44f351233f251f78496}{send\+Form} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+final String \hyperlink{class_menu_1_1_menu_t_t_t_a415b411bb82c4159d053e2e3a87a9061}{W\+I\+N\+D\+O\+W\+\_\+\+T\+I\+T\+L\+E} = \char`\"{}Dans Crazy Tic Tac Toe\char`\"{}
+\item 
+final int \hyperlink{class_menu_1_1_menu_t_t_t_a07f18d5ed40cd020290f7cb16ffadca8}{W\+I\+N\+D\+O\+W\+\_\+\+W\+I\+D\+T\+H} = 500
+\item 
+final int \hyperlink{class_menu_1_1_menu_t_t_t_a5f9a3dacb45dd6f4f1749aa86d1b1154}{W\+I\+N\+D\+O\+W\+\_\+\+H\+E\+I\+G\+H\+T} = 370
+\item 
+final String\mbox{[}$\,$\mbox{]} \hyperlink{class_menu_1_1_menu_t_t_t_a05b9b5552eecd3dd9b969a21817f9789}{T\+T\+T\+\_\+\+X\+\_\+\+O\+R\+\_\+\+O} = \{ \char`\"{} \char`\"{}, \char`\"{}X\char`\"{}, \char`\"{}O\char`\"{} \}
+\item 
+final String\mbox{[}$\,$\mbox{]} \hyperlink{class_menu_1_1_menu_t_t_t_ae21a60dde8c0681fe99ca3a163713775}{H\+U\+M\+A\+N\+\_\+\+O\+R\+\_\+\+A\+I} = \{\char`\"{}Human\char`\"{}, \char`\"{}A\+I\char`\"{}\}
+\item 
+final int \hyperlink{class_menu_1_1_menu_t_t_t_a634a62eb8c913decb22f2b27ad64e2b6}{M\+A\+X\+\_\+\+N\+U\+M\+\_\+\+P\+L\+A\+Y\+E\+R\+S} = 2
+\item 
+J\+Frame \hyperlink{class_menu_1_1_menu_t_t_t_a22f4227f781ebf5a22bb0c68c588537d}{m\+\_\+frame}
+\item 
+Array\+List$<$ J\+Text\+Field $>$ \hyperlink{class_menu_1_1_menu_t_t_t_a2398e606664e494a0bfd92cd4990404f}{m\+\_\+players\+Name\+Text\+Field}
+\item 
+Array\+List$<$ J\+Combo\+Box$<$ String $>$ $>$ \hyperlink{class_menu_1_1_menu_t_t_t_a1f431306714855f214aacab632031a23}{m\+\_\+players\+Xor\+O}
+\item 
+Array\+List$<$ J\+Combo\+Box$<$ String $>$ $>$ \hyperlink{class_menu_1_1_menu_t_t_t_a0d29323e5abc375ee10f1b27ecd6e1bd}{m\+\_\+player\+Type\+Combo\+Box}
+\item 
+Array\+List$<$ J\+Label $>$ \hyperlink{class_menu_1_1_menu_t_t_t_a3a18e1c57089dedf1bdb8808affb405b}{m\+\_\+name\+Players\+Label}
+\item 
+J\+Button \hyperlink{class_menu_1_1_menu_t_t_t_a59b7acc44f8e856bd54c46a8c81b1990}{m\+\_\+init\+Game\+Button}
+\item 
+J\+Check\+Box \hyperlink{class_menu_1_1_menu_t_t_t_a611b82f2267f9ccb007b1ee5744e3088}{visualization}
+\item 
+Boolean \hyperlink{class_menu_1_1_menu_t_t_t_a9d69fa1e5f80800c37ee3c47925f3f14}{visualize} = false
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A generic class containing the display methods. This menu class is for the game T\+T\+T. The menu allows you to select whether you want to be X or O, as well as having their respective names. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_menu_1_1_menu_t_t_t_ad4e37e7c616519cc089666adf3bda2ad}{}\index{Menu\+::\+Menu\+T\+T\+T@{Menu\+::\+Menu\+T\+T\+T}!Menu\+T\+T\+T@{Menu\+T\+T\+T}}
+\index{Menu\+T\+T\+T@{Menu\+T\+T\+T}!Menu\+::\+Menu\+T\+T\+T@{Menu\+::\+Menu\+T\+T\+T}}
+\subsubsection[{Menu\+T\+T\+T()}]{\setlength{\rightskip}{0pt plus 5cm}Menu.\+Menu\+T\+T\+T.\+Menu\+T\+T\+T (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_menu_1_1_menu_t_t_t_ad4e37e7c616519cc089666adf3bda2ad}
+This is the constructor for the Tic Tac Toe menu screen. It sets the frame size and adds all the objects. 
+
+\subsection{Member Function Documentation}
+\hypertarget{class_menu_1_1_menu_t_t_t_a605ea271b36acc1565d95db0c8469bfd}{}\index{Menu\+::\+Menu\+T\+T\+T@{Menu\+::\+Menu\+T\+T\+T}!add\+Game\+Buttons@{add\+Game\+Buttons}}
+\index{add\+Game\+Buttons@{add\+Game\+Buttons}!Menu\+::\+Menu\+T\+T\+T@{Menu\+::\+Menu\+T\+T\+T}}
+\subsubsection[{add\+Game\+Buttons()}]{\setlength{\rightskip}{0pt plus 5cm}void Menu.\+Menu\+T\+T\+T.\+add\+Game\+Buttons (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{class_menu_1_1_menu_t_t_t_a605ea271b36acc1565d95db0c8469bfd}
+Adds the back and start game button to the frame \hypertarget{class_menu_1_1_menu_t_t_t_a48a8d83ac7c6e390507700574ddfabff}{}\index{Menu\+::\+Menu\+T\+T\+T@{Menu\+::\+Menu\+T\+T\+T}!add\+Labels@{add\+Labels}}
+\index{add\+Labels@{add\+Labels}!Menu\+::\+Menu\+T\+T\+T@{Menu\+::\+Menu\+T\+T\+T}}
+\subsubsection[{add\+Labels()}]{\setlength{\rightskip}{0pt plus 5cm}void Menu.\+Menu\+T\+T\+T.\+add\+Labels (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{class_menu_1_1_menu_t_t_t_a48a8d83ac7c6e390507700574ddfabff}
+Adds the labels to the frame \hypertarget{class_menu_1_1_menu_t_t_t_a4f469514054ebd91fb4cf50e17aab7b3}{}\index{Menu\+::\+Menu\+T\+T\+T@{Menu\+::\+Menu\+T\+T\+T}!add\+Logo@{add\+Logo}}
+\index{add\+Logo@{add\+Logo}!Menu\+::\+Menu\+T\+T\+T@{Menu\+::\+Menu\+T\+T\+T}}
+\subsubsection[{add\+Logo()}]{\setlength{\rightskip}{0pt plus 5cm}void Menu.\+Menu\+T\+T\+T.\+add\+Logo (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{class_menu_1_1_menu_t_t_t_a4f469514054ebd91fb4cf50e17aab7b3}
+Adds the logo to the frame \hypertarget{class_menu_1_1_menu_t_t_t_a2ff5a71570235793d9f9792b124cfaa8}{}\index{Menu\+::\+Menu\+T\+T\+T@{Menu\+::\+Menu\+T\+T\+T}!add\+Players\+Names\+Text\+Field@{add\+Players\+Names\+Text\+Field}}
+\index{add\+Players\+Names\+Text\+Field@{add\+Players\+Names\+Text\+Field}!Menu\+::\+Menu\+T\+T\+T@{Menu\+::\+Menu\+T\+T\+T}}
+\subsubsection[{add\+Players\+Names\+Text\+Field()}]{\setlength{\rightskip}{0pt plus 5cm}void Menu.\+Menu\+T\+T\+T.\+add\+Players\+Names\+Text\+Field (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{class_menu_1_1_menu_t_t_t_a2ff5a71570235793d9f9792b124cfaa8}
+Adds the player name text field to the frame \hypertarget{class_menu_1_1_menu_t_t_t_ae2102ee7da27dee00625b813a5142143}{}\index{Menu\+::\+Menu\+T\+T\+T@{Menu\+::\+Menu\+T\+T\+T}!add\+Player\+Type@{add\+Player\+Type}}
+\index{add\+Player\+Type@{add\+Player\+Type}!Menu\+::\+Menu\+T\+T\+T@{Menu\+::\+Menu\+T\+T\+T}}
+\subsubsection[{add\+Player\+Type()}]{\setlength{\rightskip}{0pt plus 5cm}void Menu.\+Menu\+T\+T\+T.\+add\+Player\+Type (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{class_menu_1_1_menu_t_t_t_ae2102ee7da27dee00625b813a5142143}
+Adds the combo box to set the player type to the frame \hypertarget{class_menu_1_1_menu_t_t_t_aab64230cfcc735d5d7c921fff67eb371}{}\index{Menu\+::\+Menu\+T\+T\+T@{Menu\+::\+Menu\+T\+T\+T}!add\+Visualization\+Check\+Box@{add\+Visualization\+Check\+Box}}
+\index{add\+Visualization\+Check\+Box@{add\+Visualization\+Check\+Box}!Menu\+::\+Menu\+T\+T\+T@{Menu\+::\+Menu\+T\+T\+T}}
+\subsubsection[{add\+Visualization\+Check\+Box()}]{\setlength{\rightskip}{0pt plus 5cm}void Menu.\+Menu\+T\+T\+T.\+add\+Visualization\+Check\+Box (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{class_menu_1_1_menu_t_t_t_aab64230cfcc735d5d7c921fff67eb371}
+Adds the visualization check box to the frame. \hypertarget{class_menu_1_1_menu_t_t_t_ab2e2e48256d680705dac876219d404fb}{}\index{Menu\+::\+Menu\+T\+T\+T@{Menu\+::\+Menu\+T\+T\+T}!add\+Xor\+O\+Combo\+Box@{add\+Xor\+O\+Combo\+Box}}
+\index{add\+Xor\+O\+Combo\+Box@{add\+Xor\+O\+Combo\+Box}!Menu\+::\+Menu\+T\+T\+T@{Menu\+::\+Menu\+T\+T\+T}}
+\subsubsection[{add\+Xor\+O\+Combo\+Box()}]{\setlength{\rightskip}{0pt plus 5cm}void Menu.\+Menu\+T\+T\+T.\+add\+Xor\+O\+Combo\+Box (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{class_menu_1_1_menu_t_t_t_ab2e2e48256d680705dac876219d404fb}
+Adds the combo box with the options X or O to the frame \hypertarget{class_menu_1_1_menu_t_t_t_aeac6a368a9a21c6dc96bc01388f055ef}{}\index{Menu\+::\+Menu\+T\+T\+T@{Menu\+::\+Menu\+T\+T\+T}!load\+Game@{load\+Game}}
+\index{load\+Game@{load\+Game}!Menu\+::\+Menu\+T\+T\+T@{Menu\+::\+Menu\+T\+T\+T}}
+\subsubsection[{load\+Game()}]{\setlength{\rightskip}{0pt plus 5cm}void Menu.\+Menu\+T\+T\+T.\+load\+Game (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{class_menu_1_1_menu_t_t_t_aeac6a368a9a21c6dc96bc01388f055ef}
+Loads the saved game from the file res/save\+T\+T\+T.\+csv \hypertarget{class_menu_1_1_menu_t_t_t_aadb5ca51346ce541623408f04e806ba3}{}\index{Menu\+::\+Menu\+T\+T\+T@{Menu\+::\+Menu\+T\+T\+T}!main@{main}}
+\index{main@{main}!Menu\+::\+Menu\+T\+T\+T@{Menu\+::\+Menu\+T\+T\+T}}
+\subsubsection[{main(\+String[] args)}]{\setlength{\rightskip}{0pt plus 5cm}static void Menu.\+Menu\+T\+T\+T.\+main (
+\begin{DoxyParamCaption}
+\item[{String\mbox{[}$\,$\mbox{]}}]{args}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{class_menu_1_1_menu_t_t_t_aadb5ca51346ce541623408f04e806ba3}
+This is the test method. It calls the menu\+T\+T\+T constructor to add all the correct buttons, all methods are voids so it\textquotesingle{}s impossible to input invalid information All methods are called, if no load game file available it will try to start the game with no player information throwing an error. \hypertarget{class_menu_1_1_menu_t_t_t_a62e5048bd2e1a44f351233f251f78496}{}\index{Menu\+::\+Menu\+T\+T\+T@{Menu\+::\+Menu\+T\+T\+T}!send\+Form@{send\+Form}}
+\index{send\+Form@{send\+Form}!Menu\+::\+Menu\+T\+T\+T@{Menu\+::\+Menu\+T\+T\+T}}
+\subsubsection[{send\+Form()}]{\setlength{\rightskip}{0pt plus 5cm}void Menu.\+Menu\+T\+T\+T.\+send\+Form (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{class_menu_1_1_menu_t_t_t_a62e5048bd2e1a44f351233f251f78496}
+Sends all the player details (name, piece) to Game\+T\+T\+T 
+
+\subsection{Member Data Documentation}
+\hypertarget{class_menu_1_1_menu_t_t_t_ae21a60dde8c0681fe99ca3a163713775}{}\index{Menu\+::\+Menu\+T\+T\+T@{Menu\+::\+Menu\+T\+T\+T}!H\+U\+M\+A\+N\+\_\+\+O\+R\+\_\+\+A\+I@{H\+U\+M\+A\+N\+\_\+\+O\+R\+\_\+\+A\+I}}
+\index{H\+U\+M\+A\+N\+\_\+\+O\+R\+\_\+\+A\+I@{H\+U\+M\+A\+N\+\_\+\+O\+R\+\_\+\+A\+I}!Menu\+::\+Menu\+T\+T\+T@{Menu\+::\+Menu\+T\+T\+T}}
+\subsubsection[{H\+U\+M\+A\+N\+\_\+\+O\+R\+\_\+\+A\+I}]{\setlength{\rightskip}{0pt plus 5cm}final String \mbox{[}$\,$\mbox{]} Menu.\+Menu\+T\+T\+T.\+H\+U\+M\+A\+N\+\_\+\+O\+R\+\_\+\+A\+I = \{\char`\"{}Human\char`\"{}, \char`\"{}A\+I\char`\"{}\}\hspace{0.3cm}{\ttfamily [private]}}\label{class_menu_1_1_menu_t_t_t_ae21a60dde8c0681fe99ca3a163713775}
+Array to hold player types \hypertarget{class_menu_1_1_menu_t_t_t_a22f4227f781ebf5a22bb0c68c588537d}{}\index{Menu\+::\+Menu\+T\+T\+T@{Menu\+::\+Menu\+T\+T\+T}!m\+\_\+frame@{m\+\_\+frame}}
+\index{m\+\_\+frame@{m\+\_\+frame}!Menu\+::\+Menu\+T\+T\+T@{Menu\+::\+Menu\+T\+T\+T}}
+\subsubsection[{m\+\_\+frame}]{\setlength{\rightskip}{0pt plus 5cm}J\+Frame Menu.\+Menu\+T\+T\+T.\+m\+\_\+frame\hspace{0.3cm}{\ttfamily [private]}}\label{class_menu_1_1_menu_t_t_t_a22f4227f781ebf5a22bb0c68c588537d}
+Frame for the tic tac toe menu \hypertarget{class_menu_1_1_menu_t_t_t_a59b7acc44f8e856bd54c46a8c81b1990}{}\index{Menu\+::\+Menu\+T\+T\+T@{Menu\+::\+Menu\+T\+T\+T}!m\+\_\+init\+Game\+Button@{m\+\_\+init\+Game\+Button}}
+\index{m\+\_\+init\+Game\+Button@{m\+\_\+init\+Game\+Button}!Menu\+::\+Menu\+T\+T\+T@{Menu\+::\+Menu\+T\+T\+T}}
+\subsubsection[{m\+\_\+init\+Game\+Button}]{\setlength{\rightskip}{0pt plus 5cm}J\+Button Menu.\+Menu\+T\+T\+T.\+m\+\_\+init\+Game\+Button\hspace{0.3cm}{\ttfamily [private]}}\label{class_menu_1_1_menu_t_t_t_a59b7acc44f8e856bd54c46a8c81b1990}
+Button to initialise game \hypertarget{class_menu_1_1_menu_t_t_t_a3a18e1c57089dedf1bdb8808affb405b}{}\index{Menu\+::\+Menu\+T\+T\+T@{Menu\+::\+Menu\+T\+T\+T}!m\+\_\+name\+Players\+Label@{m\+\_\+name\+Players\+Label}}
+\index{m\+\_\+name\+Players\+Label@{m\+\_\+name\+Players\+Label}!Menu\+::\+Menu\+T\+T\+T@{Menu\+::\+Menu\+T\+T\+T}}
+\subsubsection[{m\+\_\+name\+Players\+Label}]{\setlength{\rightskip}{0pt plus 5cm}Array\+List$<$J\+Label$>$ Menu.\+Menu\+T\+T\+T.\+m\+\_\+name\+Players\+Label\hspace{0.3cm}{\ttfamily [private]}}\label{class_menu_1_1_menu_t_t_t_a3a18e1c57089dedf1bdb8808affb405b}
+Array list to hold the players name label \hypertarget{class_menu_1_1_menu_t_t_t_a2398e606664e494a0bfd92cd4990404f}{}\index{Menu\+::\+Menu\+T\+T\+T@{Menu\+::\+Menu\+T\+T\+T}!m\+\_\+players\+Name\+Text\+Field@{m\+\_\+players\+Name\+Text\+Field}}
+\index{m\+\_\+players\+Name\+Text\+Field@{m\+\_\+players\+Name\+Text\+Field}!Menu\+::\+Menu\+T\+T\+T@{Menu\+::\+Menu\+T\+T\+T}}
+\subsubsection[{m\+\_\+players\+Name\+Text\+Field}]{\setlength{\rightskip}{0pt plus 5cm}Array\+List$<$J\+Text\+Field$>$ Menu.\+Menu\+T\+T\+T.\+m\+\_\+players\+Name\+Text\+Field\hspace{0.3cm}{\ttfamily [private]}}\label{class_menu_1_1_menu_t_t_t_a2398e606664e494a0bfd92cd4990404f}
+Array list to hold the player\textquotesingle{}s name text fields \hypertarget{class_menu_1_1_menu_t_t_t_a1f431306714855f214aacab632031a23}{}\index{Menu\+::\+Menu\+T\+T\+T@{Menu\+::\+Menu\+T\+T\+T}!m\+\_\+players\+Xor\+O@{m\+\_\+players\+Xor\+O}}
+\index{m\+\_\+players\+Xor\+O@{m\+\_\+players\+Xor\+O}!Menu\+::\+Menu\+T\+T\+T@{Menu\+::\+Menu\+T\+T\+T}}
+\subsubsection[{m\+\_\+players\+Xor\+O}]{\setlength{\rightskip}{0pt plus 5cm}Array\+List$<$J\+Combo\+Box$<$String$>$ $>$ Menu.\+Menu\+T\+T\+T.\+m\+\_\+players\+Xor\+O\hspace{0.3cm}{\ttfamily [private]}}\label{class_menu_1_1_menu_t_t_t_a1f431306714855f214aacab632031a23}
+Array list to hold player piece options (X or O) \hypertarget{class_menu_1_1_menu_t_t_t_a0d29323e5abc375ee10f1b27ecd6e1bd}{}\index{Menu\+::\+Menu\+T\+T\+T@{Menu\+::\+Menu\+T\+T\+T}!m\+\_\+player\+Type\+Combo\+Box@{m\+\_\+player\+Type\+Combo\+Box}}
+\index{m\+\_\+player\+Type\+Combo\+Box@{m\+\_\+player\+Type\+Combo\+Box}!Menu\+::\+Menu\+T\+T\+T@{Menu\+::\+Menu\+T\+T\+T}}
+\subsubsection[{m\+\_\+player\+Type\+Combo\+Box}]{\setlength{\rightskip}{0pt plus 5cm}Array\+List$<$J\+Combo\+Box$<$String$>$ $>$ Menu.\+Menu\+T\+T\+T.\+m\+\_\+player\+Type\+Combo\+Box\hspace{0.3cm}{\ttfamily [private]}}\label{class_menu_1_1_menu_t_t_t_a0d29323e5abc375ee10f1b27ecd6e1bd}
+Array list to hold player type \hypertarget{class_menu_1_1_menu_t_t_t_a634a62eb8c913decb22f2b27ad64e2b6}{}\index{Menu\+::\+Menu\+T\+T\+T@{Menu\+::\+Menu\+T\+T\+T}!M\+A\+X\+\_\+\+N\+U\+M\+\_\+\+P\+L\+A\+Y\+E\+R\+S@{M\+A\+X\+\_\+\+N\+U\+M\+\_\+\+P\+L\+A\+Y\+E\+R\+S}}
+\index{M\+A\+X\+\_\+\+N\+U\+M\+\_\+\+P\+L\+A\+Y\+E\+R\+S@{M\+A\+X\+\_\+\+N\+U\+M\+\_\+\+P\+L\+A\+Y\+E\+R\+S}!Menu\+::\+Menu\+T\+T\+T@{Menu\+::\+Menu\+T\+T\+T}}
+\subsubsection[{M\+A\+X\+\_\+\+N\+U\+M\+\_\+\+P\+L\+A\+Y\+E\+R\+S}]{\setlength{\rightskip}{0pt plus 5cm}final int Menu.\+Menu\+T\+T\+T.\+M\+A\+X\+\_\+\+N\+U\+M\+\_\+\+P\+L\+A\+Y\+E\+R\+S = 2\hspace{0.3cm}{\ttfamily [private]}}\label{class_menu_1_1_menu_t_t_t_a634a62eb8c913decb22f2b27ad64e2b6}
+Maximum number of players \hypertarget{class_menu_1_1_menu_t_t_t_a05b9b5552eecd3dd9b969a21817f9789}{}\index{Menu\+::\+Menu\+T\+T\+T@{Menu\+::\+Menu\+T\+T\+T}!T\+T\+T\+\_\+\+X\+\_\+\+O\+R\+\_\+\+O@{T\+T\+T\+\_\+\+X\+\_\+\+O\+R\+\_\+\+O}}
+\index{T\+T\+T\+\_\+\+X\+\_\+\+O\+R\+\_\+\+O@{T\+T\+T\+\_\+\+X\+\_\+\+O\+R\+\_\+\+O}!Menu\+::\+Menu\+T\+T\+T@{Menu\+::\+Menu\+T\+T\+T}}
+\subsubsection[{T\+T\+T\+\_\+\+X\+\_\+\+O\+R\+\_\+\+O}]{\setlength{\rightskip}{0pt plus 5cm}final String \mbox{[}$\,$\mbox{]} Menu.\+Menu\+T\+T\+T.\+T\+T\+T\+\_\+\+X\+\_\+\+O\+R\+\_\+\+O = \{ \char`\"{} \char`\"{}, \char`\"{}X\char`\"{}, \char`\"{}O\char`\"{} \}\hspace{0.3cm}{\ttfamily [private]}}\label{class_menu_1_1_menu_t_t_t_a05b9b5552eecd3dd9b969a21817f9789}
+Array to hold values X and O \hypertarget{class_menu_1_1_menu_t_t_t_a611b82f2267f9ccb007b1ee5744e3088}{}\index{Menu\+::\+Menu\+T\+T\+T@{Menu\+::\+Menu\+T\+T\+T}!visualization@{visualization}}
+\index{visualization@{visualization}!Menu\+::\+Menu\+T\+T\+T@{Menu\+::\+Menu\+T\+T\+T}}
+\subsubsection[{visualization}]{\setlength{\rightskip}{0pt plus 5cm}J\+Check\+Box Menu.\+Menu\+T\+T\+T.\+visualization\hspace{0.3cm}{\ttfamily [private]}}\label{class_menu_1_1_menu_t_t_t_a611b82f2267f9ccb007b1ee5744e3088}
+Check box for visualization \hypertarget{class_menu_1_1_menu_t_t_t_a9d69fa1e5f80800c37ee3c47925f3f14}{}\index{Menu\+::\+Menu\+T\+T\+T@{Menu\+::\+Menu\+T\+T\+T}!visualize@{visualize}}
+\index{visualize@{visualize}!Menu\+::\+Menu\+T\+T\+T@{Menu\+::\+Menu\+T\+T\+T}}
+\subsubsection[{visualize}]{\setlength{\rightskip}{0pt plus 5cm}Boolean Menu.\+Menu\+T\+T\+T.\+visualize = false\hspace{0.3cm}{\ttfamily [private]}}\label{class_menu_1_1_menu_t_t_t_a9d69fa1e5f80800c37ee3c47925f3f14}
+Boolean for visualization \hypertarget{class_menu_1_1_menu_t_t_t_a5f9a3dacb45dd6f4f1749aa86d1b1154}{}\index{Menu\+::\+Menu\+T\+T\+T@{Menu\+::\+Menu\+T\+T\+T}!W\+I\+N\+D\+O\+W\+\_\+\+H\+E\+I\+G\+H\+T@{W\+I\+N\+D\+O\+W\+\_\+\+H\+E\+I\+G\+H\+T}}
+\index{W\+I\+N\+D\+O\+W\+\_\+\+H\+E\+I\+G\+H\+T@{W\+I\+N\+D\+O\+W\+\_\+\+H\+E\+I\+G\+H\+T}!Menu\+::\+Menu\+T\+T\+T@{Menu\+::\+Menu\+T\+T\+T}}
+\subsubsection[{W\+I\+N\+D\+O\+W\+\_\+\+H\+E\+I\+G\+H\+T}]{\setlength{\rightskip}{0pt plus 5cm}final int Menu.\+Menu\+T\+T\+T.\+W\+I\+N\+D\+O\+W\+\_\+\+H\+E\+I\+G\+H\+T = 370\hspace{0.3cm}{\ttfamily [private]}}\label{class_menu_1_1_menu_t_t_t_a5f9a3dacb45dd6f4f1749aa86d1b1154}
+Height of the window \hypertarget{class_menu_1_1_menu_t_t_t_a415b411bb82c4159d053e2e3a87a9061}{}\index{Menu\+::\+Menu\+T\+T\+T@{Menu\+::\+Menu\+T\+T\+T}!W\+I\+N\+D\+O\+W\+\_\+\+T\+I\+T\+L\+E@{W\+I\+N\+D\+O\+W\+\_\+\+T\+I\+T\+L\+E}}
+\index{W\+I\+N\+D\+O\+W\+\_\+\+T\+I\+T\+L\+E@{W\+I\+N\+D\+O\+W\+\_\+\+T\+I\+T\+L\+E}!Menu\+::\+Menu\+T\+T\+T@{Menu\+::\+Menu\+T\+T\+T}}
+\subsubsection[{W\+I\+N\+D\+O\+W\+\_\+\+T\+I\+T\+L\+E}]{\setlength{\rightskip}{0pt plus 5cm}final String Menu.\+Menu\+T\+T\+T.\+W\+I\+N\+D\+O\+W\+\_\+\+T\+I\+T\+L\+E = \char`\"{}Dans Crazy Tic Tac Toe\char`\"{}\hspace{0.3cm}{\ttfamily [private]}}\label{class_menu_1_1_menu_t_t_t_a415b411bb82c4159d053e2e3a87a9061}
+Title of the window \hypertarget{class_menu_1_1_menu_t_t_t_a07f18d5ed40cd020290f7cb16ffadca8}{}\index{Menu\+::\+Menu\+T\+T\+T@{Menu\+::\+Menu\+T\+T\+T}!W\+I\+N\+D\+O\+W\+\_\+\+W\+I\+D\+T\+H@{W\+I\+N\+D\+O\+W\+\_\+\+W\+I\+D\+T\+H}}
+\index{W\+I\+N\+D\+O\+W\+\_\+\+W\+I\+D\+T\+H@{W\+I\+N\+D\+O\+W\+\_\+\+W\+I\+D\+T\+H}!Menu\+::\+Menu\+T\+T\+T@{Menu\+::\+Menu\+T\+T\+T}}
+\subsubsection[{W\+I\+N\+D\+O\+W\+\_\+\+W\+I\+D\+T\+H}]{\setlength{\rightskip}{0pt plus 5cm}final int Menu.\+Menu\+T\+T\+T.\+W\+I\+N\+D\+O\+W\+\_\+\+W\+I\+D\+T\+H = 500\hspace{0.3cm}{\ttfamily [private]}}\label{class_menu_1_1_menu_t_t_t_a07f18d5ed40cd020290f7cb16ffadca8}
+Width of the window 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Menu/\hyperlink{_menu_t_t_t_8java}{Menu\+T\+T\+T.\+java}\end{DoxyCompactItemize}

@@ -1,5 +1,5 @@
 package Display;
-/**
+/** 
  * @file Display.java
  * 
  * @brief This class is the superclass display, which contains generic
@@ -8,7 +8,7 @@ package Display;
  * 
  * @date 29/03/2015
  * 
- * @author Casey Denner
+ * @author Casey Denner 
  *  
  */
 
@@ -21,15 +21,10 @@ import Menu.GameSelector;
 /**
  * @class Display
  * @brief This class is the superclass display, which contains generic
- * display related methods which are to be used by the respective 
- * superclass display classes.
+ * 	display related methods.
  */
 public class Display extends JPanel {
 	
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = -5669737807449551821L;
 	/** sets shape width and height */
 	private final int SHAPE_WIDTH = 30;
 	private final int SHAPE_HEIGHT = 30;
@@ -98,7 +93,10 @@ public class Display extends JPanel {
 	public static final int OFFSET40 = 40; 
 	public static final int OFFSET50 = 50; 
 
-	/** This method draws rectangles for the boards **/
+	/**
+	 * This method draws rectangles on the board
+	 * @param graphics
+	 */
 	public void paintComponent(Graphics graphics) {
 		if(GameSelector.m_TRACE){
 			System.out.println("Display::paintComponent");

@@ -17,8 +17,9 @@ import Square.Square;
 /**
  * @class Board
  * @brief superclass for generating the board, this class contains all of
- * the generic information concerning board classes, such as initialising
+ * 	the generic information concerning board classes, such as initialising
  * the grids and detecting the end-game.
+ *
  */
 public abstract class Board {
 

@@ -1,3 +1,4 @@
+package Square;
 /**
  * @file Square.java
  * @author Casey Denner
@@ -5,10 +6,7 @@
  * @brief This class stores the position of each square and its elements
  */
 
-package Square;
-
 import Menu.GameSelector;
-
 /**
  * @class Square
  * @brief This class stores the position of each square and its elements
@@ -17,8 +15,8 @@ public abstract class Square {
 	
 	/** Stores the position of the square on the board*/ 
 	protected int m_position;
-	/** stores what the square is filled with. possible values:
-	 * " ", "O" or "X"
+	/**
+	 * Stores what the square is filled with. possible values: " ", "O" or "X"
 	 */
 	protected char m_x;
 

@@ -1,0 +1,602 @@
+\hypertarget{class_game_1_1_game_sn_l}{}\section{Game.\+Game\+Sn\+L Class Reference}
+\label{class_game_1_1_game_sn_l}\index{Game.\+Game\+Sn\+L@{Game.\+Game\+Sn\+L}}
+
+
+Creates all the user interface for Snakes and Ladders, as well as contains all the functions to play the game.  
+
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{class_game_1_1_game_sn_l_a7dc9a794ee67fda75110c95f37927bfd}{get\+Number\+Of\+Players} ()
+\item 
+Array\+List$<$ Integer $>$ \hyperlink{class_game_1_1_game_sn_l_a6b0635ee59d9a41d6d99d46c2695ac1d}{get\+Ladders} ()
+\item 
+Array\+List$<$ Integer $>$ \hyperlink{class_game_1_1_game_sn_l_a22041d671d2441ef54db03691e0005f8}{get\+Snakes} ()
+\item 
+int \hyperlink{class_game_1_1_game_sn_l_a3be79ab2fef3a95a5225df2c070ded0f}{get\+Player\+Location} (int player\+Index)
+\item 
+int \hyperlink{class_game_1_1_game_sn_l_aeee36f69ce6b0181699985b4f8f33804}{get\+Players\+Size} ()
+\item 
+int \hyperlink{class_game_1_1_game_sn_l_a17f7962bedb5c8342429d9193fda4109}{get\+Iterator} ()
+\item 
+\hyperlink{class_player_1_1_player_sn_l}{Player\+Sn\+L} \hyperlink{class_game_1_1_game_sn_l_a076667f8879f4028f32f7b6e9a12a56e}{get\+Player} (int player\+Index)
+\item 
+Array\+List$<$ Integer $>$ \hyperlink{class_game_1_1_game_sn_l_a3039b9412740fd591db9adf56d1e27e2}{get\+Movement\+Squares} ()
+\item 
+void \hyperlink{class_game_1_1_game_sn_l_af55a1bc816074728dd65958c30929374}{set\+Snakes} (int i)
+\item 
+void \hyperlink{class_game_1_1_game_sn_l_a08b5522b146d49dcef3c4b3a477314ee}{set\+Ladders} (int i)
+\item 
+void \hyperlink{class_game_1_1_game_sn_l_a4b111f57d294bb007201657c20cf6938}{set\+Movement\+Squares} (int i)
+\item 
+\hyperlink{class_game_1_1_game_sn_l_a76663e6331e7f09bdb0baaf6d3f28b2f}{Game\+Sn\+L} (Array\+List$<$ String $>$ player\+Names, Array\+List$<$ Color $>$ player\+Colors, Array\+List$<$ Integer $>$ player\+Positions, Array\+List$<$ Integer $>$ snakes, Array\+List$<$ Integer $>$ ladders, Boolean visualization)
+\item 
+\hyperlink{class_game_1_1_game_sn_l_a6fe06bf600d5c45331213809355c2dea}{Game\+Sn\+L} (final Array\+List$<$ String $>$ player\+Names, final Array\+List$<$ Color $>$ player\+Colors, final int snakes, final int ladders, final Boolean visualization)
+\item 
+int \hyperlink{class_game_1_1_game_sn_l_ae00564fcdb6a04cf947fbd9a3a540afc}{button\+Push} ()
+\item 
+void \hyperlink{class_game_1_1_game_sn_l_aef0c39ae2a4b0a54a2fa7f7a9037ac23}{frame\+Dispose} ()
+\item 
+void \hyperlink{class_game_1_1_game_sn_l_a144de1dde78fd74ce80cc83793414171}{reset} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static int \hyperlink{class_game_1_1_game_sn_l_adb89cd5405a48486385f71e283923f4e}{get\+Movement\+Pair} (int original)
+\item 
+static void \hyperlink{class_game_1_1_game_sn_l_ab20ec2d01e628a96bbf74c98d2c471b1}{main} (String\mbox{[}$\,$\mbox{]} args)
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_game_1_1_game_sn_l_a9ea5d21ac9e477612c96de2ffa25fce3}{sort\+Players} ()
+\item 
+void \hyperlink{class_game_1_1_game_sn_l_a95f5e6f89379d65d08bf6421b07b202b}{init\+Variables} (Array\+List$<$ String $>$ player\+Names, Array\+List$<$ Color $>$ player\+Colors, int snakes, int ladders)
+\item 
+void \hyperlink{class_game_1_1_game_sn_l_ae3a0f31e079a3eb474a5e0a90ebf5a50}{init\+Display} ()
+\item 
+int \hyperlink{class_game_1_1_game_sn_l_a0b8ab49d329624503e5ca5dd85cb64c3}{check\+Move} (\hyperlink{class_player_1_1_player_sn_l}{Player\+Sn\+L} player)
+\item 
+void \hyperlink{class_game_1_1_game_sn_l_a9a88724dc4d30ef554e1024facc396ee}{move\+Player} (\hyperlink{class_player_1_1_player_sn_l}{Player\+Sn\+L} player, int destination)
+\item 
+void \hyperlink{class_game_1_1_game_sn_l_ad27ea3509697a5154650136b9b8a6ad6}{winner} (\hyperlink{class_player_1_1_player_sn_l}{Player\+Sn\+L} player)
+\item 
+int \hyperlink{class_game_1_1_game_sn_l_a2014a57bc83dedaff97c1dbc1a7ff558}{roll\+Dice} ()
+\item 
+int\mbox{[}$\,$\mbox{]} \hyperlink{class_game_1_1_game_sn_l_a7e7927cbebfd31c8bb0204edc40adffc}{generate\+Squares} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+final int \hyperlink{class_game_1_1_game_sn_l_ad8871bbe0cb946186f76093b958380b2}{B\+O\+A\+R\+D\+\_\+\+W\+I\+D\+T\+H} = 10
+\item 
+final int \hyperlink{class_game_1_1_game_sn_l_a1fe9384816bed631e283ad665da87b25}{B\+O\+A\+R\+D\+\_\+\+H\+E\+I\+G\+H\+T} = 10
+\item 
+final int \hyperlink{class_game_1_1_game_sn_l_a624c7a8a2f8d296257239b8003a5dafd}{F\+R\+A\+M\+E\+\_\+\+H\+E\+I\+G\+H\+T} = 600
+\item 
+final int \hyperlink{class_game_1_1_game_sn_l_afdca372266402cff76e7713cb7141ad6}{F\+R\+A\+M\+E\+\_\+\+W\+I\+D\+T\+H} = 800
+\item 
+J\+Frame \hyperlink{class_game_1_1_game_sn_l_a694cff89aec27b85a6b970b2304c6968}{m\+\_\+frame} = new J\+Frame(\char`\"{}Snakes \& Ladders\char`\"{})
+\item 
+final J\+Panel \hyperlink{class_game_1_1_game_sn_l_a073ab891cd1c2854f4dd4081cfc1319c}{m\+\_\+content\+Panel} = new J\+Panel()
+\item 
+J\+Label \hyperlink{class_game_1_1_game_sn_l_a59399bbb046839055516f0ce733b9ba7}{m\+\_\+dice\+Pic\+Label} = new J\+Label(new Image\+Icon(\char`\"{}null\char`\"{}))
+\item 
+Buffered\+Image \hyperlink{class_game_1_1_game_sn_l_af12170048b789d0c3303ab35c9b58413}{m\+\_\+my\+Picture} = null
+\item 
+J\+Frame \hyperlink{class_game_1_1_game_sn_l_ae665665dd40de7d795777635000da8eb}{m\+\_\+initial\+Roll\+Frame} = new J\+Frame()
+\item 
+int\mbox{[}$\,$\mbox{]} \hyperlink{class_game_1_1_game_sn_l_a005ffc3118d467caff14a7afdc68a520}{m\+\_\+initial\+Rolls}
+\item 
+Array\+List$<$ String $>$ \hyperlink{class_game_1_1_game_sn_l_a0faf146bfc9f0bd5814b3b3c71c00a20}{m\+\_\+player\+Names}
+\item 
+Array\+List$<$ Color $>$ \hyperlink{class_game_1_1_game_sn_l_aab5fbfe1044b0a403fdfa7634c0c344b}{m\+\_\+player\+Colors}
+\item 
+J\+Text\+Field \hyperlink{class_game_1_1_game_sn_l_a0726c8332d62c46e936a13dc4d3abd1b}{m\+\_\+txt\+Field}
+\item 
+J\+Button \hyperlink{class_game_1_1_game_sn_l_acc91a4663c2f1c4ee9381a070332d7a2}{m\+\_\+btn\+Roll\+Dice}
+\item 
+J\+Button \hyperlink{class_game_1_1_game_sn_l_a6e2e15971627fbc196ed207742a79e44}{m\+\_\+btn\+Continue}
+\item 
+\hyperlink{class_board_1_1_board_sn_l}{Board\+Sn\+L} \hyperlink{class_game_1_1_game_sn_l_a9cb06e53592cfc48ca485c25ab9c1e42}{m\+\_\+board}
+\item 
+int \hyperlink{class_game_1_1_game_sn_l_a4cff3283ef1f344a871b2019ae92dd57}{m\+\_\+player\+Iterator} = 0
+\item 
+\hyperlink{class_display_1_1_display_sn_l}{Display\+Sn\+L} \hyperlink{class_game_1_1_game_sn_l_af35fcedb0f8206713981e01068c3f281}{m\+\_\+shapes\+Panel}
+\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static Array\+List$<$ Integer $>$ \hyperlink{class_game_1_1_game_sn_l_a904b75e06e59aa1a9c028a948f98e33e}{m\+\_\+snakes\+List} = new Array\+List$<$Integer$>$()
+\item 
+static Array\+List$<$ Integer $>$ \hyperlink{class_game_1_1_game_sn_l_a0b47e32e0960ed988d341b31b5f3bd3b}{m\+\_\+ladders\+List} = new Array\+List$<$Integer$>$()
+\item 
+static Array\+List$<$ \hyperlink{class_player_1_1_player_sn_l}{Player\+Sn\+L} $>$ \hyperlink{class_game_1_1_game_sn_l_a942dda31e02524f87962efa42b2c2642}{players} = new Array\+List$<$\hyperlink{class_player_1_1_player_sn_l}{Player\+Sn\+L}$>$()
+\item 
+static Array\+List$<$ Integer $>$ \hyperlink{class_game_1_1_game_sn_l_af8c7ff07d44c8713db098772d7888478}{m\+\_\+movement\+Squares}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Creates all the user interface for Snakes and Ladders, as well as contains all the functions to play the game. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_game_1_1_game_sn_l_a76663e6331e7f09bdb0baaf6d3f28b2f}{}\index{Game\+::\+Game\+Sn\+L@{Game\+::\+Game\+Sn\+L}!Game\+Sn\+L@{Game\+Sn\+L}}
+\index{Game\+Sn\+L@{Game\+Sn\+L}!Game\+::\+Game\+Sn\+L@{Game\+::\+Game\+Sn\+L}}
+\subsubsection[{Game\+Sn\+L(\+Array\+List$<$ String $>$ player\+Names, Array\+List$<$ Color $>$ player\+Colors, Array\+List$<$ Integer $>$ player\+Positions, Array\+List$<$ Integer $>$ snakes, Array\+List$<$ Integer $>$ ladders, Boolean visualization)}]{\setlength{\rightskip}{0pt plus 5cm}Game.\+Game\+Sn\+L.\+Game\+Sn\+L (
+\begin{DoxyParamCaption}
+\item[{Array\+List$<$ String $>$}]{player\+Names, }
+\item[{Array\+List$<$ Color $>$}]{player\+Colors, }
+\item[{Array\+List$<$ Integer $>$}]{player\+Positions, }
+\item[{Array\+List$<$ Integer $>$}]{snakes, }
+\item[{Array\+List$<$ Integer $>$}]{ladders, }
+\item[{Boolean}]{visualization}
+\end{DoxyParamCaption}
+)}\label{class_game_1_1_game_sn_l_a76663e6331e7f09bdb0baaf6d3f28b2f}
+Loads data into game
+
+
+\begin{DoxyParams}{Parameters}
+{\em player\+Names} & stores the player names. \\
+\hline
+{\em player\+Colors} & shows list of colours. \\
+\hline
+{\em player\+Positions} & shows list of player positions. \\
+\hline
+{\em snakes} & adds snakes to various squares. \\
+\hline
+{\em ladders} & adds ladders to various squares. \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_game_1_1_game_sn_l_a6fe06bf600d5c45331213809355c2dea}{}\index{Game\+::\+Game\+Sn\+L@{Game\+::\+Game\+Sn\+L}!Game\+Sn\+L@{Game\+Sn\+L}}
+\index{Game\+Sn\+L@{Game\+Sn\+L}!Game\+::\+Game\+Sn\+L@{Game\+::\+Game\+Sn\+L}}
+\subsubsection[{Game\+Sn\+L(final Array\+List$<$ String $>$ player\+Names, final Array\+List$<$ Color $>$ player\+Colors, final int snakes, final int ladders, final Boolean visualization)}]{\setlength{\rightskip}{0pt plus 5cm}Game.\+Game\+Sn\+L.\+Game\+Sn\+L (
+\begin{DoxyParamCaption}
+\item[{final Array\+List$<$ String $>$}]{player\+Names, }
+\item[{final Array\+List$<$ Color $>$}]{player\+Colors, }
+\item[{final int}]{snakes, }
+\item[{final int}]{ladders, }
+\item[{final Boolean}]{visualization}
+\end{DoxyParamCaption}
+)}\label{class_game_1_1_game_sn_l_a6fe06bf600d5c45331213809355c2dea}
+Stores passed data into the game
+
+
+\begin{DoxyParams}{Parameters}
+{\em player\+Names} & 
+\begin{DoxyItemize}
+\item all player names. 
+\end{DoxyItemize}\\
+\hline
+{\em player\+Colors} & 
+\begin{DoxyItemize}
+\item colour of each player. 
+\end{DoxyItemize}\\
+\hline
+{\em snakes} & 
+\begin{DoxyItemize}
+\item number of snakes to be generated. 
+\end{DoxyItemize}\\
+\hline
+{\em ladders} & 
+\begin{DoxyItemize}
+\item number of ladders to be generated. 
+\end{DoxyItemize}\\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_game_1_1_game_sn_l_ae00564fcdb6a04cf947fbd9a3a540afc}{}\index{Game\+::\+Game\+Sn\+L@{Game\+::\+Game\+Sn\+L}!button\+Push@{button\+Push}}
+\index{button\+Push@{button\+Push}!Game\+::\+Game\+Sn\+L@{Game\+::\+Game\+Sn\+L}}
+\subsubsection[{button\+Push()}]{\setlength{\rightskip}{0pt plus 5cm}int Game.\+Game\+Sn\+L.\+button\+Push (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_game_1_1_game_sn_l_ae00564fcdb6a04cf947fbd9a3a540afc}
+Iterates through player turns
+
+\begin{DoxyReturn}{Returns}
+a random number between 1-\/6 
+\end{DoxyReturn}
+\hypertarget{class_game_1_1_game_sn_l_a0b8ab49d329624503e5ca5dd85cb64c3}{}\index{Game\+::\+Game\+Sn\+L@{Game\+::\+Game\+Sn\+L}!check\+Move@{check\+Move}}
+\index{check\+Move@{check\+Move}!Game\+::\+Game\+Sn\+L@{Game\+::\+Game\+Sn\+L}}
+\subsubsection[{check\+Move(\+Player\+Sn\+L player)}]{\setlength{\rightskip}{0pt plus 5cm}int Game.\+Game\+Sn\+L.\+check\+Move (
+\begin{DoxyParamCaption}
+\item[{{\bf Player\+Sn\+L}}]{player}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{class_game_1_1_game_sn_l_a0b8ab49d329624503e5ca5dd85cb64c3}
+Checks if the player has won and checks if the destination is valid
+
+
+\begin{DoxyParams}{Parameters}
+{\em player} & 
+\begin{DoxyItemize}
+\item current player 
+\end{DoxyItemize}\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a random number from 1-\/6 
+\end{DoxyReturn}
+\hypertarget{class_game_1_1_game_sn_l_aef0c39ae2a4b0a54a2fa7f7a9037ac23}{}\index{Game\+::\+Game\+Sn\+L@{Game\+::\+Game\+Sn\+L}!frame\+Dispose@{frame\+Dispose}}
+\index{frame\+Dispose@{frame\+Dispose}!Game\+::\+Game\+Sn\+L@{Game\+::\+Game\+Sn\+L}}
+\subsubsection[{frame\+Dispose()}]{\setlength{\rightskip}{0pt plus 5cm}void Game.\+Game\+Sn\+L.\+frame\+Dispose (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_game_1_1_game_sn_l_aef0c39ae2a4b0a54a2fa7f7a9037ac23}
+\hypertarget{class_game_1_1_game_sn_l_a7e7927cbebfd31c8bb0204edc40adffc}{}\index{Game\+::\+Game\+Sn\+L@{Game\+::\+Game\+Sn\+L}!generate\+Squares@{generate\+Squares}}
+\index{generate\+Squares@{generate\+Squares}!Game\+::\+Game\+Sn\+L@{Game\+::\+Game\+Sn\+L}}
+\subsubsection[{generate\+Squares()}]{\setlength{\rightskip}{0pt plus 5cm}int \mbox{[}$\,$\mbox{]} Game.\+Game\+Sn\+L.\+generate\+Squares (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{class_game_1_1_game_sn_l_a7e7927cbebfd31c8bb0204edc40adffc}
+Generates snake and ladder starting and ending positions
+
+\begin{DoxyReturn}{Returns}
+snake and ladder starting and ending positions 
+\end{DoxyReturn}
+\hypertarget{class_game_1_1_game_sn_l_a17f7962bedb5c8342429d9193fda4109}{}\index{Game\+::\+Game\+Sn\+L@{Game\+::\+Game\+Sn\+L}!get\+Iterator@{get\+Iterator}}
+\index{get\+Iterator@{get\+Iterator}!Game\+::\+Game\+Sn\+L@{Game\+::\+Game\+Sn\+L}}
+\subsubsection[{get\+Iterator()}]{\setlength{\rightskip}{0pt plus 5cm}int Game.\+Game\+Sn\+L.\+get\+Iterator (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_game_1_1_game_sn_l_a17f7962bedb5c8342429d9193fda4109}
+Returns the current turn
+
+\begin{DoxyReturn}{Returns}
+whose turn it is 
+\end{DoxyReturn}
+\hypertarget{class_game_1_1_game_sn_l_a6b0635ee59d9a41d6d99d46c2695ac1d}{}\index{Game\+::\+Game\+Sn\+L@{Game\+::\+Game\+Sn\+L}!get\+Ladders@{get\+Ladders}}
+\index{get\+Ladders@{get\+Ladders}!Game\+::\+Game\+Sn\+L@{Game\+::\+Game\+Sn\+L}}
+\subsubsection[{get\+Ladders()}]{\setlength{\rightskip}{0pt plus 5cm}Array\+List$<$Integer$>$ Game.\+Game\+Sn\+L.\+get\+Ladders (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_game_1_1_game_sn_l_a6b0635ee59d9a41d6d99d46c2695ac1d}
+Returns list of ladders
+
+\begin{DoxyReturn}{Returns}
+list of laddders 
+\end{DoxyReturn}
+\hypertarget{class_game_1_1_game_sn_l_adb89cd5405a48486385f71e283923f4e}{}\index{Game\+::\+Game\+Sn\+L@{Game\+::\+Game\+Sn\+L}!get\+Movement\+Pair@{get\+Movement\+Pair}}
+\index{get\+Movement\+Pair@{get\+Movement\+Pair}!Game\+::\+Game\+Sn\+L@{Game\+::\+Game\+Sn\+L}}
+\subsubsection[{get\+Movement\+Pair(int original)}]{\setlength{\rightskip}{0pt plus 5cm}static int Game.\+Game\+Sn\+L.\+get\+Movement\+Pair (
+\begin{DoxyParamCaption}
+\item[{int}]{original}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{class_game_1_1_game_sn_l_adb89cd5405a48486385f71e283923f4e}
+Generates the squares the player has to move to before and after a snake or a ladder object
+
+
+\begin{DoxyParams}{Parameters}
+{\em original} & 
+\begin{DoxyItemize}
+\item player\textquotesingle{}s initial position 
+\end{DoxyItemize}\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the squares the player has to move to before and after a snake or a ladder object 
+\end{DoxyReturn}
+\hypertarget{class_game_1_1_game_sn_l_a3039b9412740fd591db9adf56d1e27e2}{}\index{Game\+::\+Game\+Sn\+L@{Game\+::\+Game\+Sn\+L}!get\+Movement\+Squares@{get\+Movement\+Squares}}
+\index{get\+Movement\+Squares@{get\+Movement\+Squares}!Game\+::\+Game\+Sn\+L@{Game\+::\+Game\+Sn\+L}}
+\subsubsection[{get\+Movement\+Squares()}]{\setlength{\rightskip}{0pt plus 5cm}Array\+List$<$Integer$>$ Game.\+Game\+Sn\+L.\+get\+Movement\+Squares (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_game_1_1_game_sn_l_a3039b9412740fd591db9adf56d1e27e2}
+Returns the squares the player has to move to before and after a snake or a ladder object
+
+\begin{DoxyReturn}{Returns}
+the squares the player has to move to before and after a snake or a ladder object 
+\end{DoxyReturn}
+\hypertarget{class_game_1_1_game_sn_l_a7dc9a794ee67fda75110c95f37927bfd}{}\index{Game\+::\+Game\+Sn\+L@{Game\+::\+Game\+Sn\+L}!get\+Number\+Of\+Players@{get\+Number\+Of\+Players}}
+\index{get\+Number\+Of\+Players@{get\+Number\+Of\+Players}!Game\+::\+Game\+Sn\+L@{Game\+::\+Game\+Sn\+L}}
+\subsubsection[{get\+Number\+Of\+Players()}]{\setlength{\rightskip}{0pt plus 5cm}int Game.\+Game\+Sn\+L.\+get\+Number\+Of\+Players (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_game_1_1_game_sn_l_a7dc9a794ee67fda75110c95f37927bfd}
+Returns the number of players
+
+\begin{DoxyReturn}{Returns}
+the number of players 
+\end{DoxyReturn}
+\hypertarget{class_game_1_1_game_sn_l_a076667f8879f4028f32f7b6e9a12a56e}{}\index{Game\+::\+Game\+Sn\+L@{Game\+::\+Game\+Sn\+L}!get\+Player@{get\+Player}}
+\index{get\+Player@{get\+Player}!Game\+::\+Game\+Sn\+L@{Game\+::\+Game\+Sn\+L}}
+\subsubsection[{get\+Player(int player\+Index)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Player\+Sn\+L} Game.\+Game\+Sn\+L.\+get\+Player (
+\begin{DoxyParamCaption}
+\item[{int}]{player\+Index}
+\end{DoxyParamCaption}
+)}\label{class_game_1_1_game_sn_l_a076667f8879f4028f32f7b6e9a12a56e}
+Returns a player name
+
+
+\begin{DoxyParams}{Parameters}
+{\em player\+Index} & 
+\begin{DoxyItemize}
+\item index of player 
+\end{DoxyItemize}\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+player name 
+\end{DoxyReturn}
+\hypertarget{class_game_1_1_game_sn_l_a3be79ab2fef3a95a5225df2c070ded0f}{}\index{Game\+::\+Game\+Sn\+L@{Game\+::\+Game\+Sn\+L}!get\+Player\+Location@{get\+Player\+Location}}
+\index{get\+Player\+Location@{get\+Player\+Location}!Game\+::\+Game\+Sn\+L@{Game\+::\+Game\+Sn\+L}}
+\subsubsection[{get\+Player\+Location(int player\+Index)}]{\setlength{\rightskip}{0pt plus 5cm}int Game.\+Game\+Sn\+L.\+get\+Player\+Location (
+\begin{DoxyParamCaption}
+\item[{int}]{player\+Index}
+\end{DoxyParamCaption}
+)}\label{class_game_1_1_game_sn_l_a3be79ab2fef3a95a5225df2c070ded0f}
+Returns current player\textquotesingle{}s location
+
+
+\begin{DoxyParams}{Parameters}
+{\em player\+Index} & 
+\begin{DoxyItemize}
+\item index of the current player 
+\end{DoxyItemize}\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the current player\textquotesingle{}s location 
+\end{DoxyReturn}
+\hypertarget{class_game_1_1_game_sn_l_aeee36f69ce6b0181699985b4f8f33804}{}\index{Game\+::\+Game\+Sn\+L@{Game\+::\+Game\+Sn\+L}!get\+Players\+Size@{get\+Players\+Size}}
+\index{get\+Players\+Size@{get\+Players\+Size}!Game\+::\+Game\+Sn\+L@{Game\+::\+Game\+Sn\+L}}
+\subsubsection[{get\+Players\+Size()}]{\setlength{\rightskip}{0pt plus 5cm}int Game.\+Game\+Sn\+L.\+get\+Players\+Size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_game_1_1_game_sn_l_aeee36f69ce6b0181699985b4f8f33804}
+Returns the number of players
+
+\begin{DoxyReturn}{Returns}
+the number of players 
+\end{DoxyReturn}
+\hypertarget{class_game_1_1_game_sn_l_a22041d671d2441ef54db03691e0005f8}{}\index{Game\+::\+Game\+Sn\+L@{Game\+::\+Game\+Sn\+L}!get\+Snakes@{get\+Snakes}}
+\index{get\+Snakes@{get\+Snakes}!Game\+::\+Game\+Sn\+L@{Game\+::\+Game\+Sn\+L}}
+\subsubsection[{get\+Snakes()}]{\setlength{\rightskip}{0pt plus 5cm}Array\+List$<$Integer$>$ Game.\+Game\+Sn\+L.\+get\+Snakes (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_game_1_1_game_sn_l_a22041d671d2441ef54db03691e0005f8}
+Returns list of snakes
+
+\begin{DoxyReturn}{Returns}
+list of snakes 
+\end{DoxyReturn}
+\hypertarget{class_game_1_1_game_sn_l_ae3a0f31e079a3eb474a5e0a90ebf5a50}{}\index{Game\+::\+Game\+Sn\+L@{Game\+::\+Game\+Sn\+L}!init\+Display@{init\+Display}}
+\index{init\+Display@{init\+Display}!Game\+::\+Game\+Sn\+L@{Game\+::\+Game\+Sn\+L}}
+\subsubsection[{init\+Display()}]{\setlength{\rightskip}{0pt plus 5cm}void Game.\+Game\+Sn\+L.\+init\+Display (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{class_game_1_1_game_sn_l_ae3a0f31e079a3eb474a5e0a90ebf5a50}
+Creates the display \hypertarget{class_game_1_1_game_sn_l_a95f5e6f89379d65d08bf6421b07b202b}{}\index{Game\+::\+Game\+Sn\+L@{Game\+::\+Game\+Sn\+L}!init\+Variables@{init\+Variables}}
+\index{init\+Variables@{init\+Variables}!Game\+::\+Game\+Sn\+L@{Game\+::\+Game\+Sn\+L}}
+\subsubsection[{init\+Variables(\+Array\+List$<$ String $>$ player\+Names, Array\+List$<$ Color $>$ player\+Colors, int snakes, int ladders)}]{\setlength{\rightskip}{0pt plus 5cm}void Game.\+Game\+Sn\+L.\+init\+Variables (
+\begin{DoxyParamCaption}
+\item[{Array\+List$<$ String $>$}]{player\+Names, }
+\item[{Array\+List$<$ Color $>$}]{player\+Colors, }
+\item[{int}]{snakes, }
+\item[{int}]{ladders}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{class_game_1_1_game_sn_l_a95f5e6f89379d65d08bf6421b07b202b}
+Initialises all the variables and generates the positions of the snakes and ladders
+
+
+\begin{DoxyParams}{Parameters}
+{\em player\+Names} & 
+\begin{DoxyItemize}
+\item all player names. 
+\end{DoxyItemize}\\
+\hline
+{\em player\+Colors} & 
+\begin{DoxyItemize}
+\item colour of each player. 
+\end{DoxyItemize}\\
+\hline
+{\em snakes} & 
+\begin{DoxyItemize}
+\item number of snakes to be generated. 
+\end{DoxyItemize}\\
+\hline
+{\em ladders} & 
+\begin{DoxyItemize}
+\item number of ladders to be generated. 
+\end{DoxyItemize}\\
+\hline
+\end{DoxyParams}
+Adds a player object to the player object array list
+
+Generates snake positions
+
+Generates ladder positions \hypertarget{class_game_1_1_game_sn_l_ab20ec2d01e628a96bbf74c98d2c471b1}{}\index{Game\+::\+Game\+Sn\+L@{Game\+::\+Game\+Sn\+L}!main@{main}}
+\index{main@{main}!Game\+::\+Game\+Sn\+L@{Game\+::\+Game\+Sn\+L}}
+\subsubsection[{main(\+String[] args)}]{\setlength{\rightskip}{0pt plus 5cm}static void Game.\+Game\+Sn\+L.\+main (
+\begin{DoxyParamCaption}
+\item[{String\mbox{[}$\,$\mbox{]}}]{args}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{class_game_1_1_game_sn_l_ab20ec2d01e628a96bbf74c98d2c471b1}
+This is the test method. Default values are set for names, colours and number of snakes and ladders. \hypertarget{class_game_1_1_game_sn_l_a9a88724dc4d30ef554e1024facc396ee}{}\index{Game\+::\+Game\+Sn\+L@{Game\+::\+Game\+Sn\+L}!move\+Player@{move\+Player}}
+\index{move\+Player@{move\+Player}!Game\+::\+Game\+Sn\+L@{Game\+::\+Game\+Sn\+L}}
+\subsubsection[{move\+Player(\+Player\+Sn\+L player, int destination)}]{\setlength{\rightskip}{0pt plus 5cm}void Game.\+Game\+Sn\+L.\+move\+Player (
+\begin{DoxyParamCaption}
+\item[{{\bf Player\+Sn\+L}}]{player, }
+\item[{int}]{destination}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{class_game_1_1_game_sn_l_a9a88724dc4d30ef554e1024facc396ee}
+Moves the player
+
+
+\begin{DoxyParams}{Parameters}
+{\em player} & 
+\begin{DoxyItemize}
+\item current player 
+\end{DoxyItemize}\\
+\hline
+{\em destination} & 
+\begin{DoxyItemize}
+\item destination square player will get moved to 
+\end{DoxyItemize}\\
+\hline
+\end{DoxyParams}
+\hypertarget{class_game_1_1_game_sn_l_a144de1dde78fd74ce80cc83793414171}{}\index{Game\+::\+Game\+Sn\+L@{Game\+::\+Game\+Sn\+L}!reset@{reset}}
+\index{reset@{reset}!Game\+::\+Game\+Sn\+L@{Game\+::\+Game\+Sn\+L}}
+\subsubsection[{reset()}]{\setlength{\rightskip}{0pt plus 5cm}void Game.\+Game\+Sn\+L.\+reset (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_game_1_1_game_sn_l_a144de1dde78fd74ce80cc83793414171}
+This method resets the board etc to be able to use the back button during game play. \hypertarget{class_game_1_1_game_sn_l_a2014a57bc83dedaff97c1dbc1a7ff558}{}\index{Game\+::\+Game\+Sn\+L@{Game\+::\+Game\+Sn\+L}!roll\+Dice@{roll\+Dice}}
+\index{roll\+Dice@{roll\+Dice}!Game\+::\+Game\+Sn\+L@{Game\+::\+Game\+Sn\+L}}
+\subsubsection[{roll\+Dice()}]{\setlength{\rightskip}{0pt plus 5cm}int Game.\+Game\+Sn\+L.\+roll\+Dice (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{class_game_1_1_game_sn_l_a2014a57bc83dedaff97c1dbc1a7ff558}
+Rolls the dice
+
+\begin{DoxyReturn}{Returns}
+a random number between 1-\/6 
+\end{DoxyReturn}
+\hypertarget{class_game_1_1_game_sn_l_a08b5522b146d49dcef3c4b3a477314ee}{}\index{Game\+::\+Game\+Sn\+L@{Game\+::\+Game\+Sn\+L}!set\+Ladders@{set\+Ladders}}
+\index{set\+Ladders@{set\+Ladders}!Game\+::\+Game\+Sn\+L@{Game\+::\+Game\+Sn\+L}}
+\subsubsection[{set\+Ladders(int i)}]{\setlength{\rightskip}{0pt plus 5cm}void Game.\+Game\+Sn\+L.\+set\+Ladders (
+\begin{DoxyParamCaption}
+\item[{int}]{i}
+\end{DoxyParamCaption}
+)}\label{class_game_1_1_game_sn_l_a08b5522b146d49dcef3c4b3a477314ee}
+Sets the position of the ladders 
+\begin{DoxyParams}{Parameters}
+{\em i} & -\/ board position to add ladder to \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_game_1_1_game_sn_l_a4b111f57d294bb007201657c20cf6938}{}\index{Game\+::\+Game\+Sn\+L@{Game\+::\+Game\+Sn\+L}!set\+Movement\+Squares@{set\+Movement\+Squares}}
+\index{set\+Movement\+Squares@{set\+Movement\+Squares}!Game\+::\+Game\+Sn\+L@{Game\+::\+Game\+Sn\+L}}
+\subsubsection[{set\+Movement\+Squares(int i)}]{\setlength{\rightskip}{0pt plus 5cm}void Game.\+Game\+Sn\+L.\+set\+Movement\+Squares (
+\begin{DoxyParamCaption}
+\item[{int}]{i}
+\end{DoxyParamCaption}
+)}\label{class_game_1_1_game_sn_l_a4b111f57d294bb007201657c20cf6938}
+\hypertarget{class_game_1_1_game_sn_l_af55a1bc816074728dd65958c30929374}{}\index{Game\+::\+Game\+Sn\+L@{Game\+::\+Game\+Sn\+L}!set\+Snakes@{set\+Snakes}}
+\index{set\+Snakes@{set\+Snakes}!Game\+::\+Game\+Sn\+L@{Game\+::\+Game\+Sn\+L}}
+\subsubsection[{set\+Snakes(int i)}]{\setlength{\rightskip}{0pt plus 5cm}void Game.\+Game\+Sn\+L.\+set\+Snakes (
+\begin{DoxyParamCaption}
+\item[{int}]{i}
+\end{DoxyParamCaption}
+)}\label{class_game_1_1_game_sn_l_af55a1bc816074728dd65958c30929374}
+Sets the position of the snakes 
+\begin{DoxyParams}{Parameters}
+{\em i} & -\/ board position to add snake to \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_game_1_1_game_sn_l_a9ea5d21ac9e477612c96de2ffa25fce3}{}\index{Game\+::\+Game\+Sn\+L@{Game\+::\+Game\+Sn\+L}!sort\+Players@{sort\+Players}}
+\index{sort\+Players@{sort\+Players}!Game\+::\+Game\+Sn\+L@{Game\+::\+Game\+Sn\+L}}
+\subsubsection[{sort\+Players()}]{\setlength{\rightskip}{0pt plus 5cm}void Game.\+Game\+Sn\+L.\+sort\+Players (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{class_game_1_1_game_sn_l_a9ea5d21ac9e477612c96de2ffa25fce3}
+Determines who takes which turn \hypertarget{class_game_1_1_game_sn_l_ad27ea3509697a5154650136b9b8a6ad6}{}\index{Game\+::\+Game\+Sn\+L@{Game\+::\+Game\+Sn\+L}!winner@{winner}}
+\index{winner@{winner}!Game\+::\+Game\+Sn\+L@{Game\+::\+Game\+Sn\+L}}
+\subsubsection[{winner(\+Player\+Sn\+L player)}]{\setlength{\rightskip}{0pt plus 5cm}void Game.\+Game\+Sn\+L.\+winner (
+\begin{DoxyParamCaption}
+\item[{{\bf Player\+Sn\+L}}]{player}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{class_game_1_1_game_sn_l_ad27ea3509697a5154650136b9b8a6ad6}
+Displays winner information in a pop-\/up
+
+
+\begin{DoxyParams}{Parameters}
+{\em player} & 
+\begin{DoxyItemize}
+\item current player 
+\end{DoxyItemize}\\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_game_1_1_game_sn_l_a1fe9384816bed631e283ad665da87b25}{}\index{Game\+::\+Game\+Sn\+L@{Game\+::\+Game\+Sn\+L}!B\+O\+A\+R\+D\+\_\+\+H\+E\+I\+G\+H\+T@{B\+O\+A\+R\+D\+\_\+\+H\+E\+I\+G\+H\+T}}
+\index{B\+O\+A\+R\+D\+\_\+\+H\+E\+I\+G\+H\+T@{B\+O\+A\+R\+D\+\_\+\+H\+E\+I\+G\+H\+T}!Game\+::\+Game\+Sn\+L@{Game\+::\+Game\+Sn\+L}}
+\subsubsection[{B\+O\+A\+R\+D\+\_\+\+H\+E\+I\+G\+H\+T}]{\setlength{\rightskip}{0pt plus 5cm}final int Game.\+Game\+Sn\+L.\+B\+O\+A\+R\+D\+\_\+\+H\+E\+I\+G\+H\+T = 10\hspace{0.3cm}{\ttfamily [private]}}\label{class_game_1_1_game_sn_l_a1fe9384816bed631e283ad665da87b25}
+Height of Snakes and Ladders Board \hypertarget{class_game_1_1_game_sn_l_ad8871bbe0cb946186f76093b958380b2}{}\index{Game\+::\+Game\+Sn\+L@{Game\+::\+Game\+Sn\+L}!B\+O\+A\+R\+D\+\_\+\+W\+I\+D\+T\+H@{B\+O\+A\+R\+D\+\_\+\+W\+I\+D\+T\+H}}
+\index{B\+O\+A\+R\+D\+\_\+\+W\+I\+D\+T\+H@{B\+O\+A\+R\+D\+\_\+\+W\+I\+D\+T\+H}!Game\+::\+Game\+Sn\+L@{Game\+::\+Game\+Sn\+L}}
+\subsubsection[{B\+O\+A\+R\+D\+\_\+\+W\+I\+D\+T\+H}]{\setlength{\rightskip}{0pt plus 5cm}final int Game.\+Game\+Sn\+L.\+B\+O\+A\+R\+D\+\_\+\+W\+I\+D\+T\+H = 10\hspace{0.3cm}{\ttfamily [private]}}\label{class_game_1_1_game_sn_l_ad8871bbe0cb946186f76093b958380b2}
+Width of Snakes and Ladders Board \hypertarget{class_game_1_1_game_sn_l_a624c7a8a2f8d296257239b8003a5dafd}{}\index{Game\+::\+Game\+Sn\+L@{Game\+::\+Game\+Sn\+L}!F\+R\+A\+M\+E\+\_\+\+H\+E\+I\+G\+H\+T@{F\+R\+A\+M\+E\+\_\+\+H\+E\+I\+G\+H\+T}}
+\index{F\+R\+A\+M\+E\+\_\+\+H\+E\+I\+G\+H\+T@{F\+R\+A\+M\+E\+\_\+\+H\+E\+I\+G\+H\+T}!Game\+::\+Game\+Sn\+L@{Game\+::\+Game\+Sn\+L}}
+\subsubsection[{F\+R\+A\+M\+E\+\_\+\+H\+E\+I\+G\+H\+T}]{\setlength{\rightskip}{0pt plus 5cm}final int Game.\+Game\+Sn\+L.\+F\+R\+A\+M\+E\+\_\+\+H\+E\+I\+G\+H\+T = 600\hspace{0.3cm}{\ttfamily [private]}}\label{class_game_1_1_game_sn_l_a624c7a8a2f8d296257239b8003a5dafd}
+Height of frame \hypertarget{class_game_1_1_game_sn_l_afdca372266402cff76e7713cb7141ad6}{}\index{Game\+::\+Game\+Sn\+L@{Game\+::\+Game\+Sn\+L}!F\+R\+A\+M\+E\+\_\+\+W\+I\+D\+T\+H@{F\+R\+A\+M\+E\+\_\+\+W\+I\+D\+T\+H}}
+\index{F\+R\+A\+M\+E\+\_\+\+W\+I\+D\+T\+H@{F\+R\+A\+M\+E\+\_\+\+W\+I\+D\+T\+H}!Game\+::\+Game\+Sn\+L@{Game\+::\+Game\+Sn\+L}}
+\subsubsection[{F\+R\+A\+M\+E\+\_\+\+W\+I\+D\+T\+H}]{\setlength{\rightskip}{0pt plus 5cm}final int Game.\+Game\+Sn\+L.\+F\+R\+A\+M\+E\+\_\+\+W\+I\+D\+T\+H = 800\hspace{0.3cm}{\ttfamily [private]}}\label{class_game_1_1_game_sn_l_afdca372266402cff76e7713cb7141ad6}
+Width of frame \hypertarget{class_game_1_1_game_sn_l_a9cb06e53592cfc48ca485c25ab9c1e42}{}\index{Game\+::\+Game\+Sn\+L@{Game\+::\+Game\+Sn\+L}!m\+\_\+board@{m\+\_\+board}}
+\index{m\+\_\+board@{m\+\_\+board}!Game\+::\+Game\+Sn\+L@{Game\+::\+Game\+Sn\+L}}
+\subsubsection[{m\+\_\+board}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Board\+Sn\+L} Game.\+Game\+Sn\+L.\+m\+\_\+board\hspace{0.3cm}{\ttfamily [private]}}\label{class_game_1_1_game_sn_l_a9cb06e53592cfc48ca485c25ab9c1e42}
+Board object \hypertarget{class_game_1_1_game_sn_l_a6e2e15971627fbc196ed207742a79e44}{}\index{Game\+::\+Game\+Sn\+L@{Game\+::\+Game\+Sn\+L}!m\+\_\+btn\+Continue@{m\+\_\+btn\+Continue}}
+\index{m\+\_\+btn\+Continue@{m\+\_\+btn\+Continue}!Game\+::\+Game\+Sn\+L@{Game\+::\+Game\+Sn\+L}}
+\subsubsection[{m\+\_\+btn\+Continue}]{\setlength{\rightskip}{0pt plus 5cm}J\+Button Game.\+Game\+Sn\+L.\+m\+\_\+btn\+Continue\hspace{0.3cm}{\ttfamily [private]}}\label{class_game_1_1_game_sn_l_a6e2e15971627fbc196ed207742a79e44}
+Displays the continue button \hypertarget{class_game_1_1_game_sn_l_acc91a4663c2f1c4ee9381a070332d7a2}{}\index{Game\+::\+Game\+Sn\+L@{Game\+::\+Game\+Sn\+L}!m\+\_\+btn\+Roll\+Dice@{m\+\_\+btn\+Roll\+Dice}}
+\index{m\+\_\+btn\+Roll\+Dice@{m\+\_\+btn\+Roll\+Dice}!Game\+::\+Game\+Sn\+L@{Game\+::\+Game\+Sn\+L}}
+\subsubsection[{m\+\_\+btn\+Roll\+Dice}]{\setlength{\rightskip}{0pt plus 5cm}J\+Button Game.\+Game\+Sn\+L.\+m\+\_\+btn\+Roll\+Dice\hspace{0.3cm}{\ttfamily [private]}}\label{class_game_1_1_game_sn_l_acc91a4663c2f1c4ee9381a070332d7a2}
+Displays the roll dice button \hypertarget{class_game_1_1_game_sn_l_a073ab891cd1c2854f4dd4081cfc1319c}{}\index{Game\+::\+Game\+Sn\+L@{Game\+::\+Game\+Sn\+L}!m\+\_\+content\+Panel@{m\+\_\+content\+Panel}}
+\index{m\+\_\+content\+Panel@{m\+\_\+content\+Panel}!Game\+::\+Game\+Sn\+L@{Game\+::\+Game\+Sn\+L}}
+\subsubsection[{m\+\_\+content\+Panel}]{\setlength{\rightskip}{0pt plus 5cm}final J\+Panel Game.\+Game\+Sn\+L.\+m\+\_\+content\+Panel = new J\+Panel()\hspace{0.3cm}{\ttfamily [private]}}\label{class_game_1_1_game_sn_l_a073ab891cd1c2854f4dd4081cfc1319c}
+Panel for player names and positions as well as the dice image \hypertarget{class_game_1_1_game_sn_l_a59399bbb046839055516f0ce733b9ba7}{}\index{Game\+::\+Game\+Sn\+L@{Game\+::\+Game\+Sn\+L}!m\+\_\+dice\+Pic\+Label@{m\+\_\+dice\+Pic\+Label}}
+\index{m\+\_\+dice\+Pic\+Label@{m\+\_\+dice\+Pic\+Label}!Game\+::\+Game\+Sn\+L@{Game\+::\+Game\+Sn\+L}}
+\subsubsection[{m\+\_\+dice\+Pic\+Label}]{\setlength{\rightskip}{0pt plus 5cm}J\+Label Game.\+Game\+Sn\+L.\+m\+\_\+dice\+Pic\+Label = new J\+Label(new Image\+Icon(\char`\"{}null\char`\"{}))\hspace{0.3cm}{\ttfamily [private]}}\label{class_game_1_1_game_sn_l_a59399bbb046839055516f0ce733b9ba7}
+Dice image \hypertarget{class_game_1_1_game_sn_l_a694cff89aec27b85a6b970b2304c6968}{}\index{Game\+::\+Game\+Sn\+L@{Game\+::\+Game\+Sn\+L}!m\+\_\+frame@{m\+\_\+frame}}
+\index{m\+\_\+frame@{m\+\_\+frame}!Game\+::\+Game\+Sn\+L@{Game\+::\+Game\+Sn\+L}}
+\subsubsection[{m\+\_\+frame}]{\setlength{\rightskip}{0pt plus 5cm}J\+Frame Game.\+Game\+Sn\+L.\+m\+\_\+frame = new J\+Frame(\char`\"{}Snakes \& Ladders\char`\"{})\hspace{0.3cm}{\ttfamily [private]}}\label{class_game_1_1_game_sn_l_a694cff89aec27b85a6b970b2304c6968}
+J\+Frame for displaying the Snakes and Ladders board \hypertarget{class_game_1_1_game_sn_l_ae665665dd40de7d795777635000da8eb}{}\index{Game\+::\+Game\+Sn\+L@{Game\+::\+Game\+Sn\+L}!m\+\_\+initial\+Roll\+Frame@{m\+\_\+initial\+Roll\+Frame}}
+\index{m\+\_\+initial\+Roll\+Frame@{m\+\_\+initial\+Roll\+Frame}!Game\+::\+Game\+Sn\+L@{Game\+::\+Game\+Sn\+L}}
+\subsubsection[{m\+\_\+initial\+Roll\+Frame}]{\setlength{\rightskip}{0pt plus 5cm}J\+Frame Game.\+Game\+Sn\+L.\+m\+\_\+initial\+Roll\+Frame = new J\+Frame()\hspace{0.3cm}{\ttfamily [private]}}\label{class_game_1_1_game_sn_l_ae665665dd40de7d795777635000da8eb}
+Pop up for initial roll \hypertarget{class_game_1_1_game_sn_l_a005ffc3118d467caff14a7afdc68a520}{}\index{Game\+::\+Game\+Sn\+L@{Game\+::\+Game\+Sn\+L}!m\+\_\+initial\+Rolls@{m\+\_\+initial\+Rolls}}
+\index{m\+\_\+initial\+Rolls@{m\+\_\+initial\+Rolls}!Game\+::\+Game\+Sn\+L@{Game\+::\+Game\+Sn\+L}}
+\subsubsection[{m\+\_\+initial\+Rolls}]{\setlength{\rightskip}{0pt plus 5cm}int \mbox{[}$\,$\mbox{]} Game.\+Game\+Sn\+L.\+m\+\_\+initial\+Rolls\hspace{0.3cm}{\ttfamily [private]}}\label{class_game_1_1_game_sn_l_a005ffc3118d467caff14a7afdc68a520}
+Initial roll array for player iteration \hypertarget{class_game_1_1_game_sn_l_a0b47e32e0960ed988d341b31b5f3bd3b}{}\index{Game\+::\+Game\+Sn\+L@{Game\+::\+Game\+Sn\+L}!m\+\_\+ladders\+List@{m\+\_\+ladders\+List}}
+\index{m\+\_\+ladders\+List@{m\+\_\+ladders\+List}!Game\+::\+Game\+Sn\+L@{Game\+::\+Game\+Sn\+L}}
+\subsubsection[{m\+\_\+ladders\+List}]{\setlength{\rightskip}{0pt plus 5cm}Array\+List$<$Integer$>$ Game.\+Game\+Sn\+L.\+m\+\_\+ladders\+List = new Array\+List$<$Integer$>$()\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}\label{class_game_1_1_game_sn_l_a0b47e32e0960ed988d341b31b5f3bd3b}
+Arraylist for ladders \hypertarget{class_game_1_1_game_sn_l_af8c7ff07d44c8713db098772d7888478}{}\index{Game\+::\+Game\+Sn\+L@{Game\+::\+Game\+Sn\+L}!m\+\_\+movement\+Squares@{m\+\_\+movement\+Squares}}
+\index{m\+\_\+movement\+Squares@{m\+\_\+movement\+Squares}!Game\+::\+Game\+Sn\+L@{Game\+::\+Game\+Sn\+L}}
+\subsubsection[{m\+\_\+movement\+Squares}]{\setlength{\rightskip}{0pt plus 5cm}Array\+List$<$Integer$>$ Game.\+Game\+Sn\+L.\+m\+\_\+movement\+Squares\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}\label{class_game_1_1_game_sn_l_af8c7ff07d44c8713db098772d7888478}
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= 
+            \textcolor{keyword}{new} ArrayList<Integer>()
+\end{DoxyCode}
+Arraylist for the squares the player has to move to before and after a snake or a ladder object \hypertarget{class_game_1_1_game_sn_l_af12170048b789d0c3303ab35c9b58413}{}\index{Game\+::\+Game\+Sn\+L@{Game\+::\+Game\+Sn\+L}!m\+\_\+my\+Picture@{m\+\_\+my\+Picture}}
+\index{m\+\_\+my\+Picture@{m\+\_\+my\+Picture}!Game\+::\+Game\+Sn\+L@{Game\+::\+Game\+Sn\+L}}
+\subsubsection[{m\+\_\+my\+Picture}]{\setlength{\rightskip}{0pt plus 5cm}Buffered\+Image Game.\+Game\+Sn\+L.\+m\+\_\+my\+Picture = null\hspace{0.3cm}{\ttfamily [private]}}\label{class_game_1_1_game_sn_l_af12170048b789d0c3303ab35c9b58413}
+Determines what dice photo to display \hypertarget{class_game_1_1_game_sn_l_aab5fbfe1044b0a403fdfa7634c0c344b}{}\index{Game\+::\+Game\+Sn\+L@{Game\+::\+Game\+Sn\+L}!m\+\_\+player\+Colors@{m\+\_\+player\+Colors}}
+\index{m\+\_\+player\+Colors@{m\+\_\+player\+Colors}!Game\+::\+Game\+Sn\+L@{Game\+::\+Game\+Sn\+L}}
+\subsubsection[{m\+\_\+player\+Colors}]{\setlength{\rightskip}{0pt plus 5cm}Array\+List$<$Color$>$ Game.\+Game\+Sn\+L.\+m\+\_\+player\+Colors\hspace{0.3cm}{\ttfamily [private]}}\label{class_game_1_1_game_sn_l_aab5fbfe1044b0a403fdfa7634c0c344b}
+All player colours, whether human or A\+I \hypertarget{class_game_1_1_game_sn_l_a4cff3283ef1f344a871b2019ae92dd57}{}\index{Game\+::\+Game\+Sn\+L@{Game\+::\+Game\+Sn\+L}!m\+\_\+player\+Iterator@{m\+\_\+player\+Iterator}}
+\index{m\+\_\+player\+Iterator@{m\+\_\+player\+Iterator}!Game\+::\+Game\+Sn\+L@{Game\+::\+Game\+Sn\+L}}
+\subsubsection[{m\+\_\+player\+Iterator}]{\setlength{\rightskip}{0pt plus 5cm}int Game.\+Game\+Sn\+L.\+m\+\_\+player\+Iterator = 0\hspace{0.3cm}{\ttfamily [private]}}\label{class_game_1_1_game_sn_l_a4cff3283ef1f344a871b2019ae92dd57}
+Iterator for all players \hypertarget{class_game_1_1_game_sn_l_a0faf146bfc9f0bd5814b3b3c71c00a20}{}\index{Game\+::\+Game\+Sn\+L@{Game\+::\+Game\+Sn\+L}!m\+\_\+player\+Names@{m\+\_\+player\+Names}}
+\index{m\+\_\+player\+Names@{m\+\_\+player\+Names}!Game\+::\+Game\+Sn\+L@{Game\+::\+Game\+Sn\+L}}
+\subsubsection[{m\+\_\+player\+Names}]{\setlength{\rightskip}{0pt plus 5cm}Array\+List$<$String$>$ Game.\+Game\+Sn\+L.\+m\+\_\+player\+Names\hspace{0.3cm}{\ttfamily [private]}}\label{class_game_1_1_game_sn_l_a0faf146bfc9f0bd5814b3b3c71c00a20}
+All player names, whether human or A\+I \hypertarget{class_game_1_1_game_sn_l_af35fcedb0f8206713981e01068c3f281}{}\index{Game\+::\+Game\+Sn\+L@{Game\+::\+Game\+Sn\+L}!m\+\_\+shapes\+Panel@{m\+\_\+shapes\+Panel}}
+\index{m\+\_\+shapes\+Panel@{m\+\_\+shapes\+Panel}!Game\+::\+Game\+Sn\+L@{Game\+::\+Game\+Sn\+L}}
+\subsubsection[{m\+\_\+shapes\+Panel}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Display\+Sn\+L} Game.\+Game\+Sn\+L.\+m\+\_\+shapes\+Panel\hspace{0.3cm}{\ttfamily [private]}}\label{class_game_1_1_game_sn_l_af35fcedb0f8206713981e01068c3f281}
+Panel to display everything \hypertarget{class_game_1_1_game_sn_l_a904b75e06e59aa1a9c028a948f98e33e}{}\index{Game\+::\+Game\+Sn\+L@{Game\+::\+Game\+Sn\+L}!m\+\_\+snakes\+List@{m\+\_\+snakes\+List}}
+\index{m\+\_\+snakes\+List@{m\+\_\+snakes\+List}!Game\+::\+Game\+Sn\+L@{Game\+::\+Game\+Sn\+L}}
+\subsubsection[{m\+\_\+snakes\+List}]{\setlength{\rightskip}{0pt plus 5cm}Array\+List$<$Integer$>$ Game.\+Game\+Sn\+L.\+m\+\_\+snakes\+List = new Array\+List$<$Integer$>$()\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}\label{class_game_1_1_game_sn_l_a904b75e06e59aa1a9c028a948f98e33e}
+Arraylist for snakes \hypertarget{class_game_1_1_game_sn_l_a0726c8332d62c46e936a13dc4d3abd1b}{}\index{Game\+::\+Game\+Sn\+L@{Game\+::\+Game\+Sn\+L}!m\+\_\+txt\+Field@{m\+\_\+txt\+Field}}
+\index{m\+\_\+txt\+Field@{m\+\_\+txt\+Field}!Game\+::\+Game\+Sn\+L@{Game\+::\+Game\+Sn\+L}}
+\subsubsection[{m\+\_\+txt\+Field}]{\setlength{\rightskip}{0pt plus 5cm}J\+Text\+Field Game.\+Game\+Sn\+L.\+m\+\_\+txt\+Field\hspace{0.3cm}{\ttfamily [private]}}\label{class_game_1_1_game_sn_l_a0726c8332d62c46e936a13dc4d3abd1b}
+Displays the player turn \hypertarget{class_game_1_1_game_sn_l_a942dda31e02524f87962efa42b2c2642}{}\index{Game\+::\+Game\+Sn\+L@{Game\+::\+Game\+Sn\+L}!players@{players}}
+\index{players@{players}!Game\+::\+Game\+Sn\+L@{Game\+::\+Game\+Sn\+L}}
+\subsubsection[{players}]{\setlength{\rightskip}{0pt plus 5cm}Array\+List$<${\bf Player\+Sn\+L}$>$ Game.\+Game\+Sn\+L.\+players = new Array\+List$<${\bf Player\+Sn\+L}$>$()\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}\label{class_game_1_1_game_sn_l_a942dda31e02524f87962efa42b2c2642}
+Arraylist for human player names 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Game/\hyperlink{_game_sn_l_8java}{Game\+Sn\+L.\+java}\end{DoxyCompactItemize}

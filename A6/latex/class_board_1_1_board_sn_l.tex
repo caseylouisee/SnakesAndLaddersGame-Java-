@@ -1,0 +1,144 @@
+\hypertarget{class_board_1_1_board_sn_l}{}\section{Board.\+Board\+Sn\+L Class Reference}
+\label{class_board_1_1_board_sn_l}\index{Board.\+Board\+Sn\+L@{Board.\+Board\+Sn\+L}}
+
+
+the board class for Sn\+L which is a subclass of board, it contains specific methods for the Sn\+L game, such as checking if there is a player on the 100th square  
+
+
+Inheritance diagram for Board.\+Board\+Sn\+L\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_board_1_1_board_sn_l}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_square_1_1_square_sn_l}{Square\+Sn\+L} \hyperlink{class_board_1_1_board_sn_l_a808a8299c5ee4a8256b5e68915fd9eca}{get\+Square} (int i)
+\item 
+\hyperlink{class_board_1_1_board_sn_l_a03f7b8911496b68ad4de0d1b0939220a}{Board\+Sn\+L} (int width, int height, Array\+List$<$ Integer $>$ movement\+Squares, Array\+List$<$ Integer $>$ ladders\+List, Array\+List$<$ Integer $>$ snakes\+List)
+\item 
+int \hyperlink{class_board_1_1_board_sn_l_aae2b39e92ddf94fefa4bc86a3bdb6055}{detect\+End\+Game} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{class_board_1_1_board_sn_l_a528d4e87b3553f7c0bdb7b5a0a3685d5}{main} (String\mbox{[}$\,$\mbox{]} args)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_board_1_1_board_sn_l_a934454d70accef26911914261147d8f5}{initialize\+Grid} (int width, int height)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_square_1_1_square_sn_l}{Square\+Sn\+L}\mbox{[}$\,$\mbox{]} \hyperlink{class_board_1_1_board_sn_l_a98423adeb63e796de2d496689b4ce8e1}{m\+\_\+board\+Game}
+\item 
+final int \hyperlink{class_board_1_1_board_sn_l_a133b0d6726fc954ea12a66b4369e3fa6}{F\+I\+N\+A\+L\+\_\+\+S\+Q\+U\+A\+R\+E} = 99
+\item 
+final int \hyperlink{class_board_1_1_board_sn_l_a9f3b27889e40b337a28438224a5fab4b}{W\+I\+N} = 1
+\item 
+final int \hyperlink{class_board_1_1_board_sn_l_aa6138411eddcd92ae999cff9fc34acb7}{L\+O\+S\+S} = 0
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+the board class for Sn\+L which is a subclass of board, it contains specific methods for the Sn\+L game, such as checking if there is a player on the 100th square 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_board_1_1_board_sn_l_a03f7b8911496b68ad4de0d1b0939220a}{}\index{Board\+::\+Board\+Sn\+L@{Board\+::\+Board\+Sn\+L}!Board\+Sn\+L@{Board\+Sn\+L}}
+\index{Board\+Sn\+L@{Board\+Sn\+L}!Board\+::\+Board\+Sn\+L@{Board\+::\+Board\+Sn\+L}}
+\subsubsection[{Board\+Sn\+L(int width, int height, Array\+List$<$ Integer $>$ movement\+Squares, Array\+List$<$ Integer $>$ ladders\+List, Array\+List$<$ Integer $>$ snakes\+List)}]{\setlength{\rightskip}{0pt plus 5cm}Board.\+Board\+Sn\+L.\+Board\+Sn\+L (
+\begin{DoxyParamCaption}
+\item[{int}]{width, }
+\item[{int}]{height, }
+\item[{Array\+List$<$ Integer $>$}]{movement\+Squares, }
+\item[{Array\+List$<$ Integer $>$}]{ladders\+List, }
+\item[{Array\+List$<$ Integer $>$}]{snakes\+List}
+\end{DoxyParamCaption}
+)}\label{class_board_1_1_board_sn_l_a03f7b8911496b68ad4de0d1b0939220a}
+Constructor for creating the new board, creates new Squares to fill the board, the number of which is width$\ast$height 
+\begin{DoxyParams}{Parameters}
+{\em width} & int containing the width of the board to be created \\
+\hline
+{\em height} & int containing the height of the board to be created \\
+\hline
+{\em movement\+Squares} & Array\+List of integers containing the position of the ladder bottoms and tail tops (the squares where addition movement occurs) \\
+\hline
+{\em ladders\+List} & Array\+List of integers containing the positions of both the tops and bottoms of ladders. \\
+\hline
+{\em snakes\+List} & Array\+List of integers containing the positions of both the tops and bottoms of snakes. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_board_1_1_board_sn_l_aae2b39e92ddf94fefa4bc86a3bdb6055}{}\index{Board\+::\+Board\+Sn\+L@{Board\+::\+Board\+Sn\+L}!detect\+End\+Game@{detect\+End\+Game}}
+\index{detect\+End\+Game@{detect\+End\+Game}!Board\+::\+Board\+Sn\+L@{Board\+::\+Board\+Sn\+L}}
+\subsubsection[{detect\+End\+Game()}]{\setlength{\rightskip}{0pt plus 5cm}int Board.\+Board\+Sn\+L.\+detect\+End\+Game (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_board_1_1_board_sn_l_aae2b39e92ddf94fefa4bc86a3bdb6055}
+Method for detecting whether the end game has been reached \begin{DoxyReturn}{Returns}
+int containing 1 if win detected 0 if not. 
+\end{DoxyReturn}
+\hypertarget{class_board_1_1_board_sn_l_a808a8299c5ee4a8256b5e68915fd9eca}{}\index{Board\+::\+Board\+Sn\+L@{Board\+::\+Board\+Sn\+L}!get\+Square@{get\+Square}}
+\index{get\+Square@{get\+Square}!Board\+::\+Board\+Sn\+L@{Board\+::\+Board\+Sn\+L}}
+\subsubsection[{get\+Square(int i)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Square\+Sn\+L} Board.\+Board\+Sn\+L.\+get\+Square (
+\begin{DoxyParamCaption}
+\item[{int}]{i}
+\end{DoxyParamCaption}
+)}\label{class_board_1_1_board_sn_l_a808a8299c5ee4a8256b5e68915fd9eca}
+Gives access to a specific square on the board 
+\begin{DoxyParams}{Parameters}
+{\em i} & int containing the position to access \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Square\+Sn\+L pointer to the square located at position i 
+\end{DoxyReturn}
+\hypertarget{class_board_1_1_board_sn_l_a934454d70accef26911914261147d8f5}{}\index{Board\+::\+Board\+Sn\+L@{Board\+::\+Board\+Sn\+L}!initialize\+Grid@{initialize\+Grid}}
+\index{initialize\+Grid@{initialize\+Grid}!Board\+::\+Board\+Sn\+L@{Board\+::\+Board\+Sn\+L}}
+\subsubsection[{initialize\+Grid(int width, int height)}]{\setlength{\rightskip}{0pt plus 5cm}void Board.\+Board\+Sn\+L.\+initialize\+Grid (
+\begin{DoxyParamCaption}
+\item[{int}]{width, }
+\item[{int}]{height}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{class_board_1_1_board_sn_l_a934454d70accef26911914261147d8f5}
+Method that initialises the Sn\+L grid with squares ready for their values to be set 
+\begin{DoxyParams}{Parameters}
+{\em width} & integer containing the width of board to set up \\
+\hline
+{\em height} & integer containing the height of board to set up \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_board_1_1_board_sn_l_a528d4e87b3553f7c0bdb7b5a0a3685d5}{}\index{Board\+::\+Board\+Sn\+L@{Board\+::\+Board\+Sn\+L}!main@{main}}
+\index{main@{main}!Board\+::\+Board\+Sn\+L@{Board\+::\+Board\+Sn\+L}}
+\subsubsection[{main(\+String[] args)}]{\setlength{\rightskip}{0pt plus 5cm}static void Board.\+Board\+Sn\+L.\+main (
+\begin{DoxyParamCaption}
+\item[{String\mbox{[}$\,$\mbox{]}}]{args}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{class_board_1_1_board_sn_l_a528d4e87b3553f7c0bdb7b5a0a3685d5}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_board_1_1_board_sn_l_a133b0d6726fc954ea12a66b4369e3fa6}{}\index{Board\+::\+Board\+Sn\+L@{Board\+::\+Board\+Sn\+L}!F\+I\+N\+A\+L\+\_\+\+S\+Q\+U\+A\+R\+E@{F\+I\+N\+A\+L\+\_\+\+S\+Q\+U\+A\+R\+E}}
+\index{F\+I\+N\+A\+L\+\_\+\+S\+Q\+U\+A\+R\+E@{F\+I\+N\+A\+L\+\_\+\+S\+Q\+U\+A\+R\+E}!Board\+::\+Board\+Sn\+L@{Board\+::\+Board\+Sn\+L}}
+\subsubsection[{F\+I\+N\+A\+L\+\_\+\+S\+Q\+U\+A\+R\+E}]{\setlength{\rightskip}{0pt plus 5cm}final int Board.\+Board\+Sn\+L.\+F\+I\+N\+A\+L\+\_\+\+S\+Q\+U\+A\+R\+E = 99\hspace{0.3cm}{\ttfamily [private]}}\label{class_board_1_1_board_sn_l_a133b0d6726fc954ea12a66b4369e3fa6}
+An integer storing the final square on the board \hypertarget{class_board_1_1_board_sn_l_aa6138411eddcd92ae999cff9fc34acb7}{}\index{Board\+::\+Board\+Sn\+L@{Board\+::\+Board\+Sn\+L}!L\+O\+S\+S@{L\+O\+S\+S}}
+\index{L\+O\+S\+S@{L\+O\+S\+S}!Board\+::\+Board\+Sn\+L@{Board\+::\+Board\+Sn\+L}}
+\subsubsection[{L\+O\+S\+S}]{\setlength{\rightskip}{0pt plus 5cm}final int Board.\+Board\+Sn\+L.\+L\+O\+S\+S = 0\hspace{0.3cm}{\ttfamily [private]}}\label{class_board_1_1_board_sn_l_aa6138411eddcd92ae999cff9fc34acb7}
+\hypertarget{class_board_1_1_board_sn_l_a98423adeb63e796de2d496689b4ce8e1}{}\index{Board\+::\+Board\+Sn\+L@{Board\+::\+Board\+Sn\+L}!m\+\_\+board\+Game@{m\+\_\+board\+Game}}
+\index{m\+\_\+board\+Game@{m\+\_\+board\+Game}!Board\+::\+Board\+Sn\+L@{Board\+::\+Board\+Sn\+L}}
+\subsubsection[{m\+\_\+board\+Game}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Square\+Sn\+L} \mbox{[}$\,$\mbox{]} Board.\+Board\+Sn\+L.\+m\+\_\+board\+Game\hspace{0.3cm}{\ttfamily [private]}}\label{class_board_1_1_board_sn_l_a98423adeb63e796de2d496689b4ce8e1}
+The array that stores all the squares used on the board \hypertarget{class_board_1_1_board_sn_l_a9f3b27889e40b337a28438224a5fab4b}{}\index{Board\+::\+Board\+Sn\+L@{Board\+::\+Board\+Sn\+L}!W\+I\+N@{W\+I\+N}}
+\index{W\+I\+N@{W\+I\+N}!Board\+::\+Board\+Sn\+L@{Board\+::\+Board\+Sn\+L}}
+\subsubsection[{W\+I\+N}]{\setlength{\rightskip}{0pt plus 5cm}final int Board.\+Board\+Sn\+L.\+W\+I\+N = 1\hspace{0.3cm}{\ttfamily [private]}}\label{class_board_1_1_board_sn_l_a9f3b27889e40b337a28438224a5fab4b}
+integers storing different return values for the method detect\+End\+Game 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Board/\hyperlink{_board_sn_l_8java}{Board\+Sn\+L.\+java}\end{DoxyCompactItemize}

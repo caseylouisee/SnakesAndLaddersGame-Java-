@@ -1,0 +1,266 @@
+\hypertarget{class_game_1_1_game_t_t_t}{}\section{Game.\+Game\+T\+T\+T Class Reference}
+\label{class_game_1_1_game_t_t_t}\index{Game.\+Game\+T\+T\+T@{Game.\+Game\+T\+T\+T}}
+
+
+Creates some of the user interface for Tic\+Tac\+Toe, as well as contains general information about human and A\+I players.  
+
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+boolean \hyperlink{class_game_1_1_game_t_t_t_a0791200e84a23a5dc121df19e6b6d308}{set\+Movement\+Human} (int Sqindex)
+\item 
+boolean \hyperlink{class_game_1_1_game_t_t_t_a85cffeaf994f8a35e3c56282b641a7a6}{set\+Movement\+A\+I} (int Sqindex)
+\item 
+Array\+List$<$ \hyperlink{class_player_1_1_player_t_t_t}{Player\+T\+T\+T} $>$ \hyperlink{class_game_1_1_game_t_t_t_a079a7a4f3c45ad5613a5765494c45d07}{get\+Players} ()
+\item 
+int \hyperlink{class_game_1_1_game_t_t_t_ac1f85bc3a5fc38f6ce84d53f36591ccd}{winner} ()
+\item 
+void \hyperlink{class_game_1_1_game_t_t_t_a8cbcf85e799d76e5c1b17dc54a3bc113}{next\+Turn} ()
+\item 
+\hyperlink{class_player_1_1_player_t_t_t}{Player\+T\+T\+T} \hyperlink{class_game_1_1_game_t_t_t_a751517c76715c85be2ff6b22ea1dbfe4}{get\+Player\+Turn} ()
+\item 
+int\mbox{[}$\,$\mbox{]} \hyperlink{class_game_1_1_game_t_t_t_a73acd5e17507d3c5aaca626202c61b1b}{get\+Coordinates\+Winning\+Squares} ()
+\item 
+\hyperlink{class_board_1_1_board_t_t_t}{Board\+T\+T\+T} \hyperlink{class_game_1_1_game_t_t_t_a2bc6494f74d04c47d2b294be71ee083f}{get\+Board} ()
+\item 
+\hyperlink{class_game_1_1_game_t_t_t_a730d7c27a82de9c4c5125b7fd8466ff2}{Game\+T\+T\+T} (Array\+List$<$ \hyperlink{class_player_1_1_player_t_t_t}{Player\+T\+T\+T} $>$ players2, Boolean visualization)
+\item 
+\hyperlink{class_game_1_1_game_t_t_t_adadd26eb4181169333b929dace529d2b}{Game\+T\+T\+T} (Array\+List$<$ \hyperlink{class_player_1_1_player_t_t_t}{Player\+T\+T\+T} $>$ players2, char\mbox{[}$\,$\mbox{]} square\+Values)
+\item 
+void \hyperlink{class_game_1_1_game_t_t_t_aa34199a3a29bba81669f56a08703d451}{frame\+Dispose} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{class_game_1_1_game_t_t_t_a039bbaac8ea491c16fa231a69fd3b664}{main} (String\mbox{[}$\,$\mbox{]} args)
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_game_1_1_game_t_t_t_a34f74c29027f3e658cf080336255a533}{init} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Array\+List$<$ \hyperlink{class_player_1_1_player_t_t_t}{Player\+T\+T\+T} $>$ \hyperlink{class_game_1_1_game_t_t_t_aad75ff74595b7b58542d7060a77ca169}{m\+\_\+players}
+\item 
+int \hyperlink{class_game_1_1_game_t_t_t_a2a4f4d1d24717d2629a2560421e926bc}{m\+\_\+turn}
+\item 
+\hyperlink{class_board_1_1_board_t_t_t}{Board\+T\+T\+T} \hyperlink{class_game_1_1_game_t_t_t_a7da768af1eaf7e75452a54391961275f}{m\+\_\+board}
+\item 
+J\+Frame \hyperlink{class_game_1_1_game_t_t_t_a1ddfe813d586411f16504069d6bddf5d}{m\+\_\+frame} = new J\+Frame(\char`\"{}T\+T\+T\char`\"{})
+\item 
+\hyperlink{class_display_1_1_display_t_t_t}{Display\+T\+T\+T} \hyperlink{class_game_1_1_game_t_t_t_a6b2de64f05009047dd3a01867da865c0}{m\+\_\+shapes\+Panel}
+\item 
+int\mbox{[}$\,$\mbox{]} \hyperlink{class_game_1_1_game_t_t_t_a79f50cdad0e0978bb30ac4ba2a96a971}{m\+\_\+count}
+\item 
+Boolean \hyperlink{class_game_1_1_game_t_t_t_ad1efe890e60af4826d664276e1e49ea4}{m\+\_\+visualize} = false
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Creates some of the user interface for Tic\+Tac\+Toe, as well as contains general information about human and A\+I players. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_game_1_1_game_t_t_t_a730d7c27a82de9c4c5125b7fd8466ff2}{}\index{Game\+::\+Game\+T\+T\+T@{Game\+::\+Game\+T\+T\+T}!Game\+T\+T\+T@{Game\+T\+T\+T}}
+\index{Game\+T\+T\+T@{Game\+T\+T\+T}!Game\+::\+Game\+T\+T\+T@{Game\+::\+Game\+T\+T\+T}}
+\subsubsection[{Game\+T\+T\+T(\+Array\+List$<$ Player\+T\+T\+T $>$ players2, Boolean visualization)}]{\setlength{\rightskip}{0pt plus 5cm}Game.\+Game\+T\+T\+T.\+Game\+T\+T\+T (
+\begin{DoxyParamCaption}
+\item[{Array\+List$<$ {\bf Player\+T\+T\+T} $>$}]{players2, }
+\item[{Boolean}]{visualization}
+\end{DoxyParamCaption}
+)}\label{class_game_1_1_game_t_t_t_a730d7c27a82de9c4c5125b7fd8466ff2}
+Stores passed data into the game and calls all display methods, also initialises variables
+
+
+\begin{DoxyParams}{Parameters}
+{\em players2} & 
+\begin{DoxyItemize}
+\item all player names. 
+\end{DoxyItemize}\\
+\hline
+\end{DoxyParams}
+\hypertarget{class_game_1_1_game_t_t_t_adadd26eb4181169333b929dace529d2b}{}\index{Game\+::\+Game\+T\+T\+T@{Game\+::\+Game\+T\+T\+T}!Game\+T\+T\+T@{Game\+T\+T\+T}}
+\index{Game\+T\+T\+T@{Game\+T\+T\+T}!Game\+::\+Game\+T\+T\+T@{Game\+::\+Game\+T\+T\+T}}
+\subsubsection[{Game\+T\+T\+T(\+Array\+List$<$ Player\+T\+T\+T $>$ players2, char[] square\+Values)}]{\setlength{\rightskip}{0pt plus 5cm}Game.\+Game\+T\+T\+T.\+Game\+T\+T\+T (
+\begin{DoxyParamCaption}
+\item[{Array\+List$<$ {\bf Player\+T\+T\+T} $>$}]{players2, }
+\item[{char\mbox{[}$\,$\mbox{]}}]{square\+Values}
+\end{DoxyParamCaption}
+)}\label{class_game_1_1_game_t_t_t_adadd26eb4181169333b929dace529d2b}
+Loads data into game
+
+
+\begin{DoxyParams}{Parameters}
+{\em players2} & 
+\begin{DoxyItemize}
+\item all player names. 
+\end{DoxyItemize}\\
+\hline
+{\em square\+Values} & 
+\begin{DoxyItemize}
+\item positions of te pieces 
+\end{DoxyItemize}\\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_game_1_1_game_t_t_t_aa34199a3a29bba81669f56a08703d451}{}\index{Game\+::\+Game\+T\+T\+T@{Game\+::\+Game\+T\+T\+T}!frame\+Dispose@{frame\+Dispose}}
+\index{frame\+Dispose@{frame\+Dispose}!Game\+::\+Game\+T\+T\+T@{Game\+::\+Game\+T\+T\+T}}
+\subsubsection[{frame\+Dispose()}]{\setlength{\rightskip}{0pt plus 5cm}void Game.\+Game\+T\+T\+T.\+frame\+Dispose (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_game_1_1_game_t_t_t_aa34199a3a29bba81669f56a08703d451}
+Closes the frame \hypertarget{class_game_1_1_game_t_t_t_a2bc6494f74d04c47d2b294be71ee083f}{}\index{Game\+::\+Game\+T\+T\+T@{Game\+::\+Game\+T\+T\+T}!get\+Board@{get\+Board}}
+\index{get\+Board@{get\+Board}!Game\+::\+Game\+T\+T\+T@{Game\+::\+Game\+T\+T\+T}}
+\subsubsection[{get\+Board()}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Board\+T\+T\+T} Game.\+Game\+T\+T\+T.\+get\+Board (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_game_1_1_game_t_t_t_a2bc6494f74d04c47d2b294be71ee083f}
+Returns the board object
+
+\begin{DoxyReturn}{Returns}
+the board object 
+\end{DoxyReturn}
+\hypertarget{class_game_1_1_game_t_t_t_a73acd5e17507d3c5aaca626202c61b1b}{}\index{Game\+::\+Game\+T\+T\+T@{Game\+::\+Game\+T\+T\+T}!get\+Coordinates\+Winning\+Squares@{get\+Coordinates\+Winning\+Squares}}
+\index{get\+Coordinates\+Winning\+Squares@{get\+Coordinates\+Winning\+Squares}!Game\+::\+Game\+T\+T\+T@{Game\+::\+Game\+T\+T\+T}}
+\subsubsection[{get\+Coordinates\+Winning\+Squares()}]{\setlength{\rightskip}{0pt plus 5cm}int \mbox{[}$\,$\mbox{]} Game.\+Game\+T\+T\+T.\+get\+Coordinates\+Winning\+Squares (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_game_1_1_game_t_t_t_a73acd5e17507d3c5aaca626202c61b1b}
+Returns the position of the winning move, from starting square to ending square
+
+\begin{DoxyReturn}{Returns}
+the position of the winning move, from starting square to ending square 
+\end{DoxyReturn}
+\hypertarget{class_game_1_1_game_t_t_t_a079a7a4f3c45ad5613a5765494c45d07}{}\index{Game\+::\+Game\+T\+T\+T@{Game\+::\+Game\+T\+T\+T}!get\+Players@{get\+Players}}
+\index{get\+Players@{get\+Players}!Game\+::\+Game\+T\+T\+T@{Game\+::\+Game\+T\+T\+T}}
+\subsubsection[{get\+Players()}]{\setlength{\rightskip}{0pt plus 5cm}Array\+List$<${\bf Player\+T\+T\+T}$>$ Game.\+Game\+T\+T\+T.\+get\+Players (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_game_1_1_game_t_t_t_a079a7a4f3c45ad5613a5765494c45d07}
+Returns the list of players.
+
+\begin{DoxyReturn}{Returns}
+the list of players 
+\end{DoxyReturn}
+\hypertarget{class_game_1_1_game_t_t_t_a751517c76715c85be2ff6b22ea1dbfe4}{}\index{Game\+::\+Game\+T\+T\+T@{Game\+::\+Game\+T\+T\+T}!get\+Player\+Turn@{get\+Player\+Turn}}
+\index{get\+Player\+Turn@{get\+Player\+Turn}!Game\+::\+Game\+T\+T\+T@{Game\+::\+Game\+T\+T\+T}}
+\subsubsection[{get\+Player\+Turn()}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Player\+T\+T\+T} Game.\+Game\+T\+T\+T.\+get\+Player\+Turn (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_game_1_1_game_t_t_t_a751517c76715c85be2ff6b22ea1dbfe4}
+Returns whose turn it is
+
+\begin{DoxyReturn}{Returns}
+whose turn it is 
+\end{DoxyReturn}
+\hypertarget{class_game_1_1_game_t_t_t_a34f74c29027f3e658cf080336255a533}{}\index{Game\+::\+Game\+T\+T\+T@{Game\+::\+Game\+T\+T\+T}!init@{init}}
+\index{init@{init}!Game\+::\+Game\+T\+T\+T@{Game\+::\+Game\+T\+T\+T}}
+\subsubsection[{init()}]{\setlength{\rightskip}{0pt plus 5cm}void Game.\+Game\+T\+T\+T.\+init (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{class_game_1_1_game_t_t_t_a34f74c29027f3e658cf080336255a533}
+Creates the display \hypertarget{class_game_1_1_game_t_t_t_a039bbaac8ea491c16fa231a69fd3b664}{}\index{Game\+::\+Game\+T\+T\+T@{Game\+::\+Game\+T\+T\+T}!main@{main}}
+\index{main@{main}!Game\+::\+Game\+T\+T\+T@{Game\+::\+Game\+T\+T\+T}}
+\subsubsection[{main(\+String[] args)}]{\setlength{\rightskip}{0pt plus 5cm}static void Game.\+Game\+T\+T\+T.\+main (
+\begin{DoxyParamCaption}
+\item[{String\mbox{[}$\,$\mbox{]}}]{args}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{class_game_1_1_game_t_t_t_a039bbaac8ea491c16fa231a69fd3b664}
+This is the test method. Default values are set for names and pieces. \hypertarget{class_game_1_1_game_t_t_t_a8cbcf85e799d76e5c1b17dc54a3bc113}{}\index{Game\+::\+Game\+T\+T\+T@{Game\+::\+Game\+T\+T\+T}!next\+Turn@{next\+Turn}}
+\index{next\+Turn@{next\+Turn}!Game\+::\+Game\+T\+T\+T@{Game\+::\+Game\+T\+T\+T}}
+\subsubsection[{next\+Turn()}]{\setlength{\rightskip}{0pt plus 5cm}void Game.\+Game\+T\+T\+T.\+next\+Turn (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_game_1_1_game_t_t_t_a8cbcf85e799d76e5c1b17dc54a3bc113}
+Determines whose turn it is \hypertarget{class_game_1_1_game_t_t_t_a85cffeaf994f8a35e3c56282b641a7a6}{}\index{Game\+::\+Game\+T\+T\+T@{Game\+::\+Game\+T\+T\+T}!set\+Movement\+A\+I@{set\+Movement\+A\+I}}
+\index{set\+Movement\+A\+I@{set\+Movement\+A\+I}!Game\+::\+Game\+T\+T\+T@{Game\+::\+Game\+T\+T\+T}}
+\subsubsection[{set\+Movement\+A\+I(int Sqindex)}]{\setlength{\rightskip}{0pt plus 5cm}boolean Game.\+Game\+T\+T\+T.\+set\+Movement\+A\+I (
+\begin{DoxyParamCaption}
+\item[{int}]{Sqindex}
+\end{DoxyParamCaption}
+)}\label{class_game_1_1_game_t_t_t_a85cffeaf994f8a35e3c56282b641a7a6}
+Checks if the A\+I player\textquotesingle{}s next move is valid, if it is, add the piece to the square
+
+
+\begin{DoxyParams}{Parameters}
+{\em Sqindex} & 
+\begin{DoxyItemize}
+\item is the square the piece will be put to 
+\end{DoxyItemize}\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+if the move was successful or not 
+\end{DoxyReturn}
+\hypertarget{class_game_1_1_game_t_t_t_a0791200e84a23a5dc121df19e6b6d308}{}\index{Game\+::\+Game\+T\+T\+T@{Game\+::\+Game\+T\+T\+T}!set\+Movement\+Human@{set\+Movement\+Human}}
+\index{set\+Movement\+Human@{set\+Movement\+Human}!Game\+::\+Game\+T\+T\+T@{Game\+::\+Game\+T\+T\+T}}
+\subsubsection[{set\+Movement\+Human(int Sqindex)}]{\setlength{\rightskip}{0pt plus 5cm}boolean Game.\+Game\+T\+T\+T.\+set\+Movement\+Human (
+\begin{DoxyParamCaption}
+\item[{int}]{Sqindex}
+\end{DoxyParamCaption}
+)}\label{class_game_1_1_game_t_t_t_a0791200e84a23a5dc121df19e6b6d308}
+Checks if the human player\textquotesingle{}s next move is valid, if it is, add the piece to the square
+
+
+\begin{DoxyParams}{Parameters}
+{\em Sqindex} & 
+\begin{DoxyItemize}
+\item is the square the piece will be put to 
+\end{DoxyItemize}\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+if the move was successful or not 
+\end{DoxyReturn}
+\hypertarget{class_game_1_1_game_t_t_t_ac1f85bc3a5fc38f6ce84d53f36591ccd}{}\index{Game\+::\+Game\+T\+T\+T@{Game\+::\+Game\+T\+T\+T}!winner@{winner}}
+\index{winner@{winner}!Game\+::\+Game\+T\+T\+T@{Game\+::\+Game\+T\+T\+T}}
+\subsubsection[{winner()}]{\setlength{\rightskip}{0pt plus 5cm}int Game.\+Game\+T\+T\+T.\+winner (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_game_1_1_game_t_t_t_ac1f85bc3a5fc38f6ce84d53f36591ccd}
+Checks if someone has won the game
+
+\begin{DoxyReturn}{Returns}
+if someone has won or not 
+\end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_game_1_1_game_t_t_t_a7da768af1eaf7e75452a54391961275f}{}\index{Game\+::\+Game\+T\+T\+T@{Game\+::\+Game\+T\+T\+T}!m\+\_\+board@{m\+\_\+board}}
+\index{m\+\_\+board@{m\+\_\+board}!Game\+::\+Game\+T\+T\+T@{Game\+::\+Game\+T\+T\+T}}
+\subsubsection[{m\+\_\+board}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Board\+T\+T\+T} Game.\+Game\+T\+T\+T.\+m\+\_\+board\hspace{0.3cm}{\ttfamily [private]}}\label{class_game_1_1_game_t_t_t_a7da768af1eaf7e75452a54391961275f}
+Board object \hypertarget{class_game_1_1_game_t_t_t_a79f50cdad0e0978bb30ac4ba2a96a971}{}\index{Game\+::\+Game\+T\+T\+T@{Game\+::\+Game\+T\+T\+T}!m\+\_\+count@{m\+\_\+count}}
+\index{m\+\_\+count@{m\+\_\+count}!Game\+::\+Game\+T\+T\+T@{Game\+::\+Game\+T\+T\+T}}
+\subsubsection[{m\+\_\+count}]{\setlength{\rightskip}{0pt plus 5cm}int \mbox{[}$\,$\mbox{]} Game.\+Game\+T\+T\+T.\+m\+\_\+count\hspace{0.3cm}{\ttfamily [private]}}\label{class_game_1_1_game_t_t_t_a79f50cdad0e0978bb30ac4ba2a96a971}
+Holds the count of number of X\textquotesingle{}s and O\textquotesingle{}s \hypertarget{class_game_1_1_game_t_t_t_a1ddfe813d586411f16504069d6bddf5d}{}\index{Game\+::\+Game\+T\+T\+T@{Game\+::\+Game\+T\+T\+T}!m\+\_\+frame@{m\+\_\+frame}}
+\index{m\+\_\+frame@{m\+\_\+frame}!Game\+::\+Game\+T\+T\+T@{Game\+::\+Game\+T\+T\+T}}
+\subsubsection[{m\+\_\+frame}]{\setlength{\rightskip}{0pt plus 5cm}J\+Frame Game.\+Game\+T\+T\+T.\+m\+\_\+frame = new J\+Frame(\char`\"{}T\+T\+T\char`\"{})\hspace{0.3cm}{\ttfamily [private]}}\label{class_game_1_1_game_t_t_t_a1ddfe813d586411f16504069d6bddf5d}
+J\+Frame used for displaying Tic\+Tac\+Toe \hypertarget{class_game_1_1_game_t_t_t_aad75ff74595b7b58542d7060a77ca169}{}\index{Game\+::\+Game\+T\+T\+T@{Game\+::\+Game\+T\+T\+T}!m\+\_\+players@{m\+\_\+players}}
+\index{m\+\_\+players@{m\+\_\+players}!Game\+::\+Game\+T\+T\+T@{Game\+::\+Game\+T\+T\+T}}
+\subsubsection[{m\+\_\+players}]{\setlength{\rightskip}{0pt plus 5cm}Array\+List$<${\bf Player\+T\+T\+T}$>$ Game.\+Game\+T\+T\+T.\+m\+\_\+players\hspace{0.3cm}{\ttfamily [private]}}\label{class_game_1_1_game_t_t_t_aad75ff74595b7b58542d7060a77ca169}
+Arraylist for all player names \hypertarget{class_game_1_1_game_t_t_t_a6b2de64f05009047dd3a01867da865c0}{}\index{Game\+::\+Game\+T\+T\+T@{Game\+::\+Game\+T\+T\+T}!m\+\_\+shapes\+Panel@{m\+\_\+shapes\+Panel}}
+\index{m\+\_\+shapes\+Panel@{m\+\_\+shapes\+Panel}!Game\+::\+Game\+T\+T\+T@{Game\+::\+Game\+T\+T\+T}}
+\subsubsection[{m\+\_\+shapes\+Panel}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Display\+T\+T\+T} Game.\+Game\+T\+T\+T.\+m\+\_\+shapes\+Panel\hspace{0.3cm}{\ttfamily [private]}}\label{class_game_1_1_game_t_t_t_a6b2de64f05009047dd3a01867da865c0}
+Panel to display everything \hypertarget{class_game_1_1_game_t_t_t_a2a4f4d1d24717d2629a2560421e926bc}{}\index{Game\+::\+Game\+T\+T\+T@{Game\+::\+Game\+T\+T\+T}!m\+\_\+turn@{m\+\_\+turn}}
+\index{m\+\_\+turn@{m\+\_\+turn}!Game\+::\+Game\+T\+T\+T@{Game\+::\+Game\+T\+T\+T}}
+\subsubsection[{m\+\_\+turn}]{\setlength{\rightskip}{0pt plus 5cm}int Game.\+Game\+T\+T\+T.\+m\+\_\+turn\hspace{0.3cm}{\ttfamily [private]}}\label{class_game_1_1_game_t_t_t_a2a4f4d1d24717d2629a2560421e926bc}
+Determines whose turn it is \hypertarget{class_game_1_1_game_t_t_t_ad1efe890e60af4826d664276e1e49ea4}{}\index{Game\+::\+Game\+T\+T\+T@{Game\+::\+Game\+T\+T\+T}!m\+\_\+visualize@{m\+\_\+visualize}}
+\index{m\+\_\+visualize@{m\+\_\+visualize}!Game\+::\+Game\+T\+T\+T@{Game\+::\+Game\+T\+T\+T}}
+\subsubsection[{m\+\_\+visualize}]{\setlength{\rightskip}{0pt plus 5cm}Boolean Game.\+Game\+T\+T\+T.\+m\+\_\+visualize = false\hspace{0.3cm}{\ttfamily [private]}}\label{class_game_1_1_game_t_t_t_ad1efe890e60af4826d664276e1e49ea4}
+Boolean for visualization 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Game/\hyperlink{_game_t_t_t_8java}{Game\+T\+T\+T.\+java}\end{DoxyCompactItemize}

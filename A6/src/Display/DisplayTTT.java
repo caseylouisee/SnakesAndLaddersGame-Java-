@@ -1,5 +1,4 @@
 package Display;
-
 /**
  * @file DisplayTTT.java
  * 
@@ -7,7 +6,7 @@ package Display;
  * 
  * @date 23/02/2015 - 13/03/2015
  * 
- * @author RB2
+ * @author Casey Denner
  *  
  */
 

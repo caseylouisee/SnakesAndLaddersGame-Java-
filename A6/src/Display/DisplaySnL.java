@@ -40,19 +40,26 @@ import Menu.MenuSnL;
 import Player.PlayerSnL;
 /**
  * @class DisplaySnL
+ * @brief This class displays everything for the SnL game
  *
  */
 public class DisplaySnL extends JPanel implements Runnable{
 
 	/* ------ CONSTANTS ----- */
-	/** Sets shape's width and height */
+	/** Sets shape's width */
 	public static final int SQUARE_WIDTH = 50;
+	
+	/** Sets shape's height */
 	public static final int SQUARE_HEIGHT = 50;
+	
+	/** Sets shape's diameter */
 	public static final int PIECE_DIAMETER = 20;
 
-
 	/* ------ VARIABLES ------ */
+	/** response to keep track of play again/not */
 	int m_dialogResponse;
+	
+	/** roll dice initialised to 1 */
 	int roll = 1;
 
 	/** Label to display who's turn it is */

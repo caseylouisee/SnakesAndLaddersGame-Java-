@@ -1,0 +1,372 @@
+\hypertarget{class_display_1_1_display_t_t_t}{}\section{Display.\+Display\+T\+T\+T Class Reference}
+\label{class_display_1_1_display_t_t_t}\index{Display.\+Display\+T\+T\+T@{Display.\+Display\+T\+T\+T}}
+
+
+This class displays everything for the T\+T\+T game.  
+
+
+Inheritance diagram for Display.\+Display\+T\+T\+T\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_display_1_1_display_t_t_t}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{class_display_1_1_display_t_t_t_1_1_g_u_i_event_handler}{G\+U\+I\+Event\+Handler}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_display_1_1_display_t_t_t_a8e33c12c8d44efe24ad731221329fc85}{set\+Button\+Icon} (int position, char value)
+\item 
+\hyperlink{class_display_1_1_display_t_t_t_a2c3b14ea1ac44f89006718c20e00b612}{Display\+T\+T\+T} (\hyperlink{class_game_1_1_game_t_t_t}{Game\+T\+T\+T} mygame, \hyperlink{class_board_1_1_board}{Board} board, int\mbox{[}$\,$\mbox{]} count)
+\item 
+\hyperlink{class_display_1_1_display_t_t_t_a3ccc11c3b13311bc0ae2ce71a2b2dec4}{Display\+T\+T\+T} (\hyperlink{class_game_1_1_game_t_t_t}{Game\+T\+T\+T} mygame, \hyperlink{class_board_1_1_board}{Board} board\+Game, Boolean visualization)
+\item 
+void \hyperlink{class_display_1_1_display_t_t_t_a6ec07c14b618df7f4c10037ee12d3685}{paint\+Component} (Graphics graphics)
+\item 
+void \hyperlink{class_display_1_1_display_t_t_t_a3b66c11e8632e24ba72e1f36f3c2307a}{run} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+final int \hyperlink{class_display_1_1_display_t_t_t_aba4c92bd721d0fb8718fbf9ed9d837e4}{S\+H\+A\+P\+E\+\_\+\+W\+I\+D\+T\+H} = 50
+\item 
+final int \hyperlink{class_display_1_1_display_t_t_t_ad7c69ef4532bf358596b4a2d09c22fbc}{S\+H\+A\+P\+E\+\_\+\+H\+E\+I\+G\+H\+T} = 50
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static final int \hyperlink{class_display_1_1_display_t_t_t_ac07e05126f3b772dd62b3276defc0b4b}{G\+R\+I\+D\+\_\+\+W\+I\+D\+T\+H} = 8
+\item 
+static final int \hyperlink{class_display_1_1_display_t_t_t_a863d5b47363b01c44552068cd9ee832f}{G\+R\+I\+D\+\_\+\+H\+E\+I\+G\+H\+T} = 8
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_display_1_1_display_t_t_t_ac07792d99f73ff42f0e0dc33478769d5}{play\+Game} ()
+\item 
+void \hyperlink{class_display_1_1_display_t_t_t_aaea43cb629cc58c12088f1ec6106d87b}{ai\+Movement\+Strategy} ()
+\item 
+void \hyperlink{class_display_1_1_display_t_t_t_a4aa462f648708a3254eeb61dd67fe798}{do\+Movement\+Human} (int \hyperlink{class_display_1_1_display_t_t_t_a72b67bc50aa6ba47ae9d398e597c49bb}{square\+Ref})
+\item 
+void \hyperlink{class_display_1_1_display_t_t_t_a0ddb1f67a9836bcb8c13bb2c4c1da714}{do\+Movement\+A\+I} (int random\+Number)
+\item 
+void \hyperlink{class_display_1_1_display_t_t_t_ac13c73a58635d5c5779c8381d5ad9b6d}{create\+Timer} ()
+\item 
+void \hyperlink{class_display_1_1_display_t_t_t_a2603790df7e6e53a5d07701eb08b1432}{display\+Timer} ()
+\item 
+void \hyperlink{class_display_1_1_display_t_t_t_a54c366271479ec124f298ab5f00104f0}{add\+Back\+Button} ()
+\item 
+void \hyperlink{class_display_1_1_display_t_t_t_a21dad65008eb0c5db1b388bb403d7ef1}{add\+Save\+Button} ()
+\item 
+void \hyperlink{class_display_1_1_display_t_t_t_a28723b7297cdcc1b2c27553607ac00ac}{save\+Game} ()
+\item 
+void \hyperlink{class_display_1_1_display_t_t_t_aa07f5377555ef459f8ce5b4735aa402e}{display\+Turn} ()
+\item 
+void \hyperlink{class_display_1_1_display_t_t_t_a9afa2fb48121f1e4915d4d851c94b20a}{refresh\+User\+U\+I} (String current\+Turn)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Array\+List$<$ Integer $>$ \hyperlink{class_display_1_1_display_t_t_t_a7dc4fccda99b958bd1dead1dc6543442}{Xs} = new Array\+List$<$Integer$>$()
+\item 
+Array\+List$<$ Integer $>$ \hyperlink{class_display_1_1_display_t_t_t_a06c277ab266ff9c323c13e1fd50299d2}{Os} = new Array\+List$<$Integer$>$()
+\item 
+J\+Frame \hyperlink{class_display_1_1_display_t_t_t_ab4d0cb92c4459675e8abd22f8ad4161f}{frame} = new J\+Frame(\char`\"{}Tic Tac Toe\char`\"{})
+\item 
+J\+Label \hyperlink{class_display_1_1_display_t_t_t_a22f3ef7e7b2123a2b900bc8511bdd474}{disp\+Turn} = new J\+Label()
+\item 
+J\+Label \hyperlink{class_display_1_1_display_t_t_t_a2f2eeba39f4aa0dcc00ef6b72e2b6c66}{disp\+Players} = new J\+Label()
+\item 
+J\+Label \hyperlink{class_display_1_1_display_t_t_t_afbec846dfebaa4c2640cd270ec21c8b9}{disp\+Count} = new J\+Label()
+\item 
+Array\+List$<$ J\+Button $>$ \hyperlink{class_display_1_1_display_t_t_t_af2ce89b88ce5f8ccae426f4f273d52aa}{grid\+Squares} = new Array\+List$<$J\+Button$>$()
+\item 
+int \hyperlink{class_display_1_1_display_t_t_t_a72b67bc50aa6ba47ae9d398e597c49bb}{square\+Ref} = 0
+\item 
+J\+Button \hyperlink{class_display_1_1_display_t_t_t_afbd113d4a9cd8573238108344561f62c}{m\+\_\+save\+Game\+Button} = new J\+Button()
+\item 
+Image\+Icon \hyperlink{class_display_1_1_display_t_t_t_a6ff178cba82943d451e39c7c6b577f83}{animated\+Gif} = new Image\+Icon(\char`\"{}res/btn\+Clicked\+Anim.\+gif\char`\"{})
+\item 
+Image\+Icon \hyperlink{class_display_1_1_display_t_t_t_a9f22db838fa2492c00c8466efb8eebd5}{idle\+Image} = new Image\+Icon(\char`\"{}res/btn\+Idle\+Image.\+gif\char`\"{})
+\item 
+J\+Button \hyperlink{class_display_1_1_display_t_t_t_a25d9abae3eed1579b8c8a59f7d0450fa}{go\+Back\+Button} = new J\+Button()
+\item 
+Stop\+Watch \hyperlink{class_display_1_1_display_t_t_t_ab640a3b08cb9f98d5a9481e45653b49f}{m\+\_\+stop\+Watch}
+\item 
+J\+Label \hyperlink{class_display_1_1_display_t_t_t_a42c7a03ac93841369bd7e73460b59e11}{m\+\_\+lbl\+Timer} = new J\+Label(\char`\"{}Timer\char`\"{})
+\item 
+boolean \hyperlink{class_display_1_1_display_t_t_t_a8d67b95462ceda8ce22f992628f91ca4}{game\+Running} = true
+\item 
+\hyperlink{class_game_1_1_game_t_t_t}{Game\+T\+T\+T} \hyperlink{class_display_1_1_display_t_t_t_a2e4a57cf17355b6a63f5b9d4e9e74de4}{game}
+\item 
+Array\+List$<$ \hyperlink{class_player_1_1_player_t_t_t}{Player\+T\+T\+T} $>$ \hyperlink{class_display_1_1_display_t_t_t_ad3a0687ab98eb4f191cd30a64ef60304}{m\+\_\+players} = new Array\+List$<$\hyperlink{class_player_1_1_player_t_t_t}{Player\+T\+T\+T}$>$()
+\item 
+boolean \hyperlink{class_display_1_1_display_t_t_t_a713fdaab41d88af675c9f54dfcdb87a2}{ignore\+Events} = false
+\item 
+\hyperlink{class_display_1_1_display_t_t_t_1_1_g_u_i_event_handler}{G\+U\+I\+Event\+Handler} \hyperlink{class_display_1_1_display_t_t_t_a834294acca3e75ec3d75e52ecd6028bc}{handler} = new \hyperlink{class_display_1_1_display_t_t_t_1_1_g_u_i_event_handler}{G\+U\+I\+Event\+Handler}()
+\item 
+boolean \hyperlink{class_display_1_1_display_t_t_t_abea0091c8be45438d7be31081d6b8bc3}{playing} = true
+\item 
+boolean \hyperlink{class_display_1_1_display_t_t_t_a7a6b9526f0a795edccb3911009d74842}{initial\+Play} = true
+\item 
+final Random \hyperlink{class_display_1_1_display_t_t_t_a532c82249100ab477c093e5202b42415}{R\+A\+N\+D} = new Random()
+\item 
+int \hyperlink{class_display_1_1_display_t_t_t_a30415017d1d80126ca6295a1d711684d}{R\+A\+N\+D\+O\+M} = R\+A\+N\+D.\+next\+Int(63)
+\item 
+Array\+List$<$ Integer $>$ \hyperlink{class_display_1_1_display_t_t_t_aaa3a8705876d9e60253f6c4599966ae9}{m\+\_\+ai\+Moves} = new Array\+List$<$Integer$>$()
+\item 
+\hyperlink{class_board_1_1_board}{Board} \hyperlink{class_display_1_1_display_t_t_t_a3f540c3d30082e201fcb37c9623d6d27}{m\+\_\+board\+Game}
+\item 
+Boolean \hyperlink{class_display_1_1_display_t_t_t_a92b6a913aec2926f4fdf565a4146bb31}{m\+\_\+visualize} = false
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class displays everything for the T\+T\+T game. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_display_1_1_display_t_t_t_a2c3b14ea1ac44f89006718c20e00b612}{}\index{Display\+::\+Display\+T\+T\+T@{Display\+::\+Display\+T\+T\+T}!Display\+T\+T\+T@{Display\+T\+T\+T}}
+\index{Display\+T\+T\+T@{Display\+T\+T\+T}!Display\+::\+Display\+T\+T\+T@{Display\+::\+Display\+T\+T\+T}}
+\subsubsection[{Display\+T\+T\+T(\+Game\+T\+T\+T mygame, Board board, int[] count)}]{\setlength{\rightskip}{0pt plus 5cm}Display.\+Display\+T\+T\+T.\+Display\+T\+T\+T (
+\begin{DoxyParamCaption}
+\item[{{\bf Game\+T\+T\+T}}]{mygame, }
+\item[{{\bf Board}}]{board, }
+\item[{int\mbox{[}$\,$\mbox{]}}]{count}
+\end{DoxyParamCaption}
+)}\label{class_display_1_1_display_t_t_t_a2c3b14ea1ac44f89006718c20e00b612}
+Constructor for display\+T\+T\+T when load game is called. 
+\begin{DoxyParams}{Parameters}
+{\em mygame} & \\
+\hline
+{\em board} & \\
+\hline
+{\em count} & \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_display_1_1_display_t_t_t_a3ccc11c3b13311bc0ae2ce71a2b2dec4}{}\index{Display\+::\+Display\+T\+T\+T@{Display\+::\+Display\+T\+T\+T}!Display\+T\+T\+T@{Display\+T\+T\+T}}
+\index{Display\+T\+T\+T@{Display\+T\+T\+T}!Display\+::\+Display\+T\+T\+T@{Display\+::\+Display\+T\+T\+T}}
+\subsubsection[{Display\+T\+T\+T(\+Game\+T\+T\+T mygame, Board board\+Game, Boolean visualization)}]{\setlength{\rightskip}{0pt plus 5cm}Display.\+Display\+T\+T\+T.\+Display\+T\+T\+T (
+\begin{DoxyParamCaption}
+\item[{{\bf Game\+T\+T\+T}}]{mygame, }
+\item[{{\bf Board}}]{board\+Game, }
+\item[{Boolean}]{visualization}
+\end{DoxyParamCaption}
+)}\label{class_display_1_1_display_t_t_t_a3ccc11c3b13311bc0ae2ce71a2b2dec4}
+Constructor for the display\+T\+T\+T 
+\begin{DoxyParams}{Parameters}
+{\em mygame} & \\
+\hline
+{\em board\+Game} & \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_display_1_1_display_t_t_t_a54c366271479ec124f298ab5f00104f0}{}\index{Display\+::\+Display\+T\+T\+T@{Display\+::\+Display\+T\+T\+T}!add\+Back\+Button@{add\+Back\+Button}}
+\index{add\+Back\+Button@{add\+Back\+Button}!Display\+::\+Display\+T\+T\+T@{Display\+::\+Display\+T\+T\+T}}
+\subsubsection[{add\+Back\+Button()}]{\setlength{\rightskip}{0pt plus 5cm}void Display.\+Display\+T\+T\+T.\+add\+Back\+Button (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{class_display_1_1_display_t_t_t_a54c366271479ec124f298ab5f00104f0}
+adds the Back button to screen setting bounds etc \hypertarget{class_display_1_1_display_t_t_t_a21dad65008eb0c5db1b388bb403d7ef1}{}\index{Display\+::\+Display\+T\+T\+T@{Display\+::\+Display\+T\+T\+T}!add\+Save\+Button@{add\+Save\+Button}}
+\index{add\+Save\+Button@{add\+Save\+Button}!Display\+::\+Display\+T\+T\+T@{Display\+::\+Display\+T\+T\+T}}
+\subsubsection[{add\+Save\+Button()}]{\setlength{\rightskip}{0pt plus 5cm}void Display.\+Display\+T\+T\+T.\+add\+Save\+Button (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{class_display_1_1_display_t_t_t_a21dad65008eb0c5db1b388bb403d7ef1}
+adds the save\+Button to the frame \hypertarget{class_display_1_1_display_t_t_t_aaea43cb629cc58c12088f1ec6106d87b}{}\index{Display\+::\+Display\+T\+T\+T@{Display\+::\+Display\+T\+T\+T}!ai\+Movement\+Strategy@{ai\+Movement\+Strategy}}
+\index{ai\+Movement\+Strategy@{ai\+Movement\+Strategy}!Display\+::\+Display\+T\+T\+T@{Display\+::\+Display\+T\+T\+T}}
+\subsubsection[{ai\+Movement\+Strategy()}]{\setlength{\rightskip}{0pt plus 5cm}void Display.\+Display\+T\+T\+T.\+ai\+Movement\+Strategy (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{class_display_1_1_display_t_t_t_aaea43cb629cc58c12088f1ec6106d87b}
+Contains the strategy for the ai player \hypertarget{class_display_1_1_display_t_t_t_ac13c73a58635d5c5779c8381d5ad9b6d}{}\index{Display\+::\+Display\+T\+T\+T@{Display\+::\+Display\+T\+T\+T}!create\+Timer@{create\+Timer}}
+\index{create\+Timer@{create\+Timer}!Display\+::\+Display\+T\+T\+T@{Display\+::\+Display\+T\+T\+T}}
+\subsubsection[{create\+Timer()}]{\setlength{\rightskip}{0pt plus 5cm}void Display.\+Display\+T\+T\+T.\+create\+Timer (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{class_display_1_1_display_t_t_t_ac13c73a58635d5c5779c8381d5ad9b6d}
+Creates the stop watch timer \hypertarget{class_display_1_1_display_t_t_t_a2603790df7e6e53a5d07701eb08b1432}{}\index{Display\+::\+Display\+T\+T\+T@{Display\+::\+Display\+T\+T\+T}!display\+Timer@{display\+Timer}}
+\index{display\+Timer@{display\+Timer}!Display\+::\+Display\+T\+T\+T@{Display\+::\+Display\+T\+T\+T}}
+\subsubsection[{display\+Timer()}]{\setlength{\rightskip}{0pt plus 5cm}void Display.\+Display\+T\+T\+T.\+display\+Timer (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{class_display_1_1_display_t_t_t_a2603790df7e6e53a5d07701eb08b1432}
+Displays the stopwatch timer \hypertarget{class_display_1_1_display_t_t_t_aa07f5377555ef459f8ce5b4735aa402e}{}\index{Display\+::\+Display\+T\+T\+T@{Display\+::\+Display\+T\+T\+T}!display\+Turn@{display\+Turn}}
+\index{display\+Turn@{display\+Turn}!Display\+::\+Display\+T\+T\+T@{Display\+::\+Display\+T\+T\+T}}
+\subsubsection[{display\+Turn()}]{\setlength{\rightskip}{0pt plus 5cm}void Display.\+Display\+T\+T\+T.\+display\+Turn (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{class_display_1_1_display_t_t_t_aa07f5377555ef459f8ce5b4735aa402e}
+displays the turn of the player, the names of the players playing, and the player\textquotesingle{}s position \hypertarget{class_display_1_1_display_t_t_t_a0ddb1f67a9836bcb8c13bb2c4c1da714}{}\index{Display\+::\+Display\+T\+T\+T@{Display\+::\+Display\+T\+T\+T}!do\+Movement\+A\+I@{do\+Movement\+A\+I}}
+\index{do\+Movement\+A\+I@{do\+Movement\+A\+I}!Display\+::\+Display\+T\+T\+T@{Display\+::\+Display\+T\+T\+T}}
+\subsubsection[{do\+Movement\+A\+I(int random\+Number)}]{\setlength{\rightskip}{0pt plus 5cm}void Display.\+Display\+T\+T\+T.\+do\+Movement\+A\+I (
+\begin{DoxyParamCaption}
+\item[{int}]{random\+Number}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{class_display_1_1_display_t_t_t_a0ddb1f67a9836bcb8c13bb2c4c1da714}
+\hypertarget{class_display_1_1_display_t_t_t_a4aa462f648708a3254eeb61dd67fe798}{}\index{Display\+::\+Display\+T\+T\+T@{Display\+::\+Display\+T\+T\+T}!do\+Movement\+Human@{do\+Movement\+Human}}
+\index{do\+Movement\+Human@{do\+Movement\+Human}!Display\+::\+Display\+T\+T\+T@{Display\+::\+Display\+T\+T\+T}}
+\subsubsection[{do\+Movement\+Human(int square\+Ref)}]{\setlength{\rightskip}{0pt plus 5cm}void Display.\+Display\+T\+T\+T.\+do\+Movement\+Human (
+\begin{DoxyParamCaption}
+\item[{int}]{square\+Ref}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{class_display_1_1_display_t_t_t_a4aa462f648708a3254eeb61dd67fe798}
+Sets image for any button on the grid dependent on the player moving \hypertarget{class_display_1_1_display_t_t_t_a6ec07c14b618df7f4c10037ee12d3685}{}\index{Display\+::\+Display\+T\+T\+T@{Display\+::\+Display\+T\+T\+T}!paint\+Component@{paint\+Component}}
+\index{paint\+Component@{paint\+Component}!Display\+::\+Display\+T\+T\+T@{Display\+::\+Display\+T\+T\+T}}
+\subsubsection[{paint\+Component(\+Graphics graphics)}]{\setlength{\rightskip}{0pt plus 5cm}void Display.\+Display\+T\+T\+T.\+paint\+Component (
+\begin{DoxyParamCaption}
+\item[{Graphics}]{graphics}
+\end{DoxyParamCaption}
+)}\label{class_display_1_1_display_t_t_t_a6ec07c14b618df7f4c10037ee12d3685}
+Calls the method to display the timer
+
+
+\begin{DoxyParams}{Parameters}
+{\em graphics} & \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_display_1_1_display_t_t_t_ac07792d99f73ff42f0e0dc33478769d5}{}\index{Display\+::\+Display\+T\+T\+T@{Display\+::\+Display\+T\+T\+T}!play\+Game@{play\+Game}}
+\index{play\+Game@{play\+Game}!Display\+::\+Display\+T\+T\+T@{Display\+::\+Display\+T\+T\+T}}
+\subsubsection[{play\+Game()}]{\setlength{\rightskip}{0pt plus 5cm}void Display.\+Display\+T\+T\+T.\+play\+Game (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{class_display_1_1_display_t_t_t_ac07792d99f73ff42f0e0dc33478769d5}
+plays the game and delays the A\+I turn \hypertarget{class_display_1_1_display_t_t_t_a9afa2fb48121f1e4915d4d851c94b20a}{}\index{Display\+::\+Display\+T\+T\+T@{Display\+::\+Display\+T\+T\+T}!refresh\+User\+U\+I@{refresh\+User\+U\+I}}
+\index{refresh\+User\+U\+I@{refresh\+User\+U\+I}!Display\+::\+Display\+T\+T\+T@{Display\+::\+Display\+T\+T\+T}}
+\subsubsection[{refresh\+User\+U\+I(\+String current\+Turn)}]{\setlength{\rightskip}{0pt plus 5cm}void Display.\+Display\+T\+T\+T.\+refresh\+User\+U\+I (
+\begin{DoxyParamCaption}
+\item[{String}]{current\+Turn}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{class_display_1_1_display_t_t_t_a9afa2fb48121f1e4915d4d851c94b20a}
+Updates the players turn \hypertarget{class_display_1_1_display_t_t_t_a3b66c11e8632e24ba72e1f36f3c2307a}{}\index{Display\+::\+Display\+T\+T\+T@{Display\+::\+Display\+T\+T\+T}!run@{run}}
+\index{run@{run}!Display\+::\+Display\+T\+T\+T@{Display\+::\+Display\+T\+T\+T}}
+\subsubsection[{run()}]{\setlength{\rightskip}{0pt plus 5cm}void Display.\+Display\+T\+T\+T.\+run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_display_1_1_display_t_t_t_a3b66c11e8632e24ba72e1f36f3c2307a}
+override of the run method to paint components while playing game \hypertarget{class_display_1_1_display_t_t_t_a28723b7297cdcc1b2c27553607ac00ac}{}\index{Display\+::\+Display\+T\+T\+T@{Display\+::\+Display\+T\+T\+T}!save\+Game@{save\+Game}}
+\index{save\+Game@{save\+Game}!Display\+::\+Display\+T\+T\+T@{Display\+::\+Display\+T\+T\+T}}
+\subsubsection[{save\+Game()}]{\setlength{\rightskip}{0pt plus 5cm}void Display.\+Display\+T\+T\+T.\+save\+Game (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{class_display_1_1_display_t_t_t_a28723b7297cdcc1b2c27553607ac00ac}
+method to save the game to the file res/save\+T\+T\+T.\+csv \hypertarget{class_display_1_1_display_t_t_t_a8e33c12c8d44efe24ad731221329fc85}{}\index{Display\+::\+Display\+T\+T\+T@{Display\+::\+Display\+T\+T\+T}!set\+Button\+Icon@{set\+Button\+Icon}}
+\index{set\+Button\+Icon@{set\+Button\+Icon}!Display\+::\+Display\+T\+T\+T@{Display\+::\+Display\+T\+T\+T}}
+\subsubsection[{set\+Button\+Icon(int position, char value)}]{\setlength{\rightskip}{0pt plus 5cm}void Display.\+Display\+T\+T\+T.\+set\+Button\+Icon (
+\begin{DoxyParamCaption}
+\item[{int}]{position, }
+\item[{char}]{value}
+\end{DoxyParamCaption}
+)}\label{class_display_1_1_display_t_t_t_a8e33c12c8d44efe24ad731221329fc85}
+method to set button icon to X or O, used for the load game 
+
+\subsection{Member Data Documentation}
+\hypertarget{class_display_1_1_display_t_t_t_a6ff178cba82943d451e39c7c6b577f83}{}\index{Display\+::\+Display\+T\+T\+T@{Display\+::\+Display\+T\+T\+T}!animated\+Gif@{animated\+Gif}}
+\index{animated\+Gif@{animated\+Gif}!Display\+::\+Display\+T\+T\+T@{Display\+::\+Display\+T\+T\+T}}
+\subsubsection[{animated\+Gif}]{\setlength{\rightskip}{0pt plus 5cm}Image\+Icon Display.\+Display\+T\+T\+T.\+animated\+Gif = new Image\+Icon(\char`\"{}res/btn\+Clicked\+Anim.\+gif\char`\"{})\hspace{0.3cm}{\ttfamily [private]}}\label{class_display_1_1_display_t_t_t_a6ff178cba82943d451e39c7c6b577f83}
+Holds the gif for button animation \hypertarget{class_display_1_1_display_t_t_t_afbec846dfebaa4c2640cd270ec21c8b9}{}\index{Display\+::\+Display\+T\+T\+T@{Display\+::\+Display\+T\+T\+T}!disp\+Count@{disp\+Count}}
+\index{disp\+Count@{disp\+Count}!Display\+::\+Display\+T\+T\+T@{Display\+::\+Display\+T\+T\+T}}
+\subsubsection[{disp\+Count}]{\setlength{\rightskip}{0pt plus 5cm}J\+Label Display.\+Display\+T\+T\+T.\+disp\+Count = new J\+Label()\hspace{0.3cm}{\ttfamily [private]}}\label{class_display_1_1_display_t_t_t_afbec846dfebaa4c2640cd270ec21c8b9}
+Label to display count of pieces on board \hypertarget{class_display_1_1_display_t_t_t_a2f2eeba39f4aa0dcc00ef6b72e2b6c66}{}\index{Display\+::\+Display\+T\+T\+T@{Display\+::\+Display\+T\+T\+T}!disp\+Players@{disp\+Players}}
+\index{disp\+Players@{disp\+Players}!Display\+::\+Display\+T\+T\+T@{Display\+::\+Display\+T\+T\+T}}
+\subsubsection[{disp\+Players}]{\setlength{\rightskip}{0pt plus 5cm}J\+Label Display.\+Display\+T\+T\+T.\+disp\+Players = new J\+Label()\hspace{0.3cm}{\ttfamily [private]}}\label{class_display_1_1_display_t_t_t_a2f2eeba39f4aa0dcc00ef6b72e2b6c66}
+Label to display player name \hypertarget{class_display_1_1_display_t_t_t_a22f3ef7e7b2123a2b900bc8511bdd474}{}\index{Display\+::\+Display\+T\+T\+T@{Display\+::\+Display\+T\+T\+T}!disp\+Turn@{disp\+Turn}}
+\index{disp\+Turn@{disp\+Turn}!Display\+::\+Display\+T\+T\+T@{Display\+::\+Display\+T\+T\+T}}
+\subsubsection[{disp\+Turn}]{\setlength{\rightskip}{0pt plus 5cm}J\+Label Display.\+Display\+T\+T\+T.\+disp\+Turn = new J\+Label()\hspace{0.3cm}{\ttfamily [private]}}\label{class_display_1_1_display_t_t_t_a22f3ef7e7b2123a2b900bc8511bdd474}
+Label to display player turn \hypertarget{class_display_1_1_display_t_t_t_ab4d0cb92c4459675e8abd22f8ad4161f}{}\index{Display\+::\+Display\+T\+T\+T@{Display\+::\+Display\+T\+T\+T}!frame@{frame}}
+\index{frame@{frame}!Display\+::\+Display\+T\+T\+T@{Display\+::\+Display\+T\+T\+T}}
+\subsubsection[{frame}]{\setlength{\rightskip}{0pt plus 5cm}J\+Frame Display.\+Display\+T\+T\+T.\+frame = new J\+Frame(\char`\"{}Tic Tac Toe\char`\"{})\hspace{0.3cm}{\ttfamily [private]}}\label{class_display_1_1_display_t_t_t_ab4d0cb92c4459675e8abd22f8ad4161f}
+J\+Frame for tic tac toe game \hypertarget{class_display_1_1_display_t_t_t_a2e4a57cf17355b6a63f5b9d4e9e74de4}{}\index{Display\+::\+Display\+T\+T\+T@{Display\+::\+Display\+T\+T\+T}!game@{game}}
+\index{game@{game}!Display\+::\+Display\+T\+T\+T@{Display\+::\+Display\+T\+T\+T}}
+\subsubsection[{game}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Game\+T\+T\+T} Display.\+Display\+T\+T\+T.\+game\hspace{0.3cm}{\ttfamily [private]}}\label{class_display_1_1_display_t_t_t_a2e4a57cf17355b6a63f5b9d4e9e74de4}
+\hyperlink{namespace_game}{Game} object \hypertarget{class_display_1_1_display_t_t_t_a8d67b95462ceda8ce22f992628f91ca4}{}\index{Display\+::\+Display\+T\+T\+T@{Display\+::\+Display\+T\+T\+T}!game\+Running@{game\+Running}}
+\index{game\+Running@{game\+Running}!Display\+::\+Display\+T\+T\+T@{Display\+::\+Display\+T\+T\+T}}
+\subsubsection[{game\+Running}]{\setlength{\rightskip}{0pt plus 5cm}boolean Display.\+Display\+T\+T\+T.\+game\+Running = true\hspace{0.3cm}{\ttfamily [private]}}\label{class_display_1_1_display_t_t_t_a8d67b95462ceda8ce22f992628f91ca4}
+Boolean to test if game is running \hypertarget{class_display_1_1_display_t_t_t_a25d9abae3eed1579b8c8a59f7d0450fa}{}\index{Display\+::\+Display\+T\+T\+T@{Display\+::\+Display\+T\+T\+T}!go\+Back\+Button@{go\+Back\+Button}}
+\index{go\+Back\+Button@{go\+Back\+Button}!Display\+::\+Display\+T\+T\+T@{Display\+::\+Display\+T\+T\+T}}
+\subsubsection[{go\+Back\+Button}]{\setlength{\rightskip}{0pt plus 5cm}J\+Button Display.\+Display\+T\+T\+T.\+go\+Back\+Button = new J\+Button()\hspace{0.3cm}{\ttfamily [private]}}\label{class_display_1_1_display_t_t_t_a25d9abae3eed1579b8c8a59f7d0450fa}
+J\+Button to go back \hypertarget{class_display_1_1_display_t_t_t_a863d5b47363b01c44552068cd9ee832f}{}\index{Display\+::\+Display\+T\+T\+T@{Display\+::\+Display\+T\+T\+T}!G\+R\+I\+D\+\_\+\+H\+E\+I\+G\+H\+T@{G\+R\+I\+D\+\_\+\+H\+E\+I\+G\+H\+T}}
+\index{G\+R\+I\+D\+\_\+\+H\+E\+I\+G\+H\+T@{G\+R\+I\+D\+\_\+\+H\+E\+I\+G\+H\+T}!Display\+::\+Display\+T\+T\+T@{Display\+::\+Display\+T\+T\+T}}
+\subsubsection[{G\+R\+I\+D\+\_\+\+H\+E\+I\+G\+H\+T}]{\setlength{\rightskip}{0pt plus 5cm}final int Display.\+Display\+T\+T\+T.\+G\+R\+I\+D\+\_\+\+H\+E\+I\+G\+H\+T = 8\hspace{0.3cm}{\ttfamily [static]}}\label{class_display_1_1_display_t_t_t_a863d5b47363b01c44552068cd9ee832f}
+\hypertarget{class_display_1_1_display_t_t_t_ac07e05126f3b772dd62b3276defc0b4b}{}\index{Display\+::\+Display\+T\+T\+T@{Display\+::\+Display\+T\+T\+T}!G\+R\+I\+D\+\_\+\+W\+I\+D\+T\+H@{G\+R\+I\+D\+\_\+\+W\+I\+D\+T\+H}}
+\index{G\+R\+I\+D\+\_\+\+W\+I\+D\+T\+H@{G\+R\+I\+D\+\_\+\+W\+I\+D\+T\+H}!Display\+::\+Display\+T\+T\+T@{Display\+::\+Display\+T\+T\+T}}
+\subsubsection[{G\+R\+I\+D\+\_\+\+W\+I\+D\+T\+H}]{\setlength{\rightskip}{0pt plus 5cm}final int Display.\+Display\+T\+T\+T.\+G\+R\+I\+D\+\_\+\+W\+I\+D\+T\+H = 8\hspace{0.3cm}{\ttfamily [static]}}\label{class_display_1_1_display_t_t_t_ac07e05126f3b772dd62b3276defc0b4b}
+Variables to set size of grid \hypertarget{class_display_1_1_display_t_t_t_af2ce89b88ce5f8ccae426f4f273d52aa}{}\index{Display\+::\+Display\+T\+T\+T@{Display\+::\+Display\+T\+T\+T}!grid\+Squares@{grid\+Squares}}
+\index{grid\+Squares@{grid\+Squares}!Display\+::\+Display\+T\+T\+T@{Display\+::\+Display\+T\+T\+T}}
+\subsubsection[{grid\+Squares}]{\setlength{\rightskip}{0pt plus 5cm}Array\+List$<$J\+Button$>$ Display.\+Display\+T\+T\+T.\+grid\+Squares = new Array\+List$<$J\+Button$>$()\hspace{0.3cm}{\ttfamily [private]}}\label{class_display_1_1_display_t_t_t_af2ce89b88ce5f8ccae426f4f273d52aa}
+Array list of Jbuttons to store buttons rendered to the board \hypertarget{class_display_1_1_display_t_t_t_a834294acca3e75ec3d75e52ecd6028bc}{}\index{Display\+::\+Display\+T\+T\+T@{Display\+::\+Display\+T\+T\+T}!handler@{handler}}
+\index{handler@{handler}!Display\+::\+Display\+T\+T\+T@{Display\+::\+Display\+T\+T\+T}}
+\subsubsection[{handler}]{\setlength{\rightskip}{0pt plus 5cm}{\bf G\+U\+I\+Event\+Handler} Display.\+Display\+T\+T\+T.\+handler = new {\bf G\+U\+I\+Event\+Handler}()\hspace{0.3cm}{\ttfamily [private]}}\label{class_display_1_1_display_t_t_t_a834294acca3e75ec3d75e52ecd6028bc}
+event handler for human click \hypertarget{class_display_1_1_display_t_t_t_a9f22db838fa2492c00c8466efb8eebd5}{}\index{Display\+::\+Display\+T\+T\+T@{Display\+::\+Display\+T\+T\+T}!idle\+Image@{idle\+Image}}
+\index{idle\+Image@{idle\+Image}!Display\+::\+Display\+T\+T\+T@{Display\+::\+Display\+T\+T\+T}}
+\subsubsection[{idle\+Image}]{\setlength{\rightskip}{0pt plus 5cm}Image\+Icon Display.\+Display\+T\+T\+T.\+idle\+Image = new Image\+Icon(\char`\"{}res/btn\+Idle\+Image.\+gif\char`\"{})\hspace{0.3cm}{\ttfamily [private]}}\label{class_display_1_1_display_t_t_t_a9f22db838fa2492c00c8466efb8eebd5}
+\hypertarget{class_display_1_1_display_t_t_t_a713fdaab41d88af675c9f54dfcdb87a2}{}\index{Display\+::\+Display\+T\+T\+T@{Display\+::\+Display\+T\+T\+T}!ignore\+Events@{ignore\+Events}}
+\index{ignore\+Events@{ignore\+Events}!Display\+::\+Display\+T\+T\+T@{Display\+::\+Display\+T\+T\+T}}
+\subsubsection[{ignore\+Events}]{\setlength{\rightskip}{0pt plus 5cm}boolean Display.\+Display\+T\+T\+T.\+ignore\+Events = false\hspace{0.3cm}{\ttfamily [private]}}\label{class_display_1_1_display_t_t_t_a713fdaab41d88af675c9f54dfcdb87a2}
+boolean to ignore human input when ai\textquotesingle{}s turn \hypertarget{class_display_1_1_display_t_t_t_a7a6b9526f0a795edccb3911009d74842}{}\index{Display\+::\+Display\+T\+T\+T@{Display\+::\+Display\+T\+T\+T}!initial\+Play@{initial\+Play}}
+\index{initial\+Play@{initial\+Play}!Display\+::\+Display\+T\+T\+T@{Display\+::\+Display\+T\+T\+T}}
+\subsubsection[{initial\+Play}]{\setlength{\rightskip}{0pt plus 5cm}boolean Display.\+Display\+T\+T\+T.\+initial\+Play = true\hspace{0.3cm}{\ttfamily [private]}}\label{class_display_1_1_display_t_t_t_a7a6b9526f0a795edccb3911009d74842}
+boolean to detect whether it is the ai\textquotesingle{}s first turn \hypertarget{class_display_1_1_display_t_t_t_aaa3a8705876d9e60253f6c4599966ae9}{}\index{Display\+::\+Display\+T\+T\+T@{Display\+::\+Display\+T\+T\+T}!m\+\_\+ai\+Moves@{m\+\_\+ai\+Moves}}
+\index{m\+\_\+ai\+Moves@{m\+\_\+ai\+Moves}!Display\+::\+Display\+T\+T\+T@{Display\+::\+Display\+T\+T\+T}}
+\subsubsection[{m\+\_\+ai\+Moves}]{\setlength{\rightskip}{0pt plus 5cm}Array\+List$<$Integer$>$ Display.\+Display\+T\+T\+T.\+m\+\_\+ai\+Moves = new Array\+List$<$Integer$>$()\hspace{0.3cm}{\ttfamily [private]}}\label{class_display_1_1_display_t_t_t_aaa3a8705876d9e60253f6c4599966ae9}
+array list used for the ai moves \hypertarget{class_display_1_1_display_t_t_t_a3f540c3d30082e201fcb37c9623d6d27}{}\index{Display\+::\+Display\+T\+T\+T@{Display\+::\+Display\+T\+T\+T}!m\+\_\+board\+Game@{m\+\_\+board\+Game}}
+\index{m\+\_\+board\+Game@{m\+\_\+board\+Game}!Display\+::\+Display\+T\+T\+T@{Display\+::\+Display\+T\+T\+T}}
+\subsubsection[{m\+\_\+board\+Game}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Board} Display.\+Display\+T\+T\+T.\+m\+\_\+board\+Game\hspace{0.3cm}{\ttfamily [private]}}\label{class_display_1_1_display_t_t_t_a3f540c3d30082e201fcb37c9623d6d27}
+instance of the board \hypertarget{class_display_1_1_display_t_t_t_a42c7a03ac93841369bd7e73460b59e11}{}\index{Display\+::\+Display\+T\+T\+T@{Display\+::\+Display\+T\+T\+T}!m\+\_\+lbl\+Timer@{m\+\_\+lbl\+Timer}}
+\index{m\+\_\+lbl\+Timer@{m\+\_\+lbl\+Timer}!Display\+::\+Display\+T\+T\+T@{Display\+::\+Display\+T\+T\+T}}
+\subsubsection[{m\+\_\+lbl\+Timer}]{\setlength{\rightskip}{0pt plus 5cm}J\+Label Display.\+Display\+T\+T\+T.\+m\+\_\+lbl\+Timer = new J\+Label(\char`\"{}Timer\char`\"{})\hspace{0.3cm}{\ttfamily [private]}}\label{class_display_1_1_display_t_t_t_a42c7a03ac93841369bd7e73460b59e11}
+J\+Label to display timer \hypertarget{class_display_1_1_display_t_t_t_ad3a0687ab98eb4f191cd30a64ef60304}{}\index{Display\+::\+Display\+T\+T\+T@{Display\+::\+Display\+T\+T\+T}!m\+\_\+players@{m\+\_\+players}}
+\index{m\+\_\+players@{m\+\_\+players}!Display\+::\+Display\+T\+T\+T@{Display\+::\+Display\+T\+T\+T}}
+\subsubsection[{m\+\_\+players}]{\setlength{\rightskip}{0pt plus 5cm}Array\+List$<${\bf Player\+T\+T\+T}$>$ Display.\+Display\+T\+T\+T.\+m\+\_\+players = new Array\+List$<${\bf Player\+T\+T\+T}$>$()\hspace{0.3cm}{\ttfamily [private]}}\label{class_display_1_1_display_t_t_t_ad3a0687ab98eb4f191cd30a64ef60304}
+Arraylist of the players \hypertarget{class_display_1_1_display_t_t_t_afbd113d4a9cd8573238108344561f62c}{}\index{Display\+::\+Display\+T\+T\+T@{Display\+::\+Display\+T\+T\+T}!m\+\_\+save\+Game\+Button@{m\+\_\+save\+Game\+Button}}
+\index{m\+\_\+save\+Game\+Button@{m\+\_\+save\+Game\+Button}!Display\+::\+Display\+T\+T\+T@{Display\+::\+Display\+T\+T\+T}}
+\subsubsection[{m\+\_\+save\+Game\+Button}]{\setlength{\rightskip}{0pt plus 5cm}J\+Button Display.\+Display\+T\+T\+T.\+m\+\_\+save\+Game\+Button = new J\+Button()\hspace{0.3cm}{\ttfamily [private]}}\label{class_display_1_1_display_t_t_t_afbd113d4a9cd8573238108344561f62c}
+\hypertarget{class_display_1_1_display_t_t_t_ab640a3b08cb9f98d5a9481e45653b49f}{}\index{Display\+::\+Display\+T\+T\+T@{Display\+::\+Display\+T\+T\+T}!m\+\_\+stop\+Watch@{m\+\_\+stop\+Watch}}
+\index{m\+\_\+stop\+Watch@{m\+\_\+stop\+Watch}!Display\+::\+Display\+T\+T\+T@{Display\+::\+Display\+T\+T\+T}}
+\subsubsection[{m\+\_\+stop\+Watch}]{\setlength{\rightskip}{0pt plus 5cm}Stop\+Watch Display.\+Display\+T\+T\+T.\+m\+\_\+stop\+Watch\hspace{0.3cm}{\ttfamily [private]}}\label{class_display_1_1_display_t_t_t_ab640a3b08cb9f98d5a9481e45653b49f}
+Stop watch variable to display timer \hypertarget{class_display_1_1_display_t_t_t_a92b6a913aec2926f4fdf565a4146bb31}{}\index{Display\+::\+Display\+T\+T\+T@{Display\+::\+Display\+T\+T\+T}!m\+\_\+visualize@{m\+\_\+visualize}}
+\index{m\+\_\+visualize@{m\+\_\+visualize}!Display\+::\+Display\+T\+T\+T@{Display\+::\+Display\+T\+T\+T}}
+\subsubsection[{m\+\_\+visualize}]{\setlength{\rightskip}{0pt plus 5cm}Boolean Display.\+Display\+T\+T\+T.\+m\+\_\+visualize = false\hspace{0.3cm}{\ttfamily [private]}}\label{class_display_1_1_display_t_t_t_a92b6a913aec2926f4fdf565a4146bb31}
+Boolean to detect visualization \hypertarget{class_display_1_1_display_t_t_t_a06c277ab266ff9c323c13e1fd50299d2}{}\index{Display\+::\+Display\+T\+T\+T@{Display\+::\+Display\+T\+T\+T}!Os@{Os}}
+\index{Os@{Os}!Display\+::\+Display\+T\+T\+T@{Display\+::\+Display\+T\+T\+T}}
+\subsubsection[{Os}]{\setlength{\rightskip}{0pt plus 5cm}Array\+List$<$Integer$>$ Display.\+Display\+T\+T\+T.\+Os = new Array\+List$<$Integer$>$()\hspace{0.3cm}{\ttfamily [private]}}\label{class_display_1_1_display_t_t_t_a06c277ab266ff9c323c13e1fd50299d2}
+Array list used to hold O values that have been drawn \hypertarget{class_display_1_1_display_t_t_t_abea0091c8be45438d7be31081d6b8bc3}{}\index{Display\+::\+Display\+T\+T\+T@{Display\+::\+Display\+T\+T\+T}!playing@{playing}}
+\index{playing@{playing}!Display\+::\+Display\+T\+T\+T@{Display\+::\+Display\+T\+T\+T}}
+\subsubsection[{playing}]{\setlength{\rightskip}{0pt plus 5cm}boolean Display.\+Display\+T\+T\+T.\+playing = true\hspace{0.3cm}{\ttfamily [private]}}\label{class_display_1_1_display_t_t_t_abea0091c8be45438d7be31081d6b8bc3}
+boolean to set whether the game is being played or not \hypertarget{class_display_1_1_display_t_t_t_a532c82249100ab477c093e5202b42415}{}\index{Display\+::\+Display\+T\+T\+T@{Display\+::\+Display\+T\+T\+T}!R\+A\+N\+D@{R\+A\+N\+D}}
+\index{R\+A\+N\+D@{R\+A\+N\+D}!Display\+::\+Display\+T\+T\+T@{Display\+::\+Display\+T\+T\+T}}
+\subsubsection[{R\+A\+N\+D}]{\setlength{\rightskip}{0pt plus 5cm}final Random Display.\+Display\+T\+T\+T.\+R\+A\+N\+D = new Random()\hspace{0.3cm}{\ttfamily [private]}}\label{class_display_1_1_display_t_t_t_a532c82249100ab477c093e5202b42415}
+random used for the ai\textquotesingle{}s turn \hypertarget{class_display_1_1_display_t_t_t_a30415017d1d80126ca6295a1d711684d}{}\index{Display\+::\+Display\+T\+T\+T@{Display\+::\+Display\+T\+T\+T}!R\+A\+N\+D\+O\+M@{R\+A\+N\+D\+O\+M}}
+\index{R\+A\+N\+D\+O\+M@{R\+A\+N\+D\+O\+M}!Display\+::\+Display\+T\+T\+T@{Display\+::\+Display\+T\+T\+T}}
+\subsubsection[{R\+A\+N\+D\+O\+M}]{\setlength{\rightskip}{0pt plus 5cm}int Display.\+Display\+T\+T\+T.\+R\+A\+N\+D\+O\+M = R\+A\+N\+D.\+next\+Int(63)\hspace{0.3cm}{\ttfamily [private]}}\label{class_display_1_1_display_t_t_t_a30415017d1d80126ca6295a1d711684d}
+\hypertarget{class_display_1_1_display_t_t_t_ad7c69ef4532bf358596b4a2d09c22fbc}{}\index{Display\+::\+Display\+T\+T\+T@{Display\+::\+Display\+T\+T\+T}!S\+H\+A\+P\+E\+\_\+\+H\+E\+I\+G\+H\+T@{S\+H\+A\+P\+E\+\_\+\+H\+E\+I\+G\+H\+T}}
+\index{S\+H\+A\+P\+E\+\_\+\+H\+E\+I\+G\+H\+T@{S\+H\+A\+P\+E\+\_\+\+H\+E\+I\+G\+H\+T}!Display\+::\+Display\+T\+T\+T@{Display\+::\+Display\+T\+T\+T}}
+\subsubsection[{S\+H\+A\+P\+E\+\_\+\+H\+E\+I\+G\+H\+T}]{\setlength{\rightskip}{0pt plus 5cm}final int Display.\+Display\+T\+T\+T.\+S\+H\+A\+P\+E\+\_\+\+H\+E\+I\+G\+H\+T = 50}\label{class_display_1_1_display_t_t_t_ad7c69ef4532bf358596b4a2d09c22fbc}
+\hypertarget{class_display_1_1_display_t_t_t_aba4c92bd721d0fb8718fbf9ed9d837e4}{}\index{Display\+::\+Display\+T\+T\+T@{Display\+::\+Display\+T\+T\+T}!S\+H\+A\+P\+E\+\_\+\+W\+I\+D\+T\+H@{S\+H\+A\+P\+E\+\_\+\+W\+I\+D\+T\+H}}
+\index{S\+H\+A\+P\+E\+\_\+\+W\+I\+D\+T\+H@{S\+H\+A\+P\+E\+\_\+\+W\+I\+D\+T\+H}!Display\+::\+Display\+T\+T\+T@{Display\+::\+Display\+T\+T\+T}}
+\subsubsection[{S\+H\+A\+P\+E\+\_\+\+W\+I\+D\+T\+H}]{\setlength{\rightskip}{0pt plus 5cm}final int Display.\+Display\+T\+T\+T.\+S\+H\+A\+P\+E\+\_\+\+W\+I\+D\+T\+H = 50}\label{class_display_1_1_display_t_t_t_aba4c92bd721d0fb8718fbf9ed9d837e4}
+Variables to set size of buttons \hypertarget{class_display_1_1_display_t_t_t_a72b67bc50aa6ba47ae9d398e597c49bb}{}\index{Display\+::\+Display\+T\+T\+T@{Display\+::\+Display\+T\+T\+T}!square\+Ref@{square\+Ref}}
+\index{square\+Ref@{square\+Ref}!Display\+::\+Display\+T\+T\+T@{Display\+::\+Display\+T\+T\+T}}
+\subsubsection[{square\+Ref}]{\setlength{\rightskip}{0pt plus 5cm}int Display.\+Display\+T\+T\+T.\+square\+Ref = 0\hspace{0.3cm}{\ttfamily [private]}}\label{class_display_1_1_display_t_t_t_a72b67bc50aa6ba47ae9d398e597c49bb}
+A numbering for all the squares from 1 to G\+R\+I\+D\+\_\+\+W\+I\+D\+T\+H$\ast$\+G\+R\+I\+D\+\_\+\+H\+E\+I\+G\+H\+T \hypertarget{class_display_1_1_display_t_t_t_a7dc4fccda99b958bd1dead1dc6543442}{}\index{Display\+::\+Display\+T\+T\+T@{Display\+::\+Display\+T\+T\+T}!Xs@{Xs}}
+\index{Xs@{Xs}!Display\+::\+Display\+T\+T\+T@{Display\+::\+Display\+T\+T\+T}}
+\subsubsection[{Xs}]{\setlength{\rightskip}{0pt plus 5cm}Array\+List$<$Integer$>$ Display.\+Display\+T\+T\+T.\+Xs = new Array\+List$<$Integer$>$()\hspace{0.3cm}{\ttfamily [private]}}\label{class_display_1_1_display_t_t_t_a7dc4fccda99b958bd1dead1dc6543442}
+Array list used to hold X values that have been drawn 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Display/\hyperlink{_display_t_t_t_8java}{Display\+T\+T\+T.\+java}\end{DoxyCompactItemize}
