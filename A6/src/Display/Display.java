@@ -92,7 +92,9 @@ public class Display extends JPanel {
 	public static final int OFFSET10 = 10;
 	public static final int OFFSET15 = 15;
 	public static final int OFFSET20 = 20;
-	public static final int OFFSET30 = 30; 
+	public static final int OFFSET25 = 25;
+	public static final int OFFSET30 = 30;
+	public static final int OFFSET35 = 35;
 	public static final int OFFSET40 = 40; 
 	public static final int OFFSET50 = 50; 
 

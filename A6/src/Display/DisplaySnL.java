@@ -33,6 +33,7 @@ import javax.swing.Timer;
 
 import org.apache.commons.lang3.time.StopWatch;
 
+import Board.BoardSnL;
 import Game.GameSnL;
 import Menu.GameSelector;
 import Menu.MenuSnL;
@@ -364,11 +365,8 @@ public class DisplaySnL extends JPanel implements Runnable{
 			m_playerInfoPanel.add(m_playerInfo.get(i));
 			m_playerInfoPanel.add(m_playerPos.get(i));
 			//m_playerInfoPanel.add(m_playerColour.get(i));
-
 		}
-
 		add(m_playerInfoPanel);
-
 	}
 
 	/**
@@ -557,7 +555,7 @@ public class DisplaySnL extends JPanel implements Runnable{
 		}
 		for (int i = 0; i < m_players.size(); i++) {
 			this.printPlayer(getGraphics(), m_players.get(i).getPlayerColor(),
-					m_players.get(i).getPlayerLocation(),coordinates,
+					m_players.get(i).getPlayerLocation(),
 					m_players.get(i).getLastLocation());
 		}
 		repaint();
@@ -575,8 +573,8 @@ public class DisplaySnL extends JPanel implements Runnable{
 		}
 		graphics.setColor(playerColor);
 		int[] coordinates = getCoordinates(squareNo);
-		graphics.fillOval(coordinates[0] + 15, coordinates[1] + 20,
-				PIECE_DIAMETER, PIECE_DIAMETER);
+		graphics.fillOval(coordinates[0] + Display.OFFSET15, coordinates[1] +
+				Display.OFFSET20, PIECE_DIAMETER, PIECE_DIAMETER);
 
 		if(m_visualize){
 			if(GameSelector.m_TRACE){
@@ -592,43 +590,15 @@ public class DisplaySnL extends JPanel implements Runnable{
 					int [] lastCoordinates = getCoordinates(number);
 					int [] lineCoordinates = getCoordinates(line);
 					graphics.setColor(m_players.get(i).getPlayerColor());
-					graphics.fillOval(lastCoordinates[0]+15+(i*2), 
-							lastCoordinates[1] + 20+(i*2),
+					graphics.fillOval(lastCoordinates[0]+Display.OFFSET15+(i*2), 
+							lastCoordinates[1] + Display.OFFSET20+(i*2),
 							PIECE_DIAMETER, PIECE_DIAMETER);
-					graphics.drawLine(lastCoordinates[0]+20+(i*2), 
-							lastCoordinates[1]+25+(i*2),
-							lineCoordinates[0]+20+(i*2), 
-							lineCoordinates[1]+25+(i*2));
+					graphics.drawLine(lastCoordinates[0]+Display.OFFSET20+(i*2), 
+							lastCoordinates[1]+Display.OFFSET25+(i*2),
+							lineCoordinates[0]+Display.OFFSET20+(i*2), 
+							lineCoordinates[1]+Display.OFFSET25+(i*2));
 				}
 			}
-		}
-	}
-
-	/** 
-	 * Prints the player counter according to their colour 
-	 * @param graphics
-	 * @param playerColor
-	 * @param squareNo
-	 * @param coordinates
-	 * @param i 
-	 */
-	public void printPlayer(Graphics graphics, Color playerColor, int squareNo,
-			int[] coordinates, int lastLocation) {
-		if(GameSelector.m_TRACE){
-			System.out.println("DisplaySnL::printPlayer");
-		}
-		graphics.setColor(playerColor);
-		graphics.fillOval(coordinates[0], coordinates[1],
-				PIECE_DIAMETER, PIECE_DIAMETER);
-
-		if(m_visualize){
-			if(GameSelector.m_TRACE){
-				System.out.println("DisplaySnL::printPlayer with"
-						+ " visualization");
-			}
-			int [] lastCoordinates = getCoordinates(lastLocation);
-			graphics.drawLine(coordinates[0]+30, coordinates[1]+35,
-					lastCoordinates[0]+30, lastCoordinates[1]+35);
 		}
 	}
 
@@ -647,8 +617,8 @@ public class DisplaySnL extends JPanel implements Runnable{
 			for (int i = 1; i <= 10; i++) {
 				graphics.drawRect((i * SQUARE_WIDTH), (j * SQUARE_HEIGHT),
 						SQUARE_WIDTH, SQUARE_HEIGHT);
-				graphics.drawString(String.valueOf(l), i * SQUARE_WIDTH + 5, j
-						* SQUARE_HEIGHT + 15);
+				graphics.drawString(String.valueOf(l), i * SQUARE_WIDTH + 
+						Display.OFFSET5, j*SQUARE_HEIGHT + Display.OFFSET15);
 				l--;
 			}
 			j++;
@@ -656,8 +626,8 @@ public class DisplaySnL extends JPanel implements Runnable{
 			for (int i = 1; i <= 10; i++) {
 				graphics.drawRect((i * SQUARE_WIDTH), (j * SQUARE_HEIGHT),
 						SQUARE_WIDTH, SQUARE_HEIGHT);
-				graphics.drawString(String.valueOf(l), i * SQUARE_WIDTH + 5, j
-						* SQUARE_HEIGHT + 15);
+				graphics.drawString(String.valueOf(l), i * SQUARE_WIDTH + 
+						Display.OFFSET5, j*SQUARE_HEIGHT + Display.OFFSET15);
 				l++;
 			}
 			l = l - 11;
@@ -702,10 +672,10 @@ public class DisplaySnL extends JPanel implements Runnable{
 			graphics2.setStroke(new BasicStroke(5));
 			graphics2.drawLine(startCoordinates[0] + 5,
 					startCoordinates[1] + Display.OFFSET30, 
-					endCoordinates[0] + 5, endCoordinates[1]);
-			graphics2.drawLine(startCoordinates[0] + 35,
+					endCoordinates[0] + Display.OFFSET5, endCoordinates[1]);
+			graphics2.drawLine(startCoordinates[0] + Display.OFFSET35,
 					startCoordinates[1] + Display.OFFSET30, 
-					endCoordinates[0] + 35, endCoordinates[1]);
+					endCoordinates[0] + Display.OFFSET35, endCoordinates[1]);
 
 		}
 
@@ -736,16 +706,18 @@ public class DisplaySnL extends JPanel implements Runnable{
 			int[] endCoordinates = getCoordinates(endSquare);
 
 			graphics.drawImage(m_snakeHead, startCoordinates[0],
-					startCoordinates[1], 40, 40, null);
+					startCoordinates[1], Display.OFFSET40, Display.OFFSET40,
+						null);
 			graphics.drawImage(m_snakeTail, endCoordinates[0],
-					endCoordinates[1] + 10, 40, 40, null);
+					endCoordinates[1] + Display.OFFSET10, Display.OFFSET40,
+						Display.OFFSET40, null);
 
 			Graphics2D graphics2 = (Graphics2D) graphics;
 			graphics2.setColor(Color.GREEN);
 			graphics2.setStroke(new BasicStroke(10));
-			graphics2.drawLine(startCoordinates[0] + 20,
-					startCoordinates[1] + 35, endCoordinates[0] + 20,
-					endCoordinates[1] + 10);
+			graphics2.drawLine(startCoordinates[0] + Display.OFFSET20,
+					startCoordinates[1] + Display.OFFSET35, endCoordinates[0] +
+					Display.OFFSET20, endCoordinates[1] + Display.OFFSET10);
 		}
 	}
 
@@ -790,32 +762,39 @@ public class DisplaySnL extends JPanel implements Runnable{
 		if(GameSelector.m_TRACE){
 			System.out.println("DisplaySnL::winner");
 		}
-		boardOverlay = new JPanel();
+
+		for(int i = 0; i<m_players.size(); i++){
+		System.out.println("Player" + i + " " + m_gameSnL.getPlayerLocation(i));
+		}
+		
+		/*boardOverlay = new JPanel();
 		boardOverlay.setBounds(0, 0, Display.XPOS_COL500, 
 				Display.XPOS_COL500);
 		boardOverlay.setVisible(true);
 		frame.add(boardOverlay);
+		
 		Thread flash = new Thread(){
 			public void run(){
+				int sleep = 50;
 				while(true){
 					boardOverlay.setOpaque(true);
 					boardOverlay.setBackground(Color.WHITE);
-					try {Thread.sleep(50);}
+					try {Thread.sleep(sleep);}
 					catch (InterruptedException e) {}
 					boardOverlay.setBackground(Color.RED);
-					try {Thread.sleep(50);}
+					try {Thread.sleep(sleep);}
 					catch (InterruptedException e) {}
 					boardOverlay.setBackground(Color.BLUE);
-					try {Thread.sleep(50);}
+					try {Thread.sleep(sleep);}
 					catch (InterruptedException e) {}
-
 				}
 			}
 		};
-		flash.start();
+		flash.start();*/
 
-		m_dialogResponse = JOptionPane.showConfirmDialog(frame,
-				"Winner! Would you like to play again?", "Snakes and Ladders",
+		m_dialogResponse = JOptionPane.showConfirmDialog(frame,	
+				m_players.get(m_gameSnL.getIterator()).getPlayerName() +
+				" won! Would you like to play again?", "Snakes and Ladders",
 				JOptionPane.YES_NO_OPTION);
 		if (m_dialogResponse == 0) {
 			frame.dispose();

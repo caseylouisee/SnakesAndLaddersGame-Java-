@@ -140,6 +140,19 @@ public abstract class PlayerSnL extends Player {
 		}
 	}
 
+	public void setLastLocation(int playerLocation) {
+		m_allLocations.add(playerLocation);
+		m_lastLocation = playerLocation;
+	}
+	
+	public int getLastLocation(){
+		return m_lastLocation;
+	}
+	
+	public ArrayList<Integer> getAllLocations(){
+		return m_allLocations;
+	}
+
 	/**
 	 * check if the piece has moved to destination square
 	 * 
@@ -154,18 +167,5 @@ public abstract class PlayerSnL extends Player {
 					" is  destination square that is "+m_isMovementOnSquare);
 		}
 		return m_isMovementOnSquare;		
-	}
-
-	public void setLastLocation(int playerLocation) {
-		m_allLocations.add(playerLocation);
-		m_lastLocation = playerLocation;
-	}
-	
-	public int getLastLocation(){
-		return m_lastLocation;
-	}
-	
-	public ArrayList<Integer> getAllLocations(){
-		return m_allLocations;
 	}
 }

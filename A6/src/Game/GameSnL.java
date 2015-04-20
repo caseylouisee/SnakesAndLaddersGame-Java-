@@ -60,7 +60,7 @@ public class GameSnL {
 	 * Arraylist for the squares the player has to move to before and after a
 	 * snake or a ladder object
 	 */
-	private static ArrayList<Integer> movementSquares = 
+	private static ArrayList<Integer> m_movementSquares = 
 			new ArrayList<Integer>();
 	
 	/** Width of Snakes and Ladders Board */
@@ -228,9 +228,9 @@ public class GameSnL {
 	public ArrayList<Integer> getMovementSquares() {
 		if (GameSelector.m_TRACE) {
 			System.out.println("GameSnL:: getMovementSquares() no parameters"
-					+ " needed, returns: " + movementSquares);
+					+ " needed, returns: " + m_movementSquares);
 		}
-		return movementSquares;
+		return m_movementSquares;
 	}
 
 	/**
@@ -261,6 +261,26 @@ public class GameSnL {
 			return -1;
 		}
 	}
+	
+	/**
+	 * Sets the position of the snakes
+	 * @param i - board position to add snake to
+	 */
+	public void setSnakes(int i){
+		m_snakesList.add(i);
+	}
+	
+	/**
+	 * Sets the position of the ladders
+	 * @param i - board position to add ladder to
+	 */
+	public void setLadders(int i){
+		m_laddersList.add(i);
+	}
+	
+	public void setMovementSquares(int i){
+		m_movementSquares.add(i);
+	}
 
 	/**
 	 * Loads data into game
@@ -290,11 +310,11 @@ public class GameSnL {
 		m_snakesList = snakes;
 
 		for (int i = 0; i < m_snakesList.size()/2; i++) {
-			movementSquares.add(m_snakesList.get(i*2));
+			m_movementSquares.add(m_snakesList.get(i*2));
 		}
 
 		for (int i = 1; i < m_laddersList.size()/2; i++) {
-			movementSquares.add(m_laddersList.get(i*2));
+			m_movementSquares.add(m_laddersList.get(i*2));
 		}
 
 		for (int i = 0; i < playerNames.size(); i++) {
@@ -308,7 +328,7 @@ public class GameSnL {
 			}
 		}
 
-		m_board = new BoardSnL(BOARD_WIDTH, BOARD_HEIGHT, movementSquares,
+		m_board = new BoardSnL(BOARD_WIDTH, BOARD_HEIGHT, m_movementSquares,
 				m_laddersList, m_snakesList);
 		initDisplay();
 	}
@@ -486,9 +506,13 @@ public class GameSnL {
 		/** Generates snake positions */
 		for (int i = 0; i < snakes; i++) {
 			int[] snakeSquares = generateSquares();
-			m_snakesList.add(snakeSquares[0]);
-			movementSquares.add(snakeSquares[0]);
-			m_snakesList.add(snakeSquares[1]);
+			setSnakes(snakeSquares[0]);
+			//m_snakesList.add(snakeSquares[0]);
+			setMovementSquares(snakeSquares[0]);
+			//movementSquares.add(snakeSquares[0]);
+			setSnakes(snakeSquares[1]);
+			//m_snakesList.add(snakeSquares[1]);
+
 		}
 
 		System.out.println("snakes are at: " + m_snakesList);
@@ -496,14 +520,17 @@ public class GameSnL {
 		/** Generates ladder positions */
 		for (int i = 0; i < ladders; i++) {
 			int[] ladderSquares = generateSquares();
-			m_laddersList.add(ladderSquares[0]);
-			m_laddersList.add(ladderSquares[1]);
-			movementSquares.add(ladderSquares[1]);
+			setLadders(ladderSquares[0]);
+			//m_laddersList.add(ladderSquares[0]);
+			setLadders(ladderSquares[1]);
+			//m_laddersList.add(ladderSquares[1]);
+			setMovementSquares(ladderSquares[1]);
+			//m_movementSquares.add(ladderSquares[1]);
 		}
 		System.out.println("ladders are at: " + m_laddersList);
-		System.out.println("Movement Squares are: " + movementSquares);
+		System.out.println("Movement Squares are: " + m_movementSquares);
 
-		m_board = new BoardSnL(BOARD_WIDTH, BOARD_HEIGHT, movementSquares,
+		m_board = new BoardSnL(BOARD_WIDTH, BOARD_HEIGHT, m_movementSquares,
 				m_laddersList, m_snakesList);
 	}
 
@@ -546,6 +573,9 @@ public class GameSnL {
 		final int MAX_VALUE = 100;
 		// Winning
 		if ((player.getPlayerLocation() + roll) >= MAX_VALUE) {
+			player.setPlayerLocation(m_shapesPanel, m_board.getSquare(99),
+					false);
+			movePlayer(player, player.getPlayerLocation());
 			winner(player);
 		}
 
@@ -649,7 +679,7 @@ public class GameSnL {
 			System.out.println("GameSnL:: rollDice() "
 					+ "no parameters needed " + "returns:" + roll);
 		}
-
+		System.out.println("Rolled " + roll);
 		return roll;
 	}
 
@@ -702,6 +732,19 @@ public class GameSnL {
 		m_frame.dispose();
 	}
 
+	/** 
+	 * This method resets the board etc to be able to use the back button 
+	 * during game play.
+	 */
+	public void reset() {
+		m_snakesList = new ArrayList<Integer>();
+		m_laddersList = new ArrayList<Integer>();
+		players = new ArrayList<PlayerSnL>();
+		m_movementSquares = new ArrayList<Integer>();
+		m_frame = new JFrame("Snakes And Ladders");
+		m_playerIterator = 0;
+	}
+
 	/**
 	 * This is the test method. Default values are set for names, colours and
 	 * number of snakes and ladders.
@@ -749,15 +792,6 @@ public class GameSnL {
 		gameSnL.generateSquares();
 
 		gameSnL.winner(players.get(gameSnL.getIterator()));
-	}
-
-	public void reset() {
-		m_snakesList = new ArrayList<Integer>();
-		m_laddersList = new ArrayList<Integer>();
-		players = new ArrayList<PlayerSnL>();
-		movementSquares = new ArrayList<Integer>();
-		m_frame = new JFrame("Snakes And Ladders");
-		m_playerIterator = 0;
 	}
 
 }
