@@ -64,6 +64,10 @@ final int \hyperlink{class_board_1_1_board_t_t_t_ab11d997e2ea0983b566f23c4685767
 \subsection{Detailed Description}
 Specific board class for T\+T\+T game board class for T\+T\+T which is a subclass of board, this subclass contains methods specific to T\+T\+T, such as detecting the win scenario by working out adjacent squares to the players current square. 
 
+Definition at line 28 of file Board\+T\+T\+T.\+java.
+
+
+
 \subsection{Constructor \& Destructor Documentation}
 \hypertarget{class_board_1_1_board_t_t_t_ac79a9beb148634225ef350d3ca0628ad}{}\index{Board\+::\+Board\+T\+T\+T@{Board\+::\+Board\+T\+T\+T}!Board\+T\+T\+T@{Board\+T\+T\+T}}
 \index{Board\+T\+T\+T@{Board\+T\+T\+T}!Board\+::\+Board\+T\+T\+T@{Board\+::\+Board\+T\+T\+T}}
@@ -80,6 +84,18 @@ Constructor for creating a board of length width$\ast$height
 {\em height} & integer that contains the height of the board to be created \\
 \hline
 \end{DoxyParams}
+
+
+Definition at line 63 of file Board\+T\+T\+T.\+java.
+
+
+
+References Board.\+Board.\+m\+\_\+board\+Game, and Menu.\+Game\+Selector.\+m\+\_\+\+T\+R\+A\+C\+E.
+
+
+
+Referenced by Board.\+Board\+T\+T\+T.\+main().
+
 \hypertarget{class_board_1_1_board_t_t_t_a3a5fc9e11157089f888727ba696fc2e4}{}\index{Board\+::\+Board\+T\+T\+T@{Board\+::\+Board\+T\+T\+T}!Board\+T\+T\+T@{Board\+T\+T\+T}}
 \index{Board\+T\+T\+T@{Board\+T\+T\+T}!Board\+::\+Board\+T\+T\+T@{Board\+::\+Board\+T\+T\+T}}
 \subsubsection[{Board\+T\+T\+T(int width, int height, char[] square\+Values, Display\+T\+T\+T display)}]{\setlength{\rightskip}{0pt plus 5cm}Board.\+Board\+T\+T\+T.\+Board\+T\+T\+T (
@@ -92,6 +108,14 @@ Constructor for creating a board of length width$\ast$height
 )}\label{class_board_1_1_board_t_t_t_a3a5fc9e11157089f888727ba696fc2e4}
 
 
+Definition at line 75 of file Board\+T\+T\+T.\+java.
+
+
+
+References Board.\+Board.\+m\+\_\+board\+Game, and Menu.\+Game\+Selector.\+m\+\_\+\+T\+R\+A\+C\+E.
+
+
+
 \subsection{Member Function Documentation}
 \hypertarget{class_board_1_1_board_t_t_t_a08f36da4210111d8f129be28a550334e}{}\index{Board\+::\+Board\+T\+T\+T@{Board\+::\+Board\+T\+T\+T}!detect\+End\+Game@{detect\+End\+Game}}
 \index{detect\+End\+Game@{detect\+End\+Game}!Board\+::\+Board\+T\+T\+T@{Board\+::\+Board\+T\+T\+T}}
@@ -100,7 +124,19 @@ Constructor for creating a board of length width$\ast$height
 {}
 \end{DoxyParamCaption}
 )}\label{class_board_1_1_board_t_t_t_a08f36da4210111d8f129be28a550334e}
-First checks for a draw game by looping though every square and checking if there are any empty squares, if there is not then the game is a draw. It then calls the \hyperlink{class_board_1_1_board_t_t_t_ab7d0a91870f300ee5544da2c1ee8b67c}{win()} method on both X and O \hypertarget{class_board_1_1_board_t_t_t_a14ae6a700a6f83643afd3da120c1ee26}{}\index{Board\+::\+Board\+T\+T\+T@{Board\+::\+Board\+T\+T\+T}!get\+Coordinates\+Winning\+Squares@{get\+Coordinates\+Winning\+Squares}}
+First checks for a draw game by looping though every square and checking if there are any empty squares, if there is not then the game is a draw. It then calls the \hyperlink{class_board_1_1_board_t_t_t_ab7d0a91870f300ee5544da2c1ee8b67c}{win()} method on both X and O 
+
+Definition at line 93 of file Board\+T\+T\+T.\+java.
+
+
+
+References Board.\+Board.\+access\+Square(), Board.\+Board\+T\+T\+T.\+D\+R\+A\+W\+\_\+\+G\+A\+M\+E, Board.\+Board.\+m\+\_\+board\+Height, Board.\+Board.\+m\+\_\+board\+Width, Menu.\+Game\+Selector.\+m\+\_\+\+T\+R\+A\+C\+E, Board.\+Board\+T\+T\+T.\+N\+O\+T\+H\+I\+N\+G\+\_\+\+H\+A\+P\+P\+E\+N\+E\+D, Board.\+Board\+T\+T\+T.\+O\+\_\+\+W\+I\+N, Board.\+Board\+T\+T\+T.\+win(), and Board.\+Board\+T\+T\+T.\+X\+\_\+\+W\+I\+N.
+
+
+
+Referenced by Board.\+Board\+T\+T\+T.\+main(), and Game.\+Game\+T\+T\+T.\+winner().
+
+\hypertarget{class_board_1_1_board_t_t_t_a14ae6a700a6f83643afd3da120c1ee26}{}\index{Board\+::\+Board\+T\+T\+T@{Board\+::\+Board\+T\+T\+T}!get\+Coordinates\+Winning\+Squares@{get\+Coordinates\+Winning\+Squares}}
 \index{get\+Coordinates\+Winning\+Squares@{get\+Coordinates\+Winning\+Squares}!Board\+::\+Board\+T\+T\+T@{Board\+::\+Board\+T\+T\+T}}
 \subsubsection[{get\+Coordinates\+Winning\+Squares()}]{\setlength{\rightskip}{0pt plus 5cm}int \mbox{[}$\,$\mbox{]} Board.\+Board\+T\+T\+T.\+get\+Coordinates\+Winning\+Squares (
 \begin{DoxyParamCaption}
@@ -110,6 +146,18 @@ First checks for a draw game by looping though every square and checking if ther
 Used to return the start and end of the winning chain for output. \begin{DoxyReturn}{Returns}
 integer array containing the start and end of the winning chain 
 \end{DoxyReturn}
+
+
+Definition at line 49 of file Board\+T\+T\+T.\+java.
+
+
+
+References Menu.\+Game\+Selector.\+m\+\_\+\+T\+R\+A\+C\+E, and Board.\+Board\+T\+T\+T.\+m\+\_\+winning\+Square\+Coordinates.
+
+
+
+Referenced by Game.\+Game\+T\+T\+T.\+get\+Coordinates\+Winning\+Squares().
+
 \hypertarget{class_board_1_1_board_t_t_t_a1b62648f4ca1d4a074767027b9c8eec0}{}\index{Board\+::\+Board\+T\+T\+T@{Board\+::\+Board\+T\+T\+T}!main@{main}}
 \index{main@{main}!Board\+::\+Board\+T\+T\+T@{Board\+::\+Board\+T\+T\+T}}
 \subsubsection[{main(\+String[] args)}]{\setlength{\rightskip}{0pt plus 5cm}static void Board.\+Board\+T\+T\+T.\+main (
@@ -117,6 +165,14 @@ integer array containing the start and end of the winning chain
 \item[{String\mbox{[}$\,$\mbox{]}}]{args}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [static]}}\label{class_board_1_1_board_t_t_t_a1b62648f4ca1d4a074767027b9c8eec0}
+
+
+Definition at line 351 of file Board\+T\+T\+T.\+java.
+
+
+
+References Board.\+Board\+T\+T\+T.\+Board\+T\+T\+T(), Board.\+Board\+T\+T\+T.\+detect\+End\+Game(), and Board.\+Board\+T\+T\+T.\+win().
+
 \hypertarget{class_board_1_1_board_t_t_t_ab7d0a91870f300ee5544da2c1ee8b67c}{}\index{Board\+::\+Board\+T\+T\+T@{Board\+::\+Board\+T\+T\+T}!win@{win}}
 \index{win@{win}!Board\+::\+Board\+T\+T\+T@{Board\+::\+Board\+T\+T\+T}}
 \subsubsection[{win(char Xor\+O)}]{\setlength{\rightskip}{0pt plus 5cm}Boolean Board.\+Board\+T\+T\+T.\+win (
@@ -132,6 +188,18 @@ Checks (horizontally, vertically and then diagonally) if there are five Xs or Os
 \begin{DoxyReturn}{Returns}
 true of false depending on if a win is found. 
 \end{DoxyReturn}
+
+
+Definition at line 136 of file Board\+T\+T\+T.\+java.
+
+
+
+References Menu.\+Game\+Selector.\+m\+\_\+\+T\+R\+A\+C\+E, Board.\+Board\+T\+T\+T.\+win\+Column(), Board.\+Board\+T\+T\+T.\+win\+Diagonal\+Left(), Board.\+Board\+T\+T\+T.\+win\+Diagonal\+Right(), and Board.\+Board\+T\+T\+T.\+win\+Row().
+
+
+
+Referenced by Board.\+Board\+T\+T\+T.\+detect\+End\+Game(), and Board.\+Board\+T\+T\+T.\+main().
+
 \hypertarget{class_board_1_1_board_t_t_t_aa133bbee4e44152b8ba57191475409ab}{}\index{Board\+::\+Board\+T\+T\+T@{Board\+::\+Board\+T\+T\+T}!win\+Column@{win\+Column}}
 \index{win\+Column@{win\+Column}!Board\+::\+Board\+T\+T\+T@{Board\+::\+Board\+T\+T\+T}}
 \subsubsection[{win\+Column(char Xor\+O)}]{\setlength{\rightskip}{0pt plus 5cm}Boolean Board.\+Board\+T\+T\+T.\+win\+Column (
@@ -147,6 +215,18 @@ Checks if there is a vertical win
 \begin{DoxyReturn}{Returns}
 true if win is found, false if not 
 \end{DoxyReturn}
+
+
+Definition at line 214 of file Board\+T\+T\+T.\+java.
+
+
+
+References Board.\+Board.\+access\+Square(), Display.\+Display\+T\+T\+T.\+G\+R\+I\+D\+\_\+\+H\+E\+I\+G\+H\+T, Display.\+Display\+T\+T\+T.\+G\+R\+I\+D\+\_\+\+W\+I\+D\+T\+H, Board.\+Board.\+m\+\_\+board\+Width, and Menu.\+Game\+Selector.\+m\+\_\+\+T\+R\+A\+C\+E.
+
+
+
+Referenced by Board.\+Board\+T\+T\+T.\+win().
+
 \hypertarget{class_board_1_1_board_t_t_t_a5f5114b28a09db036e030ec6bb97f189}{}\index{Board\+::\+Board\+T\+T\+T@{Board\+::\+Board\+T\+T\+T}!win\+Diagonal\+Left@{win\+Diagonal\+Left}}
 \index{win\+Diagonal\+Left@{win\+Diagonal\+Left}!Board\+::\+Board\+T\+T\+T@{Board\+::\+Board\+T\+T\+T}}
 \subsubsection[{win\+Diagonal\+Left(char Xor\+O)}]{\setlength{\rightskip}{0pt plus 5cm}Boolean Board.\+Board\+T\+T\+T.\+win\+Diagonal\+Left (
@@ -162,6 +242,18 @@ Checks if there is a diagonal left win
 \begin{DoxyReturn}{Returns}
 true if win is found, false if not 
 \end{DoxyReturn}
+
+
+Definition at line 305 of file Board\+T\+T\+T.\+java.
+
+
+
+References Board.\+Board.\+access\+Square(), Display.\+Display\+T\+T\+T.\+G\+R\+I\+D\+\_\+\+H\+E\+I\+G\+H\+T, Display.\+Display\+T\+T\+T.\+G\+R\+I\+D\+\_\+\+W\+I\+D\+T\+H, Board.\+Board.\+m\+\_\+board\+Width, and Menu.\+Game\+Selector.\+m\+\_\+\+T\+R\+A\+C\+E.
+
+
+
+Referenced by Board.\+Board\+T\+T\+T.\+win().
+
 \hypertarget{class_board_1_1_board_t_t_t_a756f492a748b6050441c6f821809c40d}{}\index{Board\+::\+Board\+T\+T\+T@{Board\+::\+Board\+T\+T\+T}!win\+Diagonal\+Right@{win\+Diagonal\+Right}}
 \index{win\+Diagonal\+Right@{win\+Diagonal\+Right}!Board\+::\+Board\+T\+T\+T@{Board\+::\+Board\+T\+T\+T}}
 \subsubsection[{win\+Diagonal\+Right(char Xor\+O)}]{\setlength{\rightskip}{0pt plus 5cm}Boolean Board.\+Board\+T\+T\+T.\+win\+Diagonal\+Right (
@@ -177,6 +269,18 @@ Checks if there is a diagonal right win
 \begin{DoxyReturn}{Returns}
 true if win is found, false if not 
 \end{DoxyReturn}
+
+
+Definition at line 253 of file Board\+T\+T\+T.\+java.
+
+
+
+References Board.\+Board.\+access\+Square(), Display.\+Display\+T\+T\+T.\+G\+R\+I\+D\+\_\+\+H\+E\+I\+G\+H\+T, Display.\+Display\+T\+T\+T.\+G\+R\+I\+D\+\_\+\+W\+I\+D\+T\+H, Board.\+Board.\+m\+\_\+board\+Width, and Menu.\+Game\+Selector.\+m\+\_\+\+T\+R\+A\+C\+E.
+
+
+
+Referenced by Board.\+Board\+T\+T\+T.\+win().
+
 \hypertarget{class_board_1_1_board_t_t_t_adeda4fd9adb536be218a068d71be8587}{}\index{Board\+::\+Board\+T\+T\+T@{Board\+::\+Board\+T\+T\+T}!win\+Row@{win\+Row}}
 \index{win\+Row@{win\+Row}!Board\+::\+Board\+T\+T\+T@{Board\+::\+Board\+T\+T\+T}}
 \subsubsection[{win\+Row(char Xor\+O)}]{\setlength{\rightskip}{0pt plus 5cm}Boolean Board.\+Board\+T\+T\+T.\+win\+Row (
@@ -194,25 +298,81 @@ true if win is found, false if not
 \end{DoxyReturn}
 
 
+Definition at line 176 of file Board\+T\+T\+T.\+java.
+
+
+
+References Board.\+Board.\+access\+Square(), Display.\+Display\+T\+T\+T.\+G\+R\+I\+D\+\_\+\+H\+E\+I\+G\+H\+T, Display.\+Display\+T\+T\+T.\+G\+R\+I\+D\+\_\+\+W\+I\+D\+T\+H, Board.\+Board.\+m\+\_\+board\+Width, and Menu.\+Game\+Selector.\+m\+\_\+\+T\+R\+A\+C\+E.
+
+
+
+Referenced by Board.\+Board\+T\+T\+T.\+win().
+
+
+
 \subsection{Member Data Documentation}
 \hypertarget{class_board_1_1_board_t_t_t_a16be9cbe57d43388a3fa6e5b706210e5}{}\index{Board\+::\+Board\+T\+T\+T@{Board\+::\+Board\+T\+T\+T}!D\+R\+A\+W\+\_\+\+G\+A\+M\+E@{D\+R\+A\+W\+\_\+\+G\+A\+M\+E}}
 \index{D\+R\+A\+W\+\_\+\+G\+A\+M\+E@{D\+R\+A\+W\+\_\+\+G\+A\+M\+E}!Board\+::\+Board\+T\+T\+T@{Board\+::\+Board\+T\+T\+T}}
 \subsubsection[{D\+R\+A\+W\+\_\+\+G\+A\+M\+E}]{\setlength{\rightskip}{0pt plus 5cm}final int Board.\+Board\+T\+T\+T.\+D\+R\+A\+W\+\_\+\+G\+A\+M\+E = -\/1\hspace{0.3cm}{\ttfamily [static]}}\label{class_board_1_1_board_t_t_t_a16be9cbe57d43388a3fa6e5b706210e5}
-integers that store the return values for \hyperlink{class_board_1_1_board_t_t_t_a08f36da4210111d8f129be28a550334e}{detect\+End\+Game()} \hypertarget{class_board_1_1_board_t_t_t_a50bc789f0168c29495d4827cca10c89f}{}\index{Board\+::\+Board\+T\+T\+T@{Board\+::\+Board\+T\+T\+T}!m\+\_\+winning\+Square\+Coordinates@{m\+\_\+winning\+Square\+Coordinates}}
+integers that store the return values for \hyperlink{class_board_1_1_board_t_t_t_a08f36da4210111d8f129be28a550334e}{detect\+End\+Game()} 
+
+Definition at line 38 of file Board\+T\+T\+T.\+java.
+
+
+
+Referenced by Board.\+Board\+T\+T\+T.\+detect\+End\+Game().
+
+\hypertarget{class_board_1_1_board_t_t_t_a50bc789f0168c29495d4827cca10c89f}{}\index{Board\+::\+Board\+T\+T\+T@{Board\+::\+Board\+T\+T\+T}!m\+\_\+winning\+Square\+Coordinates@{m\+\_\+winning\+Square\+Coordinates}}
 \index{m\+\_\+winning\+Square\+Coordinates@{m\+\_\+winning\+Square\+Coordinates}!Board\+::\+Board\+T\+T\+T@{Board\+::\+Board\+T\+T\+T}}
 \subsubsection[{m\+\_\+winning\+Square\+Coordinates}]{\setlength{\rightskip}{0pt plus 5cm}int \mbox{[}$\,$\mbox{]} Board.\+Board\+T\+T\+T.\+m\+\_\+winning\+Square\+Coordinates = new int\mbox{[}2\mbox{]}\hspace{0.3cm}{\ttfamily [private]}}\label{class_board_1_1_board_t_t_t_a50bc789f0168c29495d4827cca10c89f}
-Integer array used to store the start and end of the winning chain for output \hypertarget{class_board_1_1_board_t_t_t_a5448324216e6a32d3264e50779962562}{}\index{Board\+::\+Board\+T\+T\+T@{Board\+::\+Board\+T\+T\+T}!N\+O\+T\+H\+I\+N\+G\+\_\+\+H\+A\+P\+P\+E\+N\+E\+D@{N\+O\+T\+H\+I\+N\+G\+\_\+\+H\+A\+P\+P\+E\+N\+E\+D}}
+Integer array used to store the start and end of the winning chain for output 
+
+Definition at line 33 of file Board\+T\+T\+T.\+java.
+
+
+
+Referenced by Board.\+Board\+T\+T\+T.\+get\+Coordinates\+Winning\+Squares().
+
+\hypertarget{class_board_1_1_board_t_t_t_a5448324216e6a32d3264e50779962562}{}\index{Board\+::\+Board\+T\+T\+T@{Board\+::\+Board\+T\+T\+T}!N\+O\+T\+H\+I\+N\+G\+\_\+\+H\+A\+P\+P\+E\+N\+E\+D@{N\+O\+T\+H\+I\+N\+G\+\_\+\+H\+A\+P\+P\+E\+N\+E\+D}}
 \index{N\+O\+T\+H\+I\+N\+G\+\_\+\+H\+A\+P\+P\+E\+N\+E\+D@{N\+O\+T\+H\+I\+N\+G\+\_\+\+H\+A\+P\+P\+E\+N\+E\+D}!Board\+::\+Board\+T\+T\+T@{Board\+::\+Board\+T\+T\+T}}
 \subsubsection[{N\+O\+T\+H\+I\+N\+G\+\_\+\+H\+A\+P\+P\+E\+N\+E\+D}]{\setlength{\rightskip}{0pt plus 5cm}final int Board.\+Board\+T\+T\+T.\+N\+O\+T\+H\+I\+N\+G\+\_\+\+H\+A\+P\+P\+E\+N\+E\+D = 0\hspace{0.3cm}{\ttfamily [static]}}\label{class_board_1_1_board_t_t_t_a5448324216e6a32d3264e50779962562}
+
+
+Definition at line 39 of file Board\+T\+T\+T.\+java.
+
+
+
+Referenced by Board.\+Board\+T\+T\+T.\+detect\+End\+Game().
+
 \hypertarget{class_board_1_1_board_t_t_t_a989aacd76a6193fe54a4500dd8151b41}{}\index{Board\+::\+Board\+T\+T\+T@{Board\+::\+Board\+T\+T\+T}!O\+\_\+\+W\+I\+N@{O\+\_\+\+W\+I\+N}}
 \index{O\+\_\+\+W\+I\+N@{O\+\_\+\+W\+I\+N}!Board\+::\+Board\+T\+T\+T@{Board\+::\+Board\+T\+T\+T}}
 \subsubsection[{O\+\_\+\+W\+I\+N}]{\setlength{\rightskip}{0pt plus 5cm}final int Board.\+Board\+T\+T\+T.\+O\+\_\+\+W\+I\+N = 1\hspace{0.3cm}{\ttfamily [static]}}\label{class_board_1_1_board_t_t_t_a989aacd76a6193fe54a4500dd8151b41}
+
+
+Definition at line 40 of file Board\+T\+T\+T.\+java.
+
+
+
+Referenced by Board.\+Board\+T\+T\+T.\+detect\+End\+Game().
+
 \hypertarget{class_board_1_1_board_t_t_t_ab11d997e2ea0983b566f23c4685767f6}{}\index{Board\+::\+Board\+T\+T\+T@{Board\+::\+Board\+T\+T\+T}!W\+I\+N\+\_\+\+A\+M\+O\+U\+N\+T@{W\+I\+N\+\_\+\+A\+M\+O\+U\+N\+T}}
 \index{W\+I\+N\+\_\+\+A\+M\+O\+U\+N\+T@{W\+I\+N\+\_\+\+A\+M\+O\+U\+N\+T}!Board\+::\+Board\+T\+T\+T@{Board\+::\+Board\+T\+T\+T}}
 \subsubsection[{W\+I\+N\+\_\+\+A\+M\+O\+U\+N\+T}]{\setlength{\rightskip}{0pt plus 5cm}final int Board.\+Board\+T\+T\+T.\+W\+I\+N\+\_\+\+A\+M\+O\+U\+N\+T = 5\hspace{0.3cm}{\ttfamily [private]}}\label{class_board_1_1_board_t_t_t_ab11d997e2ea0983b566f23c4685767f6}
-integer that stores the length of the chain needed to win \hypertarget{class_board_1_1_board_t_t_t_ab77ee706643fb1825e78f6b8dcacc021}{}\index{Board\+::\+Board\+T\+T\+T@{Board\+::\+Board\+T\+T\+T}!X\+\_\+\+W\+I\+N@{X\+\_\+\+W\+I\+N}}
+integer that stores the length of the chain needed to win 
+
+Definition at line 35 of file Board\+T\+T\+T.\+java.
+
+\hypertarget{class_board_1_1_board_t_t_t_ab77ee706643fb1825e78f6b8dcacc021}{}\index{Board\+::\+Board\+T\+T\+T@{Board\+::\+Board\+T\+T\+T}!X\+\_\+\+W\+I\+N@{X\+\_\+\+W\+I\+N}}
 \index{X\+\_\+\+W\+I\+N@{X\+\_\+\+W\+I\+N}!Board\+::\+Board\+T\+T\+T@{Board\+::\+Board\+T\+T\+T}}
 \subsubsection[{X\+\_\+\+W\+I\+N}]{\setlength{\rightskip}{0pt plus 5cm}final int Board.\+Board\+T\+T\+T.\+X\+\_\+\+W\+I\+N = 2\hspace{0.3cm}{\ttfamily [static]}}\label{class_board_1_1_board_t_t_t_ab77ee706643fb1825e78f6b8dcacc021}
+
+
+Definition at line 41 of file Board\+T\+T\+T.\+java.
+
+
+
+Referenced by Board.\+Board\+T\+T\+T.\+detect\+End\+Game().
+
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

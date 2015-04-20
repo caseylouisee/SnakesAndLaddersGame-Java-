@@ -106,6 +106,10 @@ Array\+List$<$ J\+Label $>$ \hyperlink{class_display_1_1_display_sn_l_a075a16b36
 \subsection{Detailed Description}
 This class displays everything for the Sn\+L game. 
 
+Definition at line 46 of file Display\+Sn\+L.\+java.
+
+
+
 \subsection{Constructor \& Destructor Documentation}
 \hypertarget{class_display_1_1_display_sn_l_a70ac465975e4e58b27ad9de607ab87c6}{}\index{Display\+::\+Display\+Sn\+L@{Display\+::\+Display\+Sn\+L}!Display\+Sn\+L@{Display\+Sn\+L}}
 \index{Display\+Sn\+L@{Display\+Sn\+L}!Display\+::\+Display\+Sn\+L@{Display\+::\+Display\+Sn\+L}}
@@ -133,6 +137,14 @@ Constructor for \hyperlink{class_display_1_1_display_sn_l}{Display\+Sn\+L}
 \end{DoxyParams}
 
 
+Definition at line 180 of file Display\+Sn\+L.\+java.
+
+
+
+References Menu.\+Game\+Selector.\+m\+\_\+\+T\+R\+A\+C\+E.
+
+
+
 \subsection{Member Function Documentation}
 \hypertarget{class_display_1_1_display_sn_l_a5c2c2ebf9f618d9ceaec463352a3a4ff}{}\index{Display\+::\+Display\+Sn\+L@{Display\+::\+Display\+Sn\+L}!add\+Back\+Button@{add\+Back\+Button}}
 \index{add\+Back\+Button@{add\+Back\+Button}!Display\+::\+Display\+Sn\+L@{Display\+::\+Display\+Sn\+L}}
@@ -141,21 +153,57 @@ Constructor for \hyperlink{class_display_1_1_display_sn_l}{Display\+Sn\+L}
 {}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [private]}}\label{class_display_1_1_display_sn_l_a5c2c2ebf9f618d9ceaec463352a3a4ff}
-adds the Back button to screen setting bounds etc \hypertarget{class_display_1_1_display_sn_l_ab16ef5ed048c34ce2f2973caa9fe2461}{}\index{Display\+::\+Display\+Sn\+L@{Display\+::\+Display\+Sn\+L}!add\+Dice\+Action\+Listener@{add\+Dice\+Action\+Listener}}
+adds the Back button to screen setting bounds etc 
+
+Definition at line 391 of file Display\+Sn\+L.\+java.
+
+
+
+References Game.\+Game\+Sn\+L.\+frame\+Dispose(), Menu.\+Game\+Selector.\+m\+\_\+\+T\+R\+A\+C\+E, and Game.\+Game\+Sn\+L.\+reset().
+
+
+
+Referenced by Display.\+Display\+Sn\+L.\+add\+Play\+Interface().
+
+\hypertarget{class_display_1_1_display_sn_l_ab16ef5ed048c34ce2f2973caa9fe2461}{}\index{Display\+::\+Display\+Sn\+L@{Display\+::\+Display\+Sn\+L}!add\+Dice\+Action\+Listener@{add\+Dice\+Action\+Listener}}
 \index{add\+Dice\+Action\+Listener@{add\+Dice\+Action\+Listener}!Display\+::\+Display\+Sn\+L@{Display\+::\+Display\+Sn\+L}}
 \subsubsection[{add\+Dice\+Action\+Listener()}]{\setlength{\rightskip}{0pt plus 5cm}void Display.\+Display\+Sn\+L.\+add\+Dice\+Action\+Listener (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [private]}}\label{class_display_1_1_display_sn_l_ab16ef5ed048c34ce2f2973caa9fe2461}
-Adds the action\+Listener for the m\+\_\+roll\+Dice\+Btn \hypertarget{class_display_1_1_display_sn_l_a1034e2f5f20ba38c25f5b321797f279f}{}\index{Display\+::\+Display\+Sn\+L@{Display\+::\+Display\+Sn\+L}!add\+Player\+Information@{add\+Player\+Information}}
+Adds the action\+Listener for the m\+\_\+roll\+Dice\+Btn 
+
+Definition at line 257 of file Display\+Sn\+L.\+java.
+
+
+
+References Game.\+Game\+Sn\+L.\+button\+Push(), Game.\+Game\+Sn\+L.\+get\+Iterator(), and Menu.\+Game\+Selector.\+m\+\_\+\+T\+R\+A\+C\+E.
+
+
+
+Referenced by Display.\+Display\+Sn\+L.\+add\+Roll\+Dice().
+
+\hypertarget{class_display_1_1_display_sn_l_a1034e2f5f20ba38c25f5b321797f279f}{}\index{Display\+::\+Display\+Sn\+L@{Display\+::\+Display\+Sn\+L}!add\+Player\+Information@{add\+Player\+Information}}
 \index{add\+Player\+Information@{add\+Player\+Information}!Display\+::\+Display\+Sn\+L@{Display\+::\+Display\+Sn\+L}}
 \subsubsection[{add\+Player\+Information()}]{\setlength{\rightskip}{0pt plus 5cm}void Display.\+Display\+Sn\+L.\+add\+Player\+Information (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [private]}}\label{class_display_1_1_display_sn_l_a1034e2f5f20ba38c25f5b321797f279f}
-Sets the player\+Info\+Panel\textquotesingle{}s bounds and adds the player name\textquotesingle{}s and position\textquotesingle{}s to it in the form of J\+Labels. \hypertarget{class_display_1_1_display_sn_l_a8d61f458e61ff504b1cf5305f8bf2d68}{}\index{Display\+::\+Display\+Sn\+L@{Display\+::\+Display\+Sn\+L}!add\+Play\+Interface@{add\+Play\+Interface}}
+Sets the player\+Info\+Panel\textquotesingle{}s bounds and adds the player name\textquotesingle{}s and position\textquotesingle{}s to it in the form of J\+Labels. 
+
+Definition at line 333 of file Display\+Sn\+L.\+java.
+
+
+
+References Game.\+Game\+Sn\+L.\+get\+Player(), Game.\+Game\+Sn\+L.\+get\+Player\+Location(), Player.\+Player.\+get\+Player\+Name(), and Menu.\+Game\+Selector.\+m\+\_\+\+T\+R\+A\+C\+E.
+
+
+
+Referenced by Display.\+Display\+Sn\+L.\+add\+Play\+Interface().
+
+\hypertarget{class_display_1_1_display_sn_l_a8d61f458e61ff504b1cf5305f8bf2d68}{}\index{Display\+::\+Display\+Sn\+L@{Display\+::\+Display\+Sn\+L}!add\+Play\+Interface@{add\+Play\+Interface}}
 \index{add\+Play\+Interface@{add\+Play\+Interface}!Display\+::\+Display\+Sn\+L@{Display\+::\+Display\+Sn\+L}}
 \subsubsection[{add\+Play\+Interface(\+J\+Frame frame)}]{\setlength{\rightskip}{0pt plus 5cm}void Display.\+Display\+Sn\+L.\+add\+Play\+Interface (
 \begin{DoxyParamCaption}
@@ -169,6 +217,18 @@ Adds the player name, who\textquotesingle{}s turn it is and the roll dice button
 {\em frame} & displays the screen output \\
 \hline
 \end{DoxyParams}
+
+
+Definition at line 198 of file Display\+Sn\+L.\+java.
+
+
+
+References Display.\+Display\+Sn\+L.\+add\+Back\+Button(), Display.\+Display\+Sn\+L.\+add\+Player\+Information(), Display.\+Display\+Sn\+L.\+add\+Roll\+Dice(), Display.\+Display\+Sn\+L.\+add\+Save\+Button(), Display.\+Display\+Sn\+L.\+create\+Timer(), Display.\+Display\+Sn\+L.\+display\+Timer(), Game.\+Game\+Sn\+L.\+get\+Iterator(), Menu.\+Game\+Selector.\+m\+\_\+\+T\+R\+A\+C\+E, Display.\+Display\+Sn\+L.\+print\+Position(), and Display.\+Display\+Sn\+L.\+run().
+
+
+
+Referenced by Game.\+Game\+Sn\+L.\+init\+Display().
+
 \hypertarget{class_display_1_1_display_sn_l_a0a2baf23a90b4ed76b05ef06f5487016}{}\index{Display\+::\+Display\+Sn\+L@{Display\+::\+Display\+Sn\+L}!add\+Roll\+Dice@{add\+Roll\+Dice}}
 \index{add\+Roll\+Dice@{add\+Roll\+Dice}!Display\+::\+Display\+Sn\+L@{Display\+::\+Display\+Sn\+L}}
 \subsubsection[{add\+Roll\+Dice()}]{\setlength{\rightskip}{0pt plus 5cm}void Display.\+Display\+Sn\+L.\+add\+Roll\+Dice (
@@ -176,28 +236,76 @@ Adds the player name, who\textquotesingle{}s turn it is and the roll dice button
 {}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [private]}}\label{class_display_1_1_display_sn_l_a0a2baf23a90b4ed76b05ef06f5487016}
-Sets the bounds for the m\+\_\+roll\+Dice\+Btn \hypertarget{class_display_1_1_display_sn_l_a1b9d580e89e9460efdbe333f8ba849b3}{}\index{Display\+::\+Display\+Sn\+L@{Display\+::\+Display\+Sn\+L}!add\+Save\+Button@{add\+Save\+Button}}
+Sets the bounds for the m\+\_\+roll\+Dice\+Btn 
+
+Definition at line 237 of file Display\+Sn\+L.\+java.
+
+
+
+References Display.\+Display\+Sn\+L.\+add\+Dice\+Action\+Listener(), Game.\+Game\+Sn\+L.\+get\+Iterator(), and Menu.\+Game\+Selector.\+m\+\_\+\+T\+R\+A\+C\+E.
+
+
+
+Referenced by Display.\+Display\+Sn\+L.\+add\+Play\+Interface().
+
+\hypertarget{class_display_1_1_display_sn_l_a1b9d580e89e9460efdbe333f8ba849b3}{}\index{Display\+::\+Display\+Sn\+L@{Display\+::\+Display\+Sn\+L}!add\+Save\+Button@{add\+Save\+Button}}
 \index{add\+Save\+Button@{add\+Save\+Button}!Display\+::\+Display\+Sn\+L@{Display\+::\+Display\+Sn\+L}}
 \subsubsection[{add\+Save\+Button()}]{\setlength{\rightskip}{0pt plus 5cm}void Display.\+Display\+Sn\+L.\+add\+Save\+Button (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [private]}}\label{class_display_1_1_display_sn_l_a1b9d580e89e9460efdbe333f8ba849b3}
-Sets the save button text and bounds and creates action listener \hypertarget{class_display_1_1_display_sn_l_a598acd47dc6015f619cc5d89265de10b}{}\index{Display\+::\+Display\+Sn\+L@{Display\+::\+Display\+Sn\+L}!create\+Timer@{create\+Timer}}
+Sets the save button text and bounds and creates action listener 
+
+Definition at line 418 of file Display\+Sn\+L.\+java.
+
+
+
+References Menu.\+Game\+Selector.\+m\+\_\+\+T\+R\+A\+C\+E, and Display.\+Display\+Sn\+L.\+save\+Game().
+
+
+
+Referenced by Display.\+Display\+Sn\+L.\+add\+Play\+Interface().
+
+\hypertarget{class_display_1_1_display_sn_l_a598acd47dc6015f619cc5d89265de10b}{}\index{Display\+::\+Display\+Sn\+L@{Display\+::\+Display\+Sn\+L}!create\+Timer@{create\+Timer}}
 \index{create\+Timer@{create\+Timer}!Display\+::\+Display\+Sn\+L@{Display\+::\+Display\+Sn\+L}}
 \subsubsection[{create\+Timer()}]{\setlength{\rightskip}{0pt plus 5cm}void Display.\+Display\+Sn\+L.\+create\+Timer (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
 )}\label{class_display_1_1_display_sn_l_a598acd47dc6015f619cc5d89265de10b}
-Creates the stop watch timer \hypertarget{class_display_1_1_display_sn_l_ab526b124e8678ad26b6ad9c759cdd5d2}{}\index{Display\+::\+Display\+Sn\+L@{Display\+::\+Display\+Sn\+L}!display\+Timer@{display\+Timer}}
+Creates the stop watch timer 
+
+Definition at line 734 of file Display\+Sn\+L.\+java.
+
+
+
+References Menu.\+Game\+Selector.\+m\+\_\+\+T\+R\+A\+C\+E.
+
+
+
+Referenced by Display.\+Display\+Sn\+L.\+add\+Play\+Interface().
+
+\hypertarget{class_display_1_1_display_sn_l_ab526b124e8678ad26b6ad9c759cdd5d2}{}\index{Display\+::\+Display\+Sn\+L@{Display\+::\+Display\+Sn\+L}!display\+Timer@{display\+Timer}}
 \index{display\+Timer@{display\+Timer}!Display\+::\+Display\+Sn\+L@{Display\+::\+Display\+Sn\+L}}
 \subsubsection[{display\+Timer()}]{\setlength{\rightskip}{0pt plus 5cm}void Display.\+Display\+Sn\+L.\+display\+Timer (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
 )}\label{class_display_1_1_display_sn_l_ab526b124e8678ad26b6ad9c759cdd5d2}
-Displays the stopwatch timer \hypertarget{class_display_1_1_display_sn_l_a4f41cf7a4a08a86da3fc95d88837eb7b}{}\index{Display\+::\+Display\+Sn\+L@{Display\+::\+Display\+Sn\+L}!draw\+Board@{draw\+Board}}
+Displays the stopwatch timer 
+
+Definition at line 757 of file Display\+Sn\+L.\+java.
+
+
+
+References Menu.\+Game\+Selector.\+m\+\_\+\+T\+R\+A\+C\+E.
+
+
+
+Referenced by Display.\+Display\+Sn\+L.\+add\+Play\+Interface().
+
+\hypertarget{class_display_1_1_display_sn_l_a4f41cf7a4a08a86da3fc95d88837eb7b}{}\index{Display\+::\+Display\+Sn\+L@{Display\+::\+Display\+Sn\+L}!draw\+Board@{draw\+Board}}
 \index{draw\+Board@{draw\+Board}!Display\+::\+Display\+Sn\+L@{Display\+::\+Display\+Sn\+L}}
 \subsubsection[{draw\+Board(\+Graphics graphics)}]{\setlength{\rightskip}{0pt plus 5cm}void Display.\+Display\+Sn\+L.\+draw\+Board (
 \begin{DoxyParamCaption}
@@ -209,6 +317,18 @@ Draws the board
 {\em graphics} & \\
 \hline
 \end{DoxyParams}
+
+
+Definition at line 615 of file Display\+Sn\+L.\+java.
+
+
+
+References Menu.\+Game\+Selector.\+m\+\_\+\+T\+R\+A\+C\+E.
+
+
+
+Referenced by Display.\+Display\+Sn\+L.\+paint\+Component().
+
 \hypertarget{class_display_1_1_display_sn_l_a6450a904c441c8fb9023b0f9d7124a3f}{}\index{Display\+::\+Display\+Sn\+L@{Display\+::\+Display\+Sn\+L}!get\+Coordinates@{get\+Coordinates}}
 \index{get\+Coordinates@{get\+Coordinates}!Display\+::\+Display\+Sn\+L@{Display\+::\+Display\+Sn\+L}}
 \subsubsection[{get\+Coordinates(int square\+No)}]{\setlength{\rightskip}{0pt plus 5cm}int \mbox{[}$\,$\mbox{]} Display.\+Display\+Sn\+L.\+get\+Coordinates (
@@ -221,6 +341,18 @@ gets the co\+\_\+ordinates on the board for a particular square
 {\em square\+No} & \\
 \hline
 \end{DoxyParams}
+
+
+Definition at line 125 of file Display\+Sn\+L.\+java.
+
+
+
+References Display.\+Display\+Sn\+L.\+get\+X\+Val(), Display.\+Display\+Sn\+L.\+get\+Y\+Val(), and Menu.\+Game\+Selector.\+m\+\_\+\+T\+R\+A\+C\+E.
+
+
+
+Referenced by Display.\+Display\+Sn\+L.\+print\+Ladders(), Display.\+Display\+Sn\+L.\+print\+Player(), and Display.\+Display\+Sn\+L.\+print\+Snakes().
+
 \hypertarget{class_display_1_1_display_sn_l_aabdde8f61b767f3074b907c65c9ab791}{}\index{Display\+::\+Display\+Sn\+L@{Display\+::\+Display\+Sn\+L}!get\+X\+Val@{get\+X\+Val}}
 \index{get\+X\+Val@{get\+X\+Val}!Display\+::\+Display\+Sn\+L@{Display\+::\+Display\+Sn\+L}}
 \subsubsection[{get\+X\+Val(int square\+No)}]{\setlength{\rightskip}{0pt plus 5cm}int Display.\+Display\+Sn\+L.\+get\+X\+Val (
@@ -236,6 +368,18 @@ Gets the X Value co-\/ordinate for the square\+No
 \begin{DoxyReturn}{Returns}
 square\+No 
 \end{DoxyReturn}
+
+
+Definition at line 150 of file Display\+Sn\+L.\+java.
+
+
+
+References Menu.\+Game\+Selector.\+m\+\_\+\+T\+R\+A\+C\+E.
+
+
+
+Referenced by Display.\+Display\+Sn\+L.\+get\+Coordinates(), and Display.\+Display\+Sn\+L.\+get\+Y\+Val().
+
 \hypertarget{class_display_1_1_display_sn_l_afd3c2bd17e0c216dc962e7c06aa43ad5}{}\index{Display\+::\+Display\+Sn\+L@{Display\+::\+Display\+Sn\+L}!get\+Y\+Val@{get\+Y\+Val}}
 \index{get\+Y\+Val@{get\+Y\+Val}!Display\+::\+Display\+Sn\+L@{Display\+::\+Display\+Sn\+L}}
 \subsubsection[{get\+Y\+Val(int square\+No)}]{\setlength{\rightskip}{0pt plus 5cm}int Display.\+Display\+Sn\+L.\+get\+Y\+Val (
@@ -251,6 +395,18 @@ Gets the Y Value co-\/ordinate for the square\+No
 \begin{DoxyReturn}{Returns}
 square\+No 
 \end{DoxyReturn}
+
+
+Definition at line 165 of file Display\+Sn\+L.\+java.
+
+
+
+References Display.\+Display\+Sn\+L.\+get\+X\+Val(), and Menu.\+Game\+Selector.\+m\+\_\+\+T\+R\+A\+C\+E.
+
+
+
+Referenced by Display.\+Display\+Sn\+L.\+get\+Coordinates().
+
 \hypertarget{class_display_1_1_display_sn_l_a7b6ce4c6d96203069d610ca54f2d6593}{}\index{Display\+::\+Display\+Sn\+L@{Display\+::\+Display\+Sn\+L}!paint\+Component@{paint\+Component}}
 \index{paint\+Component@{paint\+Component}!Display\+::\+Display\+Sn\+L@{Display\+::\+Display\+Sn\+L}}
 \subsubsection[{paint\+Component(\+Graphics graphics)}]{\setlength{\rightskip}{0pt plus 5cm}void Display.\+Display\+Sn\+L.\+paint\+Component (
@@ -263,6 +419,14 @@ Calls the method to draw the board and snakes and ladders, display timer
 {\em graphics} & \\
 \hline
 \end{DoxyParams}
+
+
+Definition at line 507 of file Display\+Sn\+L.\+java.
+
+
+
+References Display.\+Display\+Sn\+L.\+draw\+Board(), Menu.\+Game\+Selector.\+m\+\_\+\+T\+R\+A\+C\+E, Display.\+Display\+Sn\+L.\+paint\+Player(), Display.\+Display\+Sn\+L.\+print\+Ladders(), and Display.\+Display\+Sn\+L.\+print\+Snakes().
+
 \hypertarget{class_display_1_1_display_sn_l_a79258b89d04054d4db7fa10281cb5ff5}{}\index{Display\+::\+Display\+Sn\+L@{Display\+::\+Display\+Sn\+L}!paint\+Player@{paint\+Player}}
 \index{paint\+Player@{paint\+Player}!Display\+::\+Display\+Sn\+L@{Display\+::\+Display\+Sn\+L}}
 \subsubsection[{paint\+Player(\+Graphics graphics)}]{\setlength{\rightskip}{0pt plus 5cm}void Display.\+Display\+Sn\+L.\+paint\+Player (
@@ -275,6 +439,18 @@ Paints the player according to their colour and location
 {\em graphics} & \\
 \hline
 \end{DoxyParams}
+
+
+Definition at line 532 of file Display\+Sn\+L.\+java.
+
+
+
+References Menu.\+Game\+Selector.\+m\+\_\+\+T\+R\+A\+C\+E, and Display.\+Display\+Sn\+L.\+print\+Player().
+
+
+
+Referenced by Display.\+Display\+Sn\+L.\+paint\+Component(), and Display.\+Display\+Sn\+L.\+update\+Graphics().
+
 \hypertarget{class_display_1_1_display_sn_l_a8a98e89b9310a140f4df27f2021cec73}{}\index{Display\+::\+Display\+Sn\+L@{Display\+::\+Display\+Sn\+L}!print\+Ladders@{print\+Ladders}}
 \index{print\+Ladders@{print\+Ladders}!Display\+::\+Display\+Sn\+L@{Display\+::\+Display\+Sn\+L}}
 \subsubsection[{print\+Ladders(\+Graphics graphics, Array\+List$<$ Integer $>$ squares)}]{\setlength{\rightskip}{0pt plus 5cm}void Display.\+Display\+Sn\+L.\+print\+Ladders (
@@ -290,6 +466,18 @@ Prints the ladders on the board
 {\em squares} & \\
 \hline
 \end{DoxyParams}
+
+
+Definition at line 650 of file Display\+Sn\+L.\+java.
+
+
+
+References Display.\+Display\+Sn\+L.\+get\+Coordinates(), and Menu.\+Game\+Selector.\+m\+\_\+\+T\+R\+A\+C\+E.
+
+
+
+Referenced by Display.\+Display\+Sn\+L.\+paint\+Component().
+
 \hypertarget{class_display_1_1_display_sn_l_afcacea5e6e612490138e684365ade653}{}\index{Display\+::\+Display\+Sn\+L@{Display\+::\+Display\+Sn\+L}!print\+Player@{print\+Player}}
 \index{print\+Player@{print\+Player}!Display\+::\+Display\+Sn\+L@{Display\+::\+Display\+Sn\+L}}
 \subsubsection[{print\+Player(\+Graphics graphics, Color player\+Color, int square\+No, int last\+Location)}]{\setlength{\rightskip}{0pt plus 5cm}void Display.\+Display\+Sn\+L.\+print\+Player (
@@ -309,6 +497,18 @@ Prints the player to the board
 {\em square\+No} & \\
 \hline
 \end{DoxyParams}
+
+
+Definition at line 576 of file Display\+Sn\+L.\+java.
+
+
+
+References Display.\+Display\+Sn\+L.\+get\+Coordinates(), and Menu.\+Game\+Selector.\+m\+\_\+\+T\+R\+A\+C\+E.
+
+
+
+Referenced by Display.\+Display\+Sn\+L.\+paint\+Player(), and Display.\+Display\+Sn\+L.\+update\+Graphics().
+
 \hypertarget{class_display_1_1_display_sn_l_a8c5818de472e1cbb43e489bc52f6d5ee}{}\index{Display\+::\+Display\+Sn\+L@{Display\+::\+Display\+Sn\+L}!print\+Position@{print\+Position}}
 \index{print\+Position@{print\+Position}!Display\+::\+Display\+Sn\+L@{Display\+::\+Display\+Sn\+L}}
 \subsubsection[{print\+Position()}]{\setlength{\rightskip}{0pt plus 5cm}void Display.\+Display\+Sn\+L.\+print\+Position (
@@ -316,7 +516,19 @@ Prints the player to the board
 {}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [private]}}\label{class_display_1_1_display_sn_l_a8c5818de472e1cbb43e489bc52f6d5ee}
-Prints the players position in a J\+Label \hypertarget{class_display_1_1_display_sn_l_ac8d66280626ecf00242f63c0536a144c}{}\index{Display\+::\+Display\+Sn\+L@{Display\+::\+Display\+Sn\+L}!print\+Snakes@{print\+Snakes}}
+Prints the players position in a J\+Label 
+
+Definition at line 382 of file Display\+Sn\+L.\+java.
+
+
+
+References Game.\+Game\+Sn\+L.\+get\+Iterator(), Game.\+Game\+Sn\+L.\+get\+Player\+Location(), and Menu.\+Game\+Selector.\+m\+\_\+\+T\+R\+A\+C\+E.
+
+
+
+Referenced by Display.\+Display\+Sn\+L.\+add\+Play\+Interface().
+
+\hypertarget{class_display_1_1_display_sn_l_ac8d66280626ecf00242f63c0536a144c}{}\index{Display\+::\+Display\+Sn\+L@{Display\+::\+Display\+Sn\+L}!print\+Snakes@{print\+Snakes}}
 \index{print\+Snakes@{print\+Snakes}!Display\+::\+Display\+Sn\+L@{Display\+::\+Display\+Sn\+L}}
 \subsubsection[{print\+Snakes(\+Graphics graphics, Array\+List$<$ Integer $>$ snakes)}]{\setlength{\rightskip}{0pt plus 5cm}void Display.\+Display\+Sn\+L.\+print\+Snakes (
 \begin{DoxyParamCaption}
@@ -331,6 +543,18 @@ Prints the snakes on the board
 {\em snakes} & \\
 \hline
 \end{DoxyParams}
+
+
+Definition at line 695 of file Display\+Sn\+L.\+java.
+
+
+
+References Display.\+Display\+Sn\+L.\+get\+Coordinates(), and Menu.\+Game\+Selector.\+m\+\_\+\+T\+R\+A\+C\+E.
+
+
+
+Referenced by Display.\+Display\+Sn\+L.\+paint\+Component().
+
 \hypertarget{class_display_1_1_display_sn_l_ac95a51c4b09908fc635f2d97fd012ce1}{}\index{Display\+::\+Display\+Sn\+L@{Display\+::\+Display\+Sn\+L}!run@{run}}
 \index{run@{run}!Display\+::\+Display\+Sn\+L@{Display\+::\+Display\+Sn\+L}}
 \subsubsection[{run()}]{\setlength{\rightskip}{0pt plus 5cm}void Display.\+Display\+Sn\+L.\+run (
@@ -338,21 +562,53 @@ Prints the snakes on the board
 {}
 \end{DoxyParamCaption}
 )}\label{class_display_1_1_display_sn_l_ac95a51c4b09908fc635f2d97fd012ce1}
-Overrides the run method in this runnable class to repeatedly paint\+Components as the timer needs to be continuously updated \hypertarget{class_display_1_1_display_sn_l_ad99b932d022788d467c19ccae6cad0f3}{}\index{Display\+::\+Display\+Sn\+L@{Display\+::\+Display\+Sn\+L}!save\+Game@{save\+Game}}
+Overrides the run method in this runnable class to repeatedly paint\+Components as the timer needs to be continuously updated 
+
+Definition at line 820 of file Display\+Sn\+L.\+java.
+
+
+
+Referenced by Display.\+Display\+Sn\+L.\+add\+Play\+Interface().
+
+\hypertarget{class_display_1_1_display_sn_l_ad99b932d022788d467c19ccae6cad0f3}{}\index{Display\+::\+Display\+Sn\+L@{Display\+::\+Display\+Sn\+L}!save\+Game@{save\+Game}}
 \index{save\+Game@{save\+Game}!Display\+::\+Display\+Sn\+L@{Display\+::\+Display\+Sn\+L}}
 \subsubsection[{save\+Game()}]{\setlength{\rightskip}{0pt plus 5cm}void Display.\+Display\+Sn\+L.\+save\+Game (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
 )}\label{class_display_1_1_display_sn_l_ad99b932d022788d467c19ccae6cad0f3}
-method to save game to the file res/save\+Sn\+L.\+csv \hypertarget{class_display_1_1_display_sn_l_a00a9ce1fb1a24a98a1eae6df5ae3f4a4}{}\index{Display\+::\+Display\+Sn\+L@{Display\+::\+Display\+Sn\+L}!update\+Graphics@{update\+Graphics}}
+method to save game to the file res/save\+Sn\+L.\+csv 
+
+Definition at line 440 of file Display\+Sn\+L.\+java.
+
+
+
+References Game.\+Game\+Sn\+L.\+get\+Number\+Of\+Players(), and Menu.\+Game\+Selector.\+m\+\_\+\+T\+R\+A\+C\+E.
+
+
+
+Referenced by Display.\+Display\+Sn\+L.\+add\+Save\+Button().
+
+\hypertarget{class_display_1_1_display_sn_l_a00a9ce1fb1a24a98a1eae6df5ae3f4a4}{}\index{Display\+::\+Display\+Sn\+L@{Display\+::\+Display\+Sn\+L}!update\+Graphics@{update\+Graphics}}
 \index{update\+Graphics@{update\+Graphics}!Display\+::\+Display\+Sn\+L@{Display\+::\+Display\+Sn\+L}}
 \subsubsection[{update\+Graphics()}]{\setlength{\rightskip}{0pt plus 5cm}void Display.\+Display\+Sn\+L.\+update\+Graphics (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
 )}\label{class_display_1_1_display_sn_l_a00a9ce1fb1a24a98a1eae6df5ae3f4a4}
-Paints the player to the screen \hypertarget{class_display_1_1_display_sn_l_a401b3176f877da08ac0c40b3ad4d91e4}{}\index{Display\+::\+Display\+Sn\+L@{Display\+::\+Display\+Sn\+L}!update\+Graphics@{update\+Graphics}}
+Paints the player to the screen 
+
+Definition at line 548 of file Display\+Sn\+L.\+java.
+
+
+
+References Menu.\+Game\+Selector.\+m\+\_\+\+T\+R\+A\+C\+E, and Display.\+Display\+Sn\+L.\+paint\+Player().
+
+
+
+Referenced by Player.\+Player\+Sn\+L.\+set\+Player\+Location().
+
+\hypertarget{class_display_1_1_display_sn_l_a401b3176f877da08ac0c40b3ad4d91e4}{}\index{Display\+::\+Display\+Sn\+L@{Display\+::\+Display\+Sn\+L}!update\+Graphics@{update\+Graphics}}
 \index{update\+Graphics@{update\+Graphics}!Display\+::\+Display\+Sn\+L@{Display\+::\+Display\+Sn\+L}}
 \subsubsection[{update\+Graphics(int[] coordinates)}]{\setlength{\rightskip}{0pt plus 5cm}void Display.\+Display\+Sn\+L.\+update\+Graphics (
 \begin{DoxyParamCaption}
@@ -364,6 +620,14 @@ Updates the graphics on the screen particularly the player location
 {\em coordinates} & holds the coordinates of the location of the player \\
 \hline
 \end{DoxyParams}
+
+
+Definition at line 559 of file Display\+Sn\+L.\+java.
+
+
+
+References Menu.\+Game\+Selector.\+m\+\_\+\+T\+R\+A\+C\+E, and Display.\+Display\+Sn\+L.\+print\+Player().
+
 \hypertarget{class_display_1_1_display_sn_l_a232e567bedf12094d4625d6134ff768a}{}\index{Display\+::\+Display\+Sn\+L@{Display\+::\+Display\+Sn\+L}!winner@{winner}}
 \index{winner@{winner}!Display\+::\+Display\+Sn\+L@{Display\+::\+Display\+Sn\+L}}
 \subsubsection[{winner(\+J\+Frame frame)}]{\setlength{\rightskip}{0pt plus 5cm}void Display.\+Display\+Sn\+L.\+winner (
@@ -373,53 +637,125 @@ Updates the graphics on the screen particularly the player location
 )}\label{class_display_1_1_display_sn_l_a232e567bedf12094d4625d6134ff768a}
 When there is a winner a frame pops up to show winner  frame the frame for the display 
 
+Definition at line 768 of file Display\+Sn\+L.\+java.
+
+
+
+References Game.\+Game\+Sn\+L.\+get\+Iterator(), Game.\+Game\+Sn\+L.\+get\+Player\+Location(), and Menu.\+Game\+Selector.\+m\+\_\+\+T\+R\+A\+C\+E.
+
+
+
+Referenced by Game.\+Game\+Sn\+L.\+winner().
+
+
+
 \subsection{Member Data Documentation}
 \hypertarget{class_display_1_1_display_sn_l_a539641b8ae0dae1e3106d2f0717fe55d}{}\index{Display\+::\+Display\+Sn\+L@{Display\+::\+Display\+Sn\+L}!game\+Running@{game\+Running}}
 \index{game\+Running@{game\+Running}!Display\+::\+Display\+Sn\+L@{Display\+::\+Display\+Sn\+L}}
 \subsubsection[{game\+Running}]{\setlength{\rightskip}{0pt plus 5cm}boolean Display.\+Display\+Sn\+L.\+game\+Running = false\hspace{0.3cm}{\ttfamily [private]}}\label{class_display_1_1_display_sn_l_a539641b8ae0dae1e3106d2f0717fe55d}
-Boolean to test if game is running \hypertarget{class_display_1_1_display_sn_l_a4f2e517153c6066a9ba3d627728ed51c}{}\index{Display\+::\+Display\+Sn\+L@{Display\+::\+Display\+Sn\+L}!ladder@{ladder}}
+Boolean to test if game is running 
+
+Definition at line 87 of file Display\+Sn\+L.\+java.
+
+\hypertarget{class_display_1_1_display_sn_l_a4f2e517153c6066a9ba3d627728ed51c}{}\index{Display\+::\+Display\+Sn\+L@{Display\+::\+Display\+Sn\+L}!ladder@{ladder}}
 \index{ladder@{ladder}!Display\+::\+Display\+Sn\+L@{Display\+::\+Display\+Sn\+L}}
 \subsubsection[{ladder}]{\setlength{\rightskip}{0pt plus 5cm}Buffered\+Image Display.\+Display\+Sn\+L.\+ladder\hspace{0.3cm}{\ttfamily [private]}}\label{class_display_1_1_display_sn_l_a4f2e517153c6066a9ba3d627728ed51c}
+
+
+Definition at line 71 of file Display\+Sn\+L.\+java.
+
 \hypertarget{class_display_1_1_display_sn_l_a9452f0a663eaea507cf3561851e5c74e}{}\index{Display\+::\+Display\+Sn\+L@{Display\+::\+Display\+Sn\+L}!m\+\_\+back\+Button@{m\+\_\+back\+Button}}
 \index{m\+\_\+back\+Button@{m\+\_\+back\+Button}!Display\+::\+Display\+Sn\+L@{Display\+::\+Display\+Sn\+L}}
 \subsubsection[{m\+\_\+back\+Button}]{\setlength{\rightskip}{0pt plus 5cm}J\+Button Display.\+Display\+Sn\+L.\+m\+\_\+back\+Button = new J\+Button()\hspace{0.3cm}{\ttfamily [private]}}\label{class_display_1_1_display_sn_l_a9452f0a663eaea507cf3561851e5c74e}
-Button to go back to main menu \hypertarget{class_display_1_1_display_sn_l_aafb6d505956de58bbd229a789342ef19}{}\index{Display\+::\+Display\+Sn\+L@{Display\+::\+Display\+Sn\+L}!m\+\_\+dice\+Pic\+Label@{m\+\_\+dice\+Pic\+Label}}
+Button to go back to main menu 
+
+Definition at line 102 of file Display\+Sn\+L.\+java.
+
+\hypertarget{class_display_1_1_display_sn_l_aafb6d505956de58bbd229a789342ef19}{}\index{Display\+::\+Display\+Sn\+L@{Display\+::\+Display\+Sn\+L}!m\+\_\+dice\+Pic\+Label@{m\+\_\+dice\+Pic\+Label}}
 \index{m\+\_\+dice\+Pic\+Label@{m\+\_\+dice\+Pic\+Label}!Display\+::\+Display\+Sn\+L@{Display\+::\+Display\+Sn\+L}}
 \subsubsection[{m\+\_\+dice\+Pic\+Label}]{\setlength{\rightskip}{0pt plus 5cm}J\+Label Display.\+Display\+Sn\+L.\+m\+\_\+dice\+Pic\+Label = new J\+Label(new Image\+Icon(\char`\"{}null\char`\"{}))\hspace{0.3cm}{\ttfamily [private]}}\label{class_display_1_1_display_sn_l_aafb6d505956de58bbd229a789342ef19}
-Label for dice image \hypertarget{class_display_1_1_display_sn_l_a075a16b363ea3d1e75e589fe11b2b0e7}{}\index{Display\+::\+Display\+Sn\+L@{Display\+::\+Display\+Sn\+L}!m\+\_\+player\+Colour@{m\+\_\+player\+Colour}}
+Label for dice image 
+
+Definition at line 96 of file Display\+Sn\+L.\+java.
+
+\hypertarget{class_display_1_1_display_sn_l_a075a16b363ea3d1e75e589fe11b2b0e7}{}\index{Display\+::\+Display\+Sn\+L@{Display\+::\+Display\+Sn\+L}!m\+\_\+player\+Colour@{m\+\_\+player\+Colour}}
 \index{m\+\_\+player\+Colour@{m\+\_\+player\+Colour}!Display\+::\+Display\+Sn\+L@{Display\+::\+Display\+Sn\+L}}
 \subsubsection[{m\+\_\+player\+Colour}]{\setlength{\rightskip}{0pt plus 5cm}Array\+List$<$J\+Label$>$ Display.\+Display\+Sn\+L.\+m\+\_\+player\+Colour\hspace{0.3cm}{\ttfamily [private]}}\label{class_display_1_1_display_sn_l_a075a16b363ea3d1e75e589fe11b2b0e7}
-Arraylist to contain player colours \hypertarget{class_display_1_1_display_sn_l_ad4d75120b08606844b7fa63e2990928b}{}\index{Display\+::\+Display\+Sn\+L@{Display\+::\+Display\+Sn\+L}!m\+\_\+player\+Info@{m\+\_\+player\+Info}}
+Arraylist to contain player colours 
+
+Definition at line 114 of file Display\+Sn\+L.\+java.
+
+\hypertarget{class_display_1_1_display_sn_l_ad4d75120b08606844b7fa63e2990928b}{}\index{Display\+::\+Display\+Sn\+L@{Display\+::\+Display\+Sn\+L}!m\+\_\+player\+Info@{m\+\_\+player\+Info}}
 \index{m\+\_\+player\+Info@{m\+\_\+player\+Info}!Display\+::\+Display\+Sn\+L@{Display\+::\+Display\+Sn\+L}}
 \subsubsection[{m\+\_\+player\+Info}]{\setlength{\rightskip}{0pt plus 5cm}Array\+List$<$J\+Label$>$ Display.\+Display\+Sn\+L.\+m\+\_\+player\+Info\hspace{0.3cm}{\ttfamily [private]}}\label{class_display_1_1_display_sn_l_ad4d75120b08606844b7fa63e2990928b}
-Array\+List to contain player information (names) \hypertarget{class_display_1_1_display_sn_l_a7afa5f7ca8e697b64de4de4246f2c2a8}{}\index{Display\+::\+Display\+Sn\+L@{Display\+::\+Display\+Sn\+L}!m\+\_\+player\+Info\+Panel@{m\+\_\+player\+Info\+Panel}}
+Array\+List to contain player information (names) 
+
+Definition at line 108 of file Display\+Sn\+L.\+java.
+
+\hypertarget{class_display_1_1_display_sn_l_a7afa5f7ca8e697b64de4de4246f2c2a8}{}\index{Display\+::\+Display\+Sn\+L@{Display\+::\+Display\+Sn\+L}!m\+\_\+player\+Info\+Panel@{m\+\_\+player\+Info\+Panel}}
 \index{m\+\_\+player\+Info\+Panel@{m\+\_\+player\+Info\+Panel}!Display\+::\+Display\+Sn\+L@{Display\+::\+Display\+Sn\+L}}
 \subsubsection[{m\+\_\+player\+Info\+Panel}]{\setlength{\rightskip}{0pt plus 5cm}J\+Panel Display.\+Display\+Sn\+L.\+m\+\_\+player\+Info\+Panel\hspace{0.3cm}{\ttfamily [private]}}\label{class_display_1_1_display_sn_l_a7afa5f7ca8e697b64de4de4246f2c2a8}
-J\+Panel to contain player information \hypertarget{class_display_1_1_display_sn_l_aa4b30638e1d8f99b5052652ea02d6365}{}\index{Display\+::\+Display\+Sn\+L@{Display\+::\+Display\+Sn\+L}!m\+\_\+player\+Pos@{m\+\_\+player\+Pos}}
+J\+Panel to contain player information 
+
+Definition at line 105 of file Display\+Sn\+L.\+java.
+
+\hypertarget{class_display_1_1_display_sn_l_aa4b30638e1d8f99b5052652ea02d6365}{}\index{Display\+::\+Display\+Sn\+L@{Display\+::\+Display\+Sn\+L}!m\+\_\+player\+Pos@{m\+\_\+player\+Pos}}
 \index{m\+\_\+player\+Pos@{m\+\_\+player\+Pos}!Display\+::\+Display\+Sn\+L@{Display\+::\+Display\+Sn\+L}}
 \subsubsection[{m\+\_\+player\+Pos}]{\setlength{\rightskip}{0pt plus 5cm}Array\+List$<$J\+Label$>$ Display.\+Display\+Sn\+L.\+m\+\_\+player\+Pos\hspace{0.3cm}{\ttfamily [private]}}\label{class_display_1_1_display_sn_l_aa4b30638e1d8f99b5052652ea02d6365}
-Arraylist to contain player positions \hypertarget{class_display_1_1_display_sn_l_a7ae26c71761566ba21e8eb4e4981969f}{}\index{Display\+::\+Display\+Sn\+L@{Display\+::\+Display\+Sn\+L}!m\+\_\+save\+Game\+Button@{m\+\_\+save\+Game\+Button}}
+Arraylist to contain player positions 
+
+Definition at line 111 of file Display\+Sn\+L.\+java.
+
+\hypertarget{class_display_1_1_display_sn_l_a7ae26c71761566ba21e8eb4e4981969f}{}\index{Display\+::\+Display\+Sn\+L@{Display\+::\+Display\+Sn\+L}!m\+\_\+save\+Game\+Button@{m\+\_\+save\+Game\+Button}}
 \index{m\+\_\+save\+Game\+Button@{m\+\_\+save\+Game\+Button}!Display\+::\+Display\+Sn\+L@{Display\+::\+Display\+Sn\+L}}
 \subsubsection[{m\+\_\+save\+Game\+Button}]{\setlength{\rightskip}{0pt plus 5cm}J\+Button Display.\+Display\+Sn\+L.\+m\+\_\+save\+Game\+Button = new J\+Button()\hspace{0.3cm}{\ttfamily [private]}}\label{class_display_1_1_display_sn_l_a7ae26c71761566ba21e8eb4e4981969f}
-Button to save game \hypertarget{class_display_1_1_display_sn_l_ad8119225e6027adeced313ef342b67a2}{}\index{Display\+::\+Display\+Sn\+L@{Display\+::\+Display\+Sn\+L}!m\+\_\+snake\+Head@{m\+\_\+snake\+Head}}
+Button to save game 
+
+Definition at line 99 of file Display\+Sn\+L.\+java.
+
+\hypertarget{class_display_1_1_display_sn_l_ad8119225e6027adeced313ef342b67a2}{}\index{Display\+::\+Display\+Sn\+L@{Display\+::\+Display\+Sn\+L}!m\+\_\+snake\+Head@{m\+\_\+snake\+Head}}
 \index{m\+\_\+snake\+Head@{m\+\_\+snake\+Head}!Display\+::\+Display\+Sn\+L@{Display\+::\+Display\+Sn\+L}}
 \subsubsection[{m\+\_\+snake\+Head}]{\setlength{\rightskip}{0pt plus 5cm}Buffered\+Image Display.\+Display\+Sn\+L.\+m\+\_\+snake\+Head\hspace{0.3cm}{\ttfamily [private]}}\label{class_display_1_1_display_sn_l_ad8119225e6027adeced313ef342b67a2}
-Snake head and tail buffered images \hypertarget{class_display_1_1_display_sn_l_a6821965beb6bde17ff10f6e3e09f3287}{}\index{Display\+::\+Display\+Sn\+L@{Display\+::\+Display\+Sn\+L}!m\+\_\+snake\+Tail@{m\+\_\+snake\+Tail}}
+Snake head and tail buffered images 
+
+Definition at line 69 of file Display\+Sn\+L.\+java.
+
+\hypertarget{class_display_1_1_display_sn_l_a6821965beb6bde17ff10f6e3e09f3287}{}\index{Display\+::\+Display\+Sn\+L@{Display\+::\+Display\+Sn\+L}!m\+\_\+snake\+Tail@{m\+\_\+snake\+Tail}}
 \index{m\+\_\+snake\+Tail@{m\+\_\+snake\+Tail}!Display\+::\+Display\+Sn\+L@{Display\+::\+Display\+Sn\+L}}
 \subsubsection[{m\+\_\+snake\+Tail}]{\setlength{\rightskip}{0pt plus 5cm}Buffered\+Image Display.\+Display\+Sn\+L.\+m\+\_\+snake\+Tail\hspace{0.3cm}{\ttfamily [private]}}\label{class_display_1_1_display_sn_l_a6821965beb6bde17ff10f6e3e09f3287}
+
+
+Definition at line 70 of file Display\+Sn\+L.\+java.
+
 \hypertarget{class_display_1_1_display_sn_l_a4e69018d83aaba48baa701597a876bf6}{}\index{Display\+::\+Display\+Sn\+L@{Display\+::\+Display\+Sn\+L}!m\+\_\+stop\+Watch@{m\+\_\+stop\+Watch}}
 \index{m\+\_\+stop\+Watch@{m\+\_\+stop\+Watch}!Display\+::\+Display\+Sn\+L@{Display\+::\+Display\+Sn\+L}}
 \subsubsection[{m\+\_\+stop\+Watch}]{\setlength{\rightskip}{0pt plus 5cm}Stop\+Watch Display.\+Display\+Sn\+L.\+m\+\_\+stop\+Watch\hspace{0.3cm}{\ttfamily [private]}}\label{class_display_1_1_display_sn_l_a4e69018d83aaba48baa701597a876bf6}
-Stop watch variable to display timer \hypertarget{class_display_1_1_display_sn_l_ac8f487404183209a60d90af4124eb61c}{}\index{Display\+::\+Display\+Sn\+L@{Display\+::\+Display\+Sn\+L}!P\+I\+E\+C\+E\+\_\+\+D\+I\+A\+M\+E\+T\+E\+R@{P\+I\+E\+C\+E\+\_\+\+D\+I\+A\+M\+E\+T\+E\+R}}
+Stop watch variable to display timer 
+
+Definition at line 81 of file Display\+Sn\+L.\+java.
+
+\hypertarget{class_display_1_1_display_sn_l_ac8f487404183209a60d90af4124eb61c}{}\index{Display\+::\+Display\+Sn\+L@{Display\+::\+Display\+Sn\+L}!P\+I\+E\+C\+E\+\_\+\+D\+I\+A\+M\+E\+T\+E\+R@{P\+I\+E\+C\+E\+\_\+\+D\+I\+A\+M\+E\+T\+E\+R}}
 \index{P\+I\+E\+C\+E\+\_\+\+D\+I\+A\+M\+E\+T\+E\+R@{P\+I\+E\+C\+E\+\_\+\+D\+I\+A\+M\+E\+T\+E\+R}!Display\+::\+Display\+Sn\+L@{Display\+::\+Display\+Sn\+L}}
 \subsubsection[{P\+I\+E\+C\+E\+\_\+\+D\+I\+A\+M\+E\+T\+E\+R}]{\setlength{\rightskip}{0pt plus 5cm}final int Display.\+Display\+Sn\+L.\+P\+I\+E\+C\+E\+\_\+\+D\+I\+A\+M\+E\+T\+E\+R = 20\hspace{0.3cm}{\ttfamily [static]}}\label{class_display_1_1_display_sn_l_ac8f487404183209a60d90af4124eb61c}
-Sets shape\textquotesingle{}s diameter \hypertarget{class_display_1_1_display_sn_l_abcf7150eb19d813f34a1cdd3708d5c83}{}\index{Display\+::\+Display\+Sn\+L@{Display\+::\+Display\+Sn\+L}!S\+Q\+U\+A\+R\+E\+\_\+\+H\+E\+I\+G\+H\+T@{S\+Q\+U\+A\+R\+E\+\_\+\+H\+E\+I\+G\+H\+T}}
+Sets shape\textquotesingle{}s diameter 
+
+Definition at line 56 of file Display\+Sn\+L.\+java.
+
+\hypertarget{class_display_1_1_display_sn_l_abcf7150eb19d813f34a1cdd3708d5c83}{}\index{Display\+::\+Display\+Sn\+L@{Display\+::\+Display\+Sn\+L}!S\+Q\+U\+A\+R\+E\+\_\+\+H\+E\+I\+G\+H\+T@{S\+Q\+U\+A\+R\+E\+\_\+\+H\+E\+I\+G\+H\+T}}
 \index{S\+Q\+U\+A\+R\+E\+\_\+\+H\+E\+I\+G\+H\+T@{S\+Q\+U\+A\+R\+E\+\_\+\+H\+E\+I\+G\+H\+T}!Display\+::\+Display\+Sn\+L@{Display\+::\+Display\+Sn\+L}}
 \subsubsection[{S\+Q\+U\+A\+R\+E\+\_\+\+H\+E\+I\+G\+H\+T}]{\setlength{\rightskip}{0pt plus 5cm}final int Display.\+Display\+Sn\+L.\+S\+Q\+U\+A\+R\+E\+\_\+\+H\+E\+I\+G\+H\+T = 50\hspace{0.3cm}{\ttfamily [static]}}\label{class_display_1_1_display_sn_l_abcf7150eb19d813f34a1cdd3708d5c83}
-Sets shape\textquotesingle{}s height \hypertarget{class_display_1_1_display_sn_l_acac8d594916c09aae69657f94c3e766d}{}\index{Display\+::\+Display\+Sn\+L@{Display\+::\+Display\+Sn\+L}!S\+Q\+U\+A\+R\+E\+\_\+\+W\+I\+D\+T\+H@{S\+Q\+U\+A\+R\+E\+\_\+\+W\+I\+D\+T\+H}}
+Sets shape\textquotesingle{}s height 
+
+Definition at line 53 of file Display\+Sn\+L.\+java.
+
+\hypertarget{class_display_1_1_display_sn_l_acac8d594916c09aae69657f94c3e766d}{}\index{Display\+::\+Display\+Sn\+L@{Display\+::\+Display\+Sn\+L}!S\+Q\+U\+A\+R\+E\+\_\+\+W\+I\+D\+T\+H@{S\+Q\+U\+A\+R\+E\+\_\+\+W\+I\+D\+T\+H}}
 \index{S\+Q\+U\+A\+R\+E\+\_\+\+W\+I\+D\+T\+H@{S\+Q\+U\+A\+R\+E\+\_\+\+W\+I\+D\+T\+H}!Display\+::\+Display\+Sn\+L@{Display\+::\+Display\+Sn\+L}}
 \subsubsection[{S\+Q\+U\+A\+R\+E\+\_\+\+W\+I\+D\+T\+H}]{\setlength{\rightskip}{0pt plus 5cm}final int Display.\+Display\+Sn\+L.\+S\+Q\+U\+A\+R\+E\+\_\+\+W\+I\+D\+T\+H = 50\hspace{0.3cm}{\ttfamily [static]}}\label{class_display_1_1_display_sn_l_acac8d594916c09aae69657f94c3e766d}
 Sets shape\textquotesingle{}s width 
+
+Definition at line 50 of file Display\+Sn\+L.\+java.
+
+
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 

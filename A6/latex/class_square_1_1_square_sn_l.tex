@@ -38,6 +38,10 @@ int \hyperlink{class_square_1_1_square_sn_l_a1906be8d7e5ea28a4b5b1585d820186f}{m
 \subsection{Detailed Description}
 This class stores the information on each square for Sn\+L. 
 
+Definition at line 16 of file Square\+Sn\+L.\+java.
+
+
+
 \subsection{Constructor \& Destructor Documentation}
 \hypertarget{class_square_1_1_square_sn_l_ac89482de8a579e2b2249f9d8bf652351}{}\index{Square\+::\+Square\+Sn\+L@{Square\+::\+Square\+Sn\+L}!Square\+Sn\+L@{Square\+Sn\+L}}
 \index{Square\+Sn\+L@{Square\+Sn\+L}!Square\+::\+Square\+Sn\+L@{Square\+::\+Square\+Sn\+L}}
@@ -56,6 +60,18 @@ Sets up the square with the position and destination
 \end{DoxyParams}
 
 
+Definition at line 26 of file Square\+Sn\+L.\+java.
+
+
+
+References Square.\+Square.\+m\+\_\+position, and Menu.\+Game\+Selector.\+m\+\_\+\+T\+R\+A\+C\+E.
+
+
+
+Referenced by Square.\+Square\+Sn\+L.\+main().
+
+
+
 \subsection{Member Function Documentation}
 \hypertarget{class_square_1_1_square_sn_l_a7f23505690a2a6ccfe9126448f66ddeb}{}\index{Square\+::\+Square\+Sn\+L@{Square\+::\+Square\+Sn\+L}!exists\+Player@{exists\+Player}}
 \index{exists\+Player@{exists\+Player}!Square\+::\+Square\+Sn\+L@{Square\+::\+Square\+Sn\+L}}
@@ -67,6 +83,14 @@ Sets up the square with the position and destination
 returns whether a player is in the square \begin{DoxyReturn}{Returns}
 true if there is a player in the square, false if not 
 \end{DoxyReturn}
+
+
+Definition at line 64 of file Square\+Sn\+L.\+java.
+
+
+
+References Menu.\+Game\+Selector.\+m\+\_\+\+T\+R\+A\+C\+E.
+
 \hypertarget{class_square_1_1_square_sn_l_acb377b2ceb8dd5b8d65bba391f4c256d}{}\index{Square\+::\+Square\+Sn\+L@{Square\+::\+Square\+Sn\+L}!get\+Destination@{get\+Destination}}
 \index{get\+Destination@{get\+Destination}!Square\+::\+Square\+Sn\+L@{Square\+::\+Square\+Sn\+L}}
 \subsubsection[{get\+Destination()}]{\setlength{\rightskip}{0pt plus 5cm}int Square.\+Square\+Sn\+L.\+get\+Destination (
@@ -77,6 +101,18 @@ true if there is a player in the square, false if not
 returns the destination of this square, possible that destination == position \begin{DoxyReturn}{Returns}
 destination 
 \end{DoxyReturn}
+
+
+Definition at line 40 of file Square\+Sn\+L.\+java.
+
+
+
+References Square.\+Square\+Sn\+L.\+m\+\_\+destination, and Menu.\+Game\+Selector.\+m\+\_\+\+T\+R\+A\+C\+E.
+
+
+
+Referenced by Square.\+Square\+Sn\+L.\+main().
+
 \hypertarget{class_square_1_1_square_sn_l_ad948a877cff45a872082f23d72924770}{}\index{Square\+::\+Square\+Sn\+L@{Square\+::\+Square\+Sn\+L}!is\+Movement\+Square@{is\+Movement\+Square}}
 \index{is\+Movement\+Square@{is\+Movement\+Square}!Square\+::\+Square\+Sn\+L@{Square\+::\+Square\+Sn\+L}}
 \subsubsection[{is\+Movement\+Square()}]{\setlength{\rightskip}{0pt plus 5cm}boolean Square.\+Square\+Sn\+L.\+is\+Movement\+Square (
@@ -87,6 +123,18 @@ destination
 Returns whether this square is a movement square \begin{DoxyReturn}{Returns}
 true if this square is a movement square, false if it is not 
 \end{DoxyReturn}
+
+
+Definition at line 52 of file Square\+Sn\+L.\+java.
+
+
+
+References Square.\+Square\+Sn\+L.\+m\+\_\+destination, Square.\+Square.\+m\+\_\+position, and Menu.\+Game\+Selector.\+m\+\_\+\+T\+R\+A\+C\+E.
+
+
+
+Referenced by Player.\+Player\+Sn\+L.\+is\+Movement\+Square().
+
 \hypertarget{class_square_1_1_square_sn_l_ac30c492a8a5c6f0f9bf43faa069dfa5c}{}\index{Square\+::\+Square\+Sn\+L@{Square\+::\+Square\+Sn\+L}!main@{main}}
 \index{main@{main}!Square\+::\+Square\+Sn\+L@{Square\+::\+Square\+Sn\+L}}
 \subsubsection[{main(\+String[] args)}]{\setlength{\rightskip}{0pt plus 5cm}static void Square.\+Square\+Sn\+L.\+main (
@@ -96,11 +144,27 @@ true if this square is a movement square, false if it is not
 )\hspace{0.3cm}{\ttfamily [static]}}\label{class_square_1_1_square_sn_l_ac30c492a8a5c6f0f9bf43faa069dfa5c}
 
 
+Definition at line 71 of file Square\+Sn\+L.\+java.
+
+
+
+References Square.\+Square\+Sn\+L.\+get\+Destination(), Square.\+Square.\+get\+Position(), and Square.\+Square\+Sn\+L.\+Square\+Sn\+L().
+
+
+
 \subsection{Member Data Documentation}
 \hypertarget{class_square_1_1_square_sn_l_a1906be8d7e5ea28a4b5b1585d820186f}{}\index{Square\+::\+Square\+Sn\+L@{Square\+::\+Square\+Sn\+L}!m\+\_\+destination@{m\+\_\+destination}}
 \index{m\+\_\+destination@{m\+\_\+destination}!Square\+::\+Square\+Sn\+L@{Square\+::\+Square\+Sn\+L}}
 \subsubsection[{m\+\_\+destination}]{\setlength{\rightskip}{0pt plus 5cm}int Square.\+Square\+Sn\+L.\+m\+\_\+destination\hspace{0.3cm}{\ttfamily [private]}}\label{class_square_1_1_square_sn_l_a1906be8d7e5ea28a4b5b1585d820186f}
 Stores the destination of this square if it is a movement square 
+
+Definition at line 19 of file Square\+Sn\+L.\+java.
+
+
+
+Referenced by Square.\+Square\+Sn\+L.\+get\+Destination(), and Square.\+Square\+Sn\+L.\+is\+Movement\+Square().
+
+
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
