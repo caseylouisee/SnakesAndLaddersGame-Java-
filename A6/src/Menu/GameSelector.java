@@ -40,12 +40,12 @@ public class GameSelector {
 	private final static int WINDOW_HEIGHT = 450;
 	
 	/** Testing variable */
-	public static Boolean m_TRACE = true;
+	public static Boolean m_TRACE = false;
 	
 	/** Frame being used */
 	private static JFrame m_frame;
 
-	
+	/** Constructor with testing boolean. If true, test statements print */
 	public GameSelector(boolean testing){
 		m_TRACE = testing;
 		createWindow();

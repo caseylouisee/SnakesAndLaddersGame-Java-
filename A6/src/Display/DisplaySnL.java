@@ -360,18 +360,27 @@ public class DisplaySnL extends JPanel implements Runnable{
 			m_playerPos.get(i).setForeground(Color.WHITE);
 
 			// Prints java.awt.color blah blah need to fix
-			/*
-			 * m_playerColour.add(new JLabel(m_gameSnL.getPlayer(i)
-			 * 	.getPlayerColor().toString()));
-			 *	m_playerColour.get(i).setBounds(Display.XPOS_COL200, 
-			 *		Display.OFFSET2*i, 
-			 *			Display.COMPONENT_WIDTH50, Display.COMPONENT_HEIGHT20);
-			 *	m_playerColour.get(i).setForeground(Color.WHITE);
-			 */
+			Color colour = m_players.get(i).getPlayerColor();
+			String colorName = null;
+			if (Color.BLUE.equals(colour)){
+					colorName = "Blue";
+			} else if (Color.RED.equals(colour)) {
+					colorName = "Red";
+			} else if (Color.YELLOW.equals(colour)){
+					colorName = "Yellow";
+			} else if (Color.GREEN.equals(colour)){
+					colorName = "Green";
+			}
+	
+			m_playerColour.add(new JLabel(colorName));
+			m_playerColour.get(i).setBounds(Display.XPOS_COL200, 
+				Display.OFFSET15*i, Display.COMPONENT_WIDTH50, 
+				Display.COMPONENT_HEIGHT20);
+			m_playerColour.get(i).setForeground(Color.WHITE);
 
 			m_playerInfoPanel.add(m_playerInfo.get(i));
 			m_playerInfoPanel.add(m_playerPos.get(i));
-			//m_playerInfoPanel.add(m_playerColour.get(i));
+			m_playerInfoPanel.add(m_playerColour.get(i));
 		}
 		add(m_playerInfoPanel);
 	}
