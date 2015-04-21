@@ -359,7 +359,6 @@ public class DisplaySnL extends JPanel implements Runnable{
 					Display.COMPONENT_HEIGHT20);
 			m_playerPos.get(i).setForeground(Color.WHITE);
 
-			// Prints java.awt.color blah blah need to fix
 			Color colour = m_players.get(i).getPlayerColor();
 			String colorName = null;
 			if (Color.BLUE.equals(colour)){
@@ -432,7 +431,6 @@ public class DisplaySnL extends JPanel implements Runnable{
 		m_saveGameButton.setBorderPainted(false); 
 		m_saveGameButton.setFocusPainted(false);
 		m_saveGameButton.setContentAreaFilled(false);
-		//m_saveGameButton.setText("Save Game");
 		m_saveGameButton.setBounds(Display.XPOS_COL200 + Display.OFFSET20, 
 				Display.YPOS_ROW600, Display.COMPONENT_WIDTH160, 
 				Display.COMPONENT_HEIGHT85);
@@ -510,7 +508,8 @@ public class DisplaySnL extends JPanel implements Runnable{
 		} 
 	}
 
-	/** Calls the method to draw the board and snakes and ladders, display timer
+	/** 
+	 * Calls the method to draw the board and snakes and ladders, display timer
 	 * @param graphics
 	 */
 	public void paintComponent(Graphics graphics) {
@@ -577,7 +576,8 @@ public class DisplaySnL extends JPanel implements Runnable{
 		repaint();
 	}
 
-	/** Prints the player to the board 
+	/** 
+	 * Prints the player to the board 
 	 * @param graphics
 	 * @param playerColor
 	 * @param squareNo
@@ -618,7 +618,8 @@ public class DisplaySnL extends JPanel implements Runnable{
 		}
 	}
 
-	/** Draws the board 
+	/** 
+	 * Draws the board 
 	 * @param graphics
 	 */
 	public void drawBoard(Graphics graphics) {
@@ -652,7 +653,8 @@ public class DisplaySnL extends JPanel implements Runnable{
 	}
 
 
-	/** Prints the ladders on the board 
+	/** 
+	 * Prints the ladders on the board 
 	 * @param graphics
 	 * @param squares
 	 */
@@ -697,7 +699,8 @@ public class DisplaySnL extends JPanel implements Runnable{
 
 	}
 
-	/** Prints the snakes on the board
+	/** 
+	 * Prints the snakes on the board
 	 * @param graphics
 	 * @param snakes
 	 */
@@ -822,7 +825,8 @@ public class DisplaySnL extends JPanel implements Runnable{
 		}
 	}
 
-	/** Overrides the run method in this runnable class to repeatedly 
+	/** 
+	 * Overrides the run method in this runnable class to repeatedly 
 	 * paintComponents as the timer needs to be continuously updated 
 	 */
 	@Override
