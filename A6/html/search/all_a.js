@@ -36,6 +36,7 @@ var searchData=
   ['m_5fplayeriterator',['m_playerIterator',['../class_game_1_1_game_sn_l.html#a4cff3283ef1f344a871b2019ae92dd57',1,'Game::GameSnL']]],
   ['m_5fplayerladders',['m_playerLadders',['../class_menu_1_1_menu_sn_l.html#a75cae58abbeef1dc893ab2214f84aaad',1,'Menu::MenuSnL']]],
   ['m_5fplayerlocation',['m_playerLocation',['../class_player_1_1_player_sn_l.html#a9ff667423ca24b7b21b9775117156d68',1,'Player::PlayerSnL']]],
+  ['m_5fplayername',['m_playerName',['../class_player_1_1_player.html#ae0d0eb69723836aefbfbe50171f025f1',1,'Player::Player']]],
   ['m_5fplayernames',['m_playerNames',['../class_game_1_1_game_sn_l.html#a0faf146bfc9f0bd5814b3b3c71c00a20',1,'Game::GameSnL']]],
   ['m_5fplayerpos',['m_playerPos',['../class_display_1_1_display_sn_l.html#aa4b30638e1d8f99b5052652ea02d6365',1,'Display::DisplaySnL']]],
   ['m_5fplayers',['m_players',['../class_display_1_1_display_t_t_t.html#ad3a0687ab98eb4f191cd30a64ef60304',1,'Display.DisplayTTT.m_players()'],['../class_game_1_1_game_t_t_t.html#aad75ff74595b7b58542d7060a77ca169',1,'Game.GameTTT.m_players()']]],

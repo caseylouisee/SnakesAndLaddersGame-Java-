@@ -25,8 +25,10 @@ import Menu.GameSelector;
  */
 public class Display extends JPanel {
 	
-	/** sets shape width and height */
+	/** sets shape width */
 	private final int SHAPE_WIDTH = 30;
+	
+	/** sets shape height */
 	private final int SHAPE_HEIGHT = 30;
 
 	/** Used to set object locations on the JFrames/JPanels**/
@@ -102,9 +104,7 @@ public class Display extends JPanel {
 			System.out.println("Display::paintComponent");
 		}
 		super.paintComponent(graphics);
-
 		this.setBackground(Color.WHITE);
-
 		graphics.setColor(Color.BLACK);
 
 		for (int j = 0; j < 10; j++) {
@@ -113,5 +113,6 @@ public class Display extends JPanel {
 						SHAPE_WIDTH, SHAPE_HEIGHT);
 			}
 		}
+		
 	}
 }

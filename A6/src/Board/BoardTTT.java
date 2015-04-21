@@ -31,17 +31,22 @@ public class BoardTTT extends Board {
 	 * output
 	 */
 	private int[] m_winningSquareCoordinates = new int[2];
+	
 	/** integer that stores the length of the chain needed to win*/
 	private final int WIN_AMOUNT = 5;
 
-	/** integers that store the return values for detectEndGame()*/
+	/** integer that stores the value for detectEndGame()*/
 	public static final int DRAW_GAME = -1;
+	
+	/** integer that stores the value for detectEndGame()*/
 	public static final int NOTHING_HAPPENED = 0;
+	
+	/** integer that stores the value for detectEndGame()*/
 	public static final int O_WIN = 1;
+	
+	/** integer that stores the value for detectEndGame()*/
 	public static final int X_WIN = 2;
 	
-
-
 	/**
 	 * Used to return the start and end of the winning chain for output.
 	 * @return integer array containing the start and end of the winning chain
@@ -71,7 +76,16 @@ public class BoardTTT extends Board {
 		}
 	}
 
-
+	/**
+	 * Constructor for creating a board of length width*height containing 
+	 * already selected square values for use within save/load game 
+	 * @param width integer that contains the width of the board to be created
+	 * @param height integer that contains the height of the board to be 
+	 * 		created
+	 * @param squareVales chars that hold the current value of the squares on 
+	 * 		the board - X, O or " ".
+	 * @param display the display that they are saved on
+	 */
 	public BoardTTT(int width, int height, char[] squareValues,
 			DisplayTTT display) {
 		super(width, height);
@@ -174,7 +188,6 @@ public class BoardTTT extends Board {
 	 * @return true if win is found, false if not
 	 */
 	private Boolean winRow(char XorO){
-		
 		for (int i = 0; i < DisplayTTT.GRID_WIDTH; i++) {
 			int m_counter = 0;
 			for (int j = 0; j < DisplayTTT.GRID_HEIGHT; j++) {
@@ -206,6 +219,7 @@ public class BoardTTT extends Board {
 		}
 		return false;
 	}
+	
 	/**
 	 * Checks if there is a vertical win 
 	 * @param XorO the char it is checking for
@@ -348,6 +362,7 @@ public class BoardTTT extends Board {
 		return false;
 	}
 	
+	/** Test method */
 	public static void main(String[] args){
 		int width = 8;
 		int height = 8;

@@ -18,13 +18,13 @@ import Square.SquareTTT;
  * @class PlayerTTT
  * @brief  Creates a player for TicTacToe
  */
-
 public class PlayerTTT extends Player {
+	
 	/** The piece type of the player */
 	private char m_pieceType;
+	
 	/** The piece location array of the player */
 	private ArrayList<Integer> m_pieceLocations=new ArrayList<Integer>();
-
 	
 	/**
 	 * Gets the player piece type 
@@ -69,9 +69,10 @@ public class PlayerTTT extends Player {
 		return m_pieceLocations;
 	}
 	
-	/**get the every piece location integer from 0 to size-1
-	* @return most recently placed piece
-	*/
+	/**
+	 * get the every piece location integer from 0 to size-1
+	 * @return most recently placed piece
+	 */
 	public int getPieceLocation() {
 		if(GameSelector.m_TRACE){
 			System.out.println("PlayerTTT::getPieceLocation()  "

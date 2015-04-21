@@ -49,7 +49,6 @@ import Player.PlayerTTT;
  */
 public class MenuTTT {
 
-	/* ----- CONSTANTS ------- */
 	/** Title of the window */
 	private final String WINDOW_TITLE = "Dans Crazy Tic Tac Toe";
 
@@ -68,7 +67,6 @@ public class MenuTTT {
 	/** Maximum number of players */
 	private final int MAX_NUM_PLAYERS = 2;
 
-	/* ----- VARIABLES ------- */
 	/** Frame for the tic tac toe menu */
 	private JFrame m_frame;
 
@@ -93,29 +91,9 @@ public class MenuTTT {
 	/** Boolean for visualization */
 	private Boolean visualize = false;
 
-	/* -------- METHODS --------- */
-
-	/** This is the test method. 
-	 * It calls the menuTTT constructor to add all the correct buttons, 
-	 * all methods are voids so it's impossible to input invalid information
-	 * All methods are called, if no load game file available it will try to 
-	 * start the game with no player information throwing an error.
-	 */
-	public static void main(String[] args) { 
-		MenuTTT test = new MenuTTT();
-		test.addLabels();
-		test.addPlayerType();
-		test.addXorOComboBox();
-		test.addPlayersNamesTextField();
-		test.addLogo();
-		test.addGameButtons();
-		test.loadGame();
-		test.sendForm();
-	}
-
 	/** This is the constructor for the Tic Tac Toe menu screen.
 	 * It sets the frame size and adds all the objects.
-	 **/
+	 */
 	public MenuTTT() {
 
 		if(GameSelector.m_TRACE){
@@ -140,7 +118,7 @@ public class MenuTTT {
 
 	}
 
-	/** Adds the labels to the frame **/
+	/** Adds the labels to the frame */
 	private void addLabels() {
 		if(GameSelector.m_TRACE){
 			System.out.println("MenuTTT::addLabels");
@@ -158,7 +136,7 @@ public class MenuTTT {
 		}
 	}
 
-	/** Adds the combo box to set the player type to the frame**/
+	/** Adds the combo box to set the player type to the frame*/
 	private void addPlayerType(){
 		if(GameSelector.m_TRACE){
 			System.out.println("MenuTTT::addPlayerType");
@@ -174,7 +152,7 @@ public class MenuTTT {
 		}
 	}
 
-	/** Adds the combo box with the options X or O to the frame **/
+	/** Adds the combo box with the options X or O to the frame */
 	private void addXorOComboBox() {
 		if(GameSelector.m_TRACE){
 			System.out.println("MenuTTT::addXorOComboBox");
@@ -210,7 +188,7 @@ public class MenuTTT {
 		});
 	}
 
-	/** Adds the player name text field to the frame **/
+	/** Adds the player name text field to the frame */
 	private void addPlayersNamesTextField() {
 		if(GameSelector.m_TRACE){
 			System.out.println("MenuTTT::addPlayersNamesTextField");
@@ -259,7 +237,7 @@ public class MenuTTT {
 		m_frame.add(visualization);
 	}
 
-	/** Adds the logo to the frame **/
+	/** Adds the logo to the frame */
 	private void addLogo() {
 		if(GameSelector.m_TRACE){
 			System.out.println("MenuTTT::addLogo");
@@ -275,7 +253,7 @@ public class MenuTTT {
 		m_frame.add(m_logoButton);
 	}
 
-	/** Adds the back and start game button to the frame **/
+	/** Adds the back and start game button to the frame */
 	private void addGameButtons() {
 		if(GameSelector.m_TRACE){
 			System.out.println("MenuTTT::addGameButtons");
@@ -478,5 +456,23 @@ public class MenuTTT {
 			}
 		}
 
+	}
+
+	/** This is the test method. 
+	 * It calls the menuTTT constructor to add all the correct buttons, 
+	 * all methods are voids so it's impossible to input invalid information
+	 * All methods are called, if no load game file available it will try to 
+	 * start the game with no player information throwing an error.
+	 */
+	public static void main(String[] args) { 
+		MenuTTT test = new MenuTTT();
+		test.addLabels();
+		test.addPlayerType();
+		test.addXorOComboBox();
+		test.addPlayersNamesTextField();
+		test.addLogo();
+		test.addGameButtons();
+		test.loadGame();
+		test.sendForm();
 	}
 }

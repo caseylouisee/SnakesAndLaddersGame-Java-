@@ -16,13 +16,11 @@ import Menu.GameSelector;
  * @class Player
  * @brief Creates a player template for both games
  */
-
 public class Player {
 	
 	/** The name of the player */
-	String m_playerName;
+	protected String m_playerName;
 
-	
 	/**
 	 * Gets the player name 
 	 * @return the player name

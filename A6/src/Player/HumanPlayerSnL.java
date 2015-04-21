@@ -16,9 +16,7 @@ import Menu.GameSelector;
  * @class HumanPlayerSnL
  * @brief  Creates a human player for Snake and Ladders
  */
-
 public class HumanPlayerSnL extends PlayerSnL {
-
 
 	/**
 	 * Constructor that save the player name and piece color 

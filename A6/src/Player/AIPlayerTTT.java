@@ -16,10 +16,8 @@ import Square.SquareTTT;
  * @class AIPlayerTTT
  * @brief  Creates a AI player for TicTacToe
  */
-
 public class AIPlayerTTT extends PlayerTTT {
 
-	
 	/**
 	 * Constructor that save the ai player name and piece 
 	 *  to the class extends from PlayerTTT
@@ -50,7 +48,7 @@ public class AIPlayerTTT extends PlayerTTT {
 	
 	/**
 	 * Gets the player piece type extends from PlayerTTT
-	 * @return the player piece type is X or O
+	 * @return the player piece type X or O
 	 */
 	public char getPlayerPieceType() {
 		if(GameSelector.m_TRACE){

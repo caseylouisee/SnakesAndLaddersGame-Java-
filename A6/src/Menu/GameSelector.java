@@ -45,7 +45,10 @@ public class GameSelector {
 	/** Frame being used */
 	private static JFrame m_frame;
 
-	/** Constructor with testing boolean. If true, test statements print */
+	/** 
+	 * Constructor with testing boolean. If true, test statements print
+	 * @param testing 
+	 */
 	public GameSelector(boolean testing){
 		m_TRACE = testing;
 		createWindow();
@@ -128,7 +131,6 @@ public class GameSelector {
 	/**
 	 * Calls methods to create and display the user interface, as well as
 	 * handles what happens when a game is chosen
-	 * 
 	 * Unit tests are done here too
 	 */
 	public static void main(String[] args) {

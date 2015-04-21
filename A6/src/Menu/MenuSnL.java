@@ -48,7 +48,6 @@ import Game.GameSnL;
  */
 public class MenuSnL {
 
-	/* ----- CONSTANTS ------- */
 	/** Title of the window */
 	private final String WINDOW_TITLE = "Snakes and Ladders";
 
@@ -75,8 +74,6 @@ public class MenuSnL {
 	/** Maximum number of players */
 	private final int MAX_NUM_PLAYERS = 4;
 
-
-	/* ----- VARIABLES ------- */
 	/** Frame for the Snakes and Ladders Menu */
 	private JFrame m_frame;
 
@@ -551,8 +548,6 @@ public class MenuSnL {
 			System.out.print("");
 		}
 	}
-
-
 
 	/** 
 	 * Sends the information of all the players and the 

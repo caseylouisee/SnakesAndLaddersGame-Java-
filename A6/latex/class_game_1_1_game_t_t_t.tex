@@ -7,8 +7,7 @@ Creates some of the user interface for Tic\+Tac\+Toe, as well as contains genera
 
 
 
-Collaboration diagram for Game.\+Game\+T\+T\+T\+:
-\nopagebreak
+Collaboration diagram for Game.\+Game\+T\+T\+T\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -85,19 +84,14 @@ Definition at line 30 of file Game\+T\+T\+T.\+java.
 \item[{Boolean}]{visualization}
 \end{DoxyParamCaption}
 )}\label{class_game_1_1_game_t_t_t_a730d7c27a82de9c4c5125b7fd8466ff2}
-Stores passed data into the game and calls all display methods, also initialises variables
-
-
+Stores passed data into the game and calls all display methods, also initialises variables 
 \begin{DoxyParams}{Parameters}
-{\em players2} & 
-\begin{DoxyItemize}
-\item all player names. 
-\end{DoxyItemize}\\
+{\em players2} & all player names. \\
 \hline
 \end{DoxyParams}
 
 
-Definition at line 217 of file Game\+T\+T\+T.\+java.
+Definition at line 193 of file Game\+T\+T\+T.\+java.
 
 
 
@@ -115,24 +109,16 @@ Referenced by Game.\+Game\+T\+T\+T.\+main().
 \item[{char\mbox{[}$\,$\mbox{]}}]{square\+Values}
 \end{DoxyParamCaption}
 )}\label{class_game_1_1_game_t_t_t_adadd26eb4181169333b929dace529d2b}
-Loads data into game
-
-
+Loads data into game 
 \begin{DoxyParams}{Parameters}
-{\em players2} & 
-\begin{DoxyItemize}
-\item all player names. 
-\end{DoxyItemize}\\
+{\em players2} & all player names. \\
 \hline
-{\em square\+Values} & 
-\begin{DoxyItemize}
-\item positions of te pieces 
-\end{DoxyItemize}\\
+{\em square\+Values} & positions of the pieces \\
 \hline
 \end{DoxyParams}
 
 
-Definition at line 240 of file Game\+T\+T\+T.\+java.
+Definition at line 212 of file Game\+T\+T\+T.\+java.
 
 
 
@@ -148,9 +134,9 @@ References Game.\+Game\+T\+T\+T.\+init(), and Menu.\+Game\+Selector.\+m\+\_\+\+T
 {}
 \end{DoxyParamCaption}
 )}\label{class_game_1_1_game_t_t_t_aa34199a3a29bba81669f56a08703d451}
-Closes the frame 
+disposes the frame 
 
-Definition at line 263 of file Game\+T\+T\+T.\+java.
+Definition at line 234 of file Game\+T\+T\+T.\+java.
 
 
 
@@ -167,14 +153,12 @@ Referenced by Display.\+Display\+T\+T\+T.\+add\+Back\+Button(), Display.\+Displa
 {}
 \end{DoxyParamCaption}
 )}\label{class_game_1_1_game_t_t_t_a2bc6494f74d04c47d2b294be71ee083f}
-Returns the board object
-
-\begin{DoxyReturn}{Returns}
-the board object 
+Returns the board object \begin{DoxyReturn}{Returns}
+m\+\_\+board the board object 
 \end{DoxyReturn}
 
 
-Definition at line 199 of file Game\+T\+T\+T.\+java.
+Definition at line 180 of file Game\+T\+T\+T.\+java.
 
 
 
@@ -191,14 +175,12 @@ Referenced by Display.\+Display\+T\+T\+T.\+ai\+Movement\+Strategy(), and Game.\+
 {}
 \end{DoxyParamCaption}
 )}\label{class_game_1_1_game_t_t_t_a73acd5e17507d3c5aaca626202c61b1b}
-Returns the position of the winning move, from starting square to ending square
-
-\begin{DoxyReturn}{Returns}
-the position of the winning move, from starting square to ending square 
+Returns the position of the winning move, from starting square to ending square \begin{DoxyReturn}{Returns}
+m\+\_\+board.\+get\+Coordinates\+Winning\+Squares(); the position of the winning move, from starting square to ending square 
 \end{DoxyReturn}
 
 
-Definition at line 183 of file Game\+T\+T\+T.\+java.
+Definition at line 166 of file Game\+T\+T\+T.\+java.
 
 
 
@@ -215,14 +197,12 @@ Referenced by Display.\+Display\+T\+T\+T.\+do\+Movement\+A\+I(), Display.\+Displ
 {}
 \end{DoxyParamCaption}
 )}\label{class_game_1_1_game_t_t_t_a079a7a4f3c45ad5613a5765494c45d07}
-Returns the list of players.
-
-\begin{DoxyReturn}{Returns}
-the list of players 
+Returns the list of players. \begin{DoxyReturn}{Returns}
+m\+\_\+players the list of players 
 \end{DoxyReturn}
 
 
-Definition at line 119 of file Game\+T\+T\+T.\+java.
+Definition at line 108 of file Game\+T\+T\+T.\+java.
 
 
 
@@ -239,14 +219,12 @@ Referenced by Display.\+Display\+T\+T\+T.\+Display\+T\+T\+T(), Display.\+Display
 {}
 \end{DoxyParamCaption}
 )}\label{class_game_1_1_game_t_t_t_a751517c76715c85be2ff6b22ea1dbfe4}
-Returns whose turn it is
-
-\begin{DoxyReturn}{Returns}
-whose turn it is 
+Returns player\+Turn \begin{DoxyReturn}{Returns}
+m\+\_\+players.\+get(1) whose turn it is 
 \end{DoxyReturn}
 
 
-Definition at line 159 of file Game\+T\+T\+T.\+java.
+Definition at line 143 of file Game\+T\+T\+T.\+java.
 
 
 
@@ -265,7 +243,7 @@ Referenced by Display.\+Display\+T\+T\+T.\+Display\+T\+T\+T(), Display.\+Display
 )\hspace{0.3cm}{\ttfamily [private]}}\label{class_game_1_1_game_t_t_t_a34f74c29027f3e658cf080336255a533}
 Creates the display 
 
-Definition at line 273 of file Game\+T\+T\+T.\+java.
+Definition at line 243 of file Game\+T\+T\+T.\+java.
 
 
 
@@ -280,7 +258,7 @@ Referenced by Game.\+Game\+T\+T\+T.\+Game\+T\+T\+T(), and Game.\+Game\+T\+T\+T.\
 )\hspace{0.3cm}{\ttfamily [static]}}\label{class_game_1_1_game_t_t_t_a039bbaac8ea491c16fa231a69fd3b664}
 This is the test method. Default values are set for names and pieces. 
 
-Definition at line 298 of file Game\+T\+T\+T.\+java.
+Definition at line 267 of file Game\+T\+T\+T.\+java.
 
 
 
@@ -295,7 +273,7 @@ References Game.\+Game\+T\+T\+T.\+frame\+Dispose(), Game.\+Game\+T\+T\+T.\+Game\
 )}\label{class_game_1_1_game_t_t_t_a8cbcf85e799d76e5c1b17dc54a3bc113}
 Determines whose turn it is 
 
-Definition at line 145 of file Game\+T\+T\+T.\+java.
+Definition at line 131 of file Game\+T\+T\+T.\+java.
 
 
 
@@ -312,14 +290,9 @@ Referenced by Display.\+Display\+T\+T\+T.\+do\+Movement\+A\+I(), Display.\+Displ
 \item[{int}]{Sqindex}
 \end{DoxyParamCaption}
 )}\label{class_game_1_1_game_t_t_t_a85cffeaf994f8a35e3c56282b641a7a6}
-Checks if the A\+I player\textquotesingle{}s next move is valid, if it is, add the piece to the square
-
-
+Checks if the A\+I player\textquotesingle{}s next move is valid, if it is, add the piece to the square 
 \begin{DoxyParams}{Parameters}
-{\em Sqindex} & 
-\begin{DoxyItemize}
-\item is the square the piece will be put to 
-\end{DoxyItemize}\\
+{\em Sqindex} & is the square the piece will be put to \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -327,7 +300,7 @@ if the move was successful or not
 \end{DoxyReturn}
 
 
-Definition at line 93 of file Game\+T\+T\+T.\+java.
+Definition at line 84 of file Game\+T\+T\+T.\+java.
 
 
 
@@ -344,14 +317,9 @@ Referenced by Display.\+Display\+T\+T\+T.\+do\+Movement\+A\+I(), and Game.\+Game
 \item[{int}]{Sqindex}
 \end{DoxyParamCaption}
 )}\label{class_game_1_1_game_t_t_t_a0791200e84a23a5dc121df19e6b6d308}
-Checks if the human player\textquotesingle{}s next move is valid, if it is, add the piece to the square
-
-
+Checks if the human player\textquotesingle{}s next move is valid, if it is, add the piece to the square 
 \begin{DoxyParams}{Parameters}
-{\em Sqindex} & 
-\begin{DoxyItemize}
-\item is the square the piece will be put to 
-\end{DoxyItemize}\\
+{\em Sqindex} & is the square the piece will be put to \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -359,7 +327,7 @@ if the move was successful or not
 \end{DoxyReturn}
 
 
-Definition at line 65 of file Game\+T\+T\+T.\+java.
+Definition at line 59 of file Game\+T\+T\+T.\+java.
 
 
 
@@ -376,14 +344,12 @@ Referenced by Display.\+Display\+T\+T\+T.\+do\+Movement\+Human(), and Game.\+Gam
 {}
 \end{DoxyParamCaption}
 )}\label{class_game_1_1_game_t_t_t_ac1f85bc3a5fc38f6ce84d53f36591ccd}
-Checks if someone has won the game
-
-\begin{DoxyReturn}{Returns}
-if someone has won or not 
+Checks if someone has won the game \begin{DoxyReturn}{Returns}
+m\+\_\+board.\+detect\+End\+Game() if someone has won or not 
 \end{DoxyReturn}
 
 
-Definition at line 133 of file Game\+T\+T\+T.\+java.
+Definition at line 120 of file Game\+T\+T\+T.\+java.
 
 
 
@@ -401,7 +367,7 @@ Referenced by Display.\+Display\+T\+T\+T.\+do\+Movement\+A\+I(), Display.\+Displ
 \subsubsection[{m\+\_\+board}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Board\+T\+T\+T} Game.\+Game\+T\+T\+T.\+m\+\_\+board\hspace{0.3cm}{\ttfamily [private]}}\label{class_game_1_1_game_t_t_t_a7da768af1eaf7e75452a54391961275f}
 Board object 
 
-Definition at line 41 of file Game\+T\+T\+T.\+java.
+Definition at line 39 of file Game\+T\+T\+T.\+java.
 
 
 
@@ -412,21 +378,21 @@ Referenced by Game.\+Game\+T\+T\+T.\+get\+Board().
 \subsubsection[{m\+\_\+count}]{\setlength{\rightskip}{0pt plus 5cm}int \mbox{[}$\,$\mbox{]} Game.\+Game\+T\+T\+T.\+m\+\_\+count\hspace{0.3cm}{\ttfamily [private]}}\label{class_game_1_1_game_t_t_t_a79f50cdad0e0978bb30ac4ba2a96a971}
 Holds the count of number of X\textquotesingle{}s and O\textquotesingle{}s 
 
-Definition at line 50 of file Game\+T\+T\+T.\+java.
+Definition at line 48 of file Game\+T\+T\+T.\+java.
 
 \hypertarget{class_game_1_1_game_t_t_t_a1ddfe813d586411f16504069d6bddf5d}{}\index{Game\+::\+Game\+T\+T\+T@{Game\+::\+Game\+T\+T\+T}!m\+\_\+frame@{m\+\_\+frame}}
 \index{m\+\_\+frame@{m\+\_\+frame}!Game\+::\+Game\+T\+T\+T@{Game\+::\+Game\+T\+T\+T}}
 \subsubsection[{m\+\_\+frame}]{\setlength{\rightskip}{0pt plus 5cm}J\+Frame Game.\+Game\+T\+T\+T.\+m\+\_\+frame = new J\+Frame(\char`\"{}T\+T\+T\char`\"{})\hspace{0.3cm}{\ttfamily [private]}}\label{class_game_1_1_game_t_t_t_a1ddfe813d586411f16504069d6bddf5d}
 J\+Frame used for displaying Tic\+Tac\+Toe 
 
-Definition at line 44 of file Game\+T\+T\+T.\+java.
+Definition at line 42 of file Game\+T\+T\+T.\+java.
 
 \hypertarget{class_game_1_1_game_t_t_t_aad75ff74595b7b58542d7060a77ca169}{}\index{Game\+::\+Game\+T\+T\+T@{Game\+::\+Game\+T\+T\+T}!m\+\_\+players@{m\+\_\+players}}
 \index{m\+\_\+players@{m\+\_\+players}!Game\+::\+Game\+T\+T\+T@{Game\+::\+Game\+T\+T\+T}}
 \subsubsection[{m\+\_\+players}]{\setlength{\rightskip}{0pt plus 5cm}Array\+List$<${\bf Player\+T\+T\+T}$>$ Game.\+Game\+T\+T\+T.\+m\+\_\+players\hspace{0.3cm}{\ttfamily [private]}}\label{class_game_1_1_game_t_t_t_aad75ff74595b7b58542d7060a77ca169}
 Arraylist for all player names 
 
-Definition at line 35 of file Game\+T\+T\+T.\+java.
+Definition at line 33 of file Game\+T\+T\+T.\+java.
 
 
 
@@ -437,21 +403,21 @@ Referenced by Game.\+Game\+T\+T\+T.\+get\+Players().
 \subsubsection[{m\+\_\+shapes\+Panel}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Display\+T\+T\+T} Game.\+Game\+T\+T\+T.\+m\+\_\+shapes\+Panel\hspace{0.3cm}{\ttfamily [private]}}\label{class_game_1_1_game_t_t_t_a6b2de64f05009047dd3a01867da865c0}
 Panel to display everything 
 
-Definition at line 47 of file Game\+T\+T\+T.\+java.
+Definition at line 45 of file Game\+T\+T\+T.\+java.
 
 \hypertarget{class_game_1_1_game_t_t_t_a2a4f4d1d24717d2629a2560421e926bc}{}\index{Game\+::\+Game\+T\+T\+T@{Game\+::\+Game\+T\+T\+T}!m\+\_\+turn@{m\+\_\+turn}}
 \index{m\+\_\+turn@{m\+\_\+turn}!Game\+::\+Game\+T\+T\+T@{Game\+::\+Game\+T\+T\+T}}
 \subsubsection[{m\+\_\+turn}]{\setlength{\rightskip}{0pt plus 5cm}int Game.\+Game\+T\+T\+T.\+m\+\_\+turn\hspace{0.3cm}{\ttfamily [private]}}\label{class_game_1_1_game_t_t_t_a2a4f4d1d24717d2629a2560421e926bc}
 Determines whose turn it is 
 
-Definition at line 38 of file Game\+T\+T\+T.\+java.
+Definition at line 36 of file Game\+T\+T\+T.\+java.
 
 \hypertarget{class_game_1_1_game_t_t_t_ad1efe890e60af4826d664276e1e49ea4}{}\index{Game\+::\+Game\+T\+T\+T@{Game\+::\+Game\+T\+T\+T}!m\+\_\+visualize@{m\+\_\+visualize}}
 \index{m\+\_\+visualize@{m\+\_\+visualize}!Game\+::\+Game\+T\+T\+T@{Game\+::\+Game\+T\+T\+T}}
 \subsubsection[{m\+\_\+visualize}]{\setlength{\rightskip}{0pt plus 5cm}Boolean Game.\+Game\+T\+T\+T.\+m\+\_\+visualize = false\hspace{0.3cm}{\ttfamily [private]}}\label{class_game_1_1_game_t_t_t_ad1efe890e60af4826d664276e1e49ea4}
 Boolean for visualization 
 
-Definition at line 53 of file Game\+T\+T\+T.\+java.
+Definition at line 51 of file Game\+T\+T\+T.\+java.
 
 
 

@@ -29,10 +29,14 @@ public class BoardSnL extends Board {
 
 	/**The array that stores all the squares used on the board*/
 	private SquareSnL[] m_boardGame;
+	
 	/**An integer storing the final square on the board*/
 	private final int FINAL_SQUARE = 99;
-	/**integers storing different return values for the method detectEndGame*/
+	
+	/**integer storing return value for the method detectEndGame*/
 	private final int WIN = 1;
+	
+	/**integer storing return value for the method detectEndGame*/
 	private final int LOSS = 0;
 
 	/**
@@ -84,6 +88,7 @@ public class BoardSnL extends Board {
 			}
 		}
 	}
+	
 	/**
 	 * Method that initialises the SnL grid with squares ready for their values 
 	 * 		to be set
@@ -99,6 +104,7 @@ public class BoardSnL extends Board {
 		m_boardHeight = height;
 		m_boardGame = new SquareSnL[width * height];
 	}
+	
 	/**
 	 * Method for detecting whether the end game has been reached
 	 * @return int containing 1 if win detected 0 if not.
@@ -119,6 +125,7 @@ public class BoardSnL extends Board {
 		}
 	}
 	
+	/** Test method */
 	public static void main(String[] args){
 		int width = 10;
 		int height = 10;

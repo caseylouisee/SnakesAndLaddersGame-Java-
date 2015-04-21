@@ -7,8 +7,7 @@ This class displays everything for the T\+T\+T game.
 
 
 
-Inheritance diagram for Display.\+Display\+T\+T\+T\+:
-\nopagebreak
+Inheritance diagram for Display.\+Display\+T\+T\+T\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -17,8 +16,7 @@ Inheritance diagram for Display.\+Display\+T\+T\+T\+:
 \end{figure}
 
 
-Collaboration diagram for Display.\+Display\+T\+T\+T\+:
-\nopagebreak
+Collaboration diagram for Display.\+Display\+T\+T\+T\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -167,7 +165,7 @@ Constructor for display\+T\+T\+T when load game is called.
 \end{DoxyParams}
 
 
-Definition at line 165 of file Display\+T\+T\+T.\+java.
+Definition at line 175 of file Display\+T\+T\+T.\+java.
 
 
 
@@ -191,7 +189,7 @@ Constructor for the display\+T\+T\+T
 \end{DoxyParams}
 
 
-Definition at line 219 of file Display\+T\+T\+T.\+java.
+Definition at line 229 of file Display\+T\+T\+T.\+java.
 
 
 
@@ -209,7 +207,7 @@ References Display.\+Display\+T\+T\+T.\+add\+Back\+Button(), Display.\+Display\+
 )\hspace{0.3cm}{\ttfamily [private]}}\label{class_display_1_1_display_t_t_t_a54c366271479ec124f298ab5f00104f0}
 adds the Back button to screen setting bounds etc 
 
-Definition at line 730 of file Display\+T\+T\+T.\+java.
+Definition at line 745 of file Display\+T\+T\+T.\+java.
 
 
 
@@ -228,7 +226,7 @@ Referenced by Display.\+Display\+T\+T\+T.\+Display\+T\+T\+T().
 )\hspace{0.3cm}{\ttfamily [private]}}\label{class_display_1_1_display_t_t_t_a21dad65008eb0c5db1b388bb403d7ef1}
 adds the save\+Button to the frame 
 
-Definition at line 751 of file Display\+T\+T\+T.\+java.
+Definition at line 766 of file Display\+T\+T\+T.\+java.
 
 
 
@@ -247,7 +245,7 @@ Referenced by Display.\+Display\+T\+T\+T.\+Display\+T\+T\+T().
 )\hspace{0.3cm}{\ttfamily [private]}}\label{class_display_1_1_display_t_t_t_aaea43cb629cc58c12088f1ec6106d87b}
 Contains the strategy for the ai player 
 
-Definition at line 306 of file Display\+T\+T\+T.\+java.
+Definition at line 316 of file Display\+T\+T\+T.\+java.
 
 
 
@@ -266,7 +264,7 @@ Referenced by Display.\+Display\+T\+T\+T.\+play\+Game().
 )\hspace{0.3cm}{\ttfamily [private]}}\label{class_display_1_1_display_t_t_t_ac13c73a58635d5c5779c8381d5ad9b6d}
 Creates the stop watch timer 
 
-Definition at line 700 of file Display\+T\+T\+T.\+java.
+Definition at line 715 of file Display\+T\+T\+T.\+java.
 
 
 
@@ -285,7 +283,7 @@ Referenced by Display.\+Display\+T\+T\+T.\+Display\+T\+T\+T().
 )\hspace{0.3cm}{\ttfamily [private]}}\label{class_display_1_1_display_t_t_t_a2603790df7e6e53a5d07701eb08b1432}
 Displays the stopwatch timer 
 
-Definition at line 722 of file Display\+T\+T\+T.\+java.
+Definition at line 737 of file Display\+T\+T\+T.\+java.
 
 
 
@@ -304,7 +302,7 @@ Referenced by Display.\+Display\+T\+T\+T.\+paint\+Component().
 )\hspace{0.3cm}{\ttfamily [private]}}\label{class_display_1_1_display_t_t_t_aa07f5377555ef459f8ce5b4735aa402e}
 displays the turn of the player, the names of the players playing, and the player\textquotesingle{}s position 
 
-Definition at line 811 of file Display\+T\+T\+T.\+java.
+Definition at line 827 of file Display\+T\+T\+T.\+java.
 
 
 
@@ -321,9 +319,14 @@ Referenced by Display.\+Display\+T\+T\+T.\+Display\+T\+T\+T().
 \item[{int}]{random\+Number}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [private]}}\label{class_display_1_1_display_t_t_t_a0ddb1f67a9836bcb8c13bb2c4c1da714}
+This is the method that carries out the random ai movement 
+\begin{DoxyParams}{Parameters}
+{\em random\+Number} & \\
+\hline
+\end{DoxyParams}
 
 
-Definition at line 537 of file Display\+T\+T\+T.\+java.
+Definition at line 553 of file Display\+T\+T\+T.\+java.
 
 
 
@@ -341,8 +344,13 @@ Referenced by Display.\+Display\+T\+T\+T.\+ai\+Movement\+Strategy().
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [private]}}\label{class_display_1_1_display_t_t_t_a4aa462f648708a3254eeb61dd67fe798}
 Sets image for any button on the grid dependent on the player moving 
+\begin{DoxyParams}{Parameters}
+{\em square\+Ref} & this is the reference of the clicked square \\
+\hline
+\end{DoxyParams}
 
-Definition at line 397 of file Display\+T\+T\+T.\+java.
+
+Definition at line 409 of file Display\+T\+T\+T.\+java.
 
 
 
@@ -359,16 +367,14 @@ Referenced by Display.\+Display\+T\+T\+T.\+G\+U\+I\+Event\+Handler.\+action\+Per
 \item[{Graphics}]{graphics}
 \end{DoxyParamCaption}
 )}\label{class_display_1_1_display_t_t_t_a6ec07c14b618df7f4c10037ee12d3685}
-Calls the method to display the timer
-
-
+Calls the method to display the timer 
 \begin{DoxyParams}{Parameters}
 {\em graphics} & \\
 \hline
 \end{DoxyParams}
 
 
-Definition at line 688 of file Display\+T\+T\+T.\+java.
+Definition at line 703 of file Display\+T\+T\+T.\+java.
 
 
 
@@ -383,7 +389,7 @@ References Display.\+Display\+T\+T\+T.\+display\+Timer(), and Menu.\+Game\+Selec
 )\hspace{0.3cm}{\ttfamily [private]}}\label{class_display_1_1_display_t_t_t_ac07792d99f73ff42f0e0dc33478769d5}
 plays the game and delays the A\+I turn 
 
-Definition at line 280 of file Display\+T\+T\+T.\+java.
+Definition at line 290 of file Display\+T\+T\+T.\+java.
 
 
 
@@ -402,7 +408,7 @@ Referenced by Display.\+Display\+T\+T\+T.\+G\+U\+I\+Event\+Handler.\+action\+Per
 )\hspace{0.3cm}{\ttfamily [private]}}\label{class_display_1_1_display_t_t_t_a9afa2fb48121f1e4915d4d851c94b20a}
 Updates the players turn 
 
-Definition at line 838 of file Display\+T\+T\+T.\+java.
+Definition at line 854 of file Display\+T\+T\+T.\+java.
 
 
 
@@ -421,7 +427,7 @@ Referenced by Display.\+Display\+T\+T\+T.\+Display\+T\+T\+T(), Display.\+Display
 )}\label{class_display_1_1_display_t_t_t_a3b66c11e8632e24ba72e1f36f3c2307a}
 override of the run method to paint components while playing game 
 
-Definition at line 850 of file Display\+T\+T\+T.\+java.
+Definition at line 866 of file Display\+T\+T\+T.\+java.
 
 \hypertarget{class_display_1_1_display_t_t_t_a28723b7297cdcc1b2c27553607ac00ac}{}\index{Display\+::\+Display\+T\+T\+T@{Display\+::\+Display\+T\+T\+T}!save\+Game@{save\+Game}}
 \index{save\+Game@{save\+Game}!Display\+::\+Display\+T\+T\+T@{Display\+::\+Display\+T\+T\+T}}
@@ -432,7 +438,7 @@ Definition at line 850 of file Display\+T\+T\+T.\+java.
 )\hspace{0.3cm}{\ttfamily [private]}}\label{class_display_1_1_display_t_t_t_a28723b7297cdcc1b2c27553607ac00ac}
 method to save the game to the file res/save\+T\+T\+T.\+csv 
 
-Definition at line 773 of file Display\+T\+T\+T.\+java.
+Definition at line 788 of file Display\+T\+T\+T.\+java.
 
 
 
@@ -452,7 +458,7 @@ Referenced by Display.\+Display\+T\+T\+T.\+add\+Save\+Button().
 )}\label{class_display_1_1_display_t_t_t_a8e33c12c8d44efe24ad731221329fc85}
 method to set button icon to X or O, used for the load game 
 
-Definition at line 140 of file Display\+T\+T\+T.\+java.
+Definition at line 151 of file Display\+T\+T\+T.\+java.
 
 
 
@@ -468,65 +474,65 @@ Referenced by Square.\+Square\+T\+T\+T.\+Square\+T\+T\+T().
 \hypertarget{class_display_1_1_display_t_t_t_a6ff178cba82943d451e39c7c6b577f83}{}\index{Display\+::\+Display\+T\+T\+T@{Display\+::\+Display\+T\+T\+T}!animated\+Gif@{animated\+Gif}}
 \index{animated\+Gif@{animated\+Gif}!Display\+::\+Display\+T\+T\+T@{Display\+::\+Display\+T\+T\+T}}
 \subsubsection[{animated\+Gif}]{\setlength{\rightskip}{0pt plus 5cm}Image\+Icon Display.\+Display\+T\+T\+T.\+animated\+Gif = new Image\+Icon(\char`\"{}res/btn\+Clicked\+Anim.\+gif\char`\"{})\hspace{0.3cm}{\ttfamily [private]}}\label{class_display_1_1_display_t_t_t_a6ff178cba82943d451e39c7c6b577f83}
-Holds the gif for button animation 
+Holds the animated gif for button animation 
 
-Definition at line 93 of file Display\+T\+T\+T.\+java.
+Definition at line 100 of file Display\+T\+T\+T.\+java.
 
 \hypertarget{class_display_1_1_display_t_t_t_afbec846dfebaa4c2640cd270ec21c8b9}{}\index{Display\+::\+Display\+T\+T\+T@{Display\+::\+Display\+T\+T\+T}!disp\+Count@{disp\+Count}}
 \index{disp\+Count@{disp\+Count}!Display\+::\+Display\+T\+T\+T@{Display\+::\+Display\+T\+T\+T}}
 \subsubsection[{disp\+Count}]{\setlength{\rightskip}{0pt plus 5cm}J\+Label Display.\+Display\+T\+T\+T.\+disp\+Count = new J\+Label()\hspace{0.3cm}{\ttfamily [private]}}\label{class_display_1_1_display_t_t_t_afbec846dfebaa4c2640cd270ec21c8b9}
 Label to display count of pieces on board 
 
-Definition at line 78 of file Display\+T\+T\+T.\+java.
+Definition at line 82 of file Display\+T\+T\+T.\+java.
 
 \hypertarget{class_display_1_1_display_t_t_t_a2f2eeba39f4aa0dcc00ef6b72e2b6c66}{}\index{Display\+::\+Display\+T\+T\+T@{Display\+::\+Display\+T\+T\+T}!disp\+Players@{disp\+Players}}
 \index{disp\+Players@{disp\+Players}!Display\+::\+Display\+T\+T\+T@{Display\+::\+Display\+T\+T\+T}}
 \subsubsection[{disp\+Players}]{\setlength{\rightskip}{0pt plus 5cm}J\+Label Display.\+Display\+T\+T\+T.\+disp\+Players = new J\+Label()\hspace{0.3cm}{\ttfamily [private]}}\label{class_display_1_1_display_t_t_t_a2f2eeba39f4aa0dcc00ef6b72e2b6c66}
 Label to display player name 
 
-Definition at line 75 of file Display\+T\+T\+T.\+java.
+Definition at line 79 of file Display\+T\+T\+T.\+java.
 
 \hypertarget{class_display_1_1_display_t_t_t_a22f3ef7e7b2123a2b900bc8511bdd474}{}\index{Display\+::\+Display\+T\+T\+T@{Display\+::\+Display\+T\+T\+T}!disp\+Turn@{disp\+Turn}}
 \index{disp\+Turn@{disp\+Turn}!Display\+::\+Display\+T\+T\+T@{Display\+::\+Display\+T\+T\+T}}
 \subsubsection[{disp\+Turn}]{\setlength{\rightskip}{0pt plus 5cm}J\+Label Display.\+Display\+T\+T\+T.\+disp\+Turn = new J\+Label()\hspace{0.3cm}{\ttfamily [private]}}\label{class_display_1_1_display_t_t_t_a22f3ef7e7b2123a2b900bc8511bdd474}
 Label to display player turn 
 
-Definition at line 72 of file Display\+T\+T\+T.\+java.
+Definition at line 76 of file Display\+T\+T\+T.\+java.
 
 \hypertarget{class_display_1_1_display_t_t_t_ab4d0cb92c4459675e8abd22f8ad4161f}{}\index{Display\+::\+Display\+T\+T\+T@{Display\+::\+Display\+T\+T\+T}!frame@{frame}}
 \index{frame@{frame}!Display\+::\+Display\+T\+T\+T@{Display\+::\+Display\+T\+T\+T}}
 \subsubsection[{frame}]{\setlength{\rightskip}{0pt plus 5cm}J\+Frame Display.\+Display\+T\+T\+T.\+frame = new J\+Frame(\char`\"{}Tic Tac Toe\char`\"{})\hspace{0.3cm}{\ttfamily [private]}}\label{class_display_1_1_display_t_t_t_ab4d0cb92c4459675e8abd22f8ad4161f}
 J\+Frame for tic tac toe game 
 
-Definition at line 69 of file Display\+T\+T\+T.\+java.
+Definition at line 73 of file Display\+T\+T\+T.\+java.
 
 \hypertarget{class_display_1_1_display_t_t_t_a2e4a57cf17355b6a63f5b9d4e9e74de4}{}\index{Display\+::\+Display\+T\+T\+T@{Display\+::\+Display\+T\+T\+T}!game@{game}}
 \index{game@{game}!Display\+::\+Display\+T\+T\+T@{Display\+::\+Display\+T\+T\+T}}
 \subsubsection[{game}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Game\+T\+T\+T} Display.\+Display\+T\+T\+T.\+game\hspace{0.3cm}{\ttfamily [private]}}\label{class_display_1_1_display_t_t_t_a2e4a57cf17355b6a63f5b9d4e9e74de4}
 \hyperlink{namespace_game}{Game} object 
 
-Definition at line 109 of file Display\+T\+T\+T.\+java.
+Definition at line 118 of file Display\+T\+T\+T.\+java.
 
 \hypertarget{class_display_1_1_display_t_t_t_a8d67b95462ceda8ce22f992628f91ca4}{}\index{Display\+::\+Display\+T\+T\+T@{Display\+::\+Display\+T\+T\+T}!game\+Running@{game\+Running}}
 \index{game\+Running@{game\+Running}!Display\+::\+Display\+T\+T\+T@{Display\+::\+Display\+T\+T\+T}}
 \subsubsection[{game\+Running}]{\setlength{\rightskip}{0pt plus 5cm}boolean Display.\+Display\+T\+T\+T.\+game\+Running = true\hspace{0.3cm}{\ttfamily [private]}}\label{class_display_1_1_display_t_t_t_a8d67b95462ceda8ce22f992628f91ca4}
 Boolean to test if game is running 
 
-Definition at line 106 of file Display\+T\+T\+T.\+java.
+Definition at line 115 of file Display\+T\+T\+T.\+java.
 
 \hypertarget{class_display_1_1_display_t_t_t_a25d9abae3eed1579b8c8a59f7d0450fa}{}\index{Display\+::\+Display\+T\+T\+T@{Display\+::\+Display\+T\+T\+T}!go\+Back\+Button@{go\+Back\+Button}}
 \index{go\+Back\+Button@{go\+Back\+Button}!Display\+::\+Display\+T\+T\+T@{Display\+::\+Display\+T\+T\+T}}
 \subsubsection[{go\+Back\+Button}]{\setlength{\rightskip}{0pt plus 5cm}J\+Button Display.\+Display\+T\+T\+T.\+go\+Back\+Button = new J\+Button()\hspace{0.3cm}{\ttfamily [private]}}\label{class_display_1_1_display_t_t_t_a25d9abae3eed1579b8c8a59f7d0450fa}
 J\+Button to go back 
 
-Definition at line 97 of file Display\+T\+T\+T.\+java.
+Definition at line 106 of file Display\+T\+T\+T.\+java.
 
 \hypertarget{class_display_1_1_display_t_t_t_a863d5b47363b01c44552068cd9ee832f}{}\index{Display\+::\+Display\+T\+T\+T@{Display\+::\+Display\+T\+T\+T}!G\+R\+I\+D\+\_\+\+H\+E\+I\+G\+H\+T@{G\+R\+I\+D\+\_\+\+H\+E\+I\+G\+H\+T}}
 \index{G\+R\+I\+D\+\_\+\+H\+E\+I\+G\+H\+T@{G\+R\+I\+D\+\_\+\+H\+E\+I\+G\+H\+T}!Display\+::\+Display\+T\+T\+T@{Display\+::\+Display\+T\+T\+T}}
 \subsubsection[{G\+R\+I\+D\+\_\+\+H\+E\+I\+G\+H\+T}]{\setlength{\rightskip}{0pt plus 5cm}final int Display.\+Display\+T\+T\+T.\+G\+R\+I\+D\+\_\+\+H\+E\+I\+G\+H\+T = 8\hspace{0.3cm}{\ttfamily [static]}}\label{class_display_1_1_display_t_t_t_a863d5b47363b01c44552068cd9ee832f}
+Variable to set grid height 
 
-
-Definition at line 66 of file Display\+T\+T\+T.\+java.
+Definition at line 70 of file Display\+T\+T\+T.\+java.
 
 
 
@@ -535,9 +541,9 @@ Referenced by Display.\+Display\+T\+T\+T.\+Display\+T\+T\+T(), Menu.\+Menu\+T\+T
 \hypertarget{class_display_1_1_display_t_t_t_ac07e05126f3b772dd62b3276defc0b4b}{}\index{Display\+::\+Display\+T\+T\+T@{Display\+::\+Display\+T\+T\+T}!G\+R\+I\+D\+\_\+\+W\+I\+D\+T\+H@{G\+R\+I\+D\+\_\+\+W\+I\+D\+T\+H}}
 \index{G\+R\+I\+D\+\_\+\+W\+I\+D\+T\+H@{G\+R\+I\+D\+\_\+\+W\+I\+D\+T\+H}!Display\+::\+Display\+T\+T\+T@{Display\+::\+Display\+T\+T\+T}}
 \subsubsection[{G\+R\+I\+D\+\_\+\+W\+I\+D\+T\+H}]{\setlength{\rightskip}{0pt plus 5cm}final int Display.\+Display\+T\+T\+T.\+G\+R\+I\+D\+\_\+\+W\+I\+D\+T\+H = 8\hspace{0.3cm}{\ttfamily [static]}}\label{class_display_1_1_display_t_t_t_ac07e05126f3b772dd62b3276defc0b4b}
-Variables to set size of grid 
+Variable to set grid width 
 
-Definition at line 65 of file Display\+T\+T\+T.\+java.
+Definition at line 67 of file Display\+T\+T\+T.\+java.
 
 
 
@@ -548,84 +554,84 @@ Referenced by Display.\+Display\+T\+T\+T.\+Display\+T\+T\+T(), Menu.\+Menu\+T\+T
 \subsubsection[{grid\+Squares}]{\setlength{\rightskip}{0pt plus 5cm}Array\+List$<$J\+Button$>$ Display.\+Display\+T\+T\+T.\+grid\+Squares = new Array\+List$<$J\+Button$>$()\hspace{0.3cm}{\ttfamily [private]}}\label{class_display_1_1_display_t_t_t_af2ce89b88ce5f8ccae426f4f273d52aa}
 Array list of Jbuttons to store buttons rendered to the board 
 
-Definition at line 81 of file Display\+T\+T\+T.\+java.
+Definition at line 85 of file Display\+T\+T\+T.\+java.
 
 \hypertarget{class_display_1_1_display_t_t_t_a834294acca3e75ec3d75e52ecd6028bc}{}\index{Display\+::\+Display\+T\+T\+T@{Display\+::\+Display\+T\+T\+T}!handler@{handler}}
 \index{handler@{handler}!Display\+::\+Display\+T\+T\+T@{Display\+::\+Display\+T\+T\+T}}
 \subsubsection[{handler}]{\setlength{\rightskip}{0pt plus 5cm}{\bf G\+U\+I\+Event\+Handler} Display.\+Display\+T\+T\+T.\+handler = new {\bf G\+U\+I\+Event\+Handler}()\hspace{0.3cm}{\ttfamily [private]}}\label{class_display_1_1_display_t_t_t_a834294acca3e75ec3d75e52ecd6028bc}
 event handler for human click 
 
-Definition at line 118 of file Display\+T\+T\+T.\+java.
+Definition at line 127 of file Display\+T\+T\+T.\+java.
 
 \hypertarget{class_display_1_1_display_t_t_t_a9f22db838fa2492c00c8466efb8eebd5}{}\index{Display\+::\+Display\+T\+T\+T@{Display\+::\+Display\+T\+T\+T}!idle\+Image@{idle\+Image}}
 \index{idle\+Image@{idle\+Image}!Display\+::\+Display\+T\+T\+T@{Display\+::\+Display\+T\+T\+T}}
 \subsubsection[{idle\+Image}]{\setlength{\rightskip}{0pt plus 5cm}Image\+Icon Display.\+Display\+T\+T\+T.\+idle\+Image = new Image\+Icon(\char`\"{}res/btn\+Idle\+Image.\+gif\char`\"{})\hspace{0.3cm}{\ttfamily [private]}}\label{class_display_1_1_display_t_t_t_a9f22db838fa2492c00c8466efb8eebd5}
+Holds the idle gif for button animation 
 
-
-Definition at line 94 of file Display\+T\+T\+T.\+java.
+Definition at line 103 of file Display\+T\+T\+T.\+java.
 
 \hypertarget{class_display_1_1_display_t_t_t_a713fdaab41d88af675c9f54dfcdb87a2}{}\index{Display\+::\+Display\+T\+T\+T@{Display\+::\+Display\+T\+T\+T}!ignore\+Events@{ignore\+Events}}
 \index{ignore\+Events@{ignore\+Events}!Display\+::\+Display\+T\+T\+T@{Display\+::\+Display\+T\+T\+T}}
 \subsubsection[{ignore\+Events}]{\setlength{\rightskip}{0pt plus 5cm}boolean Display.\+Display\+T\+T\+T.\+ignore\+Events = false\hspace{0.3cm}{\ttfamily [private]}}\label{class_display_1_1_display_t_t_t_a713fdaab41d88af675c9f54dfcdb87a2}
 boolean to ignore human input when ai\textquotesingle{}s turn 
 
-Definition at line 115 of file Display\+T\+T\+T.\+java.
+Definition at line 124 of file Display\+T\+T\+T.\+java.
 
 \hypertarget{class_display_1_1_display_t_t_t_a7a6b9526f0a795edccb3911009d74842}{}\index{Display\+::\+Display\+T\+T\+T@{Display\+::\+Display\+T\+T\+T}!initial\+Play@{initial\+Play}}
 \index{initial\+Play@{initial\+Play}!Display\+::\+Display\+T\+T\+T@{Display\+::\+Display\+T\+T\+T}}
 \subsubsection[{initial\+Play}]{\setlength{\rightskip}{0pt plus 5cm}boolean Display.\+Display\+T\+T\+T.\+initial\+Play = true\hspace{0.3cm}{\ttfamily [private]}}\label{class_display_1_1_display_t_t_t_a7a6b9526f0a795edccb3911009d74842}
 boolean to detect whether it is the ai\textquotesingle{}s first turn 
 
-Definition at line 124 of file Display\+T\+T\+T.\+java.
+Definition at line 133 of file Display\+T\+T\+T.\+java.
 
 \hypertarget{class_display_1_1_display_t_t_t_aaa3a8705876d9e60253f6c4599966ae9}{}\index{Display\+::\+Display\+T\+T\+T@{Display\+::\+Display\+T\+T\+T}!m\+\_\+ai\+Moves@{m\+\_\+ai\+Moves}}
 \index{m\+\_\+ai\+Moves@{m\+\_\+ai\+Moves}!Display\+::\+Display\+T\+T\+T@{Display\+::\+Display\+T\+T\+T}}
 \subsubsection[{m\+\_\+ai\+Moves}]{\setlength{\rightskip}{0pt plus 5cm}Array\+List$<$Integer$>$ Display.\+Display\+T\+T\+T.\+m\+\_\+ai\+Moves = new Array\+List$<$Integer$>$()\hspace{0.3cm}{\ttfamily [private]}}\label{class_display_1_1_display_t_t_t_aaa3a8705876d9e60253f6c4599966ae9}
 array list used for the ai moves 
 
-Definition at line 131 of file Display\+T\+T\+T.\+java.
+Definition at line 142 of file Display\+T\+T\+T.\+java.
 
 \hypertarget{class_display_1_1_display_t_t_t_a3f540c3d30082e201fcb37c9623d6d27}{}\index{Display\+::\+Display\+T\+T\+T@{Display\+::\+Display\+T\+T\+T}!m\+\_\+board\+Game@{m\+\_\+board\+Game}}
 \index{m\+\_\+board\+Game@{m\+\_\+board\+Game}!Display\+::\+Display\+T\+T\+T@{Display\+::\+Display\+T\+T\+T}}
 \subsubsection[{m\+\_\+board\+Game}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Board} Display.\+Display\+T\+T\+T.\+m\+\_\+board\+Game\hspace{0.3cm}{\ttfamily [private]}}\label{class_display_1_1_display_t_t_t_a3f540c3d30082e201fcb37c9623d6d27}
 instance of the board 
 
-Definition at line 134 of file Display\+T\+T\+T.\+java.
+Definition at line 145 of file Display\+T\+T\+T.\+java.
 
 \hypertarget{class_display_1_1_display_t_t_t_a42c7a03ac93841369bd7e73460b59e11}{}\index{Display\+::\+Display\+T\+T\+T@{Display\+::\+Display\+T\+T\+T}!m\+\_\+lbl\+Timer@{m\+\_\+lbl\+Timer}}
 \index{m\+\_\+lbl\+Timer@{m\+\_\+lbl\+Timer}!Display\+::\+Display\+T\+T\+T@{Display\+::\+Display\+T\+T\+T}}
 \subsubsection[{m\+\_\+lbl\+Timer}]{\setlength{\rightskip}{0pt plus 5cm}J\+Label Display.\+Display\+T\+T\+T.\+m\+\_\+lbl\+Timer = new J\+Label(\char`\"{}Timer\char`\"{})\hspace{0.3cm}{\ttfamily [private]}}\label{class_display_1_1_display_t_t_t_a42c7a03ac93841369bd7e73460b59e11}
 J\+Label to display timer 
 
-Definition at line 103 of file Display\+T\+T\+T.\+java.
+Definition at line 112 of file Display\+T\+T\+T.\+java.
 
 \hypertarget{class_display_1_1_display_t_t_t_ad3a0687ab98eb4f191cd30a64ef60304}{}\index{Display\+::\+Display\+T\+T\+T@{Display\+::\+Display\+T\+T\+T}!m\+\_\+players@{m\+\_\+players}}
 \index{m\+\_\+players@{m\+\_\+players}!Display\+::\+Display\+T\+T\+T@{Display\+::\+Display\+T\+T\+T}}
 \subsubsection[{m\+\_\+players}]{\setlength{\rightskip}{0pt plus 5cm}Array\+List$<${\bf Player\+T\+T\+T}$>$ Display.\+Display\+T\+T\+T.\+m\+\_\+players = new Array\+List$<${\bf Player\+T\+T\+T}$>$()\hspace{0.3cm}{\ttfamily [private]}}\label{class_display_1_1_display_t_t_t_ad3a0687ab98eb4f191cd30a64ef60304}
 Arraylist of the players 
 
-Definition at line 112 of file Display\+T\+T\+T.\+java.
+Definition at line 121 of file Display\+T\+T\+T.\+java.
 
 \hypertarget{class_display_1_1_display_t_t_t_afbd113d4a9cd8573238108344561f62c}{}\index{Display\+::\+Display\+T\+T\+T@{Display\+::\+Display\+T\+T\+T}!m\+\_\+save\+Game\+Button@{m\+\_\+save\+Game\+Button}}
 \index{m\+\_\+save\+Game\+Button@{m\+\_\+save\+Game\+Button}!Display\+::\+Display\+T\+T\+T@{Display\+::\+Display\+T\+T\+T}}
 \subsubsection[{m\+\_\+save\+Game\+Button}]{\setlength{\rightskip}{0pt plus 5cm}J\+Button Display.\+Display\+T\+T\+T.\+m\+\_\+save\+Game\+Button = new J\+Button()\hspace{0.3cm}{\ttfamily [private]}}\label{class_display_1_1_display_t_t_t_afbd113d4a9cd8573238108344561f62c}
+Button to save game 
 
-
-Definition at line 86 of file Display\+T\+T\+T.\+java.
+Definition at line 91 of file Display\+T\+T\+T.\+java.
 
 \hypertarget{class_display_1_1_display_t_t_t_ab640a3b08cb9f98d5a9481e45653b49f}{}\index{Display\+::\+Display\+T\+T\+T@{Display\+::\+Display\+T\+T\+T}!m\+\_\+stop\+Watch@{m\+\_\+stop\+Watch}}
 \index{m\+\_\+stop\+Watch@{m\+\_\+stop\+Watch}!Display\+::\+Display\+T\+T\+T@{Display\+::\+Display\+T\+T\+T}}
 \subsubsection[{m\+\_\+stop\+Watch}]{\setlength{\rightskip}{0pt plus 5cm}Stop\+Watch Display.\+Display\+T\+T\+T.\+m\+\_\+stop\+Watch\hspace{0.3cm}{\ttfamily [private]}}\label{class_display_1_1_display_t_t_t_ab640a3b08cb9f98d5a9481e45653b49f}
 Stop watch variable to display timer 
 
-Definition at line 100 of file Display\+T\+T\+T.\+java.
+Definition at line 109 of file Display\+T\+T\+T.\+java.
 
 \hypertarget{class_display_1_1_display_t_t_t_a92b6a913aec2926f4fdf565a4146bb31}{}\index{Display\+::\+Display\+T\+T\+T@{Display\+::\+Display\+T\+T\+T}!m\+\_\+visualize@{m\+\_\+visualize}}
 \index{m\+\_\+visualize@{m\+\_\+visualize}!Display\+::\+Display\+T\+T\+T@{Display\+::\+Display\+T\+T\+T}}
 \subsubsection[{m\+\_\+visualize}]{\setlength{\rightskip}{0pt plus 5cm}Boolean Display.\+Display\+T\+T\+T.\+m\+\_\+visualize = false\hspace{0.3cm}{\ttfamily [private]}}\label{class_display_1_1_display_t_t_t_a92b6a913aec2926f4fdf565a4146bb31}
 Boolean to detect visualization 
 
-Definition at line 137 of file Display\+T\+T\+T.\+java.
+Definition at line 148 of file Display\+T\+T\+T.\+java.
 
 \hypertarget{class_display_1_1_display_t_t_t_a06c277ab266ff9c323c13e1fd50299d2}{}\index{Display\+::\+Display\+T\+T\+T@{Display\+::\+Display\+T\+T\+T}!Os@{Os}}
 \index{Os@{Os}!Display\+::\+Display\+T\+T\+T@{Display\+::\+Display\+T\+T\+T}}
@@ -639,33 +645,33 @@ Definition at line 58 of file Display\+T\+T\+T.\+java.
 \subsubsection[{playing}]{\setlength{\rightskip}{0pt plus 5cm}boolean Display.\+Display\+T\+T\+T.\+playing = true\hspace{0.3cm}{\ttfamily [private]}}\label{class_display_1_1_display_t_t_t_abea0091c8be45438d7be31081d6b8bc3}
 boolean to set whether the game is being played or not 
 
-Definition at line 121 of file Display\+T\+T\+T.\+java.
+Definition at line 130 of file Display\+T\+T\+T.\+java.
 
 \hypertarget{class_display_1_1_display_t_t_t_a532c82249100ab477c093e5202b42415}{}\index{Display\+::\+Display\+T\+T\+T@{Display\+::\+Display\+T\+T\+T}!R\+A\+N\+D@{R\+A\+N\+D}}
 \index{R\+A\+N\+D@{R\+A\+N\+D}!Display\+::\+Display\+T\+T\+T@{Display\+::\+Display\+T\+T\+T}}
 \subsubsection[{R\+A\+N\+D}]{\setlength{\rightskip}{0pt plus 5cm}final Random Display.\+Display\+T\+T\+T.\+R\+A\+N\+D = new Random()\hspace{0.3cm}{\ttfamily [private]}}\label{class_display_1_1_display_t_t_t_a532c82249100ab477c093e5202b42415}
 random used for the ai\textquotesingle{}s turn 
 
-Definition at line 127 of file Display\+T\+T\+T.\+java.
+Definition at line 136 of file Display\+T\+T\+T.\+java.
 
 \hypertarget{class_display_1_1_display_t_t_t_a30415017d1d80126ca6295a1d711684d}{}\index{Display\+::\+Display\+T\+T\+T@{Display\+::\+Display\+T\+T\+T}!R\+A\+N\+D\+O\+M@{R\+A\+N\+D\+O\+M}}
 \index{R\+A\+N\+D\+O\+M@{R\+A\+N\+D\+O\+M}!Display\+::\+Display\+T\+T\+T@{Display\+::\+Display\+T\+T\+T}}
 \subsubsection[{R\+A\+N\+D\+O\+M}]{\setlength{\rightskip}{0pt plus 5cm}int Display.\+Display\+T\+T\+T.\+R\+A\+N\+D\+O\+M = R\+A\+N\+D.\+next\+Int(63)\hspace{0.3cm}{\ttfamily [private]}}\label{class_display_1_1_display_t_t_t_a30415017d1d80126ca6295a1d711684d}
+random int used for ai\textquotesingle{}s turn 
 
-
-Definition at line 128 of file Display\+T\+T\+T.\+java.
+Definition at line 139 of file Display\+T\+T\+T.\+java.
 
 \hypertarget{class_display_1_1_display_t_t_t_ad7c69ef4532bf358596b4a2d09c22fbc}{}\index{Display\+::\+Display\+T\+T\+T@{Display\+::\+Display\+T\+T\+T}!S\+H\+A\+P\+E\+\_\+\+H\+E\+I\+G\+H\+T@{S\+H\+A\+P\+E\+\_\+\+H\+E\+I\+G\+H\+T}}
 \index{S\+H\+A\+P\+E\+\_\+\+H\+E\+I\+G\+H\+T@{S\+H\+A\+P\+E\+\_\+\+H\+E\+I\+G\+H\+T}!Display\+::\+Display\+T\+T\+T@{Display\+::\+Display\+T\+T\+T}}
 \subsubsection[{S\+H\+A\+P\+E\+\_\+\+H\+E\+I\+G\+H\+T}]{\setlength{\rightskip}{0pt plus 5cm}final int Display.\+Display\+T\+T\+T.\+S\+H\+A\+P\+E\+\_\+\+H\+E\+I\+G\+H\+T = 50}\label{class_display_1_1_display_t_t_t_ad7c69ef4532bf358596b4a2d09c22fbc}
+Variable to set width of buttons 
 
-
-Definition at line 62 of file Display\+T\+T\+T.\+java.
+Definition at line 64 of file Display\+T\+T\+T.\+java.
 
 \hypertarget{class_display_1_1_display_t_t_t_aba4c92bd721d0fb8718fbf9ed9d837e4}{}\index{Display\+::\+Display\+T\+T\+T@{Display\+::\+Display\+T\+T\+T}!S\+H\+A\+P\+E\+\_\+\+W\+I\+D\+T\+H@{S\+H\+A\+P\+E\+\_\+\+W\+I\+D\+T\+H}}
 \index{S\+H\+A\+P\+E\+\_\+\+W\+I\+D\+T\+H@{S\+H\+A\+P\+E\+\_\+\+W\+I\+D\+T\+H}!Display\+::\+Display\+T\+T\+T@{Display\+::\+Display\+T\+T\+T}}
 \subsubsection[{S\+H\+A\+P\+E\+\_\+\+W\+I\+D\+T\+H}]{\setlength{\rightskip}{0pt plus 5cm}final int Display.\+Display\+T\+T\+T.\+S\+H\+A\+P\+E\+\_\+\+W\+I\+D\+T\+H = 50}\label{class_display_1_1_display_t_t_t_aba4c92bd721d0fb8718fbf9ed9d837e4}
-Variables to set size of buttons 
+Variable to set width of buttons 
 
 Definition at line 61 of file Display\+T\+T\+T.\+java.
 
@@ -674,7 +680,7 @@ Definition at line 61 of file Display\+T\+T\+T.\+java.
 \subsubsection[{square\+Ref}]{\setlength{\rightskip}{0pt plus 5cm}int Display.\+Display\+T\+T\+T.\+square\+Ref = 0\hspace{0.3cm}{\ttfamily [private]}}\label{class_display_1_1_display_t_t_t_a72b67bc50aa6ba47ae9d398e597c49bb}
 A numbering for all the squares from 1 to G\+R\+I\+D\+\_\+\+W\+I\+D\+T\+H$\ast$\+G\+R\+I\+D\+\_\+\+H\+E\+I\+G\+H\+T 
 
-Definition at line 84 of file Display\+T\+T\+T.\+java.
+Definition at line 88 of file Display\+T\+T\+T.\+java.
 
 \hypertarget{class_display_1_1_display_t_t_t_a7dc4fccda99b958bd1dead1dc6543442}{}\index{Display\+::\+Display\+T\+T\+T@{Display\+::\+Display\+T\+T\+T}!Xs@{Xs}}
 \index{Xs@{Xs}!Display\+::\+Display\+T\+T\+T@{Display\+::\+Display\+T\+T\+T}}

@@ -30,6 +30,12 @@ public class SquareTTT extends Square {
 		}
 	}
 	
+	/** Constructor for the square if it already contains a value - used for 
+	 * the load game function
+	 * @param i squares position on the board
+	 * @param value X, O or " "
+	 * @param display the display it is loaded onto
+	 */
 	public SquareTTT(int i,char value, DisplayTTT display) {
 		super();
 		super.m_position = i;
@@ -41,6 +47,7 @@ public class SquareTTT extends Square {
 		}
 	}
 	
+	/** Test method */
 	public static void main(String[] args){
 		int i = 5;
 		SquareTTT squarettt = new SquareTTT(i);

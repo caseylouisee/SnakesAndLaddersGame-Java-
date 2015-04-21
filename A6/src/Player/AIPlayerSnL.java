@@ -15,10 +15,7 @@ import Menu.GameSelector;
  * @class AIPlayerSnL
  * @brief  Creates a AI player for Snake and Ladders
  */
-
 public class AIPlayerSnL extends PlayerSnL{ 
-
-
 	/**
 	 * Constructor that save the player name and piece 
 	 *  to the class extends from PlayerSnL

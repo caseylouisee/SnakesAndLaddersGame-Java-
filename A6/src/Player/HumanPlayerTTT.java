@@ -7,8 +7,6 @@
  */
 package Player;
 
-
-
 import java.util.ArrayList;
 
 import Menu.GameSelector;

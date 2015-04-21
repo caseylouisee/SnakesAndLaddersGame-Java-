@@ -57,12 +57,16 @@ public class DisplayTTT extends JPanel implements Runnable {
 	/** Array list used to hold O values that have been drawn */
 	private ArrayList<Integer> Os = new ArrayList<Integer>();
 
-	/** Variables to set size of buttons **/
+	/** Variable to set width of buttons */
 	public final int SHAPE_WIDTH = 50;
+	
+	/** Variable to set width of buttons */
 	public final int SHAPE_HEIGHT = 50;
 
-	/** Variables to set size of grid **/
+	/** Variable to set grid width */
 	public static final int GRID_WIDTH = 8;
+	
+	/** Variable to set grid height */
 	public static final int GRID_HEIGHT = 8;
 
 	/** JFrame for tic tac toe game **/
@@ -71,26 +75,31 @@ public class DisplayTTT extends JPanel implements Runnable {
 	/** Label to display player turn **/
 	private JLabel dispTurn = new JLabel();
 
-	/** Label to display player name **/
+	/** Label to display player name */
 	private JLabel dispPlayers = new JLabel();
 
-	/** Label to display count of pieces on board **/
+	/** Label to display count of pieces on board */
 	private JLabel dispCount = new JLabel();
 
-	/** Array list of Jbuttons to store buttons rendered to the board **/
+	/** Array list of Jbuttons to store buttons rendered to the board */
 	private ArrayList<JButton> gridSquares = new ArrayList<JButton>();
 
-	/** A numbering for all the squares from 1 to GRID_WIDTH*GRID_HEIGHT **/
+	/** A numbering for all the squares from 1 to GRID_WIDTH*GRID_HEIGHT */
 	private int squareRef = 0;
 
+	/** Button to save game */
 	private JButton m_saveGameButton = new JButton();
 
-	/** Integers to hold the count of number of X's and O's **/
+	/** Integer to hold the count of number of X's */
 	int m_countO = 0;
+	
+	/** Integer to hold the count of number of O's */
 	int m_countX = 0;
 
-	/** Holds the gif for button animation */
+	/** Holds the animated gif for button animation */
 	private ImageIcon animatedGif = new ImageIcon("res/btnClickedAnim.gif");
+	
+	/** Holds the idle gif for button animation */
 	private ImageIcon idleImage = new ImageIcon("res/btnIdleImage.gif");
 
 	/** JButton to go back **/
@@ -125,6 +134,8 @@ public class DisplayTTT extends JPanel implements Runnable {
 
 	/** random used for the ai's turn */
 	private final Random RAND = new Random();
+	
+	/** random int used for ai's turn */
 	private int RANDOM = RAND.nextInt(63);
 
 	/** array list used for the ai moves */
@@ -155,7 +166,6 @@ public class DisplayTTT extends JPanel implements Runnable {
 		}
 	}
 
-	/* ------ METHODS ------ */
 	/**
 	 * Constructor for displayTTT when load game is called.
 	 * @param mygame
@@ -393,7 +403,9 @@ public class DisplayTTT extends JPanel implements Runnable {
 	}
 
 
-	/** Sets image for any button on the grid dependent on the player moving **/
+	/** Sets image for any button on the grid dependent on the player moving 
+	 * @param squareRef this is the reference of the clicked square 
+	 */
 	private void doMovementHuman(int squareRef) {
 		if(GameSelector.m_TRACE){
 			System.out.println("DisplayTTT::doMovementHuman - "
@@ -534,6 +546,10 @@ public class DisplayTTT extends JPanel implements Runnable {
 		System.out.println("End of human reached ");
 	}
 
+	/**
+	 * This is the method that carries out the random ai movement
+	 * @param randomNumber
+	 */
 	private void doMovementAI(int randomNumber) {
 		if(GameSelector.m_TRACE){
 			System.out.println("DisplayTTT::doMovementAI");
@@ -682,7 +698,6 @@ public class DisplayTTT extends JPanel implements Runnable {
 
 	/**
 	 * Calls the method to display the timer
-	 * 
 	 * @param graphics
 	 **/
 	public void paintComponent(Graphics graphics) {
@@ -805,7 +820,8 @@ public class DisplayTTT extends JPanel implements Runnable {
 		} 
 	}
 
-	/** displays the turn of the player, the names of the players playing, and
+	/** 
+	 * displays the turn of the player, the names of the players playing, and
 	 * the player's position
 	 */
 	private void displayTurn() {

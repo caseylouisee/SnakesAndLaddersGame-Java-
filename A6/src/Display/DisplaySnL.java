@@ -65,13 +65,19 @@ public class DisplaySnL extends JPanel implements Runnable{
 	/** Label to display who's turn it is */
 	JLabel m_playerTurn;
 
-	/** Snake head and tail buffered images */
+	/** Snake head buffered image */
 	private BufferedImage m_snakeHead;
+	
+	/** Snake tail buffered image */
 	private BufferedImage m_snakeTail;
+	
+	/** Ladder buffered image */
 	private BufferedImage ladder;
 
-	/** Array lists to hold snakes and ladders positions */
+	/** Array lists to hold snakes positions */
 	ArrayList<Integer> m_snakeLocations = new ArrayList<Integer>();
+	
+	/** Array lists to hold ladders positions */
 	ArrayList<Integer> m_ladderLocations = new ArrayList<Integer>();
 
 	/**Array list to hold players */
@@ -136,14 +142,12 @@ public class DisplaySnL extends JPanel implements Runnable{
 		int x = (xTranslation * Display.OFFSET50);
 		int y = (yTranslation * Display.OFFSET50) - 0;
 
-		// System.out.println("X coordinate: " + x);
-		// System.out.println("Y coordinate: " + y);
-
 		int[] coordinates = { x, y };
 		return coordinates;
 	}
 
-	/** Gets the X Value co-ordinate for the squareNo
+	/** 
+	 * Gets the X Value co-ordinate for the squareNo
 	 * @param squareNo
 	 * @return squareNo
 	 */
@@ -158,7 +162,8 @@ public class DisplaySnL extends JPanel implements Runnable{
 		}
 	}
 
-	/** Gets the Y Value co-ordinate for the squareNo
+	/** 
+	 * Gets the Y Value co-ordinate for the squareNo
 	 * @param squareNo
 	 * @return squareNo
 	 */
@@ -169,8 +174,8 @@ public class DisplaySnL extends JPanel implements Runnable{
 		return ((squareNo - getXVal(squareNo)) / 10);
 	}
 
-	/* ------ METHODS ------ */
-	/** Constructor for DisplaySnL
+	/** 
+	 * Constructor for DisplaySnL
 	 *
 	 * @param gameSnL set to m_GameSnL
 	 * @param snakesList set to m_snakeLocations
@@ -190,7 +195,8 @@ public class DisplaySnL extends JPanel implements Runnable{
 		m_players = players;
 	}
 
-	/** Adds the player name, who's turn it is and the roll dice button to
+	/** 
+	 * Adds the player name, who's turn it is and the roll dice button to
 	 *  the display 
 	 *  
 	 * @param frame displays the screen output

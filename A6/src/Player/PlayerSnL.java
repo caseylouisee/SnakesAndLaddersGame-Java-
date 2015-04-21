@@ -20,7 +20,6 @@ import Square.SquareSnL;
  * @class PlayerSnL
  * @brief Creates a player for Snakes and Ladders
  */
-
 public abstract class PlayerSnL extends Player {
 
 	/** The piece initial location of the player */
@@ -140,15 +139,24 @@ public abstract class PlayerSnL extends Player {
 		}
 	}
 
+	/** 
+	 * sets the last location of the player 
+	 * @param playerLocation
+	 */
 	public void setLastLocation(int playerLocation) {
 		m_allLocations.add(playerLocation);
 		m_lastLocation = playerLocation;
 	}
 	
+	/** 
+	 * returns the last location of the player
+	 * @return m_lastLocation
+	 */
 	public int getLastLocation(){
 		return m_lastLocation;
 	}
 	
+	/** Returns the arraylist containing all the player locations */
 	public ArrayList<Integer> getAllLocations(){
 		return m_allLocations;
 	}

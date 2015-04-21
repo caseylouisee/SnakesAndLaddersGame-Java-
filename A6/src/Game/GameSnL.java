@@ -45,8 +45,6 @@ import Player.PlayerSnL;
  */
 public class GameSnL {
 
-	/************************** VARIABLES *****************************/
-
 	/** Arraylist for snakes */
 	private static ArrayList<Integer> m_snakesList = new ArrayList<Integer>();
 	
@@ -123,12 +121,9 @@ public class GameSnL {
 	/** Boolean for visualization */
 	 Boolean m_visualize;
 
-	/*------------------------ METHODS ---------------------------*/
-
 	/**
 	 * Returns the number of players
-	 * 
-	 * @return the number of players
+	 * @return m_numberOfPlayers the number of players
 	 */
 	public int getNumberOfPlayers() {
 		if (GameSelector.m_TRACE) {
@@ -140,8 +135,7 @@ public class GameSnL {
 
 	/**
 	 * Returns list of ladders
-	 * 
-	 * @return list of laddders
+	 * @return m_laddersList list of laddders
 	 */
 	public ArrayList<Integer> getLadders() {
 		if (GameSelector.m_TRACE) {
@@ -153,8 +147,7 @@ public class GameSnL {
 
 	/**
 	 * Returns list of snakes
-	 * 
-	 * @return list of snakes
+	 * @return m_snakesList list of snakes
 	 */
 	public ArrayList<Integer> getSnakes() {
 		if (GameSelector.m_TRACE) {
@@ -166,7 +159,6 @@ public class GameSnL {
 
 	/**
 	 * Returns current player's location
-	 * 
 	 * @param playerIndex
 	 *            - index of the current player
 	 * @return the current player's location
@@ -180,8 +172,7 @@ public class GameSnL {
 
 	/**
 	 * Returns the number of players
-	 * 
-	 * @return the number of players
+	 * @return players.size() the number of players
 	 */
 	public int getPlayersSize() {
 		if (GameSelector.m_TRACE) {
@@ -193,8 +184,7 @@ public class GameSnL {
 
 	/**
 	 * Returns the current turn
-	 * 
-	 * @return whose turn it is
+	 * @return m_playerIterator whose turn it is
 	 */
 	public int getIterator() {
 		if (GameSelector.m_TRACE) {
@@ -206,14 +196,13 @@ public class GameSnL {
 
 	/**
 	 * Returns a player name
-	 * 
 	 * @param playerIndex
 	 *            - index of player
-	 * @return player name
+	 * @return player
 	 */
 	public PlayerSnL getPlayer(int playerIndex) {
 		if (GameSelector.m_TRACE) {
-			System.out.println("GameSnL:: getPlayerLocation()");		
+			System.out.println("GameSnL:: getPlayer(int playerIndex)");		
 		}
 		return players.get(playerIndex);
 	}
@@ -221,9 +210,8 @@ public class GameSnL {
 	/**
 	 * Returns the squares the player has to move to before and after a snake or
 	 * a ladder object
-	 * 
-	 * @return the squares the player has to move to before and after a snake or
-	 *         a ladder object
+	 * @return m_movementSquares the squares the player has to move to before 
+	 * 		and after a snake or a ladder object
 	 */
 	public ArrayList<Integer> getMovementSquares() {
 		if (GameSelector.m_TRACE) {
@@ -236,9 +224,7 @@ public class GameSnL {
 	/**
 	 * Generates the squares the player has to move to before and after a snake
 	 * or a ladder object
-	 * 
-	 * @param original
-	 *            - player's initial position
+	 * @param original - player's initial position
 	 * @return the squares the player has to move to before and after a snake or
 	 *         a ladder object
 	 */
@@ -284,17 +270,11 @@ public class GameSnL {
 
 	/**
 	 * Loads data into game
-	 * 
-	 * @param playerNames
-	 *            stores the player names.
-	 * @param playerColors
-	 *            shows list of colours.
-	 * @param playerPositions
-	 *            shows list of player positions.
-	 * @param snakes
-	 *            adds snakes to various squares.
-	 * @param ladders
-	 *            adds ladders to various squares.
+	 * @param playerNames stores the player names.
+	 * @param playerColors shows list of colours.
+	 * @param playerPositions shows list of player positions.
+	 * @param snakes adds snakes to various squares.
+	 * @param ladders adds ladders to various squares.
 	 */
 	public GameSnL(ArrayList<String> playerNames,
 			ArrayList<Color> playerColors, ArrayList<Integer> playerPositions,
@@ -335,15 +315,10 @@ public class GameSnL {
 
 	/**
 	 * Stores passed data into the game
-	 * 
-	 * @param playerNames
-	 *            - all player names.
-	 * @param playerColors
-	 *            - colour of each player.
-	 * @param snakes
-	 *            - number of snakes to be generated.
-	 * @param ladders
-	 *            - number of ladders to be generated.
+	 * @param playerNames all player names.
+	 * @param playerColors colour of each player.
+	 * @param snakes number of snakes to be generated.
+	 * @param ladders number of ladders to be generated.
 	 */
 	public GameSnL(final ArrayList<String> playerNames,
 			final ArrayList<Color> playerColors, final int snakes,
@@ -475,14 +450,10 @@ public class GameSnL {
 	 * Initialises all the variables and generates the positions of the snakes
 	 * and ladders
 	 * 
-	 * @param playerNames
-	 *            - all player names.
-	 * @param playerColors
-	 *            - colour of each player.
-	 * @param snakes
-	 *            - number of snakes to be generated.
-	 * @param ladders
-	 *            - number of ladders to be generated.
+	 * @param playerNames all player names.
+	 * @param playerColors colour of each player.
+	 * @param snakes number of snakes to be generated.
+	 * @param ladders number of ladders to be generated.
 	 */
 	private void initVariables(ArrayList<String> playerNames,
 			ArrayList<Color> playerColors, int snakes, int ladders) {
@@ -491,7 +462,7 @@ public class GameSnL {
 			System.out.println("GameSnL:: initVariables()");
 		}
 
-		/** Adds a player object to the player object array list */
+		/* Adds a player object to the player object array list */
 		for (int i = 0; i < playerNames.size(); i++) {
 			if (playerNames.get(i).endsWith(".AI")) {
 				players.add(new AIPlayerSnL(m_playerNames.get(i),
@@ -503,7 +474,7 @@ public class GameSnL {
 			}
 		}
 		
-		/** Generates snake positions */
+		/* Generates snake positions */
 		for (int i = 0; i < snakes; i++) {
 			int[] snakeSquares = generateSquares();
 			setSnakes(snakeSquares[0]);
@@ -517,7 +488,7 @@ public class GameSnL {
 
 		System.out.println("snakes are at: " + m_snakesList);
 
-		/** Generates ladder positions */
+		/* Generates ladder positions */
 		for (int i = 0; i < ladders; i++) {
 			int[] ladderSquares = generateSquares();
 			setLadders(ladderSquares[0]);
@@ -536,7 +507,6 @@ public class GameSnL {
 
 	/** Creates the display */
 	private void initDisplay() {
-
 		if (GameSelector.m_TRACE) {
 			System.out.println("GameSnL:: initDisplay() no parameters"
 					+ " needed, no returns: ");
@@ -558,9 +528,7 @@ public class GameSnL {
 
 	/**
 	 * Checks if the player has won and checks if the destination is valid
-	 * 
-	 * @param player
-	 *            - current player
+	 * @param player current player
 	 * @return a random number from 1-6
 	 */
 	private int checkMove(PlayerSnL player) {
@@ -605,12 +573,9 @@ public class GameSnL {
 	}
 
 	/**
-	 * Moves the player
-	 * 
-	 * @param player
-	 *            - current player
-	 * @param destination
-	 *            - destination square player will get moved to
+	 * Moves the player 
+	 * @param player current player
+	 * @param destination square player will get moved to
 	 */
 	private void movePlayer(PlayerSnL player, int destination) {
 		boolean move = player.isMovementSquare(m_board.getSquare(destination));
@@ -630,9 +595,7 @@ public class GameSnL {
 
 	/**
 	 * Displays winner information in a pop-up
-	 * 
-	 * @param player
-	 *            - current player
+	 * @param player current player
 	 */
 	private void winner(PlayerSnL player) {
 		if (GameSelector.m_TRACE) {
@@ -643,7 +606,6 @@ public class GameSnL {
 
 	/**
 	 * Iterates through player turns
-	 * 
 	 * @return a random number between 1-6
 	 */
 
@@ -667,7 +629,6 @@ public class GameSnL {
 
 	/**
 	 * Rolls the dice
-	 * 
 	 * @return a random number between 1-6
 	 */
 	private int rollDice() {
@@ -685,7 +646,6 @@ public class GameSnL {
 
 	/**
 	 * Generates snake and ladder starting and ending positions
-	 * 
 	 * @return snake and ladder starting and ending positions
 	 */
 	private int[] generateSquares() {
@@ -724,6 +684,7 @@ public class GameSnL {
 		return squares;
 	}
 	
+	/** method to dispose the frame */
 	public void frameDispose() {
 		if (GameSelector.m_TRACE) {
 			System.out.println("GameSnL:: frameDispose() "
@@ -746,7 +707,7 @@ public class GameSnL {
 	}
 
 	/**
-	 * This is the test method. Default values are set for names, colours and
+	 * Test method. Default values are set for names, colours and
 	 * number of snakes and ladders.
 	 */
 	public static void main(String[] args) {

@@ -225,11 +225,11 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_board_t_t_t_8java_source.html#l00063">63</a> of file <a class="el" href="_board_t_t_t_8java_source.html">BoardTTT.java</a>.</p>
+<p>Definition at line <a class="el" href="_board_t_t_t_8java_source.html#l00068">68</a> of file <a class="el" href="_board_t_t_t_8java_source.html">BoardTTT.java</a>.</p>
 
 <p>References <a class="el" href="_board_8java_source.html#l00027">Board.Board.m_boardGame</a>, and <a class="el" href="_game_selector_8java_source.html#l00043">Menu.GameSelector.m_TRACE</a>.</p>
 
-<p>Referenced by <a class="el" href="_board_t_t_t_8java_source.html#l00351">Board.BoardTTT.main()</a>.</p>
+<p>Referenced by <a class="el" href="_board_t_t_t_8java_source.html#l00366">Board.BoardTTT.main()</a>.</p>
 
 </div>
 </div>
@@ -268,8 +268,17 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Constructor for creating a board of length width*height containing already selected square values for use within save/load game </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">width</td><td>integer that contains the width of the board to be created </td></tr>
+    <tr><td class="paramname">height</td><td>integer that contains the height of the board to be created </td></tr>
+    <tr><td class="paramname">squareVales</td><td>chars that hold the current value of the squares on the board - X, O or " ". </td></tr>
+    <tr><td class="paramname">display</td><td>the display that they are saved on </td></tr>
+  </table>
+  </dd>
+</dl>
 
-<p>Definition at line <a class="el" href="_board_t_t_t_8java_source.html#l00075">75</a> of file <a class="el" href="_board_t_t_t_8java_source.html">BoardTTT.java</a>.</p>
+<p>Definition at line <a class="el" href="_board_t_t_t_8java_source.html#l00089">89</a> of file <a class="el" href="_board_t_t_t_8java_source.html">BoardTTT.java</a>.</p>
 
 <p>References <a class="el" href="_board_8java_source.html#l00027">Board.Board.m_boardGame</a>, and <a class="el" href="_game_selector_8java_source.html#l00043">Menu.GameSelector.m_TRACE</a>.</p>
 
@@ -290,11 +299,11 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 <p>First checks for a draw game by looping though every square and checking if there are any empty squares, if there is not then the game is a draw. It then calls the <a class="el" href="class_board_1_1_board_t_t_t.html#ab7d0a91870f300ee5544da2c1ee8b67c">win()</a> method on both X and O </p>
 
-<p>Definition at line <a class="el" href="_board_t_t_t_8java_source.html#l00093">93</a> of file <a class="el" href="_board_t_t_t_8java_source.html">BoardTTT.java</a>.</p>
+<p>Definition at line <a class="el" href="_board_t_t_t_8java_source.html#l00107">107</a> of file <a class="el" href="_board_t_t_t_8java_source.html">BoardTTT.java</a>.</p>
 
-<p>References <a class="el" href="_board_8java_source.html#l00078">Board.Board.accessSquare()</a>, <a class="el" href="_board_t_t_t_8java_source.html#l00038">Board.BoardTTT.DRAW_GAME</a>, <a class="el" href="_board_8java_source.html#l00030">Board.Board.m_boardHeight</a>, <a class="el" href="_board_8java_source.html#l00029">Board.Board.m_boardWidth</a>, <a class="el" href="_game_selector_8java_source.html#l00043">Menu.GameSelector.m_TRACE</a>, <a class="el" href="_board_t_t_t_8java_source.html#l00039">Board.BoardTTT.NOTHING_HAPPENED</a>, <a class="el" href="_board_t_t_t_8java_source.html#l00040">Board.BoardTTT.O_WIN</a>, <a class="el" href="_board_t_t_t_8java_source.html#l00136">Board.BoardTTT.win()</a>, and <a class="el" href="_board_t_t_t_8java_source.html#l00041">Board.BoardTTT.X_WIN</a>.</p>
+<p>References <a class="el" href="_board_8java_source.html#l00081">Board.Board.accessSquare()</a>, <a class="el" href="_board_t_t_t_8java_source.html#l00039">Board.BoardTTT.DRAW_GAME</a>, <a class="el" href="_board_8java_source.html#l00033">Board.Board.m_boardHeight</a>, <a class="el" href="_board_8java_source.html#l00030">Board.Board.m_boardWidth</a>, <a class="el" href="_game_selector_8java_source.html#l00043">Menu.GameSelector.m_TRACE</a>, <a class="el" href="_board_t_t_t_8java_source.html#l00042">Board.BoardTTT.NOTHING_HAPPENED</a>, <a class="el" href="_board_t_t_t_8java_source.html#l00045">Board.BoardTTT.O_WIN</a>, <a class="el" href="_board_t_t_t_8java_source.html#l00150">Board.BoardTTT.win()</a>, and <a class="el" href="_board_t_t_t_8java_source.html#l00048">Board.BoardTTT.X_WIN</a>.</p>
 
-<p>Referenced by <a class="el" href="_board_t_t_t_8java_source.html#l00351">Board.BoardTTT.main()</a>, and <a class="el" href="_game_t_t_t_8java_source.html#l00133">Game.GameTTT.winner()</a>.</p>
+<p>Referenced by <a class="el" href="_board_t_t_t_8java_source.html#l00366">Board.BoardTTT.main()</a>, and <a class="el" href="_game_t_t_t_8java_source.html#l00120">Game.GameTTT.winner()</a>.</p>
 
 </div>
 </div>
@@ -312,11 +321,11 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 <p>Used to return the start and end of the winning chain for output. </p><dl class="section return"><dt>Returns</dt><dd>integer array containing the start and end of the winning chain </dd></dl>
 
-<p>Definition at line <a class="el" href="_board_t_t_t_8java_source.html#l00049">49</a> of file <a class="el" href="_board_t_t_t_8java_source.html">BoardTTT.java</a>.</p>
+<p>Definition at line <a class="el" href="_board_t_t_t_8java_source.html#l00054">54</a> of file <a class="el" href="_board_t_t_t_8java_source.html">BoardTTT.java</a>.</p>
 
 <p>References <a class="el" href="_game_selector_8java_source.html#l00043">Menu.GameSelector.m_TRACE</a>, and <a class="el" href="_board_t_t_t_8java_source.html#l00033">Board.BoardTTT.m_winningSquareCoordinates</a>.</p>
 
-<p>Referenced by <a class="el" href="_game_t_t_t_8java_source.html#l00183">Game.GameTTT.getCoordinatesWinningSquares()</a>.</p>
+<p>Referenced by <a class="el" href="_game_t_t_t_8java_source.html#l00166">Game.GameTTT.getCoordinatesWinningSquares()</a>.</p>
 
 </div>
 </div>
@@ -341,10 +350,11 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Test method </p>
 
-<p>Definition at line <a class="el" href="_board_t_t_t_8java_source.html#l00351">351</a> of file <a class="el" href="_board_t_t_t_8java_source.html">BoardTTT.java</a>.</p>
+<p>Definition at line <a class="el" href="_board_t_t_t_8java_source.html#l00366">366</a> of file <a class="el" href="_board_t_t_t_8java_source.html">BoardTTT.java</a>.</p>
 
-<p>References <a class="el" href="_board_t_t_t_8java_source.html#l00063">Board.BoardTTT.BoardTTT()</a>, <a class="el" href="_board_t_t_t_8java_source.html#l00093">Board.BoardTTT.detectEndGame()</a>, and <a class="el" href="_board_t_t_t_8java_source.html#l00136">Board.BoardTTT.win()</a>.</p>
+<p>References <a class="el" href="_board_t_t_t_8java_source.html#l00068">Board.BoardTTT.BoardTTT()</a>, <a class="el" href="_board_t_t_t_8java_source.html#l00107">Board.BoardTTT.detectEndGame()</a>, and <a class="el" href="_board_t_t_t_8java_source.html#l00150">Board.BoardTTT.win()</a>.</p>
 
 </div>
 </div>
@@ -377,11 +387,11 @@ Additional Inherited Members</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true of false depending on if a win is found. </dd></dl>
 
-<p>Definition at line <a class="el" href="_board_t_t_t_8java_source.html#l00136">136</a> of file <a class="el" href="_board_t_t_t_8java_source.html">BoardTTT.java</a>.</p>
+<p>Definition at line <a class="el" href="_board_t_t_t_8java_source.html#l00150">150</a> of file <a class="el" href="_board_t_t_t_8java_source.html">BoardTTT.java</a>.</p>
 
-<p>References <a class="el" href="_game_selector_8java_source.html#l00043">Menu.GameSelector.m_TRACE</a>, <a class="el" href="_board_t_t_t_8java_source.html#l00214">Board.BoardTTT.winColumn()</a>, <a class="el" href="_board_t_t_t_8java_source.html#l00305">Board.BoardTTT.winDiagonalLeft()</a>, <a class="el" href="_board_t_t_t_8java_source.html#l00253">Board.BoardTTT.winDiagonalRight()</a>, and <a class="el" href="_board_t_t_t_8java_source.html#l00176">Board.BoardTTT.winRow()</a>.</p>
+<p>References <a class="el" href="_game_selector_8java_source.html#l00043">Menu.GameSelector.m_TRACE</a>, <a class="el" href="_board_t_t_t_8java_source.html#l00228">Board.BoardTTT.winColumn()</a>, <a class="el" href="_board_t_t_t_8java_source.html#l00319">Board.BoardTTT.winDiagonalLeft()</a>, <a class="el" href="_board_t_t_t_8java_source.html#l00267">Board.BoardTTT.winDiagonalRight()</a>, and <a class="el" href="_board_t_t_t_8java_source.html#l00190">Board.BoardTTT.winRow()</a>.</p>
 
-<p>Referenced by <a class="el" href="_board_t_t_t_8java_source.html#l00093">Board.BoardTTT.detectEndGame()</a>, and <a class="el" href="_board_t_t_t_8java_source.html#l00351">Board.BoardTTT.main()</a>.</p>
+<p>Referenced by <a class="el" href="_board_t_t_t_8java_source.html#l00107">Board.BoardTTT.detectEndGame()</a>, and <a class="el" href="_board_t_t_t_8java_source.html#l00366">Board.BoardTTT.main()</a>.</p>
 
 </div>
 </div>
@@ -414,11 +424,11 @@ Additional Inherited Members</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true if win is found, false if not </dd></dl>
 
-<p>Definition at line <a class="el" href="_board_t_t_t_8java_source.html#l00214">214</a> of file <a class="el" href="_board_t_t_t_8java_source.html">BoardTTT.java</a>.</p>
+<p>Definition at line <a class="el" href="_board_t_t_t_8java_source.html#l00228">228</a> of file <a class="el" href="_board_t_t_t_8java_source.html">BoardTTT.java</a>.</p>
 
-<p>References <a class="el" href="_board_8java_source.html#l00078">Board.Board.accessSquare()</a>, <a class="el" href="_display_t_t_t_8java_source.html#l00066">Display.DisplayTTT.GRID_HEIGHT</a>, <a class="el" href="_display_t_t_t_8java_source.html#l00065">Display.DisplayTTT.GRID_WIDTH</a>, <a class="el" href="_board_8java_source.html#l00029">Board.Board.m_boardWidth</a>, and <a class="el" href="_game_selector_8java_source.html#l00043">Menu.GameSelector.m_TRACE</a>.</p>
+<p>References <a class="el" href="_board_8java_source.html#l00081">Board.Board.accessSquare()</a>, <a class="el" href="_display_t_t_t_8java_source.html#l00070">Display.DisplayTTT.GRID_HEIGHT</a>, <a class="el" href="_display_t_t_t_8java_source.html#l00067">Display.DisplayTTT.GRID_WIDTH</a>, <a class="el" href="_board_8java_source.html#l00030">Board.Board.m_boardWidth</a>, and <a class="el" href="_game_selector_8java_source.html#l00043">Menu.GameSelector.m_TRACE</a>.</p>
 
-<p>Referenced by <a class="el" href="_board_t_t_t_8java_source.html#l00136">Board.BoardTTT.win()</a>.</p>
+<p>Referenced by <a class="el" href="_board_t_t_t_8java_source.html#l00150">Board.BoardTTT.win()</a>.</p>
 
 </div>
 </div>
@@ -451,11 +461,11 @@ Additional Inherited Members</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true if win is found, false if not </dd></dl>
 
-<p>Definition at line <a class="el" href="_board_t_t_t_8java_source.html#l00305">305</a> of file <a class="el" href="_board_t_t_t_8java_source.html">BoardTTT.java</a>.</p>
+<p>Definition at line <a class="el" href="_board_t_t_t_8java_source.html#l00319">319</a> of file <a class="el" href="_board_t_t_t_8java_source.html">BoardTTT.java</a>.</p>
 
-<p>References <a class="el" href="_board_8java_source.html#l00078">Board.Board.accessSquare()</a>, <a class="el" href="_display_t_t_t_8java_source.html#l00066">Display.DisplayTTT.GRID_HEIGHT</a>, <a class="el" href="_display_t_t_t_8java_source.html#l00065">Display.DisplayTTT.GRID_WIDTH</a>, <a class="el" href="_board_8java_source.html#l00029">Board.Board.m_boardWidth</a>, and <a class="el" href="_game_selector_8java_source.html#l00043">Menu.GameSelector.m_TRACE</a>.</p>
+<p>References <a class="el" href="_board_8java_source.html#l00081">Board.Board.accessSquare()</a>, <a class="el" href="_display_t_t_t_8java_source.html#l00070">Display.DisplayTTT.GRID_HEIGHT</a>, <a class="el" href="_display_t_t_t_8java_source.html#l00067">Display.DisplayTTT.GRID_WIDTH</a>, <a class="el" href="_board_8java_source.html#l00030">Board.Board.m_boardWidth</a>, and <a class="el" href="_game_selector_8java_source.html#l00043">Menu.GameSelector.m_TRACE</a>.</p>
 
-<p>Referenced by <a class="el" href="_board_t_t_t_8java_source.html#l00136">Board.BoardTTT.win()</a>.</p>
+<p>Referenced by <a class="el" href="_board_t_t_t_8java_source.html#l00150">Board.BoardTTT.win()</a>.</p>
 
 </div>
 </div>
@@ -488,11 +498,11 @@ Additional Inherited Members</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true if win is found, false if not </dd></dl>
 
-<p>Definition at line <a class="el" href="_board_t_t_t_8java_source.html#l00253">253</a> of file <a class="el" href="_board_t_t_t_8java_source.html">BoardTTT.java</a>.</p>
+<p>Definition at line <a class="el" href="_board_t_t_t_8java_source.html#l00267">267</a> of file <a class="el" href="_board_t_t_t_8java_source.html">BoardTTT.java</a>.</p>
 
-<p>References <a class="el" href="_board_8java_source.html#l00078">Board.Board.accessSquare()</a>, <a class="el" href="_display_t_t_t_8java_source.html#l00066">Display.DisplayTTT.GRID_HEIGHT</a>, <a class="el" href="_display_t_t_t_8java_source.html#l00065">Display.DisplayTTT.GRID_WIDTH</a>, <a class="el" href="_board_8java_source.html#l00029">Board.Board.m_boardWidth</a>, and <a class="el" href="_game_selector_8java_source.html#l00043">Menu.GameSelector.m_TRACE</a>.</p>
+<p>References <a class="el" href="_board_8java_source.html#l00081">Board.Board.accessSquare()</a>, <a class="el" href="_display_t_t_t_8java_source.html#l00070">Display.DisplayTTT.GRID_HEIGHT</a>, <a class="el" href="_display_t_t_t_8java_source.html#l00067">Display.DisplayTTT.GRID_WIDTH</a>, <a class="el" href="_board_8java_source.html#l00030">Board.Board.m_boardWidth</a>, and <a class="el" href="_game_selector_8java_source.html#l00043">Menu.GameSelector.m_TRACE</a>.</p>
 
-<p>Referenced by <a class="el" href="_board_t_t_t_8java_source.html#l00136">Board.BoardTTT.win()</a>.</p>
+<p>Referenced by <a class="el" href="_board_t_t_t_8java_source.html#l00150">Board.BoardTTT.win()</a>.</p>
 
 </div>
 </div>
@@ -525,11 +535,11 @@ Additional Inherited Members</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true if win is found, false if not </dd></dl>
 
-<p>Definition at line <a class="el" href="_board_t_t_t_8java_source.html#l00176">176</a> of file <a class="el" href="_board_t_t_t_8java_source.html">BoardTTT.java</a>.</p>
+<p>Definition at line <a class="el" href="_board_t_t_t_8java_source.html#l00190">190</a> of file <a class="el" href="_board_t_t_t_8java_source.html">BoardTTT.java</a>.</p>
 
-<p>References <a class="el" href="_board_8java_source.html#l00078">Board.Board.accessSquare()</a>, <a class="el" href="_display_t_t_t_8java_source.html#l00066">Display.DisplayTTT.GRID_HEIGHT</a>, <a class="el" href="_display_t_t_t_8java_source.html#l00065">Display.DisplayTTT.GRID_WIDTH</a>, <a class="el" href="_board_8java_source.html#l00029">Board.Board.m_boardWidth</a>, and <a class="el" href="_game_selector_8java_source.html#l00043">Menu.GameSelector.m_TRACE</a>.</p>
+<p>References <a class="el" href="_board_8java_source.html#l00081">Board.Board.accessSquare()</a>, <a class="el" href="_display_t_t_t_8java_source.html#l00070">Display.DisplayTTT.GRID_HEIGHT</a>, <a class="el" href="_display_t_t_t_8java_source.html#l00067">Display.DisplayTTT.GRID_WIDTH</a>, <a class="el" href="_board_8java_source.html#l00030">Board.Board.m_boardWidth</a>, and <a class="el" href="_game_selector_8java_source.html#l00043">Menu.GameSelector.m_TRACE</a>.</p>
 
-<p>Referenced by <a class="el" href="_board_t_t_t_8java_source.html#l00136">Board.BoardTTT.win()</a>.</p>
+<p>Referenced by <a class="el" href="_board_t_t_t_8java_source.html#l00150">Board.BoardTTT.win()</a>.</p>
 
 </div>
 </div>
@@ -551,11 +561,11 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>integers that store the return values for <a class="el" href="class_board_1_1_board_t_t_t.html#a08f36da4210111d8f129be28a550334e">detectEndGame()</a> </p>
+<p>integer that stores the value for <a class="el" href="class_board_1_1_board_t_t_t.html#a08f36da4210111d8f129be28a550334e">detectEndGame()</a> </p>
 
-<p>Definition at line <a class="el" href="_board_t_t_t_8java_source.html#l00038">38</a> of file <a class="el" href="_board_t_t_t_8java_source.html">BoardTTT.java</a>.</p>
+<p>Definition at line <a class="el" href="_board_t_t_t_8java_source.html#l00039">39</a> of file <a class="el" href="_board_t_t_t_8java_source.html">BoardTTT.java</a>.</p>
 
-<p>Referenced by <a class="el" href="_board_t_t_t_8java_source.html#l00093">Board.BoardTTT.detectEndGame()</a>.</p>
+<p>Referenced by <a class="el" href="_board_t_t_t_8java_source.html#l00107">Board.BoardTTT.detectEndGame()</a>.</p>
 
 </div>
 </div>
@@ -580,7 +590,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Definition at line <a class="el" href="_board_t_t_t_8java_source.html#l00033">33</a> of file <a class="el" href="_board_t_t_t_8java_source.html">BoardTTT.java</a>.</p>
 
-<p>Referenced by <a class="el" href="_board_t_t_t_8java_source.html#l00049">Board.BoardTTT.getCoordinatesWinningSquares()</a>.</p>
+<p>Referenced by <a class="el" href="_board_t_t_t_8java_source.html#l00054">Board.BoardTTT.getCoordinatesWinningSquares()</a>.</p>
 
 </div>
 </div>
@@ -601,10 +611,11 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>integer that stores the value for <a class="el" href="class_board_1_1_board_t_t_t.html#a08f36da4210111d8f129be28a550334e">detectEndGame()</a> </p>
 
-<p>Definition at line <a class="el" href="_board_t_t_t_8java_source.html#l00039">39</a> of file <a class="el" href="_board_t_t_t_8java_source.html">BoardTTT.java</a>.</p>
+<p>Definition at line <a class="el" href="_board_t_t_t_8java_source.html#l00042">42</a> of file <a class="el" href="_board_t_t_t_8java_source.html">BoardTTT.java</a>.</p>
 
-<p>Referenced by <a class="el" href="_board_t_t_t_8java_source.html#l00093">Board.BoardTTT.detectEndGame()</a>.</p>
+<p>Referenced by <a class="el" href="_board_t_t_t_8java_source.html#l00107">Board.BoardTTT.detectEndGame()</a>.</p>
 
 </div>
 </div>
@@ -625,10 +636,11 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>integer that stores the value for <a class="el" href="class_board_1_1_board_t_t_t.html#a08f36da4210111d8f129be28a550334e">detectEndGame()</a> </p>
 
-<p>Definition at line <a class="el" href="_board_t_t_t_8java_source.html#l00040">40</a> of file <a class="el" href="_board_t_t_t_8java_source.html">BoardTTT.java</a>.</p>
+<p>Definition at line <a class="el" href="_board_t_t_t_8java_source.html#l00045">45</a> of file <a class="el" href="_board_t_t_t_8java_source.html">BoardTTT.java</a>.</p>
 
-<p>Referenced by <a class="el" href="_board_t_t_t_8java_source.html#l00093">Board.BoardTTT.detectEndGame()</a>.</p>
+<p>Referenced by <a class="el" href="_board_t_t_t_8java_source.html#l00107">Board.BoardTTT.detectEndGame()</a>.</p>
 
 </div>
 </div>
@@ -651,7 +663,7 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 <p>integer that stores the length of the chain needed to win </p>
 
-<p>Definition at line <a class="el" href="_board_t_t_t_8java_source.html#l00035">35</a> of file <a class="el" href="_board_t_t_t_8java_source.html">BoardTTT.java</a>.</p>
+<p>Definition at line <a class="el" href="_board_t_t_t_8java_source.html#l00036">36</a> of file <a class="el" href="_board_t_t_t_8java_source.html">BoardTTT.java</a>.</p>
 
 </div>
 </div>
@@ -672,10 +684,11 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>integer that stores the value for <a class="el" href="class_board_1_1_board_t_t_t.html#a08f36da4210111d8f129be28a550334e">detectEndGame()</a> </p>
 
-<p>Definition at line <a class="el" href="_board_t_t_t_8java_source.html#l00041">41</a> of file <a class="el" href="_board_t_t_t_8java_source.html">BoardTTT.java</a>.</p>
+<p>Definition at line <a class="el" href="_board_t_t_t_8java_source.html#l00048">48</a> of file <a class="el" href="_board_t_t_t_8java_source.html">BoardTTT.java</a>.</p>
 
-<p>Referenced by <a class="el" href="_board_t_t_t_8java_source.html#l00093">Board.BoardTTT.detectEndGame()</a>.</p>
+<p>Referenced by <a class="el" href="_board_t_t_t_8java_source.html#l00107">Board.BoardTTT.detectEndGame()</a>.</p>
 
 </div>
 </div>

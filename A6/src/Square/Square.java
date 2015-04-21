@@ -15,11 +15,11 @@ public abstract class Square {
 	
 	/** Stores the position of the square on the board*/ 
 	protected int m_position;
+	
 	/**
 	 * Stores what the square is filled with. possible values: " ", "O" or "X"
 	 */
 	protected char m_x;
-
 
 	/** 
 	 * Sets the values for x 

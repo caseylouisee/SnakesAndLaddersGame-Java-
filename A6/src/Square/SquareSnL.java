@@ -68,6 +68,8 @@ public class SquareSnL extends Square {
 		}
 		return false;
 	}
+	
+	/** testing method */
 	public static void main(String[] args){
 		int position = 5;
 		int destination = 10;

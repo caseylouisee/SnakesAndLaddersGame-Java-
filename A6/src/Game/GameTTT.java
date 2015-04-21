@@ -29,8 +29,6 @@ import Player.PlayerTTT;
 
 public class GameTTT {
 
-	/************************** VARIABLES *****************************/
-
 	/** Arraylist for all player names */
 	private ArrayList<PlayerTTT> m_players;
 	
@@ -51,17 +49,13 @@ public class GameTTT {
 
 	/** Boolean for visualization */
 	private Boolean m_visualize = false;
-	/************************** ACCESSOR METHODS *****************************/
 
 	/**
 	 * Checks if the human player's next move is valid, if it is, add the piece
 	 * to the square
-	 * 
-	 * @param Sqindex
-	 *            - is the square the piece will be put to
+	 * @param Sqindex is the square the piece will be put to
 	 * @return if the move was successful or not
-	 * */
-
+	 */
 	public boolean setMovementHuman(int Sqindex) {
 		if (m_board.accessSquare(Sqindex).getValue() != ' ') {
 			if (GameSelector.m_TRACE) {
@@ -84,12 +78,9 @@ public class GameTTT {
 	/**
 	 * Checks if the AI player's next move is valid, if it is, add the piece to
 	 * the square
-	 * 
-	 * @param Sqindex
-	 *            - is the square the piece will be put to
+	 * @param Sqindex is the square the piece will be put to
 	 * @return if the move was successful or not
-	 * */
-
+	 */
 	public boolean setMovementAI(int Sqindex) {
 
 		if (m_board.accessSquare(Sqindex).getValue() != ' ') {
@@ -112,10 +103,8 @@ public class GameTTT {
 
 	/**
 	 * Returns the list of players.
-	 * 
-	 * @return the list of players
+	 * @return m_players the list of players
 	 */
-
 	public ArrayList<PlayerTTT> getPlayers() {
 		if (GameSelector.m_TRACE) {
 			System.out.println("GameTTT:: getPlayers() no parameters"
@@ -126,10 +115,8 @@ public class GameTTT {
 
 	/**
 	 * Checks if someone has won the game
-	 * 
-	 * @return if someone has won or not
+	 * @return m_board.detectEndGame() if someone has won or not
 	 */
-
 	public int winner() {
 		if (GameSelector.m_TRACE) {
 			System.out.println("GameTTT:: winner() no parameters"
@@ -141,7 +128,6 @@ public class GameTTT {
 	/**
 	 * Determines whose turn it is
 	 */
-
 	public void nextTurn() {
 		m_turn = m_turn == 1 ? 0 : 1;
 		if (GameSelector.m_TRACE) {
@@ -151,11 +137,9 @@ public class GameTTT {
 	}
 
 	/**
-	 * Returns whose turn it is
-	 * 
-	 * @return whose turn it is
+	 * Returns playerTurn
+	 * @return m_players.get(1) whose turn it is
 	 */
-
 	public PlayerTTT getPlayerTurn() {
 		if (m_turn == 0) {
 			if (GameSelector.m_TRACE) {
@@ -175,11 +159,10 @@ public class GameTTT {
 	/**
 	 * Returns the position of the winning move, from starting square to ending
 	 * square
-	 * 
-	 * @return the position of the winning move, from starting square to ending
-	 *         square
+	 * @return m_board.getCoordinatesWinningSquares();
+	 * 		the position of the winning move, from starting square to ending
+	 *      square
 	 */
-
 	public int[] getCoordinatesWinningSquares() {
 		if (GameSelector.m_TRACE) {
 			System.out
@@ -192,10 +175,8 @@ public class GameTTT {
 
 	/**
 	 * Returns the board object
-	 * 
-	 * @return the board object
-	 * */
-
+	 * @return m_board the board object
+	 */
 	public BoardTTT getBoard() {
 		if (GameSelector.m_TRACE) {
 			System.out.println("GameTTT:: getBoard() no parameters"
@@ -204,16 +185,11 @@ public class GameTTT {
 		return m_board;
 	}
 
-	/************************** METHODS *****************************/
-
 	/**
 	 * Stores passed data into the game and calls all display methods, also
-	 * initialises variables
-	 * 
-	 * @param players2
-	 *            - all player names.
+	 * initialises variables 
+	 * @param players2 all player names.
 	 */
-
 	public GameTTT(ArrayList<PlayerTTT> players2, Boolean visualization) {
 		m_players = players2;
 		m_board = new BoardTTT(8, 8);
@@ -230,13 +206,9 @@ public class GameTTT {
 
 	/**
 	 * Loads data into game
-	 * 
-	 * @param players2
-	 *            - all player names.
-	 * @param squareValues
-	 *            - positions of te pieces
+	 * @param players2 all player names.
+	 * @param squareValues positions of the pieces
 	 */
-
 	public GameTTT(ArrayList<PlayerTTT> players2, char[] squareValues) {
 		m_players = players2;
 		m_count = new int[2];
@@ -258,8 +230,7 @@ public class GameTTT {
 		}
 	}
 
-	/** Closes the frame */
-
+	/** disposes the frame */
 	public void frameDispose() {
 		if (GameSelector.m_TRACE) {
 			System.out.println("GameTTT:: frameDispose() "
@@ -269,7 +240,6 @@ public class GameTTT {
 	}
 
 	/** Creates the display */
-
 	private void init() {
 		if (m_count != null) {
 			m_shapesPanel = new DisplayTTT(this, m_board, m_count);
@@ -293,8 +263,7 @@ public class GameTTT {
 
 	/**
 	 * This is the test method. Default values are set for names and pieces.
-	 **/
-
+	 */
 	public static void main(String[] args) {
 		ArrayList<PlayerTTT> players = new ArrayList<PlayerTTT>();
 

@@ -25,8 +25,10 @@ public abstract class Board {
 
 	/**The array that stores all the squares used on the board*/
 	protected Square[] m_boardGame;
+	
 	/** Stores the width of the board */
 	protected int m_boardWidth;
+	
 	/** Stores the height of the board */
 	protected int m_boardHeight;
 
