@@ -31,22 +31,22 @@ public class BoardTTT extends Board {
 	 * output
 	 */
 	private int[] m_winningSquareCoordinates = new int[2];
-	
+
 	/** integer that stores the length of the chain needed to win*/
 	private final int WIN_AMOUNT = 5;
 
 	/** integer that stores the value for detectEndGame()*/
 	public static final int DRAW_GAME = -1;
-	
+
 	/** integer that stores the value for detectEndGame()*/
 	public static final int NOTHING_HAPPENED = 0;
-	
+
 	/** integer that stores the value for detectEndGame()*/
 	public static final int O_WIN = 1;
-	
+
 	/** integer that stores the value for detectEndGame()*/
 	public static final int X_WIN = 2;
-	
+
 	/**
 	 * Used to return the start and end of the winning chain for output.
 	 * @return integer array containing the start and end of the winning chain
@@ -118,24 +118,32 @@ public class BoardTTT extends Board {
 				System.out.println("BoardTTT::detectEndGame() no parameters"+
 						" returns "+DRAW_GAME);
 			}
+			System.out.println("win" + m_winningSquareCoordinates[0] 
+					+ " " + m_winningSquareCoordinates[1]);
 			return DRAW_GAME;
 		}else if (win('X')){
 			if(GameSelector.m_TRACE){
 				System.out.println("BoardTTT::detectEndGame() no parameters"+
 						" returns "+X_WIN);
 			}
+			System.out.println("win" + m_winningSquareCoordinates[0] 
+					+ " " + m_winningSquareCoordinates[1]);
 			return X_WIN;
 		}else if (win('O')){
 			if(GameSelector.m_TRACE){
 				System.out.println("BoardTTT::detectEndGame() no parameters"+
 						" returns "+O_WIN);
 			}
+			System.out.println("win" + m_winningSquareCoordinates[0] 
+					+ " " + m_winningSquareCoordinates[1]);
 			return O_WIN;
 		}else{
 			if(GameSelector.m_TRACE){
 				System.out.println("BoardTTT::detectEndGame() no parameters"+
 						" returns "+NOTHING_HAPPENED);
 			}
+			System.out.println("win" + m_winningSquareCoordinates[0] 
+					+ " " + m_winningSquareCoordinates[1]);
 			return NOTHING_HAPPENED;
 		}
 	}
@@ -194,21 +202,26 @@ public class BoardTTT extends Board {
 				m_counter = 0;
 				if (accessSquare(i, j).getValue() == XorO) {
 					int temp = j;
-					for (; j < DisplayTTT.GRID_WIDTH; j++) {
-						if (accessSquare(i, j).getValue() == XorO)
+					for (; j < DisplayTTT.GRID_HEIGHT; j++) {
+						if (accessSquare(i, j).getValue() == XorO){
 							m_counter++;
-						else
+							if (m_counter >= WIN_AMOUNT) {
+								m_winningSquareCoordinates[0] = 
+										i * m_boardWidth + temp;
+								m_winningSquareCoordinates[1] = 
+										i * m_boardWidth + j;
+								System.out.println("i " + i + " temp " 
+										+ temp + " j " + j);
+								if(GameSelector.m_TRACE){
+									System.out.println("BoardTTT::winRow()"
+											+ " valid parameters:"+XorO+
+											" returns "+true);
+								}
+								return true;
+							}
+						} else {
 							break;
-					}
-					if (m_counter >= WIN_AMOUNT) {
-						m_winningSquareCoordinates[0] = i * m_boardWidth + temp;
-						m_winningSquareCoordinates[1] = i * m_boardWidth + j;
-						if(GameSelector.m_TRACE){
-							System.out.println("BoardTTT::winRow()"
-									+ " valid parameters:"+XorO+
-									" returns "+true);
 						}
-						return true;
 					}
 				}
 			}
@@ -219,34 +232,38 @@ public class BoardTTT extends Board {
 		}
 		return false;
 	}
-	
+
 	/**
 	 * Checks if there is a vertical win 
 	 * @param XorO the char it is checking for
 	 * @return true if win is found, false if not
 	 */
 	private Boolean winColumn(char XorO){
-		for (int j = 0; j < DisplayTTT.GRID_WIDTH; j++) {
+		for (int j = 0; j < DisplayTTT.GRID_HEIGHT; j++) {
 			int m_counter = 0;
 			for (int i = 0; i < DisplayTTT.GRID_WIDTH; i++) {
 				m_counter = 0;
 				if (accessSquare(i, j).getValue() == XorO) {
 					int temp = i;
 					for (; i < DisplayTTT.GRID_HEIGHT; i++) {
-						if (accessSquare(i, j).getValue() == XorO)
+						if (accessSquare(i, j).getValue() == XorO){
 							m_counter++;
-						else
+							if (m_counter >= WIN_AMOUNT) {
+								m_winningSquareCoordinates[0] = 
+										temp * m_boardWidth + j;
+								m_winningSquareCoordinates[1] = i * m_boardWidth + j;
+								System.out.println("i " + i + " temp " + temp + " j " + j);
+
+								if(GameSelector.m_TRACE){
+									System.out.println("BoardTTT::winColumn()"
+											+ " valid parameters:"+XorO+
+											" returns "+true);
+								}
+								return true;
+							}
+						} else {
 							break;
-					}
-					if (m_counter >= WIN_AMOUNT) {
-						m_winningSquareCoordinates[0] = temp * m_boardWidth + j;
-						m_winningSquareCoordinates[1] = i * m_boardWidth + j;
-						if(GameSelector.m_TRACE){
-							System.out.println("BoardTTT::winColumn()"
-									+ " valid parameters:"+XorO+
-									" returns "+true);
 						}
-						return true;
 					}
 				}
 			}
@@ -279,24 +296,28 @@ public class BoardTTT extends Board {
 							if (accessSquare(i, j).getValue() == XorO) {
 								m_counter++;
 								i--;
+								if (m_counter >= WIN_AMOUNT) {
+									m_winningSquareCoordinates[0] =
+											temp * m_boardWidth + j;
+
+									m_winningSquareCoordinates[1] =
+											i * m_boardWidth + j;
+
+									System.out.println("i " + i + " temp " + temp + " j " + j);
+
+									if(GameSelector.m_TRACE){
+										System.out.println("BoardTTT::"
+												+ "winDiagonalRight()"
+												+ " valid parameters:"+XorO+
+												" returns "+true);
+									}
+									return true;
+								}
 							} else
 								break;
 						}
 
-						if (m_counter >= WIN_AMOUNT) {
-							m_winningSquareCoordinates[0] =
-									temp * m_boardWidth + j;
 
-							m_winningSquareCoordinates[1] =
-									i * m_boardWidth + j;
-							if(GameSelector.m_TRACE){
-								System.out.println("BoardTTT::"
-										+ "winDiagonalRight()"
-										+ " valid parameters:"+XorO+
-										" returns "+true);
-							}
-							return true;
-						}
 					}
 				} catch (Exception e) {
 					break;
@@ -341,6 +362,9 @@ public class BoardTTT extends Board {
 
 							m_winningSquareCoordinates[1] = 
 									i * m_boardWidth + j;
+
+							System.out.println("i " + i + " temp " + temp + " j " + j);
+
 							if(GameSelector.m_TRACE){
 								System.out.println("BoardTTT::winDiagonalLeft()"
 										+ " valid parameters:"+XorO+
@@ -361,12 +385,12 @@ public class BoardTTT extends Board {
 		}
 		return false;
 	}
-	
+
 	/** Test method */
 	public static void main(String[] args){
 		int width = 8;
 		int height = 8;
-		
+
 		BoardTTT boardttt = new BoardTTT(width, height);
 		int win = boardttt.detectEndGame();
 		String winString = null;
@@ -382,7 +406,7 @@ public class BoardTTT extends Board {
 			winString = "X wins!";
 		}
 		System.out.println("outcome is: "+winString);
-		
+
 	}
 
 }

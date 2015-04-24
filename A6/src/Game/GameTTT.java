@@ -39,7 +39,7 @@ public class GameTTT {
 	private BoardTTT m_board;
 	
 	/** JFrame used for displaying TicTacToe */
-	private JFrame m_frame = new JFrame("TTT");
+	private JFrame m_frame = new JFrame("Tic Tac Toe");
 	
 	/** Panel to display everything */
 	private DisplayTTT m_shapesPanel;

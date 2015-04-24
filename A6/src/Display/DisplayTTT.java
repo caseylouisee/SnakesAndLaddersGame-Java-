@@ -500,6 +500,11 @@ public class DisplayTTT extends JPanel implements Runnable {
 			playing = false;
 			System.out.println("Human Case 1 Game won reached");
 			int[] coord = game.getCoordinatesWinningSquares();
+			
+			//Use this for animation for win.
+			gridSquares.get(coord[0]).setIcon(new ImageIcon("res/WIN.png"));
+			gridSquares.get(coord[1]).setIcon(new ImageIcon("res/WIN.png"));
+			
 			dialogResponse = JOptionPane.showConfirmDialog(frame, game
 					.getPlayerTurn().getPlayerName()
 					+ " won!! Would you like to play again?", "TTT",
@@ -521,6 +526,11 @@ public class DisplayTTT extends JPanel implements Runnable {
 			playing = false;
 			gameRunning = false;
 			int[] coord2 = game.getCoordinatesWinningSquares();
+			
+			//Use this for animation for win.
+			gridSquares.get(coord2[0]).setIcon(new ImageIcon("res/WIN.png"));
+			gridSquares.get(coord2[1]).setIcon(new ImageIcon("res/WIN.png"));
+			
 			dialogResponse = JOptionPane.showConfirmDialog(frame, game
 					.getPlayerTurn().getPlayerName()
 					+ " won!! Would you like to play again?", "TTT",
