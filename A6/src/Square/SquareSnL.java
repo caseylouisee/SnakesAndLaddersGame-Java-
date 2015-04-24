@@ -19,17 +19,13 @@ public class SquareSnL extends Square {
 	private int m_destination;
 
 	/**
-	 * Sets up the square with the position and destination
-	 * @param position
-	 * @param destination
+	 * sets the destination
 	 */
-	public SquareSnL(int position, int destination) {
+	public void setDestination(int destination) {
 		if(GameSelector.m_TRACE){
-			System.out.println("SqaureSnL::SquareSnL() valid parameters: "+
-					position+" "+destination+" doesn't return anything");
+			System.out.println("SqaureSnL::setDestination(int destination) "+
+					" no return, destination sets s destination");
 		}
-		this.m_position = position;
-		this.m_destination = destination;
 	}
 
 	/**
@@ -43,6 +39,20 @@ public class SquareSnL extends Square {
 					" returns "+m_destination);
 		}
 		return m_destination;
+	}
+
+	/**
+	 * Sets up the square with the position and destination
+	 * @param position
+	 * @param destination
+	 */
+	public SquareSnL(int position, int destination) {
+		if(GameSelector.m_TRACE){
+			System.out.println("SqaureSnL::SquareSnL() valid parameters: "+
+					position+" "+destination+" doesn't return anything");
+		}
+		this.m_position = position;
+		this.m_destination = destination;
 	}
 
 	/**

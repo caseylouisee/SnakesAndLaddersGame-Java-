@@ -541,7 +541,7 @@ public class GameSnL {
 		final int MAX_VALUE = 100;
 		// Winning
 		if ((player.getPlayerLocation() + roll) >= MAX_VALUE) {
-			player.setPlayerLocation(m_shapesPanel, m_board.getSquare(99),
+			player.setPlayerLocation(m_shapesPanel, m_board.getSquare(100),
 					false);
 			movePlayer(player, player.getPlayerLocation());
 			winner(player);
@@ -608,7 +608,6 @@ public class GameSnL {
 	 * Iterates through player turns
 	 * @return a random number between 1-6
 	 */
-
 	public int buttonPush() {
 		int roll = checkMove(players.get(m_playerIterator));
 		m_shapesPanel.repaint();

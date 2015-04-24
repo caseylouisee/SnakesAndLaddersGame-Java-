@@ -59,6 +59,7 @@ public class Display extends JPanel {
 	public static final int YPOS_ROW650 = 650;
 	
 	public static final int COMPONENT_WIDTH20 = 20;
+	public static final int COMPONENT_WIDTH25 = 25;
 	public static final int COMPONENT_WIDTH50 = 50;
 	public static final int COMPONENT_WIDTH75 = 75;
 	public static final int COMPONENT_WIDTH80 = 80;

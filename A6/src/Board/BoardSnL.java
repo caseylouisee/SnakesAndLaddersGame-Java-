@@ -31,7 +31,7 @@ public class BoardSnL extends Board {
 	private SquareSnL[] m_boardGame;
 	
 	/**An integer storing the final square on the board*/
-	private final int FINAL_SQUARE = 99;
+	private final int FINAL_SQUARE = 100;
 	
 	/**integer storing return value for the method detectEndGame*/
 	private final int WIN = 1;
@@ -74,7 +74,7 @@ public class BoardSnL extends Board {
 					snakesList+" doesn't return anything");
 		}
 		initializeGrid(width, height);
-		for (int i = 0; i < width * height; i++) {
+		for (int i = 0; i <= width * height; i++) {
 			if (movementSquares.contains(i)) {
 
 				m_boardGame[i] = new SquareSnL(i, GameSnL.getMovementPair(i));
@@ -102,7 +102,7 @@ public class BoardSnL extends Board {
 		}
 		m_boardWidth = width;
 		m_boardHeight = height;
-		m_boardGame = new SquareSnL[width * height];
+		m_boardGame = new SquareSnL[width * height+1];
 	}
 	
 	/**

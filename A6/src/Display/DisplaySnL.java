@@ -91,7 +91,7 @@ public class DisplaySnL extends JPanel implements Runnable{
 	JLabel m_lblTimer = new JLabel("Timer");
 
 	/** Boolean to test if game is running */
-	private boolean gameRunning = false;
+	private boolean m_gameRunning = false;
 
 	/** Game object set as null, when initiated set to GameSnL */
 	GameSnL m_gameSnL = null;
@@ -223,11 +223,11 @@ public class DisplaySnL extends JPanel implements Runnable{
 
 		createTimer();
 
-		gameRunning = true;	
+		m_gameRunning = true;	
 
 		Thread thread = new Thread(){
 			public void run(){
-				while(gameRunning){
+				while(m_gameRunning){
 					displayTimer();
 					printPosition();
 				}
@@ -362,7 +362,7 @@ public class DisplaySnL extends JPanel implements Runnable{
 			Integer location = m_gameSnL.getPlayerLocation(i);
 			m_playerPos.add(new JLabel(location.toString()));
 			m_playerPos.get(i).setBounds(Display.XPOS_COL100, 
-					Display.OFFSET15*i, Display.COMPONENT_WIDTH20, 
+					Display.OFFSET15*i, Display.COMPONENT_WIDTH25, 
 					Display.COMPONENT_HEIGHT20);
 			m_playerPos.get(i).setForeground(Color.WHITE);
 
@@ -419,7 +419,7 @@ public class DisplaySnL extends JPanel implements Runnable{
 		m_backButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				m_gameSnL.frameDispose();
-				gameRunning = false;
+				m_gameRunning = false;
 				m_gameSnL.reset();
 				new GameSelector(GameSelector.m_TRACE); 
 			}
@@ -589,22 +589,46 @@ public class DisplaySnL extends JPanel implements Runnable{
 	 * @param playerColor
 	 * @param squareNo
 	 */
-	public void printPlayer(Graphics graphics, Color playerColor, int squareNo,
+	public void printPlayer(final Graphics graphics, final Color playerColor, int squareNo,
 			int lastLocation){
 		if(GameSelector.m_TRACE){
 			System.out.println("DisplaySnL::printPlayer");
 		}
+		
 		graphics.setColor(playerColor);
-		int[] coordinates = getCoordinates(squareNo);
+		final int[] coordinates = getCoordinates(squareNo);
 		graphics.fillOval(coordinates[0] + Display.OFFSET15, coordinates[1] +
 				Display.OFFSET20, PIECE_DIAMETER, PIECE_DIAMETER);
+		
+		if(squareNo==100){
+			final JPanel panel = new JPanel();
+			panel.setBounds(coordinates[0] + Display.OFFSET15, coordinates[1] +
+					Display.OFFSET20, PIECE_DIAMETER, PIECE_DIAMETER);
+			panel.setVisible(true);
+			this.add(panel);
+			
+			Thread flash = new Thread(){
+				public void run(){
+					int sleep = 100;
+					while(m_gameRunning){
+						panel.setBackground(playerColor);
+						try {Thread.sleep(sleep);}
+						catch (InterruptedException e) {}
+						panel.setBackground(Color.WHITE);
+						try {Thread.sleep(sleep);}
+						catch (InterruptedException e) {}
+					}
+				}
+			};
+			flash.start();	
+		}
 
 		if(m_visualize){
 			if(GameSelector.m_TRACE){
 				System.out.println("DisplaySnL::printPlayer"
 						+ " with visualization");
 			}
-
+		
 			for(int i = 0; i<m_players.size(); i++){
 				for(int j = 1; 
 						j<m_players.get(i).getAllLocations().size(); j++){
@@ -835,10 +859,11 @@ public class DisplaySnL extends JPanel implements Runnable{
 	/** 
 	 * Overrides the run method in this runnable class to repeatedly 
 	 * paintComponents as the timer needs to be continuously updated 
+	 * @param squareNo 
 	 */
 	@Override
 	public void run() {
-		while (gameRunning) {
+		while (m_gameRunning) {
 			paintComponents(getGraphics());
 		}
 	}
