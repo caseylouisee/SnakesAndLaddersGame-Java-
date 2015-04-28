@@ -212,8 +212,7 @@ public class BoardTTT extends Board {
 										i * m_boardWidth + temp;
 								m_winningSquareCoordinates[1] = 
 										i * m_boardWidth + j;
-								System.out.println("i " + i + " temp " 
-										+ temp + " j " + j);
+
 								if(GameSelector.m_TRACE){
 									System.out.println("BoardTTT::winRow()"
 											+ " valid parameters:"+XorO+
@@ -255,8 +254,6 @@ public class BoardTTT extends Board {
 										temp * m_boardWidth + j;
 								m_winningSquareCoordinates[1] = 
 										i * m_boardWidth + j;
-								System.out.println("i " + i + " temp " +
-										temp + " j " + j);
 
 								if(GameSelector.m_TRACE){
 									System.out.println("BoardTTT::winColumn()"
@@ -291,12 +288,13 @@ public class BoardTTT extends Board {
 			int m_counter = 0;
 			for (int i = 0; i < DisplayTTT.GRID_WIDTH; i++) {
 				m_counter = 0;
+				if(i>7||i<0||j<0||j>7){
+					break;
+				}
 				if (accessSquare(i, j).getValue() == XorO) {
 					int temp = i;
 					for (; j < DisplayTTT.GRID_HEIGHT; j++) {
-						if(i>7||i<0||j<0||j>7){
-							break;
-						}
+						
 						if (accessSquare(i, j).getValue() == XorO) {
 							m_counter++;
 							i--;
@@ -305,8 +303,6 @@ public class BoardTTT extends Board {
 										(temp * m_boardWidth + j) - 4;
 								m_winningSquareCoordinates[1] =
 										(i * m_boardWidth + j) + 8;
-								System.out.println("i " + i + " temp " +
-										temp + " j " + j);
 
 								if(GameSelector.m_TRACE){
 									System.out.println("BoardTTT::"
@@ -342,12 +338,13 @@ public class BoardTTT extends Board {
 			int m_counter = 0;
 			for (int i = 0; i < DisplayTTT.GRID_WIDTH; i++) {
 				m_counter = 0;
+				if(i>7||i<0||j<0||j>7){
+					break;
+				}
 				if (accessSquare(i, j).getValue() == XorO) {
 					int temp = i;
 					for (; j < DisplayTTT.GRID_HEIGHT; j++) {
-						if(i>7||i<0||j<0||j>7){
-							break;
-						}
+						
 						if (accessSquare(i, j).getValue() == XorO) {
 							m_counter++;
 							i++;
@@ -357,9 +354,6 @@ public class BoardTTT extends Board {
 
 								m_winningSquareCoordinates[1] = 
 										(i * m_boardWidth + j) - 8;
-
-								System.out.println("i " + i + " temp " 
-										+ temp + " j " + j);
 
 								if(GameSelector.m_TRACE){
 									System.out.println("BoardTTT::"

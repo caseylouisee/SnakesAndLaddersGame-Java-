@@ -654,8 +654,7 @@ public class DisplayTTT extends JPanel implements Runnable {
 			playing = false;
 			gameRunning = false;
 			System.out.println("AI Case 1 Game won reached");
-			int[] coord = game.getCoordinatesWinningSquares();
-			//JOptionPane.showMessageDialog(null, coord[0] + " - " + coord[1]);
+
 			dialogResponse = JOptionPane.showConfirmDialog(frame, game
 					.getPlayerTurn().getPlayerName()
 					+ " won!! Would you like to play again?", "TTT",
@@ -677,7 +676,7 @@ public class DisplayTTT extends JPanel implements Runnable {
 			System.out.println("AI Case 2 Game won reached ");
 			playing = false;
 			gameRunning = false;
-			int[] coord2 = game.getCoordinatesWinningSquares();
+
 			dialogResponse = JOptionPane.showConfirmDialog(frame, game
 					.getPlayerTurn().getPlayerName()
 					+ " won!! Would you like to play again?", "TTT",
