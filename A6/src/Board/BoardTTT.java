@@ -294,7 +294,9 @@ public class BoardTTT extends Board {
 				if (accessSquare(i, j).getValue() == XorO) {
 					int temp = i;
 					for (; j < DisplayTTT.GRID_HEIGHT; j++) {
-						
+						if(i>7||i<0||j<0||j>7){
+							break;
+						}
 						if (accessSquare(i, j).getValue() == XorO) {
 							m_counter++;
 							i--;
@@ -344,7 +346,9 @@ public class BoardTTT extends Board {
 				if (accessSquare(i, j).getValue() == XorO) {
 					int temp = i;
 					for (; j < DisplayTTT.GRID_HEIGHT; j++) {
-						
+						if(i>7||i<0||j<0||j>7){
+							break;
+						}
 						if (accessSquare(i, j).getValue() == XorO) {
 							m_counter++;
 							i++;
