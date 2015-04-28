@@ -13,6 +13,8 @@
  */
 package Board;
 
+import java.util.ArrayList;
+
 import Display.DisplayTTT;
 import Menu.GameSelector;
 import Square.SquareTTT;
@@ -251,8 +253,10 @@ public class BoardTTT extends Board {
 							if (m_counter >= WIN_AMOUNT) {
 								m_winningSquareCoordinates[0] = 
 										temp * m_boardWidth + j;
-								m_winningSquareCoordinates[1] = i * m_boardWidth + j;
-								System.out.println("i " + i + " temp " + temp + " j " + j);
+								m_winningSquareCoordinates[1] = 
+										i * m_boardWidth + j;
+								System.out.println("i " + i + " temp " +
+										temp + " j " + j);
 
 								if(GameSelector.m_TRACE){
 									System.out.println("BoardTTT::winColumn()"
@@ -287,40 +291,35 @@ public class BoardTTT extends Board {
 			int m_counter = 0;
 			for (int i = 0; i < DisplayTTT.GRID_WIDTH; i++) {
 				m_counter = 0;
-
-				try {
-					if (accessSquare(i, j).getValue() == XorO) {
-						int temp = i;
-						for (; j < DisplayTTT.GRID_HEIGHT; j++) {
-
-							if (accessSquare(i, j).getValue() == XorO) {
-								m_counter++;
-								i--;
-								if (m_counter >= WIN_AMOUNT) {
-									m_winningSquareCoordinates[0] =
-											temp * m_boardWidth + j;
-
-									m_winningSquareCoordinates[1] =
-											i * m_boardWidth + j;
-
-									System.out.println("i " + i + " temp " + temp + " j " + j);
-
-									if(GameSelector.m_TRACE){
-										System.out.println("BoardTTT::"
-												+ "winDiagonalRight()"
-												+ " valid parameters:"+XorO+
-												" returns "+true);
-									}
-									return true;
-								}
-							} else
-								break;
+				if (accessSquare(i, j).getValue() == XorO) {
+					int temp = i;
+					for (; j < DisplayTTT.GRID_HEIGHT; j++) {
+						if(i>7||i<0||j<0||j>7){
+							break;
 						}
+						if (accessSquare(i, j).getValue() == XorO) {
+							m_counter++;
+							i--;
+							if (m_counter >= WIN_AMOUNT) {
+								m_winningSquareCoordinates[0] =
+										(temp * m_boardWidth + j) - 4;
+								m_winningSquareCoordinates[1] =
+										(i * m_boardWidth + j) + 8;
+								System.out.println("i " + i + " temp " +
+										temp + " j " + j);
 
-
+								if(GameSelector.m_TRACE){
+									System.out.println("BoardTTT::"
+											+ "winDiagonalRight()"
+											+ " valid parameters:"+XorO+
+											" returns "+true);
+								}
+								return true;
+							}
+						} else {
+							break;
+						}
 					}
-				} catch (Exception e) {
-					break;
 				}
 			}
 		}
@@ -343,38 +342,36 @@ public class BoardTTT extends Board {
 			int m_counter = 0;
 			for (int i = 0; i < DisplayTTT.GRID_WIDTH; i++) {
 				m_counter = 0;
-
-				try {
-					if (accessSquare(i, j).getValue() == XorO) {
-						int temp = i;
-						for (; j < DisplayTTT.GRID_HEIGHT; j++) {
-
-							if (accessSquare(i, j).getValue() == XorO) {
-								m_counter++;
-								i++;
-							} else
-								break;
+				if (accessSquare(i, j).getValue() == XorO) {
+					int temp = i;
+					for (; j < DisplayTTT.GRID_HEIGHT; j++) {
+						if(i>7||i<0||j<0||j>7){
+							break;
 						}
+						if (accessSquare(i, j).getValue() == XorO) {
+							m_counter++;
+							i++;
+							if (m_counter >= WIN_AMOUNT) {
+								m_winningSquareCoordinates[0] = 
+										(temp * m_boardWidth + j) - 4;
 
-						if (m_counter >= WIN_AMOUNT) {
-							m_winningSquareCoordinates[0] = 
-									temp * m_boardWidth + j;
+								m_winningSquareCoordinates[1] = 
+										(i * m_boardWidth + j) - 8;
 
-							m_winningSquareCoordinates[1] = 
-									i * m_boardWidth + j;
+								System.out.println("i " + i + " temp " 
+										+ temp + " j " + j);
 
-							System.out.println("i " + i + " temp " + temp + " j " + j);
-
-							if(GameSelector.m_TRACE){
-								System.out.println("BoardTTT::winDiagonalLeft()"
-										+ " valid parameters:"+XorO+
-										" returns "+true);
+								if(GameSelector.m_TRACE){
+									System.out.println("BoardTTT::"
+											+ "winDiagonalLeft()"
+											+ " valid parameters:"+XorO
+											+ " returns "+true);
+								}
+								return true;
 							}
-							return true;
-						}
+						} else
+							break;
 					}
-				} catch (Exception e) {
-					break;
 				}
 			}
 		}
