@@ -19,6 +19,7 @@ var searchData=
   ['component_5fwidth180',['COMPONENT_WIDTH180',['../class_display_1_1_display.html#a4e3ec7ce466aae4eae284ff350b11253',1,'Display::Display']]],
   ['component_5fwidth20',['COMPONENT_WIDTH20',['../class_display_1_1_display.html#af02e2130bca24f14a40c4d5c15712b94',1,'Display::Display']]],
   ['component_5fwidth200',['COMPONENT_WIDTH200',['../class_display_1_1_display.html#aa5010ddecefd4e39f45361172619b461',1,'Display::Display']]],
+  ['component_5fwidth25',['COMPONENT_WIDTH25',['../class_display_1_1_display.html#ab85e083dbe85ad9eeb62591816ddc962',1,'Display::Display']]],
   ['component_5fwidth250',['COMPONENT_WIDTH250',['../class_display_1_1_display.html#a4e1ace15de5d4dd0aeb2af46c76742dd',1,'Display::Display']]],
   ['component_5fwidth300',['COMPONENT_WIDTH300',['../class_display_1_1_display.html#a2f111222b6c7d15359547d6f2cbcb01e',1,'Display::Display']]],
   ['component_5fwidth350',['COMPONENT_WIDTH350',['../class_display_1_1_display.html#a63262d6fdb082de5ca713249b0df7703',1,'Display::Display']]],

@@ -7,7 +7,7 @@
  * methods specific to TTT, such as detecting the win scenario by working out
  * adjacent squares to the players current square.
  * 
- * @author Casey Denner
+ * @author Chris - A5, Casey Denner - A6
  * 
  * @date 29/03/2015
  */

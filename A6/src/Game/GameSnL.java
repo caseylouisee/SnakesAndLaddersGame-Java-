@@ -1,6 +1,6 @@
 /**
  * @file GameSnL.java
- * @author Casey Denner
+ * @author Genalyn Estrada - A5, Casey Denner - A6
  * @date 29/03/2015
  * @brief Creates all the user interface for Snakes and Ladders, as well as 
  * contains all the functions to play the game

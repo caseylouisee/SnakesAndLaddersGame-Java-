@@ -14,7 +14,7 @@ var searchData=
   ['playgame',['playGame',['../class_display_1_1_display_t_t_t.html#ac07792d99f73ff42f0e0dc33478769d5',1,'Display::DisplayTTT']]],
   ['playing',['playing',['../class_display_1_1_display_t_t_t.html#abea0091c8be45438d7be31081d6b8bc3',1,'Display::DisplayTTT']]],
   ['printladders',['printLadders',['../class_display_1_1_display_sn_l.html#a8a98e89b9310a140f4df27f2021cec73',1,'Display::DisplaySnL']]],
-  ['printplayer',['printPlayer',['../class_display_1_1_display_sn_l.html#afcacea5e6e612490138e684365ade653',1,'Display::DisplaySnL']]],
+  ['printplayer',['printPlayer',['../class_display_1_1_display_sn_l.html#a566d41c836c1e95d3be4f76289e5000f',1,'Display::DisplaySnL']]],
   ['printposition',['printPosition',['../class_display_1_1_display_sn_l.html#a8c5818de472e1cbb43e489bc52f6d5ee',1,'Display::DisplaySnL']]],
   ['printsnakes',['printSnakes',['../class_display_1_1_display_sn_l.html#ac8d66280626ecf00242f63c0536a144c',1,'Display::DisplaySnL']]]
 ];

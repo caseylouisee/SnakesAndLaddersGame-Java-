@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['win',['win',['../class_board_1_1_board_t_t_t.html#ab7d0a91870f300ee5544da2c1ee8b67c',1,'Board.BoardTTT.win()'],['../class_board_1_1_board_sn_l.html#a9f3b27889e40b337a28438224a5fab4b',1,'Board.BoardSnL.WIN()']]],
+  ['win',['WIN',['../class_board_1_1_board_sn_l.html#a9f3b27889e40b337a28438224a5fab4b',1,'Board.BoardSnL.WIN()'],['../class_board_1_1_board_t_t_t.html#ab7d0a91870f300ee5544da2c1ee8b67c',1,'Board.BoardTTT.win()']]],
   ['win_5famount',['WIN_AMOUNT',['../class_board_1_1_board_t_t_t.html#ab11d997e2ea0983b566f23c4685767f6',1,'Board::BoardTTT']]],
   ['wincolumn',['winColumn',['../class_board_1_1_board_t_t_t.html#aa133bbee4e44152b8ba57191475409ab',1,'Board::BoardTTT']]],
   ['windiagonalleft',['winDiagonalLeft',['../class_board_1_1_board_t_t_t.html#a5f5114b28a09db036e030ec6bb97f189',1,'Board::BoardTTT']]],

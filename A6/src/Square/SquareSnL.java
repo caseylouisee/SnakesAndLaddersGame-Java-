@@ -1,7 +1,7 @@
 /**
  * @file SquareSnL.java
  * @see Square.java
- * @author Casey Denner
+ * @author RB2 - A5, Casey Denner - A6
  * @date 29/03/2015
  * @brief This class stores the information on each square for SnL
  */

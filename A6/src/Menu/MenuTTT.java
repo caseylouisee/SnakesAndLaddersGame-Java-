@@ -1,15 +1,11 @@
 package Menu;
 /**
  * @file MenuTTT.java
- * 
+ * @author Casey Denner - A5, Casey Denner - A6
  * @brief A generic class containing the display methods. 
  * This menu class is for the game TTT. The menu allows you to select whether 
  * you want to be X or O, as well as having their respective names
- * 
  * @date 29/03/2015
- * 
- * @author Casey Denner
- *  
  */
 
 

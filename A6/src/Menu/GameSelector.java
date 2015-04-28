@@ -1,6 +1,6 @@
 /**
  * @file GameSelector.java
- * @author Casey Denner 
+ * @author Casey Denner - A5, Casey Denner - A6
  * @date 29/03/2015
  * @brief Select between games
  * 

@@ -6,7 +6,7 @@
  *         specific methods for the SnL game, such as checking if there is a
  *         player on the 100th square
  *         
- * @author Casey Denner
+ * @author Chris - A5, Casey Denner - A6
  * 
  * @date 29/03/2015
  */

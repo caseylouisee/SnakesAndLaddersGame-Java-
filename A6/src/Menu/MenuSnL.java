@@ -1,15 +1,12 @@
 package Menu;
 /**
- * @file MenuSnL.java
- * 
+ * @file MenuSnL.java 
+ * @author Casey Denner - A5, Casey Denner - A6
  * @brief The menu class specific to the SnL game
  * This class is for the menu of the SnL game, covering the player
  * colour selection, the number of players and the numbers of snakes and 
  * ladders on the board. The menu also allows for the input of player names
- * 
  * @date 29/03/2015
- * 
- * @author Casey Denner
  *  
  */
 

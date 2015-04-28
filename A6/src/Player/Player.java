@@ -1,11 +1,7 @@
 /**
  * @file Player.java
- * @author Casey Denner
+ * @author Yangfan Jiang - A5, Casey Denner - A6
  * @date 29/03/2015
- * @see AIPlayerTTT.java
- * @see AIPlayerSnL.java
- * @see HumanPlayerTTT.java
- * @see HumanPlayerSnL.java
  * @brief Acts as a template for all other player classes
  */
 package Player;

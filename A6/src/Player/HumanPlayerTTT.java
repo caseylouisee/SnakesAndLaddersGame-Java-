@@ -1,6 +1,6 @@
 /**
  * @file HumanPlayerTTT.java
- * @author Casey Denner
+ * @author Yangfan Jiang - A5, Casey Denner - A6
  * @date 29/03/2015
  * @see PlayerTTT.java
  * @brief Creates a human player for TicTacToe

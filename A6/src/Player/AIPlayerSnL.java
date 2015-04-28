@@ -1,6 +1,6 @@
 /**
  * @file AIPlayerSnL.java
- * @author Casey Denner
+ * @author Yangfan Jiang - A5, Casey Denner - A6
  * @date 29/03/2015
  * @see PlayerSnL.java
  * @brief Creates a AI player for Snake and Ladders

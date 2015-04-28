@@ -1,7 +1,7 @@
 var searchData=
 [
   ['game',['Game',['../namespace_game.html',1,'Game'],['../class_display_1_1_display_t_t_t.html#a2e4a57cf17355b6a63f5b9d4e9e74de4',1,'Display.DisplayTTT.game()']]],
-  ['gamerunning',['gameRunning',['../class_display_1_1_display_sn_l.html#a539641b8ae0dae1e3106d2f0717fe55d',1,'Display.DisplaySnL.gameRunning()'],['../class_display_1_1_display_t_t_t.html#a8d67b95462ceda8ce22f992628f91ca4',1,'Display.DisplayTTT.gameRunning()']]],
+  ['gamerunning',['gameRunning',['../class_display_1_1_display_t_t_t.html#a8d67b95462ceda8ce22f992628f91ca4',1,'Display::DisplayTTT']]],
   ['gameselector',['GameSelector',['../class_menu_1_1_game_selector.html',1,'Menu']]],
   ['gameselector',['GameSelector',['../class_menu_1_1_game_selector.html#adbafa9df1cdafc14b39cb120c6ee649a',1,'Menu::GameSelector']]],
   ['gameselector_2ejava',['GameSelector.java',['../_game_selector_8java.html',1,'']]],

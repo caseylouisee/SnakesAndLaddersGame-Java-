@@ -1,12 +1,11 @@
 /**
  * @file Board.java
  * 
+ * @author Chris - A5, Casey Denner - A6
+ * 
  * @brief Board superclass for generating the board, this class contains all of
  * the generic information concerning board classes, such as initialising
  * the grids and detecting the end-game.
- *         
- * @author Casey Denner
- * 
  * @date 29/03/2015
  */
 package Board;
@@ -17,9 +16,8 @@ import Square.Square;
 /**
  * @class Board
  * @brief superclass for generating the board, this class contains all of
- * 	the generic information concerning board classes, such as initialising
- * the grids and detecting the end-game.
- *
+ * 			the generic information concerning board classes, such as
+ * 			initialising the grids and detecting the end-game.
  */
 public abstract class Board {
 
