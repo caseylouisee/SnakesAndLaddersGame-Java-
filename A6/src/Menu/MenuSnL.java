@@ -56,9 +56,6 @@ public class MenuSnL {
 	private final String[] SNL_COLOR_PLAYERS = { " ", "BLUE", "RED",
 			"YELLOW", "GREEN"};
 
-	/** Array list of numbers to set for snakes/ladders */
-	private final String[] NUMBERS_OF_OPTIONS = { "1", "2", "3", "4" };
-
 	/** Width of the window */
 	private final int WINDOW_WIDTH = 500;
 
@@ -70,6 +67,9 @@ public class MenuSnL {
 
 	/** Maximum number of players */
 	private final int MAX_NUM_PLAYERS = 4;
+	
+	/** Maximum number of snakes/ladders for comboBox */
+	private final int MAX_NUM_SNL = 41;
 
 	/** Frame for the Snakes and Ladders Menu */
 	private JFrame m_frame;
@@ -96,10 +96,10 @@ public class MenuSnL {
 	private int m_numberPlayers = 0;
 
 	/** Combo box to select number of snakes */
-	private JComboBox<String> m_playerSnakes;
+	private JComboBox<Integer> m_playerSnakes;
 
 	/** Combo box to select number of ladders */
-	private JComboBox<String> m_playerLadders;
+	private JComboBox<Integer> m_playerLadders;
 
 	/** Number of snakes initialised to 1 */
 	private int m_snakesNo = 1;
@@ -108,7 +108,10 @@ public class MenuSnL {
 	private int m_laddersNo = 1;
 
 	/** Visualization check box */
-	private JCheckBox visualization;
+	private JCheckBox m_visualizationBox;
+	
+	/** Boolean for visualization */
+	private Boolean m_visualization;
 
 	/* ------------ METHODS ------------- */
 	/** This is the test method. 
@@ -315,7 +318,10 @@ public class MenuSnL {
 		if(GameSelector.m_TRACE){
 			System.out.println("MenuSnL:: addLaddersComboBox");
 		}
-		m_playerLadders = new JComboBox<String>(NUMBERS_OF_OPTIONS);
+		m_playerLadders = new JComboBox<Integer>();
+		for(int i = 0; i<MAX_NUM_SNL; i++){
+			m_playerLadders.addItem(i);
+		}
 		m_playerLadders.setBounds(Display.XPOS_COL250, Display.YPOS_ROW400,
 				Display.COMPONENT_WIDTH75, Display.COMPONENT_HEIGHT20);
 		m_playerLadders.setVisible(true);
@@ -335,7 +341,10 @@ public class MenuSnL {
 		if(GameSelector.m_TRACE){
 			System.out.println("MenuSnL:: addSnakesComboBox");
 		}
-		m_playerSnakes = new JComboBox<String>(NUMBERS_OF_OPTIONS);
+		m_playerSnakes = new JComboBox<Integer>();
+		for(int i = 0; i<MAX_NUM_SNL; i++){
+			m_playerSnakes.addItem(i);
+		}
 		m_playerSnakes.setBounds(Display.XPOS_COL250, Display.YPOS_ROW350,
 				Display.COMPONENT_WIDTH75, Display.COMPONENT_HEIGHT20);
 		m_playerSnakes.setVisible(true);
@@ -355,28 +364,34 @@ public class MenuSnL {
 		if(GameSelector.m_TRACE){
 			System.out.println("MenuSnL :: addVisualizationCheckBox");
 		}
-		visualization = new JCheckBox("Visualization?");
-		visualization.setBounds(Display.XPOS_COL350, Display.YPOS_ROW350,
+		m_visualizationBox = new JCheckBox("Visualization?");
+		m_visualizationBox.setBounds(Display.XPOS_COL350, Display.YPOS_ROW350,
 				Display.COMPONENT_WIDTH150, Display.COMPONENT_HEIGHT20);
-		visualization.setText("Visualization?");
-		visualization.setForeground(Color.WHITE);
-		visualization.setVisible(true);
+		m_visualizationBox.setText("Visualization?");
+		m_visualizationBox.setForeground(Color.WHITE);
+		m_visualizationBox.setVisible(true);
 
-		visualization.addItemListener(new ItemListener() {
+		m_visualizationBox.addItemListener(new ItemListener() {
 			public void itemStateChanged(ItemEvent event) {
 				Object source =  event.getItemSelectable();
-				if (source == visualization) {
-					System.out.println("MenuSnL :: addVisualizationCheckBox "
-							+ "- Selected");
+				if (source == m_visualizationBox) {
+					m_visualization = true;
+					if(GameSelector.m_TRACE){
+						System.out.println("MenuSnL :: addVisualizationCheckBox"
+							+ " - Selected");
+					}
 				}
 				if (event.getStateChange() == ItemEvent.DESELECTED){
-					System.out.println("MenuSnL :: addVisualizationCheckBox "
-							+ "- Deselected");
+					m_visualization = false;
+					if(GameSelector.m_TRACE){
+						System.out.println("MenuSnL :: addVisualizationCheckBox"
+							+ " - Deselected");
+					}
 				}
 			}
 		});
 
-		m_frame.add(visualization);
+		m_frame.add(m_visualizationBox);
 	}
 
 	/** Adds the snakes and ladders logo to the frame. */
@@ -673,7 +688,7 @@ public class MenuSnL {
 
 		m_frame.dispose();
 
-		if(visualization.isSelected()){
+		if(m_visualization){
 			new GameSnL(names, colors, m_snakesNo, m_laddersNo, true);
 			if(GameSelector.m_TRACE){
 				System.out.println("MenuSnL::sendForm - new GameSnL "

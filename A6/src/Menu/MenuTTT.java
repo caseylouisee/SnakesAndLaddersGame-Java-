@@ -219,13 +219,17 @@ public class MenuTTT {
 				Object source =  event.getItemSelectable();
 				if (source == visualization) {
 					visualize = true;
-					System.out.println("MenuSnL :: addVisualizationCheckBox "
+					if(GameSelector.m_TRACE){
+						System.out.println("MenuSnL :: addVisualizationCheckBox"
 							+ "- Selected");
+					}
 				}
 				if (event.getStateChange() == ItemEvent.DESELECTED){
 					visualize = false;
+					if(GameSelector.m_TRACE){
 					System.out.println("MenuSnL :: addVisualizationCheckBox "
 							+ "- Deselected");
+					}
 				}
 			}
 		});

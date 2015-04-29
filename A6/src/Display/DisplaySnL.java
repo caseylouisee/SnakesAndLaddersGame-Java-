@@ -61,7 +61,7 @@ public class DisplaySnL extends JPanel implements Runnable{
 	int m_dialogResponse;
 	
 	/** roll dice initialised to 1 */
-	int roll = 1;
+	int m_roll = 1;
 
 	/** Label to display who's turn it is */
 	JLabel m_playerTurn;
@@ -73,7 +73,7 @@ public class DisplaySnL extends JPanel implements Runnable{
 	private BufferedImage m_snakeTail;
 	
 	/** Ladder buffered image */
-	private BufferedImage ladder;
+	private BufferedImage m_ladder;
 
 	/** Array lists to hold snakes positions */
 	ArrayList<Integer> m_snakeLocations = new ArrayList<Integer>();
@@ -120,11 +120,10 @@ public class DisplaySnL extends JPanel implements Runnable{
 	/** Arraylist to contain player colours */
 	private ArrayList<JLabel> m_playerColour;
 
-	/** JPanel used for winning visual feedback */
-	JPanel boardOverlay = null;
-
 	/** Boolean used if visualization is selected */
-	Boolean m_visualize;
+	private Boolean m_visualize;
+	
+	private int i = 0;
 
 	/** gets the co_ordinates on the board for a particular square
 	 * @param squareNo
@@ -275,7 +274,7 @@ public class DisplaySnL extends JPanel implements Runnable{
 						public void actionPerformed(ActionEvent e) {
 							m_rollDiceBtn.setText("Roll Dice");
 							System.out.println("AI player found");
-							roll = m_gameSnL.buttonPush();
+							m_roll = m_gameSnL.buttonPush();
 
 							if(m_players.get(m_gameSnL.getIterator())
 									.getPlayerName().endsWith(".AI")){
@@ -293,7 +292,7 @@ public class DisplaySnL extends JPanel implements Runnable{
 
 				} else {
 					m_rollDiceBtn.setText("Roll Dice");
-					roll = m_gameSnL.buttonPush();
+					m_roll = m_gameSnL.buttonPush();
 
 					m_playerTurn.setText("It is player "
 							+ m_players.get(m_gameSnL.getIterator())
@@ -312,7 +311,7 @@ public class DisplaySnL extends JPanel implements Runnable{
 						+ m_players.get(m_gameSnL.getIterator()).getPlayerName()
 						+ "'s turn!");
 
-				m_dicePicLabel.setIcon(new ImageIcon("res/Dice"+roll+".png"));
+				m_dicePicLabel.setIcon(new ImageIcon("res/Dice"+m_roll+".png"));
 
 				//Prints out next players current location.
 				System.out.println("player position " +
@@ -322,7 +321,7 @@ public class DisplaySnL extends JPanel implements Runnable{
 			}
 		});
 
-		m_dicePicLabel.setIcon(new ImageIcon("res/Dice"+roll+".png"));
+		m_dicePicLabel.setIcon(new ImageIcon("res/Dice"+m_roll+".png"));
 
 		m_dicePicLabel.setBounds(Display.XPOS_COL400+Display.OFFSET10,
 				Display.YPOS_ROW550, Display.COMPONENT_WIDTH150,
@@ -594,11 +593,26 @@ public class DisplaySnL extends JPanel implements Runnable{
 		if(GameSelector.m_TRACE){
 			System.out.println("DisplaySnL::printPlayer");
 		}
+		int offsetP1 = -1;
+		int offsetP2 = 1; 
+		int offsetP3 = 3;
+		int offsetP4 = 5; 
+		
+		if(playerColor.equals(Color.BLUE)){
+			i = offsetP1;
+		}else if(playerColor.equals(Color.YELLOW)){
+			i = offsetP2;
+		}else if(playerColor.equals(Color.RED)){
+			i = offsetP3;
+		}else if(playerColor.equals(Color.GREEN)){
+			i = offsetP4;
+		}
 		
 		graphics.setColor(playerColor);
 		final int[] coordinates = getCoordinates(squareNo);
-		graphics.fillOval(coordinates[0] + Display.OFFSET15, coordinates[1] +
-				Display.OFFSET20, PIECE_DIAMETER, PIECE_DIAMETER);
+		graphics.fillOval(coordinates[0] + Display.OFFSET15+(i*2), 
+				coordinates[1] + Display.OFFSET20+(i*2), PIECE_DIAMETER,
+				PIECE_DIAMETER);
 		
 		if(squareNo==100){
 			final JPanel panel = new JPanel();
@@ -695,7 +709,7 @@ public class DisplaySnL extends JPanel implements Runnable{
 		}
 		//Pulls image from file
 		try {
-			ladder = ImageIO.read(new File("res/ladder.png"));
+			m_ladder = ImageIO.read(new File("res/ladder.png"));
 		} catch (IOException e) {
 			System.out.println("wrong path");
 		}
@@ -710,10 +724,10 @@ public class DisplaySnL extends JPanel implements Runnable{
 			int[] startCoordinates = getCoordinates(startSquare);
 			int[] endCoordinates = getCoordinates(endSquare);
 
-			graphics.drawImage(ladder, startCoordinates[0],
+			graphics.drawImage(m_ladder, startCoordinates[0],
 					startCoordinates[1], Display.OFFSET40, 
 					Display.OFFSET40, null);
-			graphics.drawImage(ladder, endCoordinates[0], endCoordinates[1],
+			graphics.drawImage(m_ladder, endCoordinates[0], endCoordinates[1],
 					Display.OFFSET40, Display.OFFSET40, null);
 
 			Graphics2D graphics2 = (Graphics2D) graphics;
