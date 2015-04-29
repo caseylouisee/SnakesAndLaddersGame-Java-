@@ -688,7 +688,7 @@ public class MenuSnL {
 
 		m_frame.dispose();
 
-		if(m_visualization){
+		if(m_visualizationBox.isSelected()){
 			new GameSnL(names, colors, m_snakesNo, m_laddersNo, true);
 			if(GameSelector.m_TRACE){
 				System.out.println("MenuSnL::sendForm - new GameSnL "
