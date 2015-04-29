@@ -50,42 +50,41 @@ import Player.PlayerTTT;
 public class DisplayTTT extends JPanel implements Runnable {
 
 	/* ------ VARIABLES ------ */
-	
-	/** Array list used to hold X values that have been drawn */
-	private ArrayList<Integer> Xs = new ArrayList<Integer>();
-	
-	/** Array list used to hold O values that have been drawn */
-	private ArrayList<Integer> Os = new ArrayList<Integer>();
-
 	/** Variable to set width of buttons */
-	public final int SHAPE_WIDTH = 50;
+	public static final int SHAPE_WIDTH = 50;
 	
 	/** Variable to set width of buttons */
-	public final int SHAPE_HEIGHT = 50;
+	public static final int SHAPE_HEIGHT = 50;
 
 	/** Variable to set grid width */
 	public static final int GRID_WIDTH = 8;
 	
 	/** Variable to set grid height */
 	public static final int GRID_HEIGHT = 8;
+	
+	/** integer used in ai movement */
+	private static final int MAX_RAND = 63;
+	
+	/** integer used in ai movement */
+	private static final int SURROUND_SQUARES = 8;
 
 	/** JFrame for tic tac toe game **/
-	private JFrame frame = new JFrame("Tic Tac Toe");
+	private JFrame m_frame = new JFrame("Tic Tac Toe");
 
 	/** Label to display player turn **/
-	private JLabel dispTurn = new JLabel();
+	private JLabel m_dispTurn = new JLabel();
 
 	/** Label to display player name */
-	private JLabel dispPlayers = new JLabel();
+	private JLabel m_dispPlayers = new JLabel();
 
 	/** Label to display count of pieces on board */
-	private JLabel dispCount = new JLabel();
+	private JLabel m_dispCount = new JLabel();
 
 	/** Array list of Jbuttons to store buttons rendered to the board */
 	private ArrayList<JButton> gridSquares = new ArrayList<JButton>();
 
 	/** A numbering for all the squares from 1 to GRID_WIDTH*GRID_HEIGHT */
-	private int squareRef = 0;
+	private int m_squareRef = 0;
 
 	/** Button to save game */
 	private JButton m_saveGameButton = new JButton();
@@ -97,13 +96,13 @@ public class DisplayTTT extends JPanel implements Runnable {
 	int m_countX = 0;
 
 	/** Holds the animated gif for button animation */
-	private ImageIcon animatedGif = new ImageIcon("res/btnClickedAnim.gif");
+	private ImageIcon m_animatedGif = new ImageIcon("res/btnClickedAnim.gif");
 	
 	/** Holds the idle gif for button animation */
-	private ImageIcon idleImage = new ImageIcon("res/btnIdleImage.gif");
+	private ImageIcon m_idleImage = new ImageIcon("res/btnIdleImage.gif");
 
 	/** JButton to go back **/
-	private JButton goBackButton = new JButton();
+	private JButton m_goBackButton = new JButton();
 
 	/** Stop watch variable to display timer **/
 	private StopWatch m_stopWatch;
@@ -112,40 +111,47 @@ public class DisplayTTT extends JPanel implements Runnable {
 	private JLabel m_lblTimer = new JLabel("Timer");
 
 	/** Boolean to test if game is running */
-	private boolean gameRunning = true;
+	private boolean m_gameRunning = true;
 
 	/** Game object */
-	private GameTTT game;
+	private GameTTT m_game;
 
 	/** Arraylist of the players */
 	private ArrayList<PlayerTTT> m_players = new ArrayList<PlayerTTT>();
 
 	/** boolean to ignore human input when ai's turn*/
-	private boolean ignoreEvents = false;
+	private boolean m_ignoreEvents = false;
 
 	/** event handler for human click */
-	private GUIEventHandler handler = new GUIEventHandler();
+	private GUIEventHandler m_handler = new GUIEventHandler();
 
 	/** boolean to set whether the game is being played or not */
-	private boolean playing = true;
+	private boolean m_playing = true;
 
 	/** boolean to detect whether it is the ai's first turn */
-	private boolean initialPlay = true;
+	private boolean m_initialPlay = true;
 
 	/** random used for the ai's turn */
-	private final Random RAND = new Random();
+	private static final Random RAND = new Random();
 	
 	/** random int used for ai's turn */
-	private int RANDOM = RAND.nextInt(63);
+	private int m_Random = RAND.nextInt(63);
 
 	/** array list used for the ai moves */
 	private ArrayList<Integer> m_aiMoves = new ArrayList<Integer>();
+	
+	/** Array list used to hold X values that have been drawn */
+	private ArrayList<Integer> Xs = new ArrayList<Integer>();
+	
+	/** Array list used to hold O values that have been drawn */
+	private ArrayList<Integer> Os = new ArrayList<Integer>();
 
 	/** instance of the board */
 	private Board m_boardGame;
 
 	/** Boolean to detect visualization */
 	private Boolean m_visualize = false;
+	
 
 	/** method to set button icon to X or O, used for the load game */
 	public void setButtonIcon(int position, char value){
@@ -179,10 +185,9 @@ public class DisplayTTT extends JPanel implements Runnable {
 		}
 		m_countX=count[0];
 		m_countO=count[1];
-		game = mygame;
+		m_game = mygame;
 		m_boardGame = board;
-		m_players = game.getPlayers();
-		// create red border
+		m_players = m_game.getPlayers();
 		Border buttonBorder = new LineBorder(Color.RED, 1);
 		// begin rendering grid
 
@@ -192,28 +197,28 @@ public class DisplayTTT extends JPanel implements Runnable {
 				gridSquares.add(new JButton());
 				// set position of buttons to appear in grid formation, with
 				// 15px margin on left and top.
-				gridSquares.get(squareRef).setBounds(SHAPE_WIDTH * i + 
+				gridSquares.get(m_squareRef).setBounds(SHAPE_WIDTH * i + 
 						Display.OFFSET15, SHAPE_HEIGHT * j + Display.OFFSET15, 
 						SHAPE_WIDTH, SHAPE_HEIGHT);
-				gridSquares.get(squareRef).setBorder(buttonBorder);
-				gridSquares.get(squareRef).setIcon(idleImage); // reset buttons
-				gridSquares.get(squareRef).setBackground(Color.BLACK);
-				gridSquares.get(squareRef).setPressedIcon(animatedGif);
-				gridSquares.get(squareRef).setHorizontalAlignment(
+				gridSquares.get(m_squareRef).setBorder(buttonBorder);
+				gridSquares.get(m_squareRef).setIcon(m_idleImage); // reset buttons
+				gridSquares.get(m_squareRef).setBackground(Color.BLACK);
+				gridSquares.get(m_squareRef).setPressedIcon(m_animatedGif);
+				gridSquares.get(m_squareRef).setHorizontalAlignment(
 						SwingConstants.LEFT);
-				gridSquares.get(squareRef).setVerticalAlignment(
+				gridSquares.get(m_squareRef).setVerticalAlignment(
 						SwingConstants.TOP);
 
-				gridSquares.get(squareRef).addActionListener(handler);
+				gridSquares.get(m_squareRef).addActionListener(m_handler);
 
-				add(gridSquares.get(squareRef));
+				add(gridSquares.get(m_squareRef));
 				// add prepared buttons above to frame
-				squareRef++; // increments squareRef for next square.
+				m_squareRef++; // increments squareRef for next square.
 
 			}
 		}
 
-		refreshUserUI(game.getPlayerTurn().getPlayerName());
+		refreshUserUI(m_game.getPlayerTurn().getPlayerName());
 		displayTurn();
 		addBackButton();
 		addSaveButton();
@@ -231,10 +236,10 @@ public class DisplayTTT extends JPanel implements Runnable {
 			System.out.println("DisplayTTT::Constructor called - "
 					+ "params (GameTTT, Board, Boolean visualization)");
 		}
-		game = mygame;
+		m_game = mygame;
 		m_boardGame = boardGame;
 		m_visualize = visualization;
-		m_players = game.getPlayers();
+		m_players = m_game.getPlayers();
 		// create red border
 		Border buttonBorder = new LineBorder(Color.RED, 1);
 		// begin rendering grid
@@ -245,28 +250,28 @@ public class DisplayTTT extends JPanel implements Runnable {
 				gridSquares.add(new JButton());
 				// set position of buttons to appear in grid formation, with
 				// 15px margin on left and top.
-				gridSquares.get(squareRef).setBounds(SHAPE_WIDTH * i +
+				gridSquares.get(m_squareRef).setBounds(SHAPE_WIDTH * i +
 						Display.OFFSET15, SHAPE_HEIGHT * j + Display.OFFSET15,
 						SHAPE_WIDTH, SHAPE_HEIGHT);
-				gridSquares.get(squareRef).setBorder(buttonBorder);
-				gridSquares.get(squareRef).setIcon(idleImage); // reset buttons
-				gridSquares.get(squareRef).setBackground(Color.BLACK);
-				gridSquares.get(squareRef).setPressedIcon(animatedGif);
-				gridSquares.get(squareRef).setHorizontalAlignment(
+				gridSquares.get(m_squareRef).setBorder(buttonBorder);
+				gridSquares.get(m_squareRef).setIcon(m_idleImage); // reset buttons
+				gridSquares.get(m_squareRef).setBackground(Color.BLACK);
+				gridSquares.get(m_squareRef).setPressedIcon(m_animatedGif);
+				gridSquares.get(m_squareRef).setHorizontalAlignment(
 						SwingConstants.LEFT);
-				gridSquares.get(squareRef).setVerticalAlignment(
+				gridSquares.get(m_squareRef).setVerticalAlignment(
 						SwingConstants.TOP);
 
-				gridSquares.get(squareRef).addActionListener(handler);
+				gridSquares.get(m_squareRef).addActionListener(m_handler);
 
-				add(gridSquares.get(squareRef));
+				add(gridSquares.get(m_squareRef));
 				// add prepared buttons above to frame
-				squareRef++; // increments squareRef for next square.
+				m_squareRef++; // increments squareRef for next square.
 
 			}
 		}
 
-		refreshUserUI(game.getPlayerTurn().getPlayerName());
+		refreshUserUI(m_game.getPlayerTurn().getPlayerName());
 		displayTurn();
 		addBackButton();
 		addSaveButton();
@@ -277,9 +282,9 @@ public class DisplayTTT extends JPanel implements Runnable {
 	/** Action listener for the human player click */
 	private class GUIEventHandler implements ActionListener {
 		public void actionPerformed(ActionEvent event) {
-			if (ignoreEvents == false) {
+			if (m_ignoreEvents == false) {
 				doMovementHuman(gridSquares.indexOf(event.getSource()));
-				if (playing) {
+				if (m_playing) {
 					playGame();
 				}
 			}
@@ -291,10 +296,10 @@ public class DisplayTTT extends JPanel implements Runnable {
 		if(GameSelector.m_TRACE){
 			System.out.println("DisplayTTT::playGame - no params");
 		}
-		if (game.getPlayerTurn().getPlayerName().endsWith(".AI")) {
-			ignoreEvents = true;
+		if (m_game.getPlayerTurn().getPlayerName().endsWith(".AI")) {
+			m_ignoreEvents = true;
 
-			if (playing) {
+			if (m_playing) {
 				ActionListener listen = new ActionListener() {
 					@Override
 					public void actionPerformed(ActionEvent e) {
@@ -307,9 +312,9 @@ public class DisplayTTT extends JPanel implements Runnable {
 				timer.start();
 			}
 		} else {
-			ignoreEvents = false;
+			m_ignoreEvents = false;
 		}
-		System.out.println(game.getPlayerTurn().getPlayerName());
+		System.out.println(m_game.getPlayerTurn().getPlayerName());
 	}
 
 	/** Contains the strategy for the ai player */
@@ -317,84 +322,98 @@ public class DisplayTTT extends JPanel implements Runnable {
 		if(GameSelector.m_TRACE){
 			System.out.println("DisplayTTT::aiMovementStrategy - no params");
 		}
-		if (initialPlay) {
-			m_aiMoves.add(RANDOM);
-			doMovementAI(RANDOM);
-			System.out.println("Computer move placed at:" + (RANDOM));
-			initialPlay = false;
-		} else if (!initialPlay) {
+		if (m_initialPlay) {
+			m_aiMoves.add(m_Random);
+			doMovementAI(m_Random);
+			System.out.println("Computer move placed at:" + (m_Random));
+			m_initialPlay = false;
+		} else if (!m_initialPlay) {
 			try{
-				if ((game.getBoard().accessSquare(RANDOM + 1).getValue() ==' ')
-						&& ((RANDOM + 1) <= 63) && (RANDOM % 8 != 7)) {
-					doMovementAI(RANDOM + 1);
-					RANDOM = RANDOM + 1;
-				} else if ((game.getBoard().accessSquare(RANDOM - 1)
-						.getValue() == ' ') && ((RANDOM - 1)>=0) 
-						&& (RANDOM % 8 != 0)) {
-					doMovementAI(RANDOM - 1);
-					RANDOM = RANDOM - 1;
-				} else if (((RANDOM + 7 )<= 63) &&(game.getBoard()
-						.accessSquare(RANDOM + 7).getValue() == ' ')
-						&&  (RANDOM % 8 != 0)) {
-					doMovementAI(RANDOM + 7);
-					RANDOM = RANDOM + 7;
-				} else if (((RANDOM - 7)>=0) &&(game.getBoard()
-						.accessSquare(RANDOM - 7).getValue() == ' ')
-						&&  (RANDOM % 8 != 7)) {
-					doMovementAI(RANDOM - 7);
-					RANDOM = RANDOM - 7;
-				} else if ((game.getBoard().accessSquare(RANDOM + 8)
-						.getValue() == ' ') && ((RANDOM + 8) <= 63)) {
-					doMovementAI(RANDOM + 8);
-					RANDOM = RANDOM + 8;
-				} else if ((game.getBoard().accessSquare(RANDOM - 8)
-						.getValue() == ' ') && ((RANDOM - 8)>=0)) {
-					doMovementAI(RANDOM - 8);
-					RANDOM = RANDOM - 8;
-				} else if (((RANDOM + 4) <= 63) &&(game.getBoard()
-						.accessSquare(RANDOM + 4) .getValue() == ' ')
-						&& RANDOM % 8 != 5 && RANDOM % 8 != 6
-						&& RANDOM % 8 != 7 && RANDOM % 8 != 4) {
-					doMovementAI(RANDOM + 4);
-					RANDOM = RANDOM + 4;
-				} else if (((RANDOM - 4)>=0) && (game.getBoard()
-						.accessSquare(RANDOM - 4).getValue() == ' ')
-						&& RANDOM % 8 != 0 && RANDOM % 8 != 1
-						&& RANDOM % 8 != 2 && RANDOM % 8 != 3) {
-					doMovementAI(RANDOM - 4);
-					RANDOM = RANDOM - 4;
-				} else if (((RANDOM - 28)>=0)&&(game.getBoard()
-						.accessSquare(RANDOM - 28).getValue() == ' ')) {
-					doMovementAI(RANDOM - 28);
-					RANDOM = RANDOM - 28;
-				} else if (((RANDOM + 28) <= 63) &&(game.getBoard()
-						.accessSquare(RANDOM + 28).getValue() == ' ')) {
-					doMovementAI(RANDOM + 28);
-					RANDOM = RANDOM + 28;
-				} else if (((RANDOM - 32)>=0)&&(game.getBoard()
-						.accessSquare(RANDOM - 32).getValue() == ' ')) {
-					doMovementAI(RANDOM - 32);
-					RANDOM = RANDOM - 32;
-				} else if ((RANDOM + 32) <= 63&&(game.getBoard()
-						.accessSquare(RANDOM + 32).getValue() == ' ')) {
-					doMovementAI(RANDOM + 32);
-					RANDOM = RANDOM + 32;
+				if ((m_game.getBoard().accessSquare(m_Random + 1).getValue() ==' ')
+					&& ((m_Random + 1) <= MAX_RAND) 
+					&& (m_Random % SURROUND_SQUARES != (SURROUND_SQUARES-1))){
+						doMovementAI(m_Random + 1);
+						m_Random = m_Random + 1;
+				} else if ((m_game.getBoard().accessSquare(m_Random - 1)
+							.getValue() == ' ') && ((m_Random - 1)>=0) 
+							&& (m_Random % SURROUND_SQUARES != 0)) {
+								doMovementAI(m_Random - 1);
+								m_Random = m_Random - 1;
+				} else if (((m_Random + (SURROUND_SQUARES-1) )<= MAX_RAND) 
+							&&(m_game.getBoard()
+							.accessSquare(m_Random + (SURROUND_SQUARES-1))
+							.getValue() == ' ')
+							&& (m_Random % SURROUND_SQUARES != 0)) {
+								doMovementAI(m_Random + (SURROUND_SQUARES-1));
+								m_Random = m_Random + (SURROUND_SQUARES-1);
+				} else if (((m_Random - (SURROUND_SQUARES-1))>=0) 
+							&&(m_game.getBoard()
+							.accessSquare(m_Random - (SURROUND_SQUARES-1))
+							.getValue() == ' ')
+						    &&(m_Random % SURROUND_SQUARES != 
+						    (SURROUND_SQUARES-1))){
+								doMovementAI(m_Random - (SURROUND_SQUARES-1));
+								m_Random = m_Random - (SURROUND_SQUARES-1);
+				} else if ((m_game.getBoard()
+							.accessSquare(m_Random + SURROUND_SQUARES)
+							.getValue() == ' ') && ((m_Random + SURROUND_SQUARES)
+							<= MAX_RAND)) {
+								doMovementAI(m_Random + SURROUND_SQUARES);
+								m_Random = m_Random + SURROUND_SQUARES;
+				} else if ((m_game.getBoard()
+							.accessSquare(m_Random - SURROUND_SQUARES)
+							.getValue() == ' ') 
+							&& ((m_Random - SURROUND_SQUARES)>=0)) {
+								doMovementAI(m_Random - SURROUND_SQUARES);
+								m_Random = m_Random - SURROUND_SQUARES;
+				} else if (((m_Random + 4) <= MAX_RAND) &&(m_game.getBoard()
+							.accessSquare(m_Random + 4).getValue() == ' ')
+							&& m_Random % SURROUND_SQUARES != 5 
+							&& m_Random % SURROUND_SQUARES != 6
+							&& m_Random % SURROUND_SQUARES != 7 
+							&& m_Random % SURROUND_SQUARES != 4) {
+								doMovementAI(m_Random + 4);
+								m_Random = m_Random + 4;
+				} else if (((m_Random - 4)>=0) && (m_game.getBoard()
+							.accessSquare(m_Random - 4).getValue() == ' ')
+							&& m_Random % SURROUND_SQUARES != 0 
+							&& m_Random % SURROUND_SQUARES != 1
+							&& m_Random % SURROUND_SQUARES != 2 
+							&& m_Random % SURROUND_SQUARES != 3) {
+								doMovementAI(m_Random - 4);
+								m_Random = m_Random - 4;
+				} else if (((m_Random - 28)>=0)&&(m_game.getBoard()
+							.accessSquare(m_Random - 28).getValue() == ' ')) {
+							doMovementAI(m_Random - 28);
+							m_Random = m_Random - 28;
+				} else if (((m_Random + 28) <= MAX_RAND) &&(m_game.getBoard()
+							.accessSquare(m_Random + 28).getValue() == ' ')) {
+							doMovementAI(m_Random + 28);
+							m_Random = m_Random + 28;
+				} else if (((m_Random - 32)>=0)&&(m_game.getBoard()
+							.accessSquare(m_Random - 32).getValue() == ' ')) {
+							doMovementAI(m_Random - 32);
+							m_Random = m_Random - 32;
+				} else if ((m_Random + 32) <= MAX_RAND&&(m_game.getBoard()
+							.accessSquare(m_Random + 32).getValue() == ' ')) {
+								doMovementAI(m_Random + 32);
+								m_Random = m_Random + 32;
 				} else {
-					for(int i=0;i<=63;i++) {
-						if (game.getBoard().accessSquare(i).getValue() == ' ') {
-							doMovementAI(i);
-							RANDOM = i;
-							break;
+					for(int i=0;i<=MAX_RAND;i++) {
+						if (m_game.getBoard().accessSquare(i).getValue() == ' ') {
+								doMovementAI(i);
+								m_Random = i;
+								break;
 						}
 					}
-				}System.out.println("Computer move placed at:" + (RANDOM));
+				}System.out.println("Computer move placed at:" + (m_Random));
 			}catch (ArrayIndexOutOfBoundsException ex){
 				while(true) {
-					int random=RAND.nextInt(63);
-					if (game.getBoard().accessSquare(random).getValue() == ' '){
+					int random=RAND.nextInt(MAX_RAND);
+					if (m_game.getBoard().accessSquare(random).getValue() == ' '){
 						doMovementAI(random);
 						System.out.println("i am random :"+ random);
-						RANDOM = random;
+						m_Random = random;
 						break;
 					}
 				}
@@ -413,7 +432,7 @@ public class DisplayTTT extends JPanel implements Runnable {
 		}
 		System.out.println("Movement human reached");
 		int dialogResponse; // initialises variable to store dialog response
-		if (!game.setMovementHuman(squareRef))
+		if (!m_game.setMovementHuman(squareRef))
 			return; // do nothing if square is valid move but doesn't trigger a
 		// win or a draw or an invalid move.
 		if(m_visualize){
@@ -424,7 +443,7 @@ public class DisplayTTT extends JPanel implements Runnable {
 			Font myFont = new Font("Impact", Font.CENTER_BASELINE, 20);
 			gridSquares.get(squareRef).setFont(myFont);
 
-			if (game.getPlayerTurn().isX()) { // draws a cross
+			if (m_game.getPlayerTurn().isX()) { // draws a cross
 				gridSquares.get(squareRef).setForeground(Color.WHITE);
 				Xs.add(squareRef);
 				m_countX++;
@@ -460,7 +479,7 @@ public class DisplayTTT extends JPanel implements Runnable {
 				System.out.println("An O has been placed at" + squareRef);
 			}			
 		}else{
-			if (game.getPlayerTurn().isX()) { // draws a cross
+			if (m_game.getPlayerTurn().isX()) { // draws a cross
 				gridSquares.get(squareRef).setIcon(
 						new ImageIcon("res/CROSS.png"));
 				m_countX++;
@@ -473,49 +492,49 @@ public class DisplayTTT extends JPanel implements Runnable {
 			}
 		}
 
-		switch (game.winner()) {
+		switch (m_game.winner()) {
 		case -1: // a draw
 
 			System.out.println("Human Draw reached");
-			playing = false;
-			gameRunning = false;
-			dialogResponse = JOptionPane.showConfirmDialog(frame,
+			m_playing = false;
+			m_gameRunning = false;
+			dialogResponse = JOptionPane.showConfirmDialog(m_frame,
 					"Draw! Would you like to play again?", "TTT",
 					JOptionPane.YES_NO_OPTION);
 			if (dialogResponse == 0) {
 				// play again
-				playing = false;
+				m_playing = false;
 				new MenuTTT();
-				game.frameDispose();
+				m_game.frameDispose();
 			} else {
-				playing = false;
-				game.frameDispose();
+				m_playing = false;
+				m_game.frameDispose();
 				System.exit(0);
 
 			}
 			break;
 
 		case 1: // Supposedly P1 wins
-			gameRunning = false;
-			playing = false;
+			m_gameRunning = false;
+			m_playing = false;
 			System.out.println("Human Case 1 Game won reached");
-			int[] coord = game.getCoordinatesWinningSquares();
+			int[] coord = m_game.getCoordinatesWinningSquares();
 			
 			//Use this for animation for win.
 			gridSquares.get(coord[0]).setIcon(new ImageIcon("res/WIN.png"));
 			gridSquares.get(coord[1]).setIcon(new ImageIcon("res/WIN.png"));
 			
-			dialogResponse = JOptionPane.showConfirmDialog(frame, game
+			dialogResponse = JOptionPane.showConfirmDialog(m_frame, m_game
 					.getPlayerTurn().getPlayerName()
 					+ " won!! Would you like to play again?", "TTT",
 					JOptionPane.YES_NO_OPTION);
 			if (dialogResponse == 0) {
-				playing = false;
+				m_playing = false;
 				new MenuTTT();
-				game.frameDispose();
+				m_game.frameDispose();
 			} else {
-				playing = false;
-				game.frameDispose();
+				m_playing = false;
+				m_game.frameDispose();
 				System.exit(0);
 			}
 			break;
@@ -523,34 +542,34 @@ public class DisplayTTT extends JPanel implements Runnable {
 		case 2:
 
 			System.out.println("Human Case 2 Game won reached ");
-			playing = false;
-			gameRunning = false;
-			int[] coord2 = game.getCoordinatesWinningSquares();
+			m_playing = false;
+			m_gameRunning = false;
+			int[] coord2 = m_game.getCoordinatesWinningSquares();
 			
 			//Use this for animation for win.
 			gridSquares.get(coord2[0]).setIcon(new ImageIcon("res/WIN.png"));
 			gridSquares.get(coord2[1]).setIcon(new ImageIcon("res/WIN.png"));
 			
-			dialogResponse = JOptionPane.showConfirmDialog(frame, game
+			dialogResponse = JOptionPane.showConfirmDialog(m_frame, m_game
 					.getPlayerTurn().getPlayerName()
 					+ " won!! Would you like to play again?", "TTT",
 					JOptionPane.YES_NO_OPTION);
 			if (dialogResponse == 0) {
 				// play again
-				playing = false;
+				m_playing = false;
 				new MenuTTT();
-				game.frameDispose();
+				m_game.frameDispose();
 			} else {
-				playing = false;
-				game.frameDispose();
+				m_playing = false;
+				m_game.frameDispose();
 				System.exit(0);
 
 			}
 			break;
 
 		default:
-			game.nextTurn();
-			this.refreshUserUI(game.getPlayerTurn().getPlayerName());
+			m_game.nextTurn();
+			this.refreshUserUI(m_game.getPlayerTurn().getPlayerName());
 		}
 
 		System.out.println("End of human reached ");
@@ -568,7 +587,7 @@ public class DisplayTTT extends JPanel implements Runnable {
 
 		int dialogResponse;
 
-		if (!game.setMovementAI(randomNumber))
+		if (!m_game.setMovementAI(randomNumber))
 			return;
 
 		else {
@@ -580,7 +599,7 @@ public class DisplayTTT extends JPanel implements Runnable {
 				}
 				Font myFont = new Font("Impact", Font.CENTER_BASELINE, 20);
 				gridSquares.get(randomNumber).setFont(myFont);
-				if (game.getPlayerTurn().isX()) { // draws a cross
+				if (m_game.getPlayerTurn().isX()) { // draws a cross
 					gridSquares.get(randomNumber).setForeground(Color.WHITE);
 					Xs.add(randomNumber);
 					m_countX++;
@@ -616,7 +635,7 @@ public class DisplayTTT extends JPanel implements Runnable {
 					System.out.println("An O has been placed at" +randomNumber);
 				}
 			}else{
-				if (game.getPlayerTurn().isX()) { // draws a cross
+				if (m_game.getPlayerTurn().isX()) { // draws a cross
 
 					gridSquares.get(randomNumber).setIcon(
 							new ImageIcon("res/CROSS.png"));
@@ -629,44 +648,44 @@ public class DisplayTTT extends JPanel implements Runnable {
 			}
 		}
 		
-		switch (game.winner()) {
+		switch (m_game.winner()) {
 		
 		case -1: // a draw
 			System.out.println("AI Draw reached");
-			gameRunning = false;
-			dialogResponse = JOptionPane.showConfirmDialog(frame,
+			m_gameRunning = false;
+			dialogResponse = JOptionPane.showConfirmDialog(m_frame,
 					"Draw! Would you like to play again?", "TTT",
 					JOptionPane.YES_NO_OPTION);
 			if (dialogResponse == 0) {
 				// play again
-				playing = false;
+				m_playing = false;
 				new MenuTTT();
-				game.frameDispose();
+				m_game.frameDispose();
 			} else {
-				playing = false;
-				game.frameDispose();
+				m_playing = false;
+				m_game.frameDispose();
 				System.exit(0);
 
 			}
 			break;
 
 		case 1: // a player won
-			playing = false;
-			gameRunning = false;
+			m_playing = false;
+			m_gameRunning = false;
 			System.out.println("AI Case 1 Game won reached");
 
-			dialogResponse = JOptionPane.showConfirmDialog(frame, game
+			dialogResponse = JOptionPane.showConfirmDialog(m_frame, m_game
 					.getPlayerTurn().getPlayerName()
 					+ " won!! Would you like to play again?", "TTT",
 					JOptionPane.YES_NO_OPTION);
 			if (dialogResponse == 0) {
 				// play again
-				playing = false;
-				game.frameDispose();
+				m_playing = false;
+				m_game.frameDispose();
 				new MenuTTT();
 			} else {
-				playing = false;
-				game.frameDispose();
+				m_playing = false;
+				m_game.frameDispose();
 				System.exit(0);
 
 			}
@@ -674,22 +693,22 @@ public class DisplayTTT extends JPanel implements Runnable {
 
 		case 2:
 			System.out.println("AI Case 2 Game won reached ");
-			playing = false;
-			gameRunning = false;
+			m_playing = false;
+			m_gameRunning = false;
 
-			dialogResponse = JOptionPane.showConfirmDialog(frame, game
+			dialogResponse = JOptionPane.showConfirmDialog(m_frame, m_game
 					.getPlayerTurn().getPlayerName()
 					+ " won!! Would you like to play again?", "TTT",
 					JOptionPane.YES_NO_OPTION);
 			if (dialogResponse == 0) {
 				// play again
 
-				playing = false;
-				game.frameDispose();
+				m_playing = false;
+				m_game.frameDispose();
 				new MenuTTT();
 			} else {
-				playing = false;
-				game.frameDispose();
+				m_playing = false;
+				m_game.frameDispose();
 				System.exit(0);
 
 			}
@@ -698,9 +717,9 @@ public class DisplayTTT extends JPanel implements Runnable {
 
 		default:
 			// iterates to next turn
-			game.nextTurn();
+			m_game.nextTurn();
 			// updates turn label
-			this.refreshUserUI(game.getPlayerTurn().getPlayerName());
+			this.refreshUserUI(m_game.getPlayerTurn().getPlayerName());
 		}
 		System.out.println("End of AI reached ");
 	}
@@ -755,20 +774,20 @@ public class DisplayTTT extends JPanel implements Runnable {
 		if(GameSelector.m_TRACE){
 			System.out.println("DisplayTTT::addBackButton - no params");
 		}
-		goBackButton.setIcon(new ImageIcon("res/BACKBTN.png"));
-		goBackButton.setBorderPainted(false); 
-		goBackButton.setFocusPainted(false);
-		goBackButton.setContentAreaFilled(false);
-		goBackButton.setBounds(0, Display.YPOS_ROW500, 
+		m_goBackButton.setIcon(new ImageIcon("res/BACKBTN.png"));
+		m_goBackButton.setBorderPainted(false); 
+		m_goBackButton.setFocusPainted(false);
+		m_goBackButton.setContentAreaFilled(false);
+		m_goBackButton.setBounds(0, Display.YPOS_ROW500, 
 				Display.COMPONENT_WIDTH160, Display.COMPONENT_HEIGHT85);
-		goBackButton.setVisible(true);
-		goBackButton.addActionListener(new ActionListener() {
+		m_goBackButton.setVisible(true);
+		m_goBackButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				game.frameDispose();
+				m_game.frameDispose();
 				new GameSelector(GameSelector.m_TRACE); 
 			}
 		});
-		add(goBackButton);
+		add(m_goBackButton);
 	}
 
 	/** adds the saveButton to the frame */
@@ -838,25 +857,25 @@ public class DisplayTTT extends JPanel implements Runnable {
 			System.out.println("DisplayTTT::displayTurn - no params");
 		}
 		// sets colours and bounds for turn and list of players labels.
-		dispTurn.setForeground(Color.WHITE);
-		dispTurn.setBounds(Display.OFFSET10, 
+		m_dispTurn.setForeground(Color.WHITE);
+		m_dispTurn.setBounds(Display.OFFSET10, 
 				Display.YPOS_ROW450-Display.OFFSET20, 
 				Display.COMPONENT_WIDTH350, Display.COMPONENT_HEIGHT20);
-		dispPlayers.setForeground(Color.WHITE);
-		dispPlayers.setBounds(Display.OFFSET10, Display.YPOS_ROW450,
+		m_dispPlayers.setForeground(Color.WHITE);
+		m_dispPlayers.setBounds(Display.OFFSET10, Display.YPOS_ROW450,
 				Display.COMPONENT_WIDTH350, Display.COMPONENT_HEIGHT20);
-		dispPlayers.setText("Players playing: "
-				+ game.getPlayers().get(0).getPlayerName() + ","
-				+ game.getPlayers().get(1).getPlayerName());
-		dispCount.setForeground(Color.WHITE);
-		dispCount.setBounds(Display.OFFSET10, 
+		m_dispPlayers.setText("Players playing: "
+				+ m_game.getPlayers().get(0).getPlayerName() + ","
+				+ m_game.getPlayers().get(1).getPlayerName());
+		m_dispCount.setForeground(Color.WHITE);
+		m_dispCount.setBounds(Display.OFFSET10, 
 				Display.YPOS_ROW450 + Display.OFFSET20, 
 				Display.COMPONENT_WIDTH350, Display.COMPONENT_HEIGHT20);
-		dispCount.setText(""); // blank for initialisation
+		m_dispCount.setText(""); // blank for initialisation
 
-		add(dispPlayers);
-		add(dispTurn);
-		add(dispCount);
+		add(m_dispPlayers);
+		add(m_dispTurn);
+		add(m_dispCount);
 	}
 
 	/** Updates the players turn */
@@ -865,15 +884,15 @@ public class DisplayTTT extends JPanel implements Runnable {
 			System.out.println("DisplayTTT::refreshUserUI "
 					+ "- params(String current turn");
 		}
-		dispTurn.setText(currentTurn + ", Take your turn!");
-		dispCount.setText("Number of X's = " + m_countX + " Number of O's = "
+		m_dispTurn.setText(currentTurn + ", Take your turn!");
+		m_dispCount.setText("Number of X's = " + m_countX + " Number of O's = "
 				+ m_countO);
 	}
 
 	/** override of the run method to paint components while playing game */
 	@Override
 	public void run() {
-		while (gameRunning) {
+		while (m_gameRunning) {
 			paintComponents(getGraphics());
 		}
 	}

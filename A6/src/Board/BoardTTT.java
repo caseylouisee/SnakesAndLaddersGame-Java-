@@ -48,6 +48,12 @@ public class BoardTTT extends Board {
 
 	/** integer that stores the value for detectEndGame()*/
 	public static final int X_WIN = 2;
+	
+	/** integer that is used as an offset for diagonal wins */
+	public static final int LINE_OFFSET4 = 4; 
+	
+	/** integer that is used as an offset for diagonal wins */
+	public static final int LINE_OFFSET8 = 8;
 
 	/**
 	 * Used to return the start and end of the winning chain for output.
@@ -302,9 +308,9 @@ public class BoardTTT extends Board {
 							i--;
 							if (m_counter >= WIN_AMOUNT) {
 								m_winningSquareCoordinates[0] =
-										(temp * m_boardWidth + j) - 4;
+										(temp * m_boardWidth + j)-LINE_OFFSET4;
 								m_winningSquareCoordinates[1] =
-										(i * m_boardWidth + j) + 8;
+										(i * m_boardWidth + j) + LINE_OFFSET8;
 
 								if(GameSelector.m_TRACE){
 									System.out.println("BoardTTT::"
@@ -354,10 +360,10 @@ public class BoardTTT extends Board {
 							i++;
 							if (m_counter >= WIN_AMOUNT) {
 								m_winningSquareCoordinates[0] = 
-										(temp * m_boardWidth + j) - 4;
+										(temp * m_boardWidth + j)-LINE_OFFSET4;
 
 								m_winningSquareCoordinates[1] = 
-										(i * m_boardWidth + j) - 8;
+										(i * m_boardWidth + j) - LINE_OFFSET8;
 
 								if(GameSelector.m_TRACE){
 									System.out.println("BoardTTT::"
