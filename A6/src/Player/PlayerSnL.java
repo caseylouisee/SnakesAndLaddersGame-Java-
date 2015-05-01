@@ -24,16 +24,16 @@ public abstract class PlayerSnL extends Player {
 
 	/** The piece initial location of the player */
 	public int m_playerLocation = 1;
-	
+
 	/** The piece color of the player */
 	public Color m_playerColor;
-	
+
 	/** To check if piece is on the destination square or not */
 	public boolean m_isMovementOnSquare;
-	
+
 	/** Last location of player */
 	public int m_lastLocation;
-	
+
 	/** Array of positions */
 	public ArrayList<Integer> m_allLocations = new ArrayList<Integer>();
 
@@ -75,53 +75,63 @@ public abstract class PlayerSnL extends Player {
 	 * @return true if piece gets to destination square, or false if the 
 	 * destination is out of bound
 	 */
-	public boolean setPlayerLocation(DisplaySnL displaySnL, Square s,
+	public boolean setPlayerLocation(DisplaySnL displaySnL, Square dest,
 			boolean isMovementSquare) {
-		if (s.getPosition() <= 100 && s.getPosition() >= 0) {
-			if (s.getPosition() > m_playerLocation) {
+		if (dest.getPosition() <= 100 && dest.getPosition() >= 0) {
+			if (dest.getPosition() > m_playerLocation) {
 				if (GameSelector.m_TRACE) {
-					System.out.println(s.getPosition() +" "+m_playerLocation);
+					System.out.println(dest.getPosition()+" "+m_playerLocation);
 				}
-				for (int i = m_playerLocation; i < s.getPosition(); i++) {
-					m_playerLocation = i + 1;
-					if (GameSelector.m_TRACE) {
-						System.out.println("Player Location is now: "
-								+ m_playerLocation);
-					}
-					displaySnL.updateGraphics();
-					try {
-						if (isMovementSquare) {
-							Thread.sleep(10);
-						} else {
-							Thread.sleep(100);
+				// no if statement if want to show travel up and down 
+				// snakes/ladders but progress is across board
+				if(isMovementSquare){
+					m_playerLocation = dest.getPosition(); 
+				}else{
+					for (int i = m_playerLocation; i < dest.getPosition(); i++){
+						m_playerLocation = i + 1;
+						if (GameSelector.m_TRACE) {
+							System.out.println("Player Location is now: "
+									+ m_playerLocation);
 						}
-					} catch (InterruptedException e) {
-					}
-				}
-			} else {
-				if (GameSelector.m_TRACE) {
-					System.out.println(s.getPosition()+" "+m_playerLocation);
-				}
-				for (int i = m_playerLocation; i > s.getPosition(); i--) {
-					m_playerLocation = i - 1;
-					if (GameSelector.m_TRACE) {
-						System.out.println("Player Location is now: "
-								+ m_playerLocation);
-					}
-					displaySnL.updateGraphics();
-					try {
-						if (isMovementSquare) {
+						displaySnL.updateGraphics();
+						try {
+							/*if (isMovementSquare) {
 							Thread.sleep(10);
-						} else {
+						} else {*/
 							Thread.sleep(100);
+							//}
+						} catch (InterruptedException e) {
 						}
-					} catch (InterruptedException e) {
 					}
+				}} else {
+					if (GameSelector.m_TRACE) {
+						System.out.println(dest.getPosition()+" "
+									+m_playerLocation);
+					}
+					if(isMovementSquare){
+						m_playerLocation = dest.getPosition(); 
+					}else{
+						for (int i = m_playerLocation;
+								i > dest.getPosition(); i--) {
+							m_playerLocation = i - 1;
+							if (GameSelector.m_TRACE) {
+								System.out.println("Player Location is now: "
+										+ m_playerLocation);
+							}
+							displaySnL.updateGraphics();
+							try {
+								/*if (isMovementSquare) {
+							Thread.sleep(10);
+						} else {*/
+								Thread.sleep(100);
+								//}
+							} catch (InterruptedException e) {
+							}
+						}}
 				}
-			}
 			if(GameSelector.m_TRACE){
 				System.out.println("PlayerSnL::setPlayerLocation()  "
-						+ "set player piece location: "+s+
+						+ "set player piece location: "+ dest +
 						"and check success is true");
 			}
 			return true;
@@ -132,7 +142,7 @@ public abstract class PlayerSnL extends Player {
 			}
 			if(GameSelector.m_TRACE){
 				System.out.println("PlayerSnL::setPlayerLocation()  "
-						+ "set player piece location: "+s+
+						+ "set player piece location: "+ dest +
 						"and check success is false");
 			}
 			return false;
@@ -147,7 +157,7 @@ public abstract class PlayerSnL extends Player {
 		m_allLocations.add(playerLocation);
 		m_lastLocation = playerLocation;
 	}
-	
+
 	/** 
 	 * returns the last location of the player
 	 * @return m_lastLocation
@@ -155,7 +165,7 @@ public abstract class PlayerSnL extends Player {
 	public int getLastLocation(){
 		return m_lastLocation;
 	}
-	
+
 	/** Returns the arraylist containing all the player locations */
 	public ArrayList<Integer> getAllLocations(){
 		return m_allLocations;

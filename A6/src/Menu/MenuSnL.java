@@ -11,24 +11,36 @@ package Menu;
  */
 
 
+import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.nio.file.DirectoryStream;
+import java.nio.file.FileSystems;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.ArrayList;
+import java.util.Iterator;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
+import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
@@ -112,28 +124,6 @@ public class MenuSnL {
 	
 	/** Boolean for visualization */
 	private Boolean m_visualization;
-
-	/* ------------ METHODS ------------- */
-	/** This is the test method. 
-	 * It calls the menuSnL constructor to add all the correct buttons, 
-	 * all methods are voids so it's impossible to input invalid information. 
-	 * All methods are called, if no load game file available it will try to 
-	 * start the game with no player information throwing an error.
-	 */
-	public static void main(String[] args) { 
-		MenuSnL test = new MenuSnL();	
-		test.addLabels();
-		test.addNumberOfPlayersComboBox();
-		test.addPlayersNamesTextField();
-		test.addColoursComboBox();
-		test.addPlayerType();
-		test.addLaddersComboBox();
-		test.addSnakesComboBox();
-		test.addLogo();
-		test.addGameButtons();
-		test.loadGame();
-		test.sendForm();
-	}
 
 	/** 
 	 * This is the MenuSnL constructor. It sets up a new frame setting 
@@ -456,7 +446,21 @@ public class MenuSnL {
 		m_loadGame.setVisible(true);
 		m_loadGame.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				loadGame();
+				File path = new File("savedGamesSnL/");
+				File [] files = path.listFiles();
+				for (int i = 0; i < files.length; i++){
+					if (files[i].isFile()){ 
+						System.out.println(files[i]);
+					}
+				}
+				File fileName = (File) JOptionPane.showInputDialog(m_frame, 
+					        "What game do you want to load?",
+					        "Load Game",
+					        JOptionPane.QUESTION_MESSAGE, 
+					        null, 
+					        files, 
+					        files[0]);
+				loadGame(fileName.toString());
 			}
 		});
 
@@ -466,12 +470,12 @@ public class MenuSnL {
 	}
 
 	/** loads the game from the file res/saveSnL */
-	private void loadGame(){
+	private void loadGame(String fileName){
 		if(GameSelector.m_TRACE){
 			System.out.println("MenuSnL:: loadGame");
 		}
 
-		String csvFile = "res/saveSnL.csv";
+		String csvFile = fileName;
 		BufferedReader br = null;
 		String line="";
 
@@ -701,5 +705,26 @@ public class MenuSnL {
 						+ "no visualization");
 			}
 		}
+	}
+
+	/** This is the test method. 
+	 * It calls the menuSnL constructor to add all the correct buttons, 
+	 * all methods are voids so it's impossible to input invalid information. 
+	 * All methods are called, if no load game file available it will try to 
+	 * start the game with no player information throwing an error.
+	 */
+	public static void main(String[] args) { 
+		MenuSnL test = new MenuSnL();	
+		test.addLabels();
+		test.addNumberOfPlayersComboBox();
+		test.addPlayersNamesTextField();
+		test.addColoursComboBox();
+		test.addPlayerType();
+		test.addLaddersComboBox();
+		test.addSnakesComboBox();
+		test.addLogo();
+		test.addGameButtons();
+		test.loadGame("savedGamesSnL/saveSnL.csv");
+		test.sendForm();
 	}
 }

@@ -16,6 +16,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
@@ -301,7 +302,21 @@ public class MenuTTT {
 		loadGame.setVisible(true);
 		loadGame.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				loadGame();
+				File path = new File("savedGamesTTT/");
+				File [] files = path.listFiles();
+				for (int i = 0; i < files.length; i++){
+					if (files[i].isFile()){ 
+						System.out.println(files[i]);
+					}
+				}
+				File fileName = (File) JOptionPane.showInputDialog(m_frame, 
+					        "What game do you want to load?",
+					        "Load Game",
+					        JOptionPane.QUESTION_MESSAGE, 
+					        null, 
+					        files, 
+					        files[0]);
+				loadGame(fileName.toString());
 			}
 		});
 
@@ -311,11 +326,11 @@ public class MenuTTT {
 	}
 
 	/** Loads the saved game from the file res/saveTTT.csv */
-	private void loadGame(){
+	private void loadGame(String fileName){
 		if(GameSelector.m_TRACE){
 			System.out.println("MenuTTT::loadGame");
 		}
-		String csvFile = "res/saveTTT.csv";
+		String csvFile = fileName;
 		BufferedReader br = null;
 		String line="";
 
@@ -472,7 +487,7 @@ public class MenuTTT {
 		test.addPlayersNamesTextField();
 		test.addLogo();
 		test.addGameButtons();
-		test.loadGame();
+		test.loadGame("savedGames/saveTTT.csv");
 		test.sendForm();
 	}
 }

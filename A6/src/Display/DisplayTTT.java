@@ -805,15 +805,16 @@ public class DisplayTTT extends JPanel implements Runnable {
 		m_saveGameButton.setVisible(true);
 		m_saveGameButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				String name=JOptionPane.showInputDialog ("Save game as..."); 
 				JOptionPane.showMessageDialog(null, "Game saved");
-				saveGame();
+				saveGame(name);
 			}
 		});
 		add(m_saveGameButton);
 	}
 
-	/** method to save the game to the file res/saveTTT.csv */
-	private void saveGame(){
+	/** method to save the game to the file */
+	private void saveGame(String fileName){
 		if(GameSelector.m_TRACE){
 			System.out.println("DisplayTTT::saveGame - no params");
 		}
@@ -824,9 +825,11 @@ public class DisplayTTT extends JPanel implements Runnable {
 		 */
 
 		try{
-			Files.deleteIfExists(Paths.get("res/saveTTT.csv"));
+			Files.deleteIfExists(Paths.get(
+					"savedGamesTTT/" +fileName+ ".csv"));
 			
-			FileWriter writer = new FileWriter("res/saveTTT.csv");
+			FileWriter writer = new FileWriter(
+					"savedGamesTTT/"+fileName+".csv");
 
 			writer.append(m_players.get(0).getPlayerName()+",");
 			writer.append(m_players.get(0).getPlayerPieceType()+",");
