@@ -28,7 +28,6 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
-import javax.swing.border.EmptyBorder;
 
 import Board.BoardSnL;
 import Display.Display;
@@ -242,7 +241,7 @@ public class GameSnL {
 
 			return m_snakesList.get(movementPair);
 		} else {
-			System.out.println("error");
+			System.out.println("GameSnL::getMovementPair(int original)-error");
 
 			return -1;
 		}
@@ -486,8 +485,6 @@ public class GameSnL {
 
 		}
 
-		System.out.println("snakes are at: " + m_snakesList);
-
 		/* Generates ladder positions */
 		for (int i = 0; i < ladders; i++) {
 			int[] ladderSquares = generateSquares();
@@ -498,9 +495,13 @@ public class GameSnL {
 			setMovementSquares(ladderSquares[1]);
 			//m_movementSquares.add(ladderSquares[1]);
 		}
-		System.out.println("ladders are at: " + m_laddersList);
-		System.out.println("Movement Squares are: " + m_movementSquares);
-
+		
+		if(GameSelector.m_TRACE){
+			System.out.println("snakes are at: " + m_snakesList);
+			System.out.println("ladders are at: " + m_laddersList);
+			System.out.println("Movement Squares are: " + m_movementSquares);
+		}
+		
 		m_board = new BoardSnL(BOARD_WIDTH, BOARD_HEIGHT, m_movementSquares,
 				m_laddersList, m_snakesList);
 	}
@@ -528,6 +529,7 @@ public class GameSnL {
 
 	/**
 	 * Checks if the player has won and checks if the destination is valid
+	 * then moves player
 	 * @param player current player
 	 * @return a random number from 1-6
 	 */
@@ -535,7 +537,8 @@ public class GameSnL {
 		int roll = rollDice();
 
 		if (GameSelector.m_TRACE) {
-			System.out.println("GameSnL:: initVariables()");
+			System.out.println("GameSnL:: checkMove (PlayerSnL player) -"
+					+ " move player if valid move, checks for win");
 		}
 
 		final int MAX_VALUE = 100;
@@ -543,59 +546,67 @@ public class GameSnL {
 		if ((player.getPlayerLocation() + roll) >= MAX_VALUE) {
 			player.setPlayerLocation(m_shapesPanel,m_board.getSquare(MAX_VALUE),
 					false);
-			movePlayer(player, player.getPlayerLocation());
 			winner(player);
 		}
 
 		else {
-			
 			if(m_visualize){
 				// adds current location as last location before moving
 				player.setLastLocation(player.getPlayerLocation());
+				
+				// checks whether the player has hit a snake/ladder
+				boolean move = player.isMovementSquare(m_board.getSquare(
+						player.getPlayerLocation() + roll));
+				
+				// sets last location to where the player landed plus dice roll
+				player.setLastLocation(player.getPlayerLocation()+roll);
+				
+				// sets player location to where the player lands plus dice roll
+				player.setPlayerLocation(m_shapesPanel,m_board.getSquare(
+						player.getPlayerLocation()+roll),false);
+				
+				// sets new location if move is true
+				player.setPlayerLocation(m_shapesPanel,
+						m_board.getSquare(m_board.getSquare(
+								player.getPlayerLocation()).getDestination()),
+								move);		
+				
+			} else {
+				// adds current location as last location before moving
+				player.setLastLocation(player.getPlayerLocation());
+
 				// checks whether the player has hit a snake/ladder
 				boolean move = player.isMovementSquare(m_board.getSquare(player
 						.getPlayerLocation() + roll));
-				// sets last location to where the player landed with the dice roll
+
+				// sets last location to where the player landed plus dice roll
 				player.setLastLocation(player.getPlayerLocation()+roll);
-				// sets player location to where the player landed with dice roll
-				player.setPlayerLocation(m_shapesPanel,
-						m_board.getSquare(player.getPlayerLocation()+roll),false);
-				// sets new location if move is true
-				player.setPlayerLocation(m_shapesPanel,
-						m_board.getSquare(player.getPlayerLocation()), move);
-				
-				System.out.println("Move: " + move);
-				if (move) {
-					movePlayer(player, m_board.getSquare(player.getPlayerLocation())
-							.getDestination());
+
+				if(GameSelector.m_TRACE){
+					System.out.println("Move: " + move);
 				}
-			} else {
-			// adds current location as last location before moving
-			player.setLastLocation(player.getPlayerLocation());
-			
-			// checks whether the player has hit a snake/ladder
-			boolean move = player.isMovementSquare(m_board.getSquare(player
-					.getPlayerLocation() + roll));
-			
-			// sets last location to where the player landed with the dice roll
-			player.setLastLocation(player.getPlayerLocation()+roll);
-			
-				System.out.println("Move: " + move);
+				
 				if (move) {
 					player.setPlayerLocation(m_shapesPanel, 
-							m_board.getSquare(m_board.getSquare(
-								player.getPlayerLocation()+roll)
-								.getDestination()), move);
+							m_board.getSquare(player.getPlayerLocation()+roll),
+							false);
 					
-					movePlayer(player, 
-							m_board.getSquare(player.getPlayerLocation())
-							.getDestination());
+					// sleep to show the movement up the ladder/down snake
+					try {
+						Thread.sleep(500);
+					} catch (InterruptedException e) {
+						e.printStackTrace();
+					}
+					player.setPlayerLocation(m_shapesPanel, 
+							m_board.getSquare(m_board.getSquare(
+									player.getPlayerLocation())
+									.getDestination()),
+							move);
 				}else{
-
-					// sets new location if move is true
+					// sets location if move is false
 					player.setPlayerLocation(m_shapesPanel,
-						m_board.getSquare(player.getPlayerLocation()+roll),
-						move);
+							m_board.getSquare(player.getPlayerLocation()+roll),
+							move);
 				}
 			}
 
@@ -604,33 +615,12 @@ public class GameSnL {
 	}
 
 	/**
-	 * Moves the player 
-	 * @param player current player
-	 * @param destination square player will get moved to
-	 */
-	private void movePlayer(PlayerSnL player, int destination) {
-		boolean move = player.isMovementSquare(m_board.getSquare(destination));
-		player.setPlayerLocation(m_shapesPanel, m_board.getSquare(destination),
-				move);
-
-		System.out.println("Move: " + move);
-		if (move) {
-			movePlayer(player, m_board.getSquare(player.getPlayerLocation())
-					.getDestination());
-		}
-
-		if (GameSelector.m_TRACE) {
-			System.out.println("GameSnL:: movePlayer()");
-		}
-	}
-
-	/**
 	 * Displays winner information in a pop-up
 	 * @param player current player
 	 */
 	private void winner(PlayerSnL player) {
 		if (GameSelector.m_TRACE) {
-			System.out.println("GameSnL:: winner()");
+			System.out.println("GameSnL:: winner(PlayerSnL player)");
 		}
 		m_shapesPanel.winner(m_frame);
 	}
@@ -640,7 +630,7 @@ public class GameSnL {
 	 * @return a random number between 1-6
 	 */
 	public int buttonPush() {
-		int roll = checkMove(players.get(m_playerIterator));
+		int iterator = checkMove(players.get(m_playerIterator));
 		m_shapesPanel.repaint();
 
 		if (m_playerIterator >= players.size() - 1) {
@@ -650,11 +640,10 @@ public class GameSnL {
 		}
 
 		if (GameSelector.m_TRACE) {
-			System.out.println("GameSnL:: winner() " + "no parameters needed"
-					+ "returns:" + roll);
+			System.out.println("GameSnL:: buttonPush() returns:" + iterator);
 		}
 
-		return roll;
+		return iterator;
 	}
 
 	/**
@@ -667,10 +656,9 @@ public class GameSnL {
 		int roll = (int) (Math.random() * (MAX_VALUE - MIN_VALUE) + MIN_VALUE);
 
 		if (GameSelector.m_TRACE) {
-			System.out.println("GameSnL:: rollDice() "
-					+ "no parameters needed " + "returns:" + roll);
+			System.out.println("GameSnL:: rollDice() returns:" + roll);
 		}
-		System.out.println("Rolled " + roll);
+		
 		return roll;
 	}
 
@@ -707,8 +695,8 @@ public class GameSnL {
 		int[] squares = { startSquareNo, endSquareNo };
 
 		if (GameSelector.m_TRACE) {
-			System.out.println("GameSnL:: generateSquares() "
-					+ "no parameters " + "needed " + "returns:" + squares);
+			System.out.println("GameSnL:: generateSquares() returns:" 
+						+ squares);
 		}
 
 		return squares;
@@ -717,8 +705,7 @@ public class GameSnL {
 	/** method to dispose the frame */
 	public void frameDispose() {
 		if (GameSelector.m_TRACE) {
-			System.out.println("GameSnL:: frameDispose() "
-					+ "no parameters needed, no returns");
+			System.out.println("GameSnL:: frameDispose() no returns");
 		}
 		m_frame.dispose();
 	}
@@ -764,24 +751,14 @@ public class GameSnL {
 		gameSnL.getLadders();
 		gameSnL.getSnakes();
 		gameSnL.getPlayersSize();
-
 		gameSnL.rollDice();
 		gameSnL.buttonPush();
 		gameSnL.getIterator();
 		gameSnL.getPlayerLocation(gameSnL.m_playerIterator);
-
 		gameSnL.getMovementSquares();
-
 		gameSnL.checkMove(players.get(gameSnL.getIterator()));
-		gameSnL.movePlayer(
-				players.get(gameSnL.getIterator()),
-				gameSnL.m_board.getSquare(
-						players.get(gameSnL.getIterator()).getPlayerLocation())
-						.getDestination());
-
 		getMovementPair(1);
 		gameSnL.generateSquares();
-
 		gameSnL.winner(players.get(gameSnL.getIterator()));
 	}
 

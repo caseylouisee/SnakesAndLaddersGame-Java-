@@ -82,8 +82,6 @@ public abstract class PlayerSnL extends Player {
 				if (GameSelector.m_TRACE) {
 					System.out.println(dest.getPosition()+" "+m_playerLocation);
 				}
-				// no if statement if want to show travel up and down 
-				// snakes/ladders but progress is across board
 				if(isMovementSquare){
 					m_playerLocation = dest.getPosition(); 
 				}else{
@@ -95,44 +93,37 @@ public abstract class PlayerSnL extends Player {
 						}
 						displaySnL.updateGraphics();
 						try {
-							/*if (isMovementSquare) {
-							Thread.sleep(10);
-						} else {*/
 							Thread.sleep(100);
-							//}
 						} catch (InterruptedException e) {
 						}
 					}
-				}} else {
-					if (GameSelector.m_TRACE) {
-						System.out.println(dest.getPosition()+" "
-									+m_playerLocation);
-					}
-					if(isMovementSquare){
-						m_playerLocation = dest.getPosition(); 
-					}else{
-						for (int i = m_playerLocation;
-								i > dest.getPosition(); i--) {
-							m_playerLocation = i - 1;
-							if (GameSelector.m_TRACE) {
-								System.out.println("Player Location is now: "
-										+ m_playerLocation);
-							}
-							displaySnL.updateGraphics();
-							try {
-								/*if (isMovementSquare) {
-							Thread.sleep(10);
-						} else {*/
-								Thread.sleep(100);
-								//}
-							} catch (InterruptedException e) {
-							}
-						}}
 				}
+			} else {
+				if (GameSelector.m_TRACE) {
+					System.out.println(dest.getPosition()+" "+m_playerLocation);
+				}
+				if(isMovementSquare){
+					m_playerLocation = dest.getPosition(); 
+				}else{
+					for (int i = m_playerLocation;
+							i > dest.getPosition(); i--) {
+						m_playerLocation = i - 1;
+						if (GameSelector.m_TRACE) {
+							System.out.println("Player Location is now: "
+									+ m_playerLocation);
+						}
+						displaySnL.updateGraphics();
+						try {
+							Thread.sleep(100);
+						} catch (InterruptedException e) {
+						}
+					}
+				}
+			}
 			if(GameSelector.m_TRACE){
 				System.out.println("PlayerSnL::setPlayerLocation()  "
 						+ "set player piece location: "+ dest +
-						"and check success is true");
+						"and check the move is true");
 			}
 			return true;
 

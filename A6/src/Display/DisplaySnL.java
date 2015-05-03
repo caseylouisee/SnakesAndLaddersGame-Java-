@@ -14,8 +14,6 @@ import java.awt.BasicStroke;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
-import java.awt.Insets;
-import java.awt.RenderingHints;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
@@ -27,18 +25,14 @@ import java.util.ArrayList;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
-import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import javax.swing.JScrollPane;
-import javax.swing.JTextArea;
 import javax.swing.Timer;
 
 import org.apache.commons.lang3.time.StopWatch;
 
-import Board.BoardSnL;
 import Game.GameSnL;
 import Menu.GameSelector;
 import Menu.MenuSnL;
@@ -318,10 +312,11 @@ public class DisplaySnL extends JPanel implements Runnable{
 				m_dicePicLabel.setIcon(new ImageIcon("res/Dice"+m_roll+".png"));
 
 				//Prints out next players current location.
-				System.out.println("player position " +
+				if(GameSelector.m_TRACE){
+					System.out.println("player position " +
 						m_players.get(m_gameSnL.getIterator())
 						.getPlayerLocation());
-
+				}
 			}
 		});
 
@@ -421,8 +416,8 @@ public class DisplaySnL extends JPanel implements Runnable{
 		// listen for clicks
 		m_backButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				m_gameSnL.frameDispose();
 				m_gameRunning = false;
+				m_gameSnL.frameDispose();
 				m_gameSnL.reset();
 				new GameSelector(GameSelector.m_TRACE); 
 			}
@@ -624,8 +619,8 @@ public class DisplaySnL extends JPanel implements Runnable{
 		int maxSquare = 100;
 		if(position==maxSquare){
 			final JPanel panel = new JPanel();
-			panel.setBounds(coordinates[0] + Display.OFFSET15, coordinates[1] +
-					Display.OFFSET20, PIECE_DIAMETER, PIECE_DIAMETER);
+			int size = 50;
+			panel.setBounds(coordinates[0] , coordinates[1], size, size);
 			panel.setVisible(true);
 			this.add(panel);
 
@@ -782,7 +777,7 @@ public class DisplaySnL extends JPanel implements Runnable{
 		try {
 			m_ladder = ImageIO.read(new File("res/ladder.png"));
 		} catch (IOException e) {
-			System.out.println("wrong path");
+			System.out.println("DisplaySnL:: printLadders - wrong path");
 		}
 
 		for (int i = 0; i < squares.size(); i++) {
@@ -828,7 +823,7 @@ public class DisplaySnL extends JPanel implements Runnable{
 			m_snakeHead = ImageIO.read(new File("res/SnakeHead.png"));
 			m_snakeTail = ImageIO.read(new File("res/SnakeTail.png"));
 		} catch (IOException e) {
-			System.out.println("wrong path");
+			System.out.println("DisplaySnL:: printSnakes - wrong path");
 		}
 
 		for (int i = 0; i < snakes.size(); i++) {

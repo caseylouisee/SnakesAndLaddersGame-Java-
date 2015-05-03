@@ -13,8 +13,6 @@
  */
 package Board;
 
-import java.util.ArrayList;
-
 import Display.DisplayTTT;
 import Menu.GameSelector;
 import Square.SquareTTT;

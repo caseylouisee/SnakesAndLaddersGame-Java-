@@ -11,9 +11,7 @@ package Menu;
  */
 
 
-import java.awt.BorderLayout;
 import java.awt.Color;
-import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
@@ -23,24 +21,15 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.nio.file.DirectoryStream;
-import java.nio.file.FileSystems;
-import java.nio.file.Files;
-import java.nio.file.Path;
 import java.util.ArrayList;
-import java.util.Iterator;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
-import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
-import javax.swing.JPanel;
-import javax.swing.JScrollPane;
-import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
@@ -79,7 +68,7 @@ public class MenuSnL {
 
 	/** Maximum number of players */
 	private final int MAX_NUM_PLAYERS = 4;
-	
+
 	/** Maximum number of snakes/ladders for comboBox */
 	private final int MAX_NUM_SNL = 41;
 
@@ -121,9 +110,6 @@ public class MenuSnL {
 
 	/** Visualization check box */
 	private JCheckBox m_visualizationBox;
-	
-	/** Boolean for visualization */
-	private Boolean m_visualization;
 
 	/** 
 	 * This is the MenuSnL constructor. It sets up a new frame setting 
@@ -309,7 +295,7 @@ public class MenuSnL {
 			System.out.println("MenuSnL:: addLaddersComboBox");
 		}
 		m_playerLadders = new JComboBox<Integer>();
-		for(int i = 0; i<MAX_NUM_SNL; i++){
+		for(int i = 1; i<MAX_NUM_SNL; i++){
 			m_playerLadders.addItem(i);
 		}
 		m_playerLadders.setBounds(Display.XPOS_COL250, Display.YPOS_ROW400,
@@ -332,7 +318,7 @@ public class MenuSnL {
 			System.out.println("MenuSnL:: addSnakesComboBox");
 		}
 		m_playerSnakes = new JComboBox<Integer>();
-		for(int i = 0; i<MAX_NUM_SNL; i++){
+		for(int i = 1; i<MAX_NUM_SNL; i++){
 			m_playerSnakes.addItem(i);
 		}
 		m_playerSnakes.setBounds(Display.XPOS_COL250, Display.YPOS_ROW350,
@@ -365,17 +351,15 @@ public class MenuSnL {
 			public void itemStateChanged(ItemEvent event) {
 				Object source =  event.getItemSelectable();
 				if (source == m_visualizationBox) {
-					m_visualization = true;
 					if(GameSelector.m_TRACE){
 						System.out.println("MenuSnL :: addVisualizationCheckBox"
-							+ " - Selected");
+								+ " - Selected");
 					}
 				}
 				if (event.getStateChange() == ItemEvent.DESELECTED){
-					m_visualization = false;
 					if(GameSelector.m_TRACE){
 						System.out.println("MenuSnL :: addVisualizationCheckBox"
-							+ " - Deselected");
+								+ " - Deselected");
 					}
 				}
 			}
@@ -453,15 +437,22 @@ public class MenuSnL {
 						System.out.println(files[i]);
 					}
 				}
+
 				File fileName = (File) JOptionPane.showInputDialog(m_frame, 
-					        "What game do you want to load?",
-					        "Load Game",
-					        JOptionPane.QUESTION_MESSAGE, 
-					        null, 
-					        files, 
-					        files[0]);
-				loadGame(fileName.toString());
+						"What game do you want to load?",
+						"Load Game",
+						JOptionPane.QUESTION_MESSAGE, 
+						null, 
+						files, 
+						files[0]);
+
+				if(fileName==null){
+					return;
+				}else{
+					loadGame(fileName.toString());
+				}
 			}
+
 		});
 
 		m_frame.add(m_loadGame);
@@ -494,67 +485,70 @@ public class MenuSnL {
 			}else{	
 				String[] columns = new String[5];
 				try{
-				int numberOfPlayers = Integer.parseInt(line);
-				System.out.println(numberOfPlayers);
-
-				line = br.readLine();
-				columns = line.split(",");
-
-				Color color;
-				for(int i=0;i<numberOfPlayers;i++){
-
-					m_playerNames.add(columns[0]);
-					color = new Color(Integer.parseInt(columns[1]),
-							Integer.parseInt(columns[2]),
-							Integer.parseInt(columns[3]));
-					m_playerColors.add(color);
-					m_playerPositions.add(Integer.parseInt(columns[4]));
-					for(int j=0;j<5;j++){
-						System.out.print(columns[j]+",");
+					int numberOfPlayers = Integer.parseInt(line);
+					if(GameSelector.m_TRACE){
+						System.out.println("No. of players: "+numberOfPlayers);
 					}
-					System.out.println();
 					line = br.readLine();
 					columns = line.split(",");
-				}
 
-				int numberOfSnakes = Integer.parseInt(columns[0]);
-				int numberOfLadders = Integer.parseInt(columns[1]);
-				System.out.println(columns[0]+", "+columns[1]);
+					Color color;
+					for(int i=0;i<numberOfPlayers;i++){
+						m_playerNames.add(columns[0]);
+						color = new Color(Integer.parseInt(columns[1]),
+								Integer.parseInt(columns[2]),
+								Integer.parseInt(columns[3]));
+						m_playerColors.add(color);
+						m_playerPositions.add(Integer.parseInt(columns[4]));
+						for(int j=0;j<5;j++){
+							if(GameSelector.m_TRACE){
+								System.out.print(columns[j]+",");
+							}
+						}
+						System.out.println();
+						line = br.readLine();
+						columns = line.split(",");
+					}
 
-				line = br.readLine();
-				columns = line.split(",");
+					int numberOfSnakes = Integer.parseInt(columns[0]);
+					int numberOfLadders = Integer.parseInt(columns[1]);
+					if(GameSelector.m_TRACE){
+						System.out.println(columns[0]+", "+columns[1]);
+					}
+					line = br.readLine();
+					columns = line.split(",");
 
-				for(int i=0;i<numberOfSnakes*2;i+=2){
-					m_snakes.add(Integer.parseInt(columns[i]));
-					m_snakes.add(Integer.parseInt(columns[i+1]));
-				}
-	
-				line = br.readLine();
-				columns = line.split(",");
-	
-				for(int i=0; i<numberOfLadders*2;i+=2){
-					m_ladders.add(Integer.parseInt(columns[i]));
-					m_ladders.add(Integer.parseInt(columns[i+1]));
-				}
-				
-				br.close();
-				m_frame.dispose();
-				new GameSnL(m_playerNames,m_playerColors,m_playerPositions,
-						m_snakes,m_ladders, false);
-				
-				if(GameSelector.m_TRACE){
-					System.out.println("MenuSnL:: load() - new GameSnL");
-				}
-				
-				System.out.println(m_snakes);
-				System.out.println(m_ladders);
+					for(int i=0;i<numberOfSnakes*2;i+=2){
+						m_snakes.add(Integer.parseInt(columns[i]));
+						m_snakes.add(Integer.parseInt(columns[i+1]));
+					}
+
+					line = br.readLine();
+					columns = line.split(",");
+
+					for(int i=0; i<numberOfLadders*2;i+=2){
+						m_ladders.add(Integer.parseInt(columns[i]));
+						m_ladders.add(Integer.parseInt(columns[i+1]));
+					}
+
+					br.close();
+					m_frame.dispose();
+					new GameSnL(m_playerNames,m_playerColors,m_playerPositions,
+							m_snakes,m_ladders, false);
+
+					if(GameSelector.m_TRACE){
+						System.out.println("MenuSnL:: load() - new GameSnL");
+					}
+
+					System.out.println(m_snakes);
+					System.out.println(m_ladders);
 				}catch(NumberFormatException e){
 					JOptionPane.showMessageDialog(null, 
 							"Incorrect/corrupt save file.");
 				}
-				
-					
-					
+
+
+
 			} 
 		}catch (FileNotFoundException e) {
 			JOptionPane.showMessageDialog(null, "No save game data found");
@@ -578,27 +572,25 @@ public class MenuSnL {
 
 			String name;
 			String pattern = "([ ]*+[0-9A-Za-z]++[ ]*+)+";
-			name = m_playersNameTextField.get(i).getText()
-					.toString();
+			name = m_playersNameTextField.get(i).getText().toString();
 			if (name.replaceAll("\\s", "").equals("") | !name.matches(pattern)){
 				if(GameSelector.m_TRACE){
 					System.out.println("MenuSnL:: sendForm - name isn't valid");
 				}
-				JOptionPane.showMessageDialog(null,
+				JOptionPane.showMessageDialog(
+						null,
 						"Please enter a valid name for Player " + (i + 1) + "."
-								+ " Valid names include letters or numbers",
-								"Form Data", JOptionPane.ERROR_MESSAGE);
+						+ " Valid names include letters or numbers",
+						"Form Data", JOptionPane.ERROR_MESSAGE);
 				return;
 			} 
 
 			if (m_playerTypeComboBox.get(i).getSelectedItem().equals("Human")){
+				name = m_playersNameTextField.get(i).getText().toString();
 				if(GameSelector.m_TRACE){
 					System.out.println("MenuSnL:: sendForm -"
-							+ " human player name set");
+							+ " human player name set to " + name);
 				}
-				name = m_playersNameTextField.get(i).getText()
-						.toString();
-				System.out.println(name);
 				names.add(name);
 			}
 
@@ -607,14 +599,12 @@ public class MenuSnL {
 						.toString()+".AI";
 				if(GameSelector.m_TRACE){
 					System.out.println("MenuSnL:: sendForm -"
-							+ " ai player name set");
+							+ " ai player name set to " + name);
 				}
-				System.out.println(name);
 				names.add(name);
 			}
 
-			String color = m_playersColours.get(i).getSelectedItem()
-					.toString();
+			String color = m_playersColours.get(i).getSelectedItem().toString();
 			Color c;
 			Boolean colorUsed = false;
 			if (color == "GREEN") {

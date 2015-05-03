@@ -8,9 +8,7 @@ package Menu;
  * @date 29/03/2015
  */
 
-
 import java.awt.Color;
-import java.awt.HeadlessException;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
@@ -309,6 +307,7 @@ public class MenuTTT {
 						System.out.println(files[i]);
 					}
 				}
+				
 				File fileName = (File) JOptionPane.showInputDialog(m_frame, 
 					        "What game do you want to load?",
 					        "Load Game",
@@ -316,7 +315,12 @@ public class MenuTTT {
 					        null, 
 					        files, 
 					        files[0]);
-				loadGame(fileName.toString());
+				
+				if(fileName==null){
+					return;
+				}else{
+					loadGame(fileName.toString());
+				}
 			}
 		});
 
@@ -470,7 +474,6 @@ public class MenuTTT {
 				}
 			}
 		}
-
 	}
 
 	/** This is the test method. 
