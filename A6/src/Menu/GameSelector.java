@@ -14,6 +14,7 @@ package Menu;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Scanner;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -40,7 +41,7 @@ public class GameSelector {
 	private final static int WINDOW_HEIGHT = 450;
 	
 	/** Testing variable */
-	public static Boolean m_TRACE = false;
+	public static Boolean m_TRACE;
 	
 	/** Frame being used */
 	private static JFrame m_frame;
@@ -134,8 +135,15 @@ public class GameSelector {
 	 * Unit tests are done here too
 	 */
 	public static void main(String[] args) {
-		createWindow();
-		createUI();
+		Boolean bool;
+		
+		if(args[0].equalsIgnoreCase("1")){
+			bool = true;
+		}else{
+			bool = false;
+		}
+		
+		new GameSelector(bool);
 	}
 
 }
