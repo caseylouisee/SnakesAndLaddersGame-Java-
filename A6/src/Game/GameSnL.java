@@ -544,8 +544,12 @@ public class GameSnL {
 		final int MAX_VALUE = 100;
 		// Winning
 		if ((player.getPlayerLocation() + roll) >= MAX_VALUE) {
+			player.setLastLocation(player.getPlayerLocation());
+
 			player.setPlayerLocation(m_shapesPanel,m_board.getSquare(MAX_VALUE),
 					false);
+			player.setLastLocation(player.getPlayerLocation()+roll);
+
 			winner(player);
 		}
 
@@ -569,7 +573,8 @@ public class GameSnL {
 				player.setPlayerLocation(m_shapesPanel,
 						m_board.getSquare(m_board.getSquare(
 								player.getPlayerLocation()).getDestination()),
-								move);		
+								move);	
+
 				
 			} else {
 				// adds current location as last location before moving
