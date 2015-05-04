@@ -289,11 +289,11 @@ public class GameSnL {
 		m_snakesList = snakes;
 
 		for (int i = 0; i < m_snakesList.size()/2; i++) {
-			m_movementSquares.add(m_snakesList.get(i*2));
+			setMovementSquares(m_snakesList.get(i*2));
 		}
 
-		for (int i = 1; i < m_laddersList.size()/2; i++) {
-			m_movementSquares.add(m_laddersList.get(i*2));
+		for (int i = 0; i < m_laddersList.size()/2; i++) {
+			setMovementSquares(m_laddersList.get((i *2) +1));
 		}
 
 		for (int i = 0; i < playerNames.size(); i++) {
@@ -306,7 +306,6 @@ public class GameSnL {
 
 			}
 		}
-
 		m_board = new BoardSnL(BOARD_WIDTH, BOARD_HEIGHT, m_movementSquares,
 				m_laddersList, m_snakesList);
 		initDisplay();
@@ -477,11 +476,8 @@ public class GameSnL {
 		for (int i = 0; i < snakes; i++) {
 			int[] snakeSquares = generateSquares();
 			setSnakes(snakeSquares[0]);
-			//m_snakesList.add(snakeSquares[0]);
 			setMovementSquares(snakeSquares[0]);
-			//movementSquares.add(snakeSquares[0]);
 			setSnakes(snakeSquares[1]);
-			//m_snakesList.add(snakeSquares[1]);
 
 		}
 
@@ -489,11 +485,8 @@ public class GameSnL {
 		for (int i = 0; i < ladders; i++) {
 			int[] ladderSquares = generateSquares();
 			setLadders(ladderSquares[0]);
-			//m_laddersList.add(ladderSquares[0]);
 			setLadders(ladderSquares[1]);
-			//m_laddersList.add(ladderSquares[1]);
 			setMovementSquares(ladderSquares[1]);
-			//m_movementSquares.add(ladderSquares[1]);
 		}
 		
 		if(GameSelector.m_TRACE){
